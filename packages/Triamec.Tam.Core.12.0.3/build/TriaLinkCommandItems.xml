@@ -1,0 +1,1743 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+
+<!-- 
+	$Id: TriaLinkCommandItems.xml 37112 2021-03-09 07:01:36Z mvx $
+
+	Copyright © 2005 Triamec Motion AG
+
+	Defines enumerations used within Tria-Link communication and the register catalog
+-->
+
+<RegisterLayout rlid="0" root="Register" xmlns="http://schemas.triamec.com/Tam/RegisterLayout.xsd" >
+  <Descriptions>
+    <Description cultureInfo="en">Register independent enumerations used in Tria-Link commands.</Description>
+    <Description cultureInfo="de">Registerunabhängige in Tria-Link Kommandi benutzte Aufzählungen.</Description>
+  </Descriptions>
+
+  <Const prefix="c_" name="TriaLinkPacketSize" type="int" value="8">
+    <Descriptions>
+      <Description cultureInfo="en">Number of 32-Bit words that a Tria-Link packet can contain</Description>
+    </Descriptions>
+  </Const>
+
+  <Const prefix="c_" name="MaximumReadValuesUri" type="int" value="6">
+    <Descriptions>
+      <Description cultureInfo="en">Maximum number of values per URI register read service message</Description>
+    </Descriptions>
+  </Const>
+
+  <Const prefix="c_" name="MaximumWriteValuesUri" type="int" value="3">
+    <Descriptions>
+      <Description cultureInfo="en"> Maximum number of values per URI register write service message</Description>
+    </Descriptions>
+  </Const>
+
+  <Const prefix="c_" name="MaximumReadWriteValues" type="int" value="4">
+    <Descriptions>
+      <Description cultureInfo="en">Maximum number of values per register read/write service message</Description>
+    </Descriptions>
+  </Const>
+
+  <Const prefix="c_" name="MaximumReadWriteRangeValues" type="int" value="5">
+    <Descriptions>
+      <Description cultureInfo="en">Maximum number of values per register range read/write service message</Description>
+    </Descriptions>
+  </Const>
+
+  <Const prefix="c_" name="MaxCheckSumEntries" type="int" value="4">
+    <Descriptions>
+      <Description cultureInfo="en">Number of MD5 checkSum entries</Description>
+    </Descriptions>
+  </Const>
+
+  <Const prefix="c_" name="MaximumNameCharacters" type="int" value="16">
+    <Descriptions>
+      <Description cultureInfo="en">Maximum number characters a name identifier can contain (including 0 at the end)</Description>
+    </Descriptions>
+  </Const>
+
+  <Enum flags="false" prefix="SMEtTriaLink" name="Command">
+    <Descriptions>
+      <Description cultureInfo="en">Identifiers for isochronous and service packets.</Description>
+    </Descriptions>
+
+    <EnumValue prefix="SMEeTL_" name="NoOperation" value="0x00">
+      <Descriptions>
+        <Description cultureInfo="en">No operation.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="SendSubscriptionValues" value="0x01">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for isochronous packets.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="Stream3rdOrderValues" value="0x03">
+      <Descriptions>
+        <Description cultureInfo="en">cyclic 3rd order stream values.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="Stream4rdOrderValues" value="0x04">
+      <Descriptions>
+        <Description cultureInfo="en">cyclic 4rd order stream values.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="UriReadRequest" value="0x08">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for reading values from individual registers.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="UriReadResponse" value="0x09">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for acknowledging individually read registers.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="UriWriteRequest" value="0x0A">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for writing values to individual registers.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="UriWriteResponse" value="0x0B">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for acknowledging individually written registers.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="MoveDoubleRequest" value="0x0C" includeCondition="!WindowsCE">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for path planner requests with double precision floating point positions.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="MoveDoubleResponse" value="0x0D" includeCondition="!WindowsCE">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for acknowledging path planner requests with double precision floating point positions.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="ResetSubscriptionsRequest" value="0x0E">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for resetting subscriptions.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="ResetSubscriptionsResponse" value="0x0F">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for acknowledging reset subscriptions.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="PublishRequest" value="0x10">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for preparing the publication of isochronous packets.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="PublishResponse" value="0x11">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for acknowledging the preparation of publishing isochronous packets.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="SubscribeRequest" value="0x12">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for setting up retrieval of isochronous packets.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="SubscribeResponse" value="0x13">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for acknowledging the setup for retrieval of isochronous packets.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="EnableSubscriptionRequest" value="0x14">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for enabling the delivery of isochronous packets.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="EnableSubscriptionResponse" value="0x15">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for acknowledging the enabled delivery of isochronous packets.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="DriveControlRequest" value="0x16">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for controlling drives.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="DriveControlResponse" value="0x17">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for acknowledging drive control requests.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="AxisControlRequest" value="0x18">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for preparing axes.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="AxisControlResponse" value="0x19">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for acknowledging the preparation of axes.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="TamaControlRequest" value="0x1A">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for controlling the Tama virtual machine.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="TamaControlResponse" value="0x1B">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for acknowledge Tama virtual machine control requests.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="MoveFloatRequest" value="0x1C">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for commanding moves with float or Float40 typed positions.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="MoveFloatResponse" value="0x1D">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for acknowledging move commands with float or Float40 typed positions.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="TestSignalRequest" value="0x1E">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for controlling the test signal generator.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="TestSignalResponse" value="0x1F">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for acknowledging requests to the test signal generator.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="ReadRegisterRequest" value="0x20">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for requests for reading individual registers.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="ReadRegisterResponse" value="0x21">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for delivering individual register values.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="WriteRegisterRequest" value="0x22">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for writing values to individual registers.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="WriteRegisterResponse" value="0x23">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for acknowledging individually written registers.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="ReadRegisterRangeRequest" value="0x24">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for requests for reading a range of registers.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="ReadRegisterRangeResponse" value="0x25">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for delivering a range of register values.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="WriteRegisterRangeRequest" value="0x26">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for writing values to a range of registers.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="WriteRegisterRangeResponse" value="0x27">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for acknowledging written register ranges.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="GetChecksumRequest" value="0x28" deprecated="Read the desired registers and calculate an MD5 checksum.">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for requesting checksums.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="GetChecksumResponse" value="0x29" deprecated="Read the desired registers and calculate an MD5 checksum.">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for delivering checksums.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="FirmwareControlRequest" value="0x30">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for controlling the firmware.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="FirmwareStatusResponse" value="0x31">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for acknowledging requests for controlling the firmware.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="ReadFirmwareRangeRequest" value="0x32">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for requesting firmware binary code.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="ReadFirmwareRangeResponse" value="0x33">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for delivering firmware binary code.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="WriteFirmwareRangeRequest" value="0x34">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for programming firmware binary code.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="WriteFirmwareRangeResponse" value="0x35">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for acknowledging the programming of firmware binary code.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="ReadIdentificationRequest" value="0x40">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for requesting device identifications.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="ReadIdentificationResponse" value="0x41">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for delivering device identifications.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="TimeUpdateRequest" value="0x42" includeCondition="!WindowsCE">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for time update requests.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="ControlStartupRequest" value="0x50">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for control startup requests.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="ControlStartupResponse" value="0x51">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for control startup responses.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="ControlStatisticsRequest" value="0x60">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for control statistics requests.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="ControlStatisticsResponse" value="0x61">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for control statistics responses.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="AddressControlRequest" value="0x62">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for address control requests.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="AddressControlResponse" value="0x63">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for address control responses.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="SMEeTL_" name="IPTunnelRequest" value="0x70" includeCondition="!WindowsCE">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for Ethernet over Tria-Link requests.</Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="SMEeTL_" name="IPTunnelResponse" value="0x71" includeCondition="!WindowsCE">
+      <Descriptions>
+        <Description cultureInfo="en">Identifier for Ethernet over Tria-Link responses.</Description>
+      </Descriptions>
+    </EnumValue>
+
+  </Enum>
+
+  <Enum flags="false" prefix="RPTt" name="MotorBaseConfiguration">
+    <!--
+			Notes:
+				- The description of each visible entry of this specific enumeration needs to be in the form
+				  <short desc> - <long desc>
+				- The deprecated items must be kept as long as there might be old TAM configurations around.
+			-->
+    <Descriptions>
+      <Description cultureInfo="en">Characterization of the connected motor configuration.</Description>
+    </Descriptions>
+
+    <EnumValue prefix="RPTeMOT_" name="Unknown" value="-1">
+      <Descriptions>
+        <Description cultureInfo="en">The unspecified configuration.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RPTeMOT_" name="NoMotorOneAxis" value="0">
+      <Descriptions>
+        <Description cultureInfo="en">No Motor, 1 axis - One axis without motor.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RPTeMOT_" name="OneBrushDCMotor" value="1" deprecated="Use the OneDCMotor value" includeCondition="!WindowsCE">
+      <Descriptions>
+        <Description cultureInfo="en">One DC motor connected between lines A and B (h-bridge).</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RPTeMOT_" name="OneDCMotor" value="1">
+      <Descriptions>
+        <Description cultureInfo="en">1 DC Motor - One DC motor connected between lines A and B (h-bridge).</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RPTeMOT_" name="OneSynchronousACMotor" value="2">
+      <Descriptions>
+        <Description cultureInfo="en">Synchronous Motor 3-Phase - One synchronous 3-phase motor connected at lines A, B, and C.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RPTeMOT_" name="TwoBrushDCMotors" value="3" deprecated="Use the TwoDCMotors value"  includeCondition="!WindowsCE">
+      <Descriptions>
+        <Description cultureInfo="en">Two DC motors connected between lines AB and CB (multiple axes).</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RPTeMOT_" name="TwoDCMotors" value="3">
+      <Descriptions>
+        <Description cultureInfo="en">2 DC Motors - Two DC motors connected between lines AB and CB (multiple axes).</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RPTeMOT_" name="NoMotorTwoAxes" value="4">
+      <Descriptions>
+        <Description cultureInfo="en">No Motor, 2 axes - Two axes without motor.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RPTeMOT_" name="OneSynchronousTwoPhaseACMotor" value="5">
+      <Descriptions>
+        <Description cultureInfo="en">Synchronous Motor 2-Phase - One synchronous 2-phase motor connected at lines AB and CB.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RPTeMOT_" name="OneTwoPhaseACMotor" value="5" deprecated="Use the OneSynchronousTwoPhaseACMotor value" includeCondition="!WindowsCE">
+      <Descriptions>
+        <Description cultureInfo="en">One synchronous 2-phase motor connected at lines AB and CB.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RPTeMOT_" name="IOOnlyDevice" value="6">
+      <Descriptions>
+        <Description cultureInfo="en">IO only - Device without motor or axes.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RPTeMOT_" name="OneAsynchronousACMotor" value="7">
+      <Descriptions>
+        <Description cultureInfo="en">Asynchronous Motor 3-Phase - One asynchronous 3-phase motor connected at lines A, B, and C.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RPTeMOT_" name="OneAsynchronousTwoPhaseACMotor" value="8">
+      <Descriptions>
+        <Description cultureInfo="en">Asynchronous Motor 2-Phase - One asynchronous 2-phase motor connected at lines AB and CB.</Description>
+      </Descriptions>
+    </EnumValue>
+  </Enum>
+
+
+  <Enum flags="false" prefix="RPTt" name="BridgePowerSwitch">
+    <Descriptions>
+      <Description cultureInfo="en">Settings of the power section switch.</Description>
+    </Descriptions>
+
+    <EnumValue prefix="RPTePWR_" name="Off" value="0">
+      <Descriptions>
+        <Description cultureInfo="en">Power section off.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RPTePWR_" name="On" value="1">
+      <Descriptions>
+        <Description cultureInfo="en">Power section on.</Description>
+      </Descriptions>
+    </EnumValue>
+
+  </Enum>
+
+
+  <Enum flags="false" prefix="RPTt" name="TamaVMCommand">
+    <Descriptions>
+      <Description cultureInfo="en">Type of the Tama virtual machine control command.</Description>
+    </Descriptions>
+
+    <EnumValue prefix="RPTeTVM_" name="DoNothing" value="0">
+      <Descriptions>
+        <Description cultureInfo="en">No command for the Tama virtual machine.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RPTeTVM_" name="VerifyCode" value="1">
+      <Descriptions>
+        <Description cultureInfo="en">Verify the consistency of the Tama program code.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RPTeTVM_" name="DismissCode" value="2">
+      <Descriptions>
+        <Description cultureInfo="en">Dismiss the Tama program code in preparation to load another program.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RPTeTVM_" name="Initialize" value="3">
+      <Descriptions>
+        <Description cultureInfo="en">Initializes the stack of the Tama virtual machine.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RPTeTVM_" name="Enable" value="4">
+      <Descriptions>
+        <Description cultureInfo="en">Sets the Tama virtual machine operational for executing code.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RPTeTVM_" name="Disable" value="5">
+      <Descriptions>
+        <Description cultureInfo="en">Stops the Tama virtual machine from executing code.</Description>
+      </Descriptions>
+    </EnumValue>
+
+  </Enum>
+
+
+  <Enum flags="false" prefix="RCTt" name="PathPlannerCommand">
+
+    <Descriptions>
+      <Description cultureInfo="en">Path planner command.</Description>
+    </Descriptions>
+
+    <EnumValue prefix="RCTeCMD_" name="NoCommand" value="0">
+      <Descriptions>
+        <Description cultureInfo="en">No command.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeCMD_" name="Init" value="1">
+      <Descriptions>
+        <Description cultureInfo="en">Initialize the path planner.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeCMD_" name="MoveAbsolute" value="2">
+      <Descriptions>
+        <Description cultureInfo="en">Move absolute to the desired position.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeCMD_" name="MoveAbsolute_Vel" value="66">
+      <Descriptions>
+        <Description cultureInfo="en">Move absolute to the desired position. Use dedicated velocity.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeCMD_" name="MoveAbsolute_VelAcc" value="194">
+      <Descriptions>
+        <Description cultureInfo="en">Move absolute to the desired position. Use dedicated velocity and acceleration.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeCMD_" name="MoveRelative" value="3">
+      <Descriptions>
+        <Description cultureInfo="en">Move a relative distance to the actual position.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeCMD_" name="MoveRelative_Vel" value="67">
+      <Descriptions>
+        <Description cultureInfo="en">Move a relative distance to the actual position. Use dedicated velocity.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeCMD_" name="MoveRelative_VelAcc" value="195">
+      <Descriptions>
+        <Description cultureInfo="en">Move a relative distance to the actual position. Use dedicated velocity and acceleration.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeCMD_" name="MoveAdditive" value="4">
+      <Descriptions>
+        <Description cultureInfo="en">Move a relative distance additional to the previous command position.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeCMD_" name="MoveAdditive_Vel" value="68">
+      <Descriptions>
+        <Description cultureInfo="en">Move a relative distance additional to the previous command position. Use dedicated velocity.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeCMD_" name="MoveAdditive_VelAcc" value="196">
+      <Descriptions>
+        <Description cultureInfo="en">Move a relative distance additional to the previous command position. Use dedicated velocity and acceleration.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeCMD_" name="MoveVelocity" value="5">
+      <Descriptions>
+        <Description cultureInfo="en">Move continuously with constant velocity.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeCMD_" name="MoveVelocity_Acc" value="133">
+      <Descriptions>
+        <Description cultureInfo="en">Move continuously with constant velocity. Use dedicated velocity and acceleration.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeCMD_" name="MoveDirectCoupled" value="6">
+      <Descriptions>
+        <Description cultureInfo="en">Move synchronously to another axis.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeCMD_" name="MoveCoupled" value="7">
+      <Descriptions>
+        <Description cultureInfo="en">Move coupled to another axis, calculating kinematic coupling with Tama.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeCMD_" name="CoupleOut" value="13">
+      <Descriptions>
+        <Description cultureInfo="en">Immediately disengages coupling and maintains velocity.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeCMD_" name="Stop" value="8">
+      <Descriptions>
+        <Description cultureInfo="en">Stop the current move.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeCMD_" name="Stop_Acc" value="136">
+      <Descriptions>
+        <Description cultureInfo="en">Stop the current move. Use dedicated acceleration.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeCMD_" name="EmergencyStop" value="9">
+      <Descriptions>
+        <Description cultureInfo="en">Stop the current move with maximal move dynamic.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeCMD_" name="SetPosition" value="10">
+      <Descriptions>
+        <Description cultureInfo="en">Set the positions to a new absolute position.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeCMD_" name="SetPositionRelative" value="11">
+      <Descriptions>
+        <Description cultureInfo="en">Shift all the positions with a relative distance to a new position.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeCMD_" name="TorqueControl" value="12">
+      <Descriptions>
+        <Description cultureInfo="en">Exert a constant torque or force.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeCMD_" name="TorqueControl_Vel" value="76">
+      <Descriptions>
+        <Description cultureInfo="en">Exert a constant torque or force. Use dedicated velocity.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeCMD_" name="TorqueControl_VelAcc" value="204">
+      <Descriptions>
+        <Description cultureInfo="en">Exert a constant torque or force. Use dedicated velocity and acceleration.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeCMD_" name="TorqueLimit" value="14">
+      <Descriptions>
+        <Description cultureInfo="en">Set torque limit values used in torque limited moves.</Description>
+      </Descriptions>
+    </EnumValue>
+
+  </Enum>
+
+
+  <Enum flags="false" prefix="RCTt" name="PathPlannerDirection">
+
+    <Descriptions>
+      <Description cultureInfo="en">Direction property of move commands.</Description>
+      <Remarks cultureInfo="en">Values of this type are only considered when the position is configured to be within upper and lower limits (modulo position).</Remarks>
+    </Descriptions>
+
+    <EnumValue prefix="RCTeDIR_" name="Current" value="0">
+      <Descriptions>
+        <Description cultureInfo="en">Moves in current direction.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeDIR_" name="Positive" value="1">
+      <Descriptions>
+        <Description cultureInfo="en">Moves always in positive direction.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeDIR_" name="Shortest" value="2">
+      <Descriptions>
+        <Description cultureInfo="en">Moves on the shortest path.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeDIR_" name="Negative" value="3">
+      <Descriptions>
+        <Description cultureInfo="en">Moves always in negative direction.</Description>
+      </Descriptions>
+    </EnumValue>
+
+  </Enum>
+
+
+  <Enum flags="false" prefix="RCTt" name="PathPlannerExecutionOption">
+
+    <Descriptions>
+      <Description cultureInfo="en">Execution option property of move commands.</Description>
+    </Descriptions>
+
+    <EnumValue prefix="RCTeEXE_" name="Immediate" value="0">
+      <Descriptions>
+        <Description cultureInfo="en">Execute move command immediate.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTeEXE_" name="Deferred" value="1">
+      <Descriptions>
+        <Description cultureInfo="en">Execute move Command when axis is idle.</Description>
+      </Descriptions>
+    </EnumValue>
+
+  </Enum>
+
+
+  <Enum flags="false" prefix="RDSt" name="DriveStopCommand">
+
+    <Descriptions>
+      <Description cultureInfo="en">Type of the drive emergency stop command.</Description>
+    </Descriptions>
+
+    <EnumValue prefix="RDSeCMD_" name="None" value="0">
+      <Descriptions>
+        <Description cultureInfo="en">No drive emergency stop.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDSeCMD_" name="StopAllAxes" value="1">
+      <Descriptions>
+        <Description cultureInfo="en">Execute an emergency stop for all axes.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDSeCMD_" name="StopDisableAllAxes" value="2">
+      <Descriptions>
+        <Description cultureInfo="en">Execute an emergency stop for and disable all axes.</Description>
+      </Descriptions>
+    </EnumValue>
+
+  </Enum>
+
+
+  <Enum flags="false" prefix="RCTt" name="PublicationCommand">
+    <!-- Numbers must be synchronized with the Acquisitions.Slope enumeration. -->
+
+    <Descriptions>
+      <Description cultureInfo="en">Activation and trigger condition of a publication.</Description>
+    </Descriptions>
+
+    <EnumValue prefix="RCTePUBCMD_" name="Off" value="0" browsable="false">
+      <Descriptions>
+        <Description cultureInfo="en">Disable the publication.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTePUBCMD_" name="Unconditional" value="1" browsable="false">
+      <Descriptions>
+        <Description cultureInfo="en">Enable the publication without condition.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTePUBCMD_" name="AboveLevel" value="2">
+      <Descriptions>
+        <Description cultureInfo="en">Enable the publication whenever the trigger signal is above the trigger level.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTePUBCMD_" name="BelowLevel" value="3">
+      <Descriptions>
+        <Description cultureInfo="en">Enable the publication whenever the trigger signal is below the trigger level.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTePUBCMD_" name="RaisingEdge" value="4">
+      <Descriptions>
+        <Description cultureInfo="en">Enable the publication when the trigger signal crosses the trigger level with a raising edge.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTePUBCMD_" name="FallingEdge" value="5">
+      <Descriptions>
+        <Description cultureInfo="en">Enable the publication when the trigger signal crosses the trigger level with a falling edge.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTePUBCMD_" name="AnyEdge" value="6">
+      <Descriptions>
+        <Description cultureInfo="en">Enable the publication when the trigger signal changes by a value greater than the trigger epsilon.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTePUBCMD_" name="AnyEdgeEvent" value="7">
+      <Descriptions>
+        <Description cultureInfo="en">Enable publication of one event when the trigger signal changes by a value greater than the trigger epsilon.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RCTePUBCMD_" name="Placeholder100kHz" value="8" browsable="false">
+      <Descriptions>
+        <Description cultureInfo="en">Reserved to indicate a publisher slot used for the secondary packet of a 100kHz subscription. Don't use.</Description>
+      </Descriptions>
+    </EnumValue>
+
+  </Enum>
+
+
+  <Enum flags="false" prefix="RBTt" name="TriggerDataType">
+
+    <Descriptions>
+      <Description cultureInfo="en">Possible data types in the register.</Description>
+    </Descriptions>
+
+    <EnumValue prefix="RBTeTYPE_" name="Integer" value="0">
+      <Descriptions>
+        <Description cultureInfo="en">integer data type.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RBTeTYPE_" name="Boolean" value="1">
+      <Descriptions>
+        <Description cultureInfo="en">boolean data type.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RBTeTYPE_" name="Enum" value="2">
+      <Descriptions>
+        <Description cultureInfo="en">enumeration data type.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RBTeTYPE_" name="Float" value="3">
+      <Descriptions>
+        <Description cultureInfo="en">float data type.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RBTeTYPE_" name="Float40" value="4" includeCondition="!WindowsCE">
+      <Descriptions>
+        <Description cultureInfo="en">float40 data type.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RBTeTYPE_" name="Double" value="5" includeCondition="!WindowsCE">
+      <Descriptions>
+        <Description cultureInfo="en">double data type.</Description>
+      </Descriptions>
+    </EnumValue>
+  </Enum>
+
+
+  <Enum flags="false" prefix="RTCt" name="CurrentControllerTestSignalCommand">
+
+    <Descriptions>
+      <Description cultureInfo="en">Test signal generator command.</Description>
+    </Descriptions>
+
+    <EnumValue prefix="RTCeCCCMD_" name="NoCommand" value="0">
+      <Descriptions>
+        <Description cultureInfo="en">No command.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RTCeCCCMD_" name="SignalActive" value="1">
+      <Descriptions>
+        <Description cultureInfo="en">Activate the test signal generator.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RTCeCCCMD_" name="Stop" value="2">
+      <Descriptions>
+        <Description cultureInfo="en">Stop the test signal generator.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RTCeCCCMD_" name="PwmVectorModulationActive" value="3">
+      <Descriptions>
+        <Description cultureInfo="en">Activate the test signal generator in the mode PWM vector modulation.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RTCeCCCMD_" name="PwmVectorRotationActive" value="4">
+      <Descriptions>
+        <Description cultureInfo="en">Activate the test signal generator in the mode PWM vector rotation.</Description>
+      </Descriptions>
+    </EnumValue>
+  </Enum>
+
+
+  <Enum flags="false" prefix="RPTt" name="Port">
+
+    <Descriptions>
+      <Description cultureInfo="en">A Tria-Link port specifies a location within a Tria-Link station. The header of a Tria-Link packet provides a port number each for the source and destination address and controls the correct routing of a request and response packet.</Description>
+    </Descriptions>
+
+    <EnumValue prefix="RPTeTRIALINK_" name="Local" value="0">
+      <Descriptions>
+        <Description cultureInfo="en">Port for local requests.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RPTeTRIALINK_" name="StatusControl" value="1">
+      <Descriptions>
+        <Description cultureInfo="en">Port for status/control requests.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RPTeTRIALINK_" name="Dsp" value="2">
+      <Descriptions>
+        <Description cultureInfo="en">Port for DSP requests.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RPTeTRIALINK_" name="PciUsb" value="3">
+      <Descriptions>
+        <Description cultureInfo="en">Port for PCI requests.</Description>
+      </Descriptions>
+    </EnumValue>
+
+  </Enum>
+
+
+  <Enum flags="false" prefix="RPTt" name="BridgeMode">
+
+    <Descriptions>
+      <Description cultureInfo="en">Access to the Tria-Link ring granted to auxiliary connections.</Description>
+    </Descriptions>
+
+    <EnumValue prefix="RPTeBRID_" name="Disabled" value="0">
+      <Descriptions>
+        <Description cultureInfo="en">Only the device is visible.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RPTeBRID_" name="Ethernet" value="1">
+      <Descriptions>
+        <Description cultureInfo="en">All stations of the Tria-Link ring are accessible via a network connection.</Description>
+      </Descriptions>
+    </EnumValue>
+
+  </Enum>
+
+
+  <Enum flags="false" prefix="RDSt" name="DeviceState" signed="true">
+
+    <Descriptions>
+      <Description cultureInfo="en">Defines the states of the device state machine.</Description>
+    </Descriptions>
+
+    <EnumValue prefix="RDSeDRVST_" name="StartUp" value="-1">
+      <Descriptions>
+        <Description cultureInfo="en">Starting up the software, initialization and self-test software.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDSeDRVST_" name="NotReadyToSwitchOn" value="0">
+      <Descriptions>
+        <Description cultureInfo="en">Software and Hardware ready to change mode but power on is not possible.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDSeDRVST_" name="ReadyToSwitchOn" value="1">
+      <Descriptions>
+        <Description cultureInfo="en">Software and Hardware ready to change mode or switch power on.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDSeDRVST_" name="Operational" value="2">
+      <Descriptions>
+        <Description cultureInfo="en">Drive is operating, high Voltage is applied to the drive. For some devices, this state is equal to the ReadyToSwitchOn state.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDSeDRVST_" name="FaultReactionActive" value="3">
+      <Descriptions>
+        <Description cultureInfo="en">A fault reaction is in progress.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDSeDRVST_" name="FaultPending" value="4">
+      <Descriptions>
+        <Description cultureInfo="en">A fault is pending to reset.</Description>
+      </Descriptions>
+    </EnumValue>
+
+  </Enum>
+
+
+  <Enum flags="false" prefix="RDSt" name="DeviceEvent">
+
+    <Descriptions>
+      <Description cultureInfo="en">Events for the device state machine.</Description>
+    </Descriptions>
+
+    <EnumValue prefix="RDSeEVT_" name="None" value="0">
+      <Descriptions>
+        <Description cultureInfo="en">No event.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDSeEVT_" name="InitDone" value="1">
+      <Descriptions>
+        <Description cultureInfo="en">Event when initialization of the device is done.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDSeEVT_" name="SetMotorConfiguration" value="2">
+      <Descriptions>
+        <Description cultureInfo="en">Event for setting motor base configuration.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDSeEVT_" name="SwitchOn" value="3">
+      <Descriptions>
+        <Description cultureInfo="en">Event for power bridge switch on.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDSeEVT_" name="SwitchOff" value="4">
+      <Descriptions>
+        <Description cultureInfo="en">Event for power bridge switch off.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDSeEVT_" name="FaultStopOff" value="5">
+      <Descriptions>
+        <Description cultureInfo="en">Event for fault with stop and power off action.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDSeEVT_" name="FaultOff" value="6">
+      <Descriptions>
+        <Description cultureInfo="en">Event for fault with power off action.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDSeEVT_" name="ResetFault" value="7">
+      <Descriptions>
+        <Description cultureInfo="en">Event for reset of fault condition.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDSeEVT_" name="StopAllAxes" value="8">
+      <Descriptions>
+        <Description cultureInfo="en">Event which stops all axes.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDSeEVT_" name="StopDisableAllAxes" value="9">
+      <Descriptions>
+        <Description cultureInfo="en">Event which stops and disables all axes.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDSeEVT_" name="DisableAllAxes" value="10">
+      <Descriptions>
+        <Description cultureInfo="en">Event which disables all axes.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDSeEVT_" name="Reboot" value="11">
+      <Descriptions>
+        <Description cultureInfo="en">Event which reboots the drive.</Description>
+      </Descriptions>
+    </EnumValue>
+
+  </Enum>
+
+
+  <Enum flags="false" prefix="RDEt" name="DeviceErrorIdentification">
+
+    <Descriptions>
+      <Description cultureInfo="en">Error identification for the device.</Description>
+    </Descriptions>
+
+    <EnumValue prefix="RDEeDRVERR_" name="None" value="0">
+      <Descriptions>
+        <Description cultureInfo="en">No errors encountered.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="PllNotLocked" value="1" deprecated="Renamed to LinkNotReady">
+      <Descriptions>
+        <Description cultureInfo="en">The device is no longer in phase-lock with the Tria-Link.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="LinkPllNotLocked" value="1" deprecated="Renamed to LinkNotReady">
+      <Descriptions>
+        <Description cultureInfo="en">The device is no longer in phase-lock with the Tria-Link.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="LinkNotReady" value="1" >
+      <Descriptions>
+        <Description cultureInfo="en">The device isn't synchronized with its real-time link.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="ComputingTime" value="2">
+      <Descriptions>
+        <Description cultureInfo="en">The limit of the computing time is exceeded.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="I2tLimitMotorOrDrive" value="3">
+      <Descriptions>
+        <Description cultureInfo="en">The I2t limit of the motor or drive is exceeded. This error only occurs for drive-type devices.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="CurrentLimitMotorOrDrive" value="4">
+      <Descriptions>
+        <Description cultureInfo="en">The limit of the current vector is exceeded. This error only occurs for drive-type devices.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="DCBusVoltageOutOfRange" value="5">
+      <Descriptions>
+        <Description cultureInfo="en">The DC-bus voltage is out of range. This error only occurs for drive-type devices.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="BridgeVoltageOutOfRange" value="5" deprecated="Renamed to DCBusVoltageOutOfRange">
+      <Descriptions>
+        <Description cultureInfo="en">The item has been renamed to DCBusVoltageOutOfRange.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="DCBusOverCurrentLimit" value="6">
+      <Descriptions>
+        <Description cultureInfo="en">The limit of the DC-bus current is exceeded. Also reported by old drive firmware when the mid voltage is out of range.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="BridgeOverCurrentLimit" value="6" deprecated="Renamed to DCBusOverCurrentLimit">
+      <Descriptions>
+        <Description cultureInfo="en">The item has been renamed to DCBusOverCurrentLimit.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="OverCurrentOrMidVoltageError" value="6" deprecated="Renamed to DCBusOverCurrentLimit.">
+      <Descriptions>
+        <Description cultureInfo="en">The item has been renamed to DCBusOverCurrentLimit.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="TemperatureLimit" value="7">
+      <Descriptions>
+        <Description cultureInfo="en">The limit of a temperature is exceeded.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="VoltageOutOfRange" value="8">
+      <Descriptions>
+        <Description cultureInfo="en">At least one operating voltage is out of range.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="ExternalError" value="9">
+      <Descriptions>
+        <Description cultureInfo="en">The external error is triggered.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="NoValidTamaCodeAvailable" value="10">
+      <Descriptions>
+        <Description cultureInfo="en">Running Tama without valid Tama code error.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="InvalidPersistentParameters" value="11">
+      <Descriptions>
+        <Description cultureInfo="en">Persistent parameters are not compatible with running firmware.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <!-- The following Tama values must be equivalent to the TVMtERROR enum, and TamaOutOfMemory must be the first entry -->
+    <EnumValue prefix="RDEeDRVERR_" name="TamaOutOfMemory" value="12">
+      <Descriptions>
+        <Description cultureInfo="en">While executing a Tama program, the program memory became full during heap allocation. Memory is typically allocated on the heap when creating new instances of reference types, including arrays.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="TamaDivisionByZero" value="13">
+      <Descriptions>
+        <Description cultureInfo="en">While executing a Tama program, an attempt was made to divide by zero.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="TamaNullReference" value="14">
+      <Descriptions>
+        <Description cultureInfo="en">While executing a Tama program, an object property was requested, but there was a null reference.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="TamaIndexOutOfRange" value="15">
+      <Descriptions>
+        <Description cultureInfo="en">While executing a Tama program, an array element index was outside the range of the array.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="TamaCorruptedState" value="16">
+      <Descriptions>
+        <Description cultureInfo="en">While executing a Tama program, Tama program state was corrupted. This value is returned when an unknown operation code is encountered.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="MonitorIsNotRunning" value="17">
+      <Descriptions>
+        <Description cultureInfo="en">Hardware monitor on the device is not running.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="InvalidEepromData" value="18">
+      <Descriptions>
+        <Description cultureInfo="en">EEPROM data are not consistent.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="EepromWriteOperationFailed" value="19">
+      <Descriptions>
+        <Description cultureInfo="en">EEPROM write data is not possible.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="SafeTorqueOffActiveWarning" value="20">
+      <Descriptions>
+        <Description cultureInfo="en">SafeTorqueOff (STO) is active.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="SafeTorqueOffInconsistent" value="21">
+      <Descriptions>
+        <Description cultureInfo="en">SafeTorqueOff (STO) safe mode due to inconsistent channels detected (only one contact is closed).</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="SafeTorqueOffStartupTestFailure" value="22">
+      <Descriptions>
+        <Description cultureInfo="en">SafeTorqueOff (STO) safe mode due to a Startup test failure. As of TSD firmware release 6.9.0, this error is shown as SafeTorqueOffSafeMode with details in the log. </Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="SafeTorqueOffPulseTestFailure" value="23"
+               deprecated="As of TSD firmware release 6.9.0, this error is shown as SafeTorqueOffSafeMode with details in the log."  >
+      <Descriptions>
+        <Description cultureInfo="en">SafeTorqueOff (STO) safe mode due to a Pulse-Test failure. As of TSD firmware release 6.9.0, this error is shown as SafeTorqueOffSafeMode with details in the log. </Description>
+      </Descriptions>
+    </EnumValue>
+    <EnumValue prefix="RDEeDRVERR_" name="SafeTorqueOffSafeMode" value="23">
+      <Descriptions>
+        <Description cultureInfo="en">SafeTorqueOff (STO) safe mode due to any safe mode reason. Up to TSD firmware release 6.9.0, this error was used for SafeTorqueOffPulseTestFailure. </Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="SafeTorqueOffVoltOrTempLimit" value="24">
+      <Descriptions>
+        <Description cultureInfo="en">SafeTorqueOff (STO) safe mode due to Temperature or voltage limit on safety Monitor. As of TSD firmware release 6.9.0, this error is shown as SafeTorqueOffSafeMode with details in the log. </Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="PhaseShort" value="25">
+      <Descriptions>
+        <Description cultureInfo="en">A short (phase-to-phase or phase-to-earth) was detected in PWM during bridge power-up.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="MidVoltageOutOfRange" value="26">
+      <Descriptions>
+        <Description cultureInfo="en">The mid voltage is out of range.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="PowerSupplyOrBrakeNotOk" value="27">
+      <Descriptions>
+        <Description cultureInfo="en">Power supply or brake is not OK. Not all power lines available or line disturbance or brake issues.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="CommandError" value="28">
+      <Descriptions>
+        <Description cultureInfo="en">A Command was not successful.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="ParameterError" value="29">
+      <Descriptions>
+        <Description cultureInfo="en">Found an unknown or inconsistent Parameter.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RDEeDRVERR_" name="BootError" value="30">
+      <Descriptions>
+        <Description cultureInfo="en">Error during boot. Check errorMessage for details.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <!-- CAUTION 
+		
+				- The highest value transmitted in PlcErrors is 31.
+				- The highest value transmitted in MergedErrors is 255.
+				- Those errors which need to be acknowledged in FaultReactionActive are defined in 
+				  Triamec.Tam.TamDevice.ErrorNeedsToBeAcknowledgedWhileActive.
+		-->
+
+  </Enum>
+
+
+  <Enum flags="false" prefix="RASt" name="AxisState">
+
+    <Descriptions>
+      <Description cultureInfo="en">Defines the states of the axis state machine which is used to control motion.</Description>
+    </Descriptions>
+
+    <EnumValue prefix="RASeAXISST_" name="Startup" value="0">
+      <Descriptions>
+        <Description cultureInfo="en">This is the state in which the axis is, if drive is not operational.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RASeAXISST_" name="Disabled" value="1">
+      <Descriptions>
+        <Description cultureInfo="en">Switched on but not enabled.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RASeAXISST_" name="Enabling" value="2">
+      <Descriptions>
+        <Description cultureInfo="en">During enabling phase.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RASeAXISST_" name="Standstill" value="3">
+      <Descriptions>
+        <Description cultureInfo="en">Enabled and not moving.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RASeAXISST_" name="DiscreteMotion" value="4">
+      <Descriptions>
+        <Description cultureInfo="en">Motion with defined end.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RASeAXISST_" name="ContinuousMotion" value="5">
+      <Descriptions>
+        <Description cultureInfo="en">Continuous motion with constant velocity.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RASeAXISST_" name="DirectCoupledMotion" value="6">
+      <Descriptions>
+        <Description cultureInfo="en">Direct coupled motion used for slave path planner.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RASeAXISST_" name="TamaCoupledMotion" value="7">
+      <Descriptions>
+        <Description cultureInfo="en">Tama indirect coupled motion used for slave path planner.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RASeAXISST_" name="Stopping" value="8">
+      <Descriptions>
+        <Description cultureInfo="en">Stopping the move.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RASeAXISST_" name="ErrorStopping" value="9">
+      <Descriptions>
+        <Description cultureInfo="en">Stopping the move with maximum dynamics; error state.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RASeAXISST_" name="Disabling" value="12">
+      <Descriptions>
+        <Description cultureInfo="en">Preparing to disable control, for example, to put the brakes on.</Description>
+      </Descriptions>
+    </EnumValue>
+
+  </Enum>
+
+
+  <Enum flags="false" prefix="RASt" name="AxisEvent">
+
+    <Descriptions>
+      <Description cultureInfo="en">Events for the axis state machine.</Description>
+    </Descriptions>
+
+    <EnumValue prefix="RASeEVT_" name="None" value="0">
+      <Descriptions>
+        <Description cultureInfo="en">No event.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RASeEVT_" name="SwitchOn" value="1">
+      <Descriptions>
+        <Description cultureInfo="en">Event for switching on the drive.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RASeEVT_" name="SwitchOff" value="2">
+      <Descriptions>
+        <Description cultureInfo="en">Event for switching off the drive.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RASeEVT_" name="EnableAxis" value="3">
+      <Descriptions>
+        <Description cultureInfo="en">Event for enabling the axis.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RASeEVT_" name="DisableAxis" value="4">
+      <Descriptions>
+        <Description cultureInfo="en">Event for disabling the axis.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RASeEVT_" name="MoveCommand" value="5">
+      <Descriptions>
+        <Description cultureInfo="en">Event for move command.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RASeEVT_" name="ErrorStop" value="6">
+      <Descriptions>
+        <Description cultureInfo="en">Event to rise an error with a move stop.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RASeEVT_" name="ErrorDisable" value="7">
+      <Descriptions>
+        <Description cultureInfo="en">Event to rise an error with a disable axis.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RASeEVT_" name="ErrorStopDisable" value="8">
+      <Descriptions>
+        <Description cultureInfo="en">Event to rise an error with a stop and disable axis.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RASeEVT_" name="ResetError" value="9">
+      <Descriptions>
+        <Description cultureInfo="en">Event to reset axis errors.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RASeEVT_" name="ChangeUnit" value="15">
+      <Descriptions>
+        <Description cultureInfo="en">Event to change axis units.</Description>
+      </Descriptions>
+    </EnumValue>
+
+  </Enum>
+
+
+  <Enum flags="false" prefix="RAEt" name="AxisErrorIdentification">
+
+    <Descriptions>
+      <Description cultureInfo="en">Error identification for the axis.</Description>
+    </Descriptions>
+
+    <EnumValue prefix="RAEeAXISERR_" name="None" value="0">
+      <Descriptions>
+        <Description cultureInfo="en">No errors encountered.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="PositionErrorLimit" value="1">
+      <Descriptions>
+        <Description cultureInfo="en">The position error limit of the position controller is exceeded.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="IdErrorLimit" value="2">
+      <Descriptions>
+        <Description cultureInfo="en">The current error limit of the D current controller is exceeded.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="IqErrorLimit" value="3">
+      <Descriptions>
+        <Description cultureInfo="en">The current error limit of the Q current controller is exceeded.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="IdIqErrorLimit" value="4">
+      <Descriptions>
+        <Description cultureInfo="en">The current error limit of the D and Q current controller is exceeded.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="EncoderSubResolutionError" value="5">
+      <Descriptions>
+        <Description cultureInfo="en">The sub-resolution of the encoder is ambiguous. Possible cause: faulty wiring.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="EnablingNoMotorAxis" value="6">
+      <Descriptions>
+        <Description cultureInfo="en">Enabling of an Axis with no motor configuration is not possible.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="EncoderError" value="7">
+      <Descriptions>
+        <Description cultureInfo="en">Encoder works not as expected. (no or too low signal from encoder)</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="EncoderShort" value="8">
+      <Descriptions>
+        <Description cultureInfo="en">The encoder supply is shorted.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="DigOutputShort" value="9">
+      <Descriptions>
+        <Description cultureInfo="en">A digital output is shorted.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="MotorI2t" value="10">
+      <Descriptions>
+        <Description cultureInfo="en">The I2t limit of the motor is exceeded.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="PowerBridgeI2tLimit" value="11">
+      <Descriptions>
+        <Description cultureInfo="en">The I2t limit of the power bridge is exceeded.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="MotorPeakCurrentLimit" value="12">
+      <Descriptions>
+        <Description cultureInfo="en">The peak current limit of the motor is exceeded.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="PowerBridgePeakCurrentLimit" value="13">
+      <Descriptions>
+        <Description cultureInfo="en">The peak current limit of the power bridge is exceeded.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="EncoderConfigurationError" value="14">
+      <Descriptions>
+        <Description cultureInfo="en">Two encoders of different type point to the same hardware.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="OptionModuleFailure" value="15">
+      <Descriptions>
+        <Description cultureInfo="en">An encoder points to an option module which is not present or a present option module did not boot.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="EncoderDataBusError" value="16">
+      <Descriptions>
+        <Description cultureInfo="en">Encoder data bus not connected, or communication failed.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="EncoderParameterError" value="17">
+      <Descriptions>
+        <Description cultureInfo="en">This encoder type is not supported.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="EncoderNotSupported" value="17" deprecated="Renamed to EncoderParameterError">
+      <Descriptions>
+        <Description cultureInfo="en">This encoder type is not supported.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="NoDigitalEncoderPersistency" value="18">
+      <Descriptions>
+        <Description cultureInfo="en">The encoder does not contain persistency data. Please save using Commands/PositionController/EncoderPersistency.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="PhaseShort" value="19">
+      <Descriptions>
+        <Description cultureInfo="en">A short (phase-to-phase or phase-to-earth) was detected in PWM during bridge power-up.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="SynchronizationLost" value="20">
+      <Descriptions>
+        <Description cultureInfo="en">The stream interpolation synchronization is lost.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="GantryTrackingError" value="21">
+      <Descriptions>
+        <Description cultureInfo="en">The distance between the two gantry axes was larger than the GantryDeviationLimit.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="Commutation600HzLimit" value="22">
+      <Descriptions>
+        <Description cultureInfo="en">The 600Hz commutation frequency limit of this product was reached.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="UnspecifiedPositionUnit" value="23">
+      <Descriptions>
+        <Description cultureInfo="en">The position unit is not specified or not known.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="MotorTemperatureLimit" value="24">
+      <Descriptions>
+        <Description cultureInfo="en">The motor temperature limit was reached.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="AxisParameterError" value="25">
+      <Descriptions>
+        <Description cultureInfo="en">A parameter of this axis is unknown.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="AxisCommandError" value="26">
+      <Descriptions>
+        <Description cultureInfo="en">A command of this axis is unknown.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RAEeAXISERR_" name="SafeError" value="27">
+      <Descriptions>
+        <Description cultureInfo="en">The Safety mdoule threw this axis error.</Description>
+      </Descriptions>
+    </EnumValue>
+
+  </Enum>
+
+
+  <Enum flags="false" prefix="RVSt" name="TamaVirtualMachineState">
+
+    <Descriptions>
+      <Description cultureInfo="en">Tama Virtual Machine state.</Description>
+    </Descriptions>
+
+    <EnumValue prefix="RVSeVMST_" name="NoCode" value="0">
+      <Descriptions>
+        <Description cultureInfo="en">No code is downloaded for the Tama virtual machines.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RVSeVMST_" name="NoStack" value="1">
+      <Descriptions>
+        <Description cultureInfo="en">Stack of the Tama virtual machine is not initialized.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RVSeVMST_" name="Ready" value="2">
+      <Descriptions>
+        <Description cultureInfo="en">The Tama virtual machine is initialized and ready.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RVSeVMST_" name="Operational" value="3">
+      <Descriptions>
+        <Description cultureInfo="en">The Tama virtual machine is enabled and operational.</Description>
+      </Descriptions>
+    </EnumValue>
+
+  </Enum>
+
+
+  <!--PalPlus related command items-->
+
+  <Enum flags="false" prefix="RSCt" name="ScheduleState">
+    <Descriptions>
+      <Description cultureInfo="en">Execution state of a schedule.</Description>
+    </Descriptions>
+
+    <EnumValue prefix="RSCeST_" name="Stopped" value="0">
+      <Descriptions>
+        <Description cultureInfo="en">Not executed.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RSCeST_" name="Started" value="1">
+      <Descriptions>
+        <Description cultureInfo="en">Executed by a scheduler.</Description>
+      </Descriptions>
+    </EnumValue>
+  </Enum>
+
+
+  <Enum flags="false" prefix="RSCt" name="SchedulerCommand">
+    <Descriptions>
+      <Description cultureInfo="en">Trigger for a scheduler to execute a specified schedule.</Description>
+    </Descriptions>
+
+    <EnumValue prefix="RSCeCMD_" name="None" value="0">
+      <Descriptions>
+        <Description cultureInfo="en">No trigger.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RSCeCMD_" name="Start" value="1">
+      <Descriptions>
+        <Description cultureInfo="en">Start sending messages from the beginning of a schedule.</Description>
+      </Descriptions>
+    </EnumValue>
+
+    <EnumValue prefix="RSCeCMD_" name="Stop" value="2">
+      <Descriptions>
+        <Description cultureInfo="en">Stop sending messages.</Description>
+      </Descriptions>
+    </EnumValue>
+  </Enum>
+
+</RegisterLayout>

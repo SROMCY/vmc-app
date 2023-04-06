@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright © 2017 Triamec Motion AG
+-->
+
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- Hand-crafted simple and robust work around for PackageReference + !(SDK style) project, not working as advertised
+       in https://docs.microsoft.com/en-us/nuget/create-packages/select-assemblies-referenced-by-projects
+       
+       Place all files not used during compile-time in the build\runtime path instead of the lib path.
+
+    -->
+  <PropertyGroup>
+    <!-- This property also provides a means to explicitly reference libs in the runtime only path, if needed,
+         w.o. depending on NuGet version -->
+    <Triamec_Tam_TriaLink_Path>$(MSBuildThisFileDirectory)runtime</Triamec_Tam_TriaLink_Path>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Note that Content with Link metadata also works except when the package store is inside the project -->
+    <ContentWithTargetPath Include="$(Triamec_Tam_TriaLink_Path)\**\*">
+      <TargetPath>%(RecursiveDir)%(FileName)%(Extension)</TargetPath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>false</Visible>
+    </ContentWithTargetPath>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <!-- BackwardCompatibility: This makes the project files a dependency of all targets so that things rebuild if they change -->
+    <MSBuildAllProjects Condition=" '$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0' ">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
+
+  <!-- BackwardCompatibility: Allow to open and view this file. Don't edit it except for temporal testing.
+       For SDK style projects, the user has r/o access when showing all files and delving or searching in the Imports
+       node. -->
+  <ItemGroup Condition="'$(UsingMicrosoftNETSdk)' != 'true'">
+    <None Include="$(MSBuildThisFileFullPath)">
+      <Link>Properties\Build\$(MSBuildThisFile)</Link>
+      <Visible>true</Visible>
+    </None>
+  </ItemGroup>
+</Project>

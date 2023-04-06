@@ -1,0 +1,1041 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Triamec.Common</name>
+  </assembly>
+  <members>
+    <member name="T:Triamec.ArgumentExceptionHelper">
+      <summary>
+            Helps to throw <see cref="T:System.ArgumentException" />s.
+            </summary>
+    </member>
+    <member name="M:Triamec.ArgumentExceptionHelper.Throw(System.String,System.String,System.Exception)">
+      <summary>
+            Throws a new instance of the <see cref="T:System.ArgumentException" /> class.
+            </summary>
+      <param name="message">The message describing the exception.</param>
+      <param name="paramName">The name of the parameter causing the exception.</param>
+      <param name="innerException">The inner exception.</param>
+    </member>
+    <member name="M:Triamec.ArgumentExceptionHelper.ThrowOutOfRange(System.String,System.Object,System.String)">
+      <summary>
+            Throws a new instance of the <see cref="T:System.ArgumentOutOfRangeException" /> class.
+            </summary>
+      <param name="paramName">The name of the parameter causing the exception.</param>
+      <param name="actualValue">The actual value of the parameter.</param>
+      <param name="message">The message describing the exception.</param>
+    </member>
+    <member name="T:Triamec.CommonExtensions">
+      <summary>
+            Extensions methods for classes from the base framework.
+            </summary>
+    </member>
+    <member name="M:Triamec.CommonExtensions.Combine``1(System.Collections.Generic.IEnumerable{``0})">
+      <summary>
+            Combines the specified exceptions.
+            </summary>
+      <param name="exceptions">The exceptions, where items are allowed to be <see langword="null" />.</param>
+      <typeparam name="TException">The type of the exceptions.</typeparam>
+      <returns>
+        <see langword="null" /> if <paramref name="exceptions" /> contains no instances; an
+            <see cref="T:System.AggregateException" /> otherwise.
+            </returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="exceptions" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.CommonExtensions.FullMessage(System.Exception)">
+      <summary>
+            Returns a concatenation of the <see cref="P:System.Exception.Message" />s of the whole exception stack.
+            </summary>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="ex" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.CommonExtensions.GetLocation(System.Reflection.Assembly)">
+      <summary>
+            Gets <c>Assembly.Location</c> in a portable manner, transparent to shadow copying.
+            </summary>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="assembly" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.CommonExtensions.GetPath(System.Reflection.Assembly)">
+      <summary>
+            Gets the original directory of an assembly.
+            </summary>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="assembly" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.CommonExtensions.ThrowCombined``1(System.Collections.Generic.IEnumerable{``0},System.Func{System.AggregateException,System.Exception})">
+      <summary>
+            Throws a combined version of the specified exceptions, if any.
+            </summary>
+      <param name="exceptions">The exceptions, where items are allowed to be <see langword="null" />.</param>
+      <param name="resultCreator">A function passed a combined exception, returning an exception of
+            <typeparamref name="TException" />.</param>
+      <typeparam name="TException">The type of the exceptions.</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <para>
+          <paramref name="exceptions" /> is <see langword="null" />.</para>
+        <para>-or-</para>
+        <para>
+          <paramref name="resultCreator" /> is <see langword="null" />.</para>
+      </exception>
+    </member>
+    <member name="T:Triamec.Configuration.IApplicationSettings">
+      <summary>
+            Decorator for <see cref="T:System.Configuration.ApplicationSettingsBase" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.IApplicationSettings.Item(System.String)">
+      <summary>
+            Gets or sets the value of the specified application settings property backing a preference.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.IApplicationSettings.Properties">
+      <summary>
+            Gets the collection of settings properties backing the preferences.
+            </summary>
+    </member>
+    <member name="E:Triamec.Configuration.IApplicationSettings.PropertyChanged">
+      <summary>
+            Occurs when a preference changed.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.IApplicationSettings.PropertyValues">
+      <summary>
+            Gets a collection of settings property values backing the preferences.
+            </summary>
+    </member>
+    <member name="M:Triamec.Configuration.IApplicationSettings.Reload">
+      <summary>
+            Refreshes the preferences from persistent storage.
+            </summary>
+    </member>
+    <member name="M:Triamec.Configuration.IApplicationSettings.Reset">
+      <summary>
+            Restores the persisted preferences to their corresponding defaults values.
+            </summary>
+    </member>
+    <member name="M:Triamec.Configuration.IApplicationSettings.Save">
+      <summary>
+            Stores the current preferences.
+            </summary>
+      <exception cref="T:System.Configuration.ConfigurationErrorsException">Saving failed.</exception>
+    </member>
+    <member name="E:Triamec.Configuration.IApplicationSettings.SettingsSaving">
+      <summary>Occurs before values are saved to the data store.</summary>
+    </member>
+    <member name="M:Triamec.Configuration.IApplicationSettings.Upgrade">
+      <summary>
+            Upgrades the preferences from a previous version.
+            </summary>
+    </member>
+    <member name="T:Triamec.Configuration.ICorrectableSettings">
+      <summary>
+            Application settings enabling external resolution of invalid values.
+            </summary>
+    </member>
+    <member name="M:Triamec.Configuration.ICorrectableSettings.Correct(Triamec.Configuration.InvalidSettingEventArgs)">
+      <summary>
+            Corrects an invalid setting, if possible.
+            </summary>
+    </member>
+    <member name="E:Triamec.Configuration.ICorrectableSettings.InvalidSettingDetected">
+      <summary>
+            Occurs when an invalid setting is detected.
+            </summary>
+    </member>
+    <member name="T:Triamec.Configuration.InvalidSettingEventArgs">
+      <summary>
+            Data for handlers of invalid settings.
+            </summary>
+    </member>
+    <member name="M:Triamec.Configuration.InvalidSettingEventArgs.#ctor(System.Configuration.SettingsPropertyValue,System.Exception)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Configuration.InvalidSettingEventArgs" /> class.
+            </summary>
+      <param name="value">The setting value container containing the problematic value.</param>
+      <param name="error">The error caused by the problematic setting, or <see langword="null" />.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="value" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="P:Triamec.Configuration.InvalidSettingEventArgs.Error">
+      <summary>
+            Gets the error caused by the problematic setting, or <see langword="null" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.InvalidSettingEventArgs.Value">
+      <summary>
+            Gets the setting value container containing the problematic value.
+            </summary>
+    </member>
+    <member name="T:Triamec.Configuration.IPreferences">
+      <summary>
+            Preference store.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.IPreferences.Preferences">
+      <summary>
+            Gets the preferences in this preferences store, if any.
+            </summary>
+    </member>
+    <member name="T:Triamec.Configuration.NonAdvancedAttribute">
+      <summary>
+            Specifies that a property should be shown if advanced content should not be shown.
+            </summary>
+    </member>
+    <member name="M:Triamec.Configuration.NonAdvancedAttribute.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>Triamec.Configuration.NonAdvancedAttribute</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="T:Triamec.Configuration.Preference">
+      <summary>
+            Preference with a <see cref="T:System.Configuration.SettingsProperty" /> backing store using custom
+            <see cref="P:Triamec.Configuration.Preference.DisplayName" /> and <see cref="P:Triamec.Configuration.Preference.Category" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Configuration.Preference.#ctor(Triamec.Configuration.IPreferences,System.String,System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Configuration.Preference" /> class.
+            </summary>
+      <param name="owner">The preferences this preference is part of.</param>
+      <param name="propertyName">The name of the property backing this preference.</param>
+      <param name="displayName">The name to show to the user.</param>
+      <param name="category">The category under which to show the preference.</param>
+      <param name="customType">Type of the editor, or type of the converter, or <see langword="null" /> for
+            standard editors and converters.</param>
+      <param name="hasSideEffects">Whether the preference has side effects to other preferences.</param>
+    </member>
+    <member name="M:Triamec.Configuration.Preference.#ctor(Triamec.Configuration.IPreferences,System.String,System.String,System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Configuration.Preference" /> class.
+            </summary>
+      <param name="owner">The preferences this preference is part of.</param>
+      <param name="propertyName">The name of the property backing this preference.</param>
+      <param name="displayName">The name to show to the user.</param>
+      <param name="category">The category under which to show the preference.</param>
+      <param name="customType">Type of the editor, or type of the converter, or <see langword="null" /> for
+            standard editors and converters.</param>
+      <param name="hasSideEffects">Whether the preference has side effects to other preferences.</param>
+    </member>
+    <member name="M:Triamec.Configuration.Preference.#ctor(Triamec.Configuration.IPreferences,System.String,System.String,System.String,System.String,System.Boolean)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Configuration.Preference" /> class.
+            </summary>
+      <param name="owner">The preferences this preference is part of.</param>
+      <param name="propertyName">The name of the property backing this preference.</param>
+      <param name="displayName">The name to show to the user.</param>
+      <param name="category">The category under which to show the preference.</param>
+      <param name="customType">Type of the editor or <see langword="null" /> for standard editors</param>
+      <param name="hasSideEffects">Whether the preference has side effects to other preferences.</param>
+    </member>
+    <member name="M:Triamec.Configuration.Preference.#ctor(Triamec.Configuration.IPreferences,System.String,System.String,System.String,System.Type,System.Boolean)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Configuration.Preference" /> class.
+            </summary>
+      <param name="owner">The preferences this preference is part of.</param>
+      <param name="propertyName">The name of the property backing this preference.</param>
+      <param name="displayName">The name to show to the user.</param>
+      <param name="category">The category under which to show the preference.</param>
+      <param name="customType">Type of the editor, or type of the converter, or <see langword="null" /> for
+            standard editors and converters.</param>
+      <param name="hasSideEffects">Whether the preference has side effects to other preferences.</param>
+    </member>
+    <member name="M:Triamec.Configuration.Preference.AddDebugPreferences(System.Collections.Generic.ICollection{Triamec.Configuration.SettingsPreferenceDescriptor},Triamec.Configuration.IPreferences)">
+      <summary>
+            Adds additional preferences to show in DEBUG builds.
+            </summary>
+      <param name="preferences">The individual preconfigured preferences which will be possibly enlarged.</param>
+      <param name="store">The store.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <para>
+          <paramref name="preferences" /> is <see langword="null" />.</para>
+        <para>-or-</para>
+        <para>
+          <paramref name="store" /> is <see langword="null" />.</para>
+      </exception>
+    </member>
+    <member name="P:Triamec.Configuration.Preference.Category">
+      <summary>
+            Gets the custom category.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.Preference.DisplayName">
+      <summary>
+            Gets the custom display name.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.Preference.ShowAdvancedContent">
+      <summary>
+            Indicates whether to show content allowing for advanced usage scenarios.
+            </summary>
+    </member>
+    <member name="T:Triamec.Configuration.PreferencesAttribute">
+      <summary>
+            Specifies preferences for an assembly.
+            </summary>
+    </member>
+    <member name="M:Triamec.Configuration.PreferencesAttribute.#ctor(System.Type)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Configuration.PreferencesAttribute" /> class.
+            </summary>
+      <param name="preferenceType">Preference type declaring a public static property <c>Default</c> of a type
+            implementing <see cref="T:Triamec.Configuration.IPreferences" />.</param>
+    </member>
+    <member name="P:Triamec.Configuration.PreferencesAttribute.PreferenceType">
+      <summary>
+            Gets the preference type declaring a public static property <c>Default</c> of a type implementing
+            <see cref="T:Triamec.Configuration.IPreferences" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Configuration.PreferencesAttribute.SearchPreferences(System.Reflection.Assembly[])">
+      <summary>
+            Inspects assemblies for preferences.
+            </summary>
+      <param name="assemblies">The assemblies to inspect.</param>
+      <returns></returns>
+    </member>
+    <member name="T:Triamec.Configuration.SettingsPreferenceDescriptor">
+      <summary>
+            Property descriptor with an application setting as backing store.
+            </summary>
+    </member>
+    <member name="M:Triamec.Configuration.SettingsPreferenceDescriptor.#ctor(Triamec.Configuration.IPreferences,System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Configuration.SettingsPreferenceDescriptor" /> class.
+            </summary>
+      <param name="owner">The owner preference store.</param>
+      <param name="propertyName">Name of a property within <paramref name="owner" />.</param>
+    </member>
+    <member name="M:Triamec.Configuration.SettingsPreferenceDescriptor.#ctor(Triamec.Configuration.IPreferences,System.String,System.String,System.Boolean)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Configuration.SettingsPreferenceDescriptor" /> class.
+            </summary>
+      <param name="owner">The owner preference store.</param>
+      <param name="propertyName">Name of a property within <paramref name="owner" />.</param>
+      <param name="customType">Type of the editor or <see langword="null" /> for standard editors.</param>
+      <param name="hasSideEffects">Whether the preference has side effects to other preferences.</param>
+    </member>
+    <member name="M:Triamec.Configuration.SettingsPreferenceDescriptor.#ctor(Triamec.Configuration.IPreferences,System.String,System.Type,System.Boolean)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Configuration.SettingsPreferenceDescriptor" /> class.
+            </summary>
+      <param name="owner">The owner preference store.</param>
+      <param name="propertyName">Name of a property within <paramref name="owner" />.</param>
+      <param name="customType">Type of the editor, or type of the converter, or <see langword="null" /> for
+            standard editors and converters.</param>
+      <param name="hasSideEffects">Whether the preference has side effects to other preferences.</param>
+    </member>
+    <member name="M:Triamec.Configuration.SettingsPreferenceDescriptor.CanResetValue(System.Object)">
+      <summary>
+            Indicates whether resetting an object changes its value.
+            </summary>
+      <param name="component">The component to test for reset capability.</param>
+      <returns>
+        <see langword="true" /> if this preference has a default value; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="P:Triamec.Configuration.SettingsPreferenceDescriptor.Category">
+      <summary>
+            Gets the name of the category to which the member belongs.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.SettingsPreferenceDescriptor.ComponentType">
+      <summary>
+            Gets the type of the component this property is bound to.
+            </summary>
+    </member>
+    <member name="M:Triamec.Configuration.SettingsPreferenceDescriptor.CreatePreferences(Triamec.Configuration.IPreferences,System.Boolean)">
+      <summary>Create preferences from the specified settings based on the available application settings.</summary>
+      <param name="settings">The application settings.</param>
+      <param name="showReadOnly">Whether to show application scoped settings.</param>
+      <returns>The preference property descriptors.</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="settings" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="P:Triamec.Configuration.SettingsPreferenceDescriptor.Description">
+      <summary>
+            Gets the description of the member.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.SettingsPreferenceDescriptor.DisplayName">
+      <summary>
+            Gets the name that can be displayed to the user.
+            </summary>
+    </member>
+    <member name="M:Triamec.Configuration.SettingsPreferenceDescriptor.GetValue(System.Object)">
+      <summary>
+            Gets the current value of the property on a component.
+            </summary>
+      <param name="component">The component with the property for which to retrieve the value.</param>
+    </member>
+    <member name="P:Triamec.Configuration.SettingsPreferenceDescriptor.IsBrowsable">
+      <summary>
+            Gets a value indicating whether the member is browsable.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.SettingsPreferenceDescriptor.IsReadOnly">
+      <summary>
+            Gets a value indicating whether this property is read-only.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.SettingsPreferenceDescriptor.Owner">
+      <summary>
+            Gets the owner preference store.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.SettingsPreferenceDescriptor.PropertyType">
+      <summary>
+            Gets the type of the property.
+            </summary>
+    </member>
+    <member name="M:Triamec.Configuration.SettingsPreferenceDescriptor.ResetValue(System.Object)">
+      <summary>
+            Resets the value for this property of the component to the default value.
+            </summary>
+      <param name="component">The component with the property value that is to be reset to the default value.
+            </param>
+    </member>
+    <member name="M:Triamec.Configuration.SettingsPreferenceDescriptor.SetValue(System.Object,System.Object)">
+      <summary>
+            Sets the value of the component to a different value.
+            </summary>
+      <param name="component">The component with the property value that is to be set.</param>
+      <param name="value">The new value.</param>
+    </member>
+    <member name="M:Triamec.Configuration.SettingsPreferenceDescriptor.ShouldSerializeValue(System.Object)">
+      <summary>
+            Indicates whether the value of this property needs to be persisted.
+            </summary>
+      <param name="component">The component with the property to be examined for persistence.</param>
+      <returns>
+        <see langword="true" /> if <see cref="M:Triamec.Configuration.SettingsPreferenceDescriptor.GetValue(System.Object)" /> does not equal the default value, if any.
+            </returns>
+    </member>
+    <member name="T:Triamec.Configuration.UserSettings">
+      <summary>
+            Adds common functionality to application settings by means of extension methods.
+            </summary>
+    </member>
+    <member name="M:Triamec.Configuration.UserSettings.AddVolatileSetting(Triamec.Configuration.IApplicationSettings,System.String,System.Func{Triamec.Configuration.Workspace,System.Object})">
+      <summary>
+            Adds a setting with the specified name which deviates from its default only until the next
+            <see cref="M:Triamec.Configuration.IApplicationSettings.Reload" /> or <see cref="T:Triamec.Configuration.Workspace" /> change.
+            </summary>
+      <param name="settings">The settings where the setting is added to.</param>
+      <param name="name">The name.</param>
+      <param name="defaultValueProvider">A function which takes a <see cref="T:Triamec.Configuration.Workspace" /> and returns the
+            default value for the new property specific to that <see cref="T:Triamec.Configuration.Workspace" />.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <para>
+          <paramref name="settings" /> is <see langword="null" />.</para>
+        <para>-or-</para>
+        <para>
+          <paramref name="name" />
+          <see cref="M:System.String.IsNullOrEmpty(System.String)" />.</para>
+        <para>-or-</para>
+        <para>
+          <paramref name="defaultValueProvider" /> is <see langword="null" />.</para>
+      </exception>
+    </member>
+    <member name="M:Triamec.Configuration.UserSettings.AddVolatileSetting(Triamec.Configuration.IApplicationSettings,System.String,System.Object)">
+      <summary>
+            Adds a setting with the specified name which deviates from its default only until the next
+            <see cref="M:Triamec.Configuration.IApplicationSettings.Reload" />.
+            </summary>
+      <param name="settings">The settings where the setting is added to.</param>
+      <param name="name">The name.</param>
+      <param name="defaultValue">The default value for the new setting.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <para>
+          <paramref name="settings" /> is <see langword="null" />.</para>
+        <para>
+          <paramref name="name" />
+          <see cref="M:System.String.IsNullOrEmpty(System.String)" />.</para>
+      </exception>
+    </member>
+    <member name="M:Triamec.Configuration.UserSettings.GetPath(Triamec.Configuration.ICorrectableSettings,System.String)">
+      <summary>
+            Gets a path from a specified setting, checking for invalid characters.
+            </summary>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="settings" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.Configuration.UserSettings.GetPath(Triamec.Configuration.ICorrectableSettings,System.String,System.Boolean)">
+      <summary>
+            Gets a path from a specified setting, checking for invalid characters.
+            </summary>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="settings" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.Configuration.UserSettings.GetPropertiesRaceFree(System.Configuration.SettingsBase)">
+      <summary>
+            Gets <see cref="P:System.Configuration.ApplicationSettingsBase.Properties" /> in a thread safe manner.
+            </summary>
+      <param name="settings">The settings instance.</param>
+    </member>
+    <member name="M:Triamec.Configuration.UserSettings.RegisterForAdditionalServices(Triamec.Configuration.IApplicationSettings)">
+      <summary>
+            Registers the specified settings for upgrade once, auto-save and workspace change services.
+            </summary>
+      <param name="settings">The settings.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="settings" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.Configuration.UserSettings.SaveAll">
+      <summary>
+        <see cref="M:System.Configuration.SettingsBase.Save">Saves</see> all registered settings.
+            </summary>
+      <exception cref="T:System.Configuration.ConfigurationErrorsException">Saving failed.</exception>
+    </member>
+    <member name="F:Triamec.Configuration.UserSettings.UpgradeKey">
+      <summary>
+            The settings key used for remembering upgraded state.
+            <para>The value is <c>"_Upgraded"</c>.</para></summary>
+    </member>
+    <member name="M:Triamec.Configuration.UserSettings.Validate``1(Triamec.Configuration.ICorrectableSettings,System.String,System.Action{``0})">
+      <summary>
+            Invokes a method with a specified setting. If a specified exception occurs,
+            <see cref="M:Triamec.Configuration.ICorrectableSettings.Correct(Triamec.Configuration.InvalidSettingEventArgs)">corrects</see> the setting and retries.
+            </summary>
+      <param name="settings">The settings defining the setting.</param>
+      <param name="settingName">The name of the setting.</param>
+      <param name="invoker">The method to be invoked.</param>
+      <typeparam name="TSetting">The type of the setting.</typeparam>
+      <typeparam name="TResult">The type of the result.</typeparam>
+      <returns>The result of the <paramref name="invoker" />.</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="settings" /> or <paramref name="invoker" /> is
+            <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.Configuration.UserSettings.Validate``2(Triamec.Configuration.ICorrectableSettings,System.String,System.Func{``0,``1})">
+      <summary>
+            Invokes a method with a specified setting. If a specified exception occurs,
+            <see cref="M:Triamec.Configuration.ICorrectableSettings.Correct(Triamec.Configuration.InvalidSettingEventArgs)">corrects</see> the setting and retries.
+            </summary>
+      <param name="settings">The settings defining the setting.</param>
+      <param name="settingName">The name of the setting.</param>
+      <param name="invoker">The method to be invoked.</param>
+      <typeparam name="TSetting">The type of the setting.</typeparam>
+      <typeparam name="TResult">The type of the result.</typeparam>
+      <returns>The result of the <paramref name="invoker" />.</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="settings" /> or <paramref name="invoker" /> is
+            <see langword="null" />.</exception>
+    </member>
+    <member name="T:Triamec.Configuration.VolatileSettingsProvider">
+      <summary>
+            In-memory only provider.
+            </summary>
+    </member>
+    <member name="M:Triamec.Configuration.VolatileSettingsProvider.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:Triamec.Configuration.VolatileSettingsProvider" /> class.</summary>
+    </member>
+    <member name="P:Triamec.Configuration.VolatileSettingsProvider.ApplicationName">
+      <summary>Gets or sets the name of the currently running application.</summary>
+      <returns>A <see cref="T:System.String" /> that contains the application's shortened name, which does not contain a full path or extension, for example, SimpleAppSettings.</returns>
+    </member>
+    <member name="M:Triamec.Configuration.VolatileSettingsProvider.GetPropertyValues(System.Configuration.SettingsContext,System.Configuration.SettingsPropertyCollection)">
+      <summary>Returns the collection of settings property values for the specified application instance and settings property group.</summary>
+      <param name="context">A <see cref="T:System.Configuration.SettingsContext" /> describing the current application use.</param>
+      <param name="collection">A <see cref="T:System.Configuration.SettingsPropertyCollection" /> containing the settings property group whose values are to be retrieved.</param>
+      <returns>A <see cref="T:System.Configuration.SettingsPropertyValueCollection" /> containing the values for the specified settings property group.</returns>
+    </member>
+    <member name="M:Triamec.Configuration.VolatileSettingsProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)">
+      <summary>Initializes the provider.</summary>
+      <param name="name">The friendly name of the provider.</param>
+      <param name="config">A collection of the name/value pairs representing the provider-specific attributes specified in the configuration for this provider.</param>
+      <exception cref="T:System.ArgumentNullException">The name of the provider is null.</exception>
+      <exception cref="T:System.ArgumentException">The name of the provider has a length of zero.</exception>
+      <exception cref="T:System.InvalidOperationException">An attempt is made to call <see cref="M:System.Configuration.Provider.ProviderBase.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> on a provider after the provider has already been initialized.</exception>
+    </member>
+    <member name="M:Triamec.Configuration.VolatileSettingsProvider.SetPropertyValues(System.Configuration.SettingsContext,System.Configuration.SettingsPropertyValueCollection)">
+      <summary>Sets the values of the specified group of property settings.</summary>
+      <param name="context">A <see cref="T:System.Configuration.SettingsContext" /> describing the current application usage.</param>
+      <param name="collection">A <see cref="T:System.Configuration.SettingsPropertyValueCollection" /> representing the group of property settings to set.</param>
+    </member>
+    <member name="T:Triamec.Configuration.Workspace">
+      <summary>
+            Represents the Triamec workspace.
+            </summary>
+    </member>
+    <member name="M:Triamec.Configuration.Workspace.#ctor(System.String)">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Configuration.Workspace" /> class.
+            </summary>
+      <param name="filePath">The path to the workspace file.</param>
+    </member>
+    <member name="M:Triamec.Configuration.Workspace.AddDateTime(System.String)">
+      <summary>
+            Appends a universal sortable current date/time to the specified path;
+            </summary>
+      <param name="path">The path, if any.</param>
+    </member>
+    <member name="M:Triamec.Configuration.Workspace.Change(System.String)">
+      <summary>
+            Changes the <see cref="P:Triamec.Configuration.Workspace.Current" /> workspace.
+            </summary>
+      <param name="filePath">The path to the workspace file residing in the workspace to choose.</param>
+      <param name="needsToExist">Whether a new workspace must not be implicitly created if
+            <paramref name="filePath" /> does not exist.</param>
+      <returns>
+            The possibly new value of <see cref="P:Triamec.Configuration.Workspace.Current" />.
+            </returns>
+    </member>
+    <member name="M:Triamec.Configuration.Workspace.Change(System.String,System.Boolean)">
+      <summary>
+            Changes the <see cref="P:Triamec.Configuration.Workspace.Current" /> workspace.
+            </summary>
+      <param name="filePath">The path to the workspace file residing in the workspace to choose.</param>
+      <param name="needsToExist">Whether a new workspace must not be implicitly created if
+            <paramref name="filePath" /> does not exist.</param>
+      <returns>
+            The possibly new value of <see cref="P:Triamec.Configuration.Workspace.Current" /> or <see langword="null" /> if <paramref name="filePath" />
+            does not exist and <paramref name="needsToExist" /> is <see langword="true" />.
+            </returns>
+    </member>
+    <member name="E:Triamec.Configuration.Workspace.Changed">
+      <summary>
+            Occurs after <see cref="P:Triamec.Configuration.Workspace.Current" /> changed.
+            </summary>
+    </member>
+    <member name="E:Triamec.Configuration.Workspace.Changing">
+      <summary>
+            Occurs before <see cref="P:Triamec.Configuration.Workspace.Current" /> changes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.Workspace.CommissioningToolPath">
+      <summary>
+            Gets the full file path of the commissioning tool.
+            </summary>
+    </member>
+    <member name="F:Triamec.Configuration.Workspace.ConfigurationArtifactType">
+      <summary>
+            The type used to identify configuration artifacts.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.Workspace.ConfigurationFromCommandLine">
+      <summary>
+            Gets the path to the configuration from the command line.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.Workspace.ConfigurationPath">
+      <summary>
+            Gets the full path to the workspace directory where to save configurations.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.Workspace.Current">
+      <summary>
+            Gets the currently active workspace.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.Workspace.DefaultWorkspaceFileName">
+      <summary>
+            Gets the default filename for the workspace, including extension.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.Workspace.DefaultWorkspacePath">
+      <summary>
+            Gets or sets the full path to the default Triamec workspace directory.
+            </summary>
+    </member>
+    <member name="F:Triamec.Configuration.Workspace.DocumentationDirectory">
+      <summary>
+            The sub-folder of the <see cref="P:Triamec.Configuration.Workspace.DefaultWorkspacePath" /> containing documentation.
+            <para>The value is <c>"Doc"</c>.</para></summary>
+    </member>
+    <member name="P:Triamec.Configuration.Workspace.LogPath">
+      <summary>
+            Gets the full path to the log directory.
+            </summary>
+    </member>
+    <member name="F:Triamec.Configuration.Workspace.MeasurementArtifactType">
+      <summary>
+            The type used to identify measurement artifacts.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.Workspace.MeasurementPath">
+      <summary>
+            Gets the full path to the workspace directory where to save measurements.
+            </summary>
+    </member>
+    <member name="F:Triamec.Configuration.Workspace.ProjectDirectory">
+      <summary>
+            The sub-folder of the <see cref="P:Triamec.Configuration.Workspace.DefaultWorkspacePath" /> containing Visual Studio projects.
+            <para>The value is <c>"Projects"</c>.</para></summary>
+    </member>
+    <member name="P:Triamec.Configuration.Workspace.RecentWorkspaceFiles">
+      <summary>
+            Gets the list of most recently used workspace files.
+            </summary>
+    </member>
+    <member name="M:Triamec.Configuration.Workspace.RegisterDefaultFolder(System.String)">
+      <summary>
+            Adds the name of a folder to create within any workspace.
+            </summary>
+      <param name="name"></param>
+    </member>
+    <member name="P:Triamec.Configuration.Workspace.SettingsPath">
+      <summary>
+            Gets the full path to the current workspace settings directory.
+            </summary>
+    </member>
+    <member name="M:Triamec.Configuration.Workspace.ToString">
+      <summary>Returns a string that represents the current object.</summary>
+      <returns>A string that represents the current object.</returns>
+    </member>
+    <member name="E:Triamec.Configuration.Workspace.Updated">
+      <summary>
+            Occurs when an update completed.
+            </summary>
+    </member>
+    <member name="E:Triamec.Configuration.Workspace.Updating">
+      <summary>
+            Occurs before a workspace version is updated.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.Workspace.WorkspaceFile">
+      <summary>
+            Gets the full path to the workspace file.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.Workspace.WorkspacePath">
+      <summary>
+            Gets the full path to the current workspace directory.
+            </summary>
+    </member>
+    <member name="T:Triamec.Configuration.WorkspaceChangingEventArgs">
+      <summary>
+            Arguments for the <see cref="E:Triamec.Configuration.Workspace.Changing" /> event.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.WorkspaceChangingEventArgs.Handled">
+      <summary>
+            Indicates or sets wether a handler handled this event.
+            </summary>
+    </member>
+    <member name="T:Triamec.Configuration.WorkspaceEventArgs">
+      <summary>
+            Arguments for the <see cref="E:Triamec.Configuration.Workspace.Changed" /> and <see cref="E:Triamec.Configuration.Workspace.Updated" /> events.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.WorkspaceEventArgs.Canceled">
+      <summary>
+            Gets a value indicating whether the action was actually canceled.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.WorkspaceEventArgs.Failure">
+      <summary>
+            Gets a failure which occurred, if any.
+            </summary>
+    </member>
+    <member name="T:Triamec.Configuration.WorkspaceException">
+      <summary>
+            Exception thrown when working with the <see cref="T:Triamec.Configuration.Workspace" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Configuration.WorkspaceException.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Configuration.WorkspaceException" /> class.
+            </summary>
+      <param name="message">The error message that explains the reason for the exception. </param>
+      <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified. </param>
+    </member>
+    <member name="M:Triamec.Configuration.WorkspaceException.#ctor(System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Configuration.WorkspaceException" /> class.
+            </summary>
+      <param name="message">The error message that explains the reason for the exception. </param>
+      <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified. </param>
+    </member>
+    <member name="M:Triamec.Configuration.WorkspaceException.#ctor(System.String,System.Exception)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Configuration.WorkspaceException" /> class.
+            </summary>
+      <param name="message">The error message that explains the reason for the exception. </param>
+      <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified. </param>
+    </member>
+    <member name="M:Triamec.Configuration.WorkspaceException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>
+            Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+            </summary>
+      <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+      <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that Contains contextual information about the source or destination.</param>
+    </member>
+    <member name="T:Triamec.Configuration.WorkspaceSettingsProvider">
+      <summary>
+            Provides persistence for application settings in the Triamec workspace.
+            </summary>
+    </member>
+    <member name="M:Triamec.Configuration.WorkspaceSettingsProvider.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Configuration.WorkspaceSettingsProvider" /> class.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.WorkspaceSettingsProvider.ApplicationName">
+      <summary>Gets or sets the name of the currently running application.</summary>
+      <returns>A <see cref="T:System.String" /> that contains the application's shortened name, which does not contain a full path or extension, for example, SimpleAppSettings.</returns>
+    </member>
+    <member name="M:Triamec.Configuration.WorkspaceSettingsProvider.GetPreviousVersion(System.Configuration.SettingsContext,System.Configuration.SettingsProperty)">
+      <summary>Returns the value of the specified settings property for the previous version of the same application.</summary>
+      <param name="context">A <see cref="T:System.Configuration.SettingsContext" /> describing the current application usage.</param>
+      <param name="property">The <see cref="T:System.Configuration.SettingsProperty" /> whose value is to be returned.</param>
+      <returns>A <see cref="T:System.Configuration.SettingsPropertyValue" /> containing the value of the specified property setting as it was last set in the previous version of the application; or null if the setting cannot be found.</returns>
+    </member>
+    <member name="M:Triamec.Configuration.WorkspaceSettingsProvider.GetPropertyValues(System.Configuration.SettingsContext,System.Configuration.SettingsPropertyCollection)">
+      <summary>Returns the collection of settings property values for the specified application instance and settings property group.</summary>
+      <param name="context">A <see cref="T:System.Configuration.SettingsContext" /> describing the current application use.</param>
+      <param name="collection">A <see cref="T:System.Configuration.SettingsPropertyCollection" /> containing the settings property group whose values are to be retrieved.</param>
+      <returns>A <see cref="T:System.Configuration.SettingsPropertyValueCollection" /> containing the values for the specified settings property group.</returns>
+    </member>
+    <member name="M:Triamec.Configuration.WorkspaceSettingsProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)">
+      <summary>Initializes the provider.</summary>
+      <param name="name">The friendly name of the provider.</param>
+      <param name="config">A collection of the name/value pairs representing the provider-specific attributes specified in the configuration for this provider.</param>
+      <exception cref="T:System.ArgumentNullException">The name of the provider is null.</exception>
+      <exception cref="T:System.ArgumentException">The name of the provider has a length of zero.</exception>
+      <exception cref="T:System.InvalidOperationException">An attempt is made to call <see cref="M:System.Configuration.Provider.ProviderBase.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> on a provider after the provider has already been initialized.</exception>
+    </member>
+    <member name="M:Triamec.Configuration.WorkspaceSettingsProvider.Reset(System.Configuration.SettingsContext)">
+      <summary>Resets the application settings associated with the specified application to their default values.</summary>
+      <param name="context">A <see cref="T:System.Configuration.SettingsContext" /> describing the current application usage.</param>
+    </member>
+    <member name="M:Triamec.Configuration.WorkspaceSettingsProvider.SetPropertyValues(System.Configuration.SettingsContext,System.Configuration.SettingsPropertyValueCollection)">
+      <summary>Sets the values of the specified group of property settings.</summary>
+      <param name="context">A <see cref="T:System.Configuration.SettingsContext" /> describing the current application usage.</param>
+      <param name="collection">A <see cref="T:System.Configuration.SettingsPropertyValueCollection" /> representing the group of property settings to set.</param>
+    </member>
+    <member name="M:Triamec.Configuration.WorkspaceSettingsProvider.Upgrade(System.Configuration.SettingsContext,System.Configuration.SettingsPropertyCollection)">
+      <summary>Indicates to the provider that the application has been upgraded. This offers the provider an opportunity to upgrade its stored settings as appropriate.</summary>
+      <param name="context">A <see cref="T:System.Configuration.SettingsContext" /> describing the current application usage.</param>
+      <param name="properties">A <see cref="T:System.Configuration.SettingsPropertyCollection" /> containing the settings property group whose values are to be retrieved.</param>
+    </member>
+    <member name="T:Triamec.Configuration.WorkspaceUpdate">
+      <summary>
+            The kind of update applied to a <see cref="T:Triamec.Configuration.Workspace" />.
+            </summary>
+    </member>
+    <member name="F:Triamec.Configuration.WorkspaceUpdate.Full">
+      <summary>
+            Do a full update of the workspace.
+            </summary>
+    </member>
+    <member name="F:Triamec.Configuration.WorkspaceUpdate.Ignore">
+      <summary>
+            Use the workspace without any updating.
+            </summary>
+    </member>
+    <member name="T:Triamec.Configuration.WorkspaceUpdatingEventArgs">
+      <summary>
+            Arguments of the <see cref="E:Triamec.Configuration.Workspace.Updating" /> event.
+            </summary>
+    </member>
+    <member name="P:Triamec.Configuration.WorkspaceUpdatingEventArgs.Update">
+      <summary>
+            Gets or sets the kind of update to apply to the <see cref="T:Triamec.Configuration.Workspace" />.
+            </summary>
+    </member>
+    <member name="T:Triamec.Diagnostics.Log">
+      <summary>
+             Trace API.
+             </summary>
+    </member>
+    <member name="M:Triamec.Diagnostics.Log.Add(System.Diagnostics.TraceListener)">
+      <summary>
+            Adds the specified listener to the log's listeners.
+            </summary>
+      <param name="listener">The listener.</param>
+    </member>
+    <member name="M:Triamec.Diagnostics.Log.Chat(System.String)">
+      <summary>
+            Logs a message if the <c>VERBOSE</c> compilation symbol is defined.
+            </summary>
+      <param name="condition">Whether to warn.</param>
+      <param name="format">A composite format string.</param>
+      <param name="args">An array containing zero or more objects to format.</param>
+    </member>
+    <member name="M:Triamec.Diagnostics.Log.Chat(System.String,System.Object[])">
+      <summary>
+            Logs a message if the <c>VERBOSE</c> compilation symbol is defined.
+            </summary>
+      <param name="condition">Whether to warn.</param>
+      <param name="format">A composite format string.</param>
+      <param name="args">An array containing zero or more objects to format.</param>
+    </member>
+    <member name="M:Triamec.Diagnostics.Log.Complain(System.Exception)">
+      <summary>
+            Logs about a problem.
+            </summary>
+      <param name="message">The message describing the problem.</param>
+      <param name="error">The cause of the problem.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="error" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.Diagnostics.Log.Complain(System.String)">
+      <summary>
+            Logs about a problem.
+            </summary>
+      <param name="condition">Whether to warn.</param>
+      <param name="format">A composite format string.</param>
+      <param name="args">An array containing zero or more objects to format.</param>
+    </member>
+    <member name="M:Triamec.Diagnostics.Log.Complain(System.String,System.Exception)">
+      <summary>
+            Logs about a problem.
+            </summary>
+      <param name="message">The message describing the problem.</param>
+      <param name="error">The cause of the problem.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="error" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.Diagnostics.Log.Complain(System.String,System.Object[])">
+      <summary>
+            Logs about a problem.
+            </summary>
+      <param name="condition">Whether to warn.</param>
+      <param name="format">A composite format string.</param>
+      <param name="args">An array containing zero or more objects to format.</param>
+    </member>
+    <member name="M:Triamec.Diagnostics.Log.Flush">
+      <summary>
+            Flushes all listeners of the <see cref="T:Triamec.Diagnostics.Log" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Diagnostics.Log.Inform(System.String)">
+      <summary>
+            Logs an informational message.
+            </summary>
+      <param name="condition">Whether to warn.</param>
+      <param name="format">A composite format string.</param>
+      <param name="args">An array containing zero or more objects to format.</param>
+    </member>
+    <member name="M:Triamec.Diagnostics.Log.Inform(System.String,System.Object[])">
+      <summary>
+            Logs an informational message.
+            </summary>
+      <param name="condition">Whether to warn.</param>
+      <param name="format">A composite format string.</param>
+      <param name="args">An array containing zero or more objects to format.</param>
+    </member>
+    <member name="M:Triamec.Diagnostics.Log.Refresh">
+      <summary>
+            Sets up the internal <see cref="P:System.Diagnostics.TraceSource.Listeners" /> based upon the <see cref="P:System.Diagnostics.Trace.Listeners" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Diagnostics.Log.Remove(System.Diagnostics.TraceListener)">
+      <summary>
+            Removes the specified listener from the log's listeners.
+            </summary>
+      <param name="listener">The listener to remove.</param>
+    </member>
+    <member name="M:Triamec.Diagnostics.Log.Shutdown">
+      <summary>
+        <see cref="M:System.IDisposable.Dispose">Disposes</see> all internal <see cref="T:System.Diagnostics.TraceListener" />s.
+            </summary>
+    </member>
+    <member name="P:Triamec.Diagnostics.Log.Source">
+      <summary>
+            Gets the instance defining various logging behaviors.
+            </summary>
+    </member>
+    <member name="M:Triamec.Diagnostics.Log.Talk(System.Diagnostics.TraceEventType,System.String)">
+      <summary>
+            Logs an informational message of a specified level.
+            </summary>
+      <param name="condition">Whether to warn.</param>
+      <param name="format">A composite format string.</param>
+      <param name="args">An array containing zero or more objects to format.</param>
+    </member>
+    <member name="M:Triamec.Diagnostics.Log.Talk(System.Diagnostics.TraceEventType,System.String,System.Object[])">
+      <summary>
+            Logs an informational message of a specified level.
+            </summary>
+      <param name="condition">Whether to warn.</param>
+      <param name="format">A composite format string.</param>
+      <param name="args">An array containing zero or more objects to format.</param>
+    </member>
+    <member name="M:Triamec.Diagnostics.Log.Tweet(System.String)">
+      <summary>
+            Logs an informational message if the <c>DEBUG</c> compilation symbol is defined.
+            </summary>
+      <param name="condition">Whether to warn.</param>
+      <param name="format">A composite format string.</param>
+      <param name="args">An array containing zero or more objects to format.</param>
+    </member>
+    <member name="M:Triamec.Diagnostics.Log.Tweet(System.String,System.Object[])">
+      <summary>
+            Logs an informational message if the <c>DEBUG</c> compilation symbol is defined.
+            </summary>
+      <param name="condition">Whether to warn.</param>
+      <param name="format">A composite format string.</param>
+      <param name="args">An array containing zero or more objects to format.</param>
+    </member>
+    <member name="M:Triamec.Diagnostics.Log.Warn(System.String)">
+      <summary>
+            Logs a warning message.
+            </summary>
+      <param name="condition">Whether to warn.</param>
+      <param name="format">A composite format string.</param>
+      <param name="args">An array containing zero or more objects to format.</param>
+    </member>
+    <member name="M:Triamec.Diagnostics.Log.Warn(System.String,System.Object[])">
+      <summary>
+            Logs a warning message.
+            </summary>
+      <param name="condition">Whether to warn.</param>
+      <param name="format">A composite format string.</param>
+      <param name="args">An array containing zero or more objects to format.</param>
+    </member>
+    <member name="M:Triamec.Diagnostics.Log.WarnIf(System.Boolean,System.String)">
+      <summary>
+            Logs a warning message if a specified condition holds.
+            </summary>
+      <param name="condition">Whether to warn.</param>
+      <param name="format">A composite format string.</param>
+      <param name="args">An array containing zero or more objects to format.</param>
+    </member>
+    <member name="M:Triamec.Diagnostics.Log.WarnIf(System.Boolean,System.String,System.Object[])">
+      <summary>
+            Logs a warning message if a specified condition holds.
+            </summary>
+      <param name="condition">Whether to warn.</param>
+      <param name="format">A composite format string.</param>
+      <param name="args">An array containing zero or more objects to format.</param>
+    </member>
+    <member name="M:Triamec.Diagnostics.Log.Yell(System.Exception)">
+      <summary>
+            Logs about an unforeseen error.
+            </summary>
+      <param name="message">The message describing the problem.</param>
+      <param name="error">The cause of the problem.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="error" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="T:Triamec.Threading.ThreadHelper">
+      <summary>
+            Provides some global quirks when working with <see cref="T:System.Threading.Thread" />s.
+            </summary>
+    </member>
+    <member name="M:Triamec.Threading.ThreadHelper.DebuggerSensibleWait(System.Func{System.Int32,System.Boolean},System.Int32)">
+      <summary>
+            Performs the specified wait operation with special considerations regarding an attached debugger.
+            </summary>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="waiter" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="F:Triamec.Threading.ThreadHelper.MaxPriority">
+      <summary>
+            Gets a priority for low latency <see cref="T:System.Threading.Thread" />s.
+            </summary>
+    </member>
+    <member name="F:Triamec.Threading.ThreadHelper.RaisedPriority">
+      <summary>
+            Gets a priority for important <see cref="T:System.Threading.Thread" />s.
+            </summary>
+    </member>
+  </members>
+</doc>

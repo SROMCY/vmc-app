@@ -1,0 +1,4361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>RegisterLayout.17</name>
+  </assembly>
+  <members>
+    <member name="T:Triamec.Tam.Rlid17.AngleSearchParameter">
+      <summary>
+            Current modulation for angle search
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AngleSearchParameter.CurrentAmplitude">
+      <summary>
+            Current amplitude applied during angle search [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AngleSearchParameter.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AngleSearchParameter.RampConstTime">
+      <summary>
+            Constant phase time for angle search current [s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AngleSearchParameter.RampRiseTime">
+      <summary>
+            First ramp time for angle search current [s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AngleSearchParameter.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AngleSearchParameter.SineAmplitude">
+      <summary>
+            Sine amplitude for angle search versor modulation (electrical) [rad].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AngleSearchParameter.SineFrequency">
+      <summary>
+            Sine frequency for angle search versor modulation [Hz].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AngleSearchParameter.StartTime">
+      <summary>
+            Start time for the modulation ramps [s].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.AngleSearchSignalOutput">
+      <summary>
+            Angle search signal generator output signals
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AngleSearchSignalOutput.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AngleSearchSignalOutput.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AngleSearchSignalOutput.SignalAmplitude">
+      <summary>
+            Amplitude of gererated signal [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AngleSearchSignalOutput.SignalAngle">
+      <summary>
+            Complex electrical angle of generated signal [rad].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.Application">
+      <summary>
+            Application specific registers
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Application.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Application.Parameters">
+      <summary>
+            Application specific parameters.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Application.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Application.TamaControl">
+      <summary>
+            Application tama code states.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Application.Variables">
+      <summary>
+            Application specific variables.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.ApplicationParameters">
+      <summary>
+            Application specific parameters
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.ApplicationParameters.Doubles">
+      <summary>
+            Application specific double precision floating point parameters.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.ApplicationParameters.Floats">
+      <summary>
+            Application specific single precision floating point parameters.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.ApplicationParameters.Integers">
+      <summary>
+            Application specific integer parameters.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.ApplicationParameters.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.ApplicationParameters.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.ApplicationVariables">
+      <summary>
+            Application specific parameters
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.ApplicationVariables.Doubles">
+      <summary>
+            Application specific double precision floating point variables.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.ApplicationVariables.Floats">
+      <summary>
+            Application specific single precision floating point variables.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.ApplicationVariables.Integers">
+      <summary>
+            Application specific integer variables.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.ApplicationVariables.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.ApplicationVariables.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.Axis">
+      <summary>
+            Register part of axis
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Axis.Calibration">
+      <summary>
+            Calibration data.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Axis.Commands">
+      <summary>
+            Input commands for blocks.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Axis.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Axis.Parameters">
+      <summary>
+            Input parameters for blocks.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Axis.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Axis.Signals">
+      <summary>
+            Output signals of blocks.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.AxisArray">
+      <summary>
+            A TAM register array with element type <see cref="T:Triamec.Tam.Rlid17.Axis" />
+            on <see cref="T:Triamec.Tam.ITamDevice" />s.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisArray.IsArray">
+      <summary>
+            Indicates if this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is an array.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisArray.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisArray.Item(System.Int32)">
+      <summary>
+            Gets an array element
+            at a specified index.
+            </summary>
+      <param name="index">The index of the array element.</param>
+      <returns>Returns the array element at the given <paramref name="index" />.</returns>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisArray.Length">
+      <summary>
+            Gets the number of elements
+            in this register array.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisArray.PredefinedImage">
+      <summary>
+            Gets the predefined image specification
+            to use for this <see cref="T:Triamec.Tam.ITamNode" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisArray.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.AxisCalibration">
+      <summary>
+            Path planner parameters
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisCalibration.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisCalibration.OffsetCommutationAngleEncoderAngle">
+      <summary>
+            Electrical offset angle between commutation angle and commutation angle derived from actual position [rad].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisCalibration.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.AxisCommands">
+      <summary>
+            Input commands for blocks
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisCommands.CurrentController">
+      <summary>
+            Current controller commands.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisCommands.General">
+      <summary>
+            General Axis and Environment (sensor, motor, encoder) commands.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisCommands.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisCommands.OriginTranslation">
+      <summary>
+            Origintranslation commands.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisCommands.PathPlanner">
+      <summary>
+            Path planner commands.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisCommands.PositionController">
+      <summary>
+            Position controller commands.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisCommands.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisCommands.TestGenerator">
+      <summary>
+            Test signal commands.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.AxisParameters">
+      <summary>
+            Input parameters for blocks
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisParameters.AngleSearch">
+      <summary>
+            Is modulation for angle search.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisParameters.CurrentController">
+      <summary>
+            Current controller parameters.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisParameters.Environment">
+      <summary>
+            Environment (sensors, motor, encoder) parameters.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisParameters.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisParameters.PathPlanner">
+      <summary>
+            Path planner parameters.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisParameters.PositionController">
+      <summary>
+            Position controller specific parameters.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisParameters.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.AxisSignals">
+      <summary>
+            Output signals of blocks
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisSignals.AngleSearch">
+      <summary>
+            Angle search signal generator output signals.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisSignals.CurrentController">
+      <summary>
+            Current controller output signals.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisSignals.General">
+      <summary>
+            Axis general output signals.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisSignals.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisSignals.OptionModuleAnalogInput">
+      <summary>
+            Option module analog input voltage [V].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisSignals.PathInterpolator">
+      <summary>
+            Path interpolator output signals.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisSignals.PathPlanner">
+      <summary>
+            Path planner output signals.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisSignals.PositionController">
+      <summary>
+            Position controller output signals.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisSignals.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.AxisSignals.TestGenerator">
+      <summary>
+            Test signal generator signals.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.BiquadFilter">
+      <summary>
+            Parameters used for on biquad filter
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.BiquadFilter.DampingFactor1">
+      <summary>
+            Damping factor denominator [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.BiquadFilter.DampingFactor2">
+      <summary>
+            Damping factor numerator [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.BiquadFilter.EdgeFrequency1">
+      <summary>
+            Edge frequency denominator [Hz].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.BiquadFilter.EdgeFrequency2">
+      <summary>
+            Edge frequency numerator [Hz].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.BiquadFilter.FilterType">
+      <summary>
+            Selected filter type.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.BiquadFilter.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.BiquadFilter.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.BiquadFilterArray">
+      <summary>
+            A TAM register array with element type <see cref="T:Triamec.Tam.Rlid17.BiquadFilter" />
+            on <see cref="T:Triamec.Tam.ITamDevice" />s.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.BiquadFilterArray.IsArray">
+      <summary>
+            Indicates if this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is an array.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.BiquadFilterArray.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.BiquadFilterArray.Item(System.Int32)">
+      <summary>
+            Gets an array element
+            at a specified index.
+            </summary>
+      <param name="index">The index of the array element.</param>
+      <returns>Returns the array element at the given <paramref name="index" />.</returns>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.BiquadFilterArray.Length">
+      <summary>
+            Gets the number of elements
+            in this register array.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.BiquadFilterArray.PredefinedImage">
+      <summary>
+            Gets the predefined image specification
+            to use for this <see cref="T:Triamec.Tam.ITamNode" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.BiquadFilterArray.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.CurrentControllerCommands">
+      <summary>
+            Current controller commands
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerCommands.CommitParameter">
+      <summary>
+            Commit prepared parameters and calc internal parameters (commitGroup=CurrentController).
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerCommands.InjectedId">
+      <summary>
+            Current added to the position controller output, including linear interpolation [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerCommands.InjectedIq">
+      <summary>
+            Current added to the position controller output, including linear interpolation [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerCommands.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerCommands.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.CurrentControllerOutput">
+      <summary>
+            Current controller signals
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerOutput.ActualCurrent">
+      <summary>
+            Actual current of motor phases [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerOutput.ActualCurrentD">
+      <summary>
+            Actual current of the iD controller [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerOutput.ActualCurrentQ">
+      <summary>
+            Actual current of the iQ controller [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerOutput.ActualCurrentSquare">
+      <summary>
+            Actual current squared [A²].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerOutput.CommutationAngle">
+      <summary>
+            The actual electrical commutation angle [rad].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerOutput.ContinuousCurrentSquaredDrive">
+      <summary>
+            Current square filtered by drive time constant [A²].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerOutput.ContinuousCurrentSquaredMotor">
+      <summary>
+            Current square filtered by motor time constant [A²].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerOutput.ControlOutputVoltageD">
+      <summary>
+            Control output voltage uD [V].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerOutput.ControlOutputVoltageQ">
+      <summary>
+            Control output voltage uQ [V].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerOutput.CosinePhi">
+      <summary>
+            Cosine of the commutation angle [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerOutput.CurrentErrorD">
+      <summary>
+            Current error of the iD controller [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerOutput.CurrentErrorQ">
+      <summary>
+            Current error of the iQ controller [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerOutput.Enabled">
+      <summary>
+            Indicates enabled state.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerOutput.Error">
+      <summary>
+            Indicates error state.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerOutput.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerOutput.PwmRatio">
+      <summary>
+            PWM/SVM output phases.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerOutput.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerOutput.SinePhi">
+      <summary>
+            Sine of the commutation angle [1].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.CurrentControllerParameter">
+      <summary>
+            Current controller parameters
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerParameter.CurrentErrorLimit">
+      <summary>
+            Error Limit (desiredCurrent-actualCurrent) of current PI controller channel D and Q [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerParameter.IntegratorOutputLimit">
+      <summary>
+            Error Limit of integrator output (anti windup) of current PI controller channel D and Q [V].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerParameter.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerParameter.Kr">
+      <summary>
+            Gain of the current PI controller channel D and Q [V/A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerParameter.OutputLimit">
+      <summary>
+            Limitation of the current controller output channel D and Q [V].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerParameter.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.CurrentControllerParameter.Tn">
+      <summary>
+            Integrator time constant of current PI controller channel D and Q [s].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.EncoderType">
+      <summary>
+            Characterization of the connected encoder
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.EncoderType.None">
+      <summary>
+            No encoder used
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.EncoderType.Digital">
+      <summary>
+            Digital encoder used
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.EncoderType.Analog">
+      <summary>
+            Analog encoder used
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.EnvironmentParameter">
+      <summary>
+            Environment (sensors, motor, encoder) parameters
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.AxisName">
+      <summary>
+            The name of this axis.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.CommutationPhasingMethod">
+      <summary>
+            Selected commutation phasing method.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.DoIndexLatchHoming">
+      <summary>
+            This switch controls the usage if index latching mechanism during homing.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.DriveContinuousCurrentLimit">
+      <summary>
+            Drive continuous current limit (Is_Vector) [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.DriveI2tTimeConstant">
+      <summary>
+            Drive I2t supervision time constant [s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.DrivePeakCurrentLimit">
+      <summary>
+            Drive peak current limit (Is_Vector) [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.EconomicModulation">
+      <summary>
+            Needs less switching cycles if economic modulation is activated.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.EnablingMethod">
+      <summary>
+            Selected enabling method.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.EncoderCountsPerRevolution">
+      <summary>
+            Number of encoder counts per mechanical revolution [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.EncoderInvertDirection">
+      <summary>
+            Switch for encoder direction inversion. Positive application movement must rise actual position feedback.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.EncoderPitch">
+      <summary>
+            Pitch of the position measurement encoder [u/inc].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.EncoderType">
+      <summary>
+            Connected encoder type.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.MaxContinuousCurrentSquare">
+      <summary>
+            Resulting squared continuous current limit [A²].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.MaxPeakCurrentSquare">
+      <summary>
+            Resulting squared peak current limit [A²].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.ModulationMethod">
+      <summary>
+            Modulation method for SpaceVectorModulation and PulseWidthModulation.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.MotorBaseConfiguration">
+      <summary>
+            Connected motor type.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.MotorBrakeReleaseAction">
+      <summary>
+            Action needed for the release of the motor brake during axis enabling.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.MotorI2tTimeConstant">
+      <summary>
+            Motor I2T supervision time constant  [s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.MotorInvertDirection">
+      <summary>
+            Switch for motor direction inversion. Positive current/moment must increase encoder counts and commutation angle.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.MotorNominalCurrent">
+      <summary>
+            Motor nominal current [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.MotorNumberOfPolePairs">
+      <summary>
+            Number of pole pairs of the motor [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.MotorPeakCurrent">
+      <summary>
+            Motor peak current [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.PositionResolutionH">
+      <summary>
+            The encoder resolution high [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.PositionResolutionL">
+      <summary>
+            The encoder resolution low [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.ReferencePosition">
+      <summary>
+            Absolute position of reference mark to set during homing [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.EnvironmentParameter.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.General">
+      <summary>
+            General register part used for the whole drive
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.General.Commands">
+      <summary>
+            General commands for the drive.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.General.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.General.Parameters">
+      <summary>
+            General parameters for drive.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.General.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.General.Signals">
+      <summary>
+            General signals in the drive.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.General.Subscriptions">
+      <summary>
+            Subscription parameters for the drive.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.GeneralAxisCommands">
+      <summary>
+            General Axis and Environment (sensors, motor, encoder) commands
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisCommands.EncoderIndexLatchEnable">
+      <summary>
+            This bit controls the state of the encoder index latch function.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisCommands.Event">
+      <summary>
+            Event for the axis state machine .
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisCommands.EventParameter">
+      <summary>
+            Event parameter for the axis state machine .
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisCommands.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisCommands.Output1">
+      <summary>
+            Control for output 1.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisCommands.Output2">
+      <summary>
+            Control for output 2.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisCommands.PowerBridgeShutdown">
+      <summary>
+            Control for PowerBridge Shutdown.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisCommands.PowerSwitchDisable1">
+      <summary>
+            Control for power switch channel 1.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisCommands.PowerSwitchDisable2">
+      <summary>
+            Control for power switch channel 2.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisCommands.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisCommands.TamRequest">
+      <summary>
+            Identifies a new axis control request to serve [struct]. Conforms to the <see cref="P:Triamec.Tam.Rlid17.GeneralAxisCommands.TamRequest" /> type.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.GeneralAxisOutput">
+      <summary>
+            Axis general and axis environment signals
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisOutput.ActualPositionCount">
+      <summary>
+            Actual measured position count [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisOutput.ActualPositionCountHigh">
+      <summary>
+            Actual measured position count highword [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisOutput.AnalogEncoderCosine">
+      <summary>
+            Analog encoder cosine signal after compensation [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisOutput.AnalogEncoderSine">
+      <summary>
+            Analog encoder sine signal after compensation [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisOutput.AxisError">
+      <summary>
+            Axis error identification.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisOutput.AxisState">
+      <summary>
+            Axis state.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisOutput.CommandTimestamp">
+      <summary>
+            Timestamp when the last axis command was copied [10us]. Conforms to the <see cref="T:Triamec.TriaLink.Timestamp" /> type.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisOutput.CommutationAngleCount">
+      <summary>
+            Actual measured commutation angle count [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisOutput.EncoderAmplitudeState">
+      <summary>
+            State of the encoder amplitude (0=good, 1=warning, 2=error, 4=supply short).
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisOutput.EncoderIndex">
+      <summary>
+            State of encoder index.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisOutput.EncoderIndexLatch">
+      <summary>
+            State of encoder index latch.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisOutput.InputBits">
+      <summary>
+            Digital input bits (ExtIn(1:0) [b7:b6]; DigIn(5:0) [b5:b0]).
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisOutput.InternalSignals">
+      <summary>
+            Internal signals to scope at 100kHz.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisOutput.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisOutput.LatchedPositionCount">
+      <summary>
+            Latched position count at last index position [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisOutput.LatchedPositionCountHigh">
+      <summary>
+            Latched position count highword at last index position [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisOutput.LedStatus">
+      <summary>
+            Control for LED Status, Green=1, Red=2.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisOutput.MergedPlcStates">
+      <summary>
+            The merged drive, axis and isoTama states used for PLC applications [struct].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisOutput.MotorTemperature">
+      <summary>
+            Temperature of the motor [°C].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisOutput.PowerStageTemperature">
+      <summary>
+            Temperature of power stage [°C].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisOutput.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralAxisOutput.TamRequest">
+      <summary>
+            Identifies the last axis command request [struct]. Conforms to the <see cref="P:Triamec.Tam.Rlid17.GeneralAxisOutput.TamRequest" /> type.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.GeneralCommands">
+      <summary>
+            General commands for the drive
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralCommands.CommitParameter">
+      <summary>
+            Commit prepared parameters and calc internal parameters (commitGroup=General).
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralCommands.ExternalError">
+      <summary>
+            input for external error.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralCommands.Internals">
+      <summary>
+            General internal commands.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralCommands.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralCommands.LedLink1">
+      <summary>
+            Control for LED Link1, Green=1, Red=2 .
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralCommands.LedLink2">
+      <summary>
+            Control for LED Link2, Green=1, Red=2 .
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralCommands.Localbus">
+      <summary>
+            Command localbus settings here, followed by commit.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralCommands.LocalbusCommit">
+      <summary>
+            Commit localbus.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralCommands.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.GeneralInternalCommands">
+      <summary>
+            General internal commands
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalCommands.DebugAddress">
+      <summary>
+            Debug asynchronous.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalCommands.DebugCommitRead">
+      <summary>
+            Debug asynchronous.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalCommands.DebugCommitWrite">
+      <summary>
+            Debug asynchronous.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalCommands.DebugData">
+      <summary>
+            Debug asynchronous.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalCommands.Event">
+      <summary>
+            Event for the drive state machine.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalCommands.EventParameter">
+      <summary>
+            Event parameter for the drive state machine.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalCommands.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalCommands.MonitorRow2">
+      <summary>
+            Monitor cyclic abo values.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalCommands.MonitorRow3">
+      <summary>
+            Monitor cyclic abo values.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalCommands.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalCommands.TamRequest">
+      <summary>
+            Identifies a new axis control request to serve [struct]. Conforms to the <see cref="P:Triamec.Tam.Rlid17.GeneralInternalCommands.TamRequest" /> type.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.GeneralInternalSignals">
+      <summary>
+            General internal signals
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignals.CpuTemperature">
+      <summary>
+            Temperature of the main CPU [°C].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignals.GeneralSignalsFast">
+      <summary>
+            General purpose test signals to scope at 100kHz.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignals.GeneralSignalsSlow">
+      <summary>
+            General purpose test signals to scope at 10kHz.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignals.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignals.MergedErrors">
+      <summary>
+            The merged drive and axes error identification [struct]. Conforms to the <see cref="P:Triamec.Tam.Rlid17.GeneralInternalSignals.MergedErrors" /> type.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignals.MergedStates">
+      <summary>
+            The merged drive and axes states and the transition bit set [struct]. Conforms to the <see cref="P:Triamec.Tam.Rlid17.GeneralInternalSignals.MergedStates" /> type.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignals.MonitorErrors">
+      <summary>
+            Monitor cyclic abo values.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignals.MonitorRow2">
+      <summary>
+            Monitor cyclic abo values.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignals.MonitorRow3">
+      <summary>
+            Monitor cyclic abo values.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignals.MonitorRow4">
+      <summary>
+            Monitor cyclic abo values.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignals.MonitorRow5">
+      <summary>
+            Monitor cyclic abo values.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignals.MonitorRow6">
+      <summary>
+            Monitor cyclic abo values.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignals.ParameterChecksum">
+      <summary>
+            The checksum over all persistent parameters. Calculated during startup [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignals.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignals.TamRequest">
+      <summary>
+            Identifies the last executed drive control request [struct]. Conforms to the <see cref="P:Triamec.Tam.Rlid17.GeneralInternalSignals.TamRequest" /> type.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignals.WasPersistent">
+      <summary>
+            The drive did startup from persistent parameters [1].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.GeneralInternalSignalsMonitorsFloat">
+      <summary>
+            General internal monitor signals of type float
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignalsMonitorsFloat.BridgeMonitor">
+      <summary>
+            internal [].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignalsMonitorsFloat.DigIoMonitor">
+      <summary>
+            internal [].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignalsMonitorsFloat.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignalsMonitorsFloat.NotUsed">
+      <summary>
+            internal [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignalsMonitorsFloat.OptionModuleA">
+      <summary>
+            internal [].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignalsMonitorsFloat.OptionModuleB">
+      <summary>
+            internal [].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignalsMonitorsFloat.SafetyMonitorA">
+      <summary>
+            internal [].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignalsMonitorsFloat.SafetyMonitorB">
+      <summary>
+            internal [].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignalsMonitorsFloat.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignalsMonitorsFloat.TcMonitor">
+      <summary>
+            internal [].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.GeneralInternalSignalsMonitorsInt">
+      <summary>
+            General internal monitor signals of type unsigned integer
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignalsMonitorsInt.BridgeMonitor">
+      <summary>
+            internal [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignalsMonitorsInt.DigIoMonitor">
+      <summary>
+            internal [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignalsMonitorsInt.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignalsMonitorsInt.NotUsed">
+      <summary>
+            internal [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignalsMonitorsInt.OptionModuleA">
+      <summary>
+            internal [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignalsMonitorsInt.OptionModuleB">
+      <summary>
+            internal [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignalsMonitorsInt.SafetyMonitorA">
+      <summary>
+            internal [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignalsMonitorsInt.SafetyMonitorB">
+      <summary>
+            internal [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignalsMonitorsInt.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralInternalSignalsMonitorsInt.TcMonitor">
+      <summary>
+            internal [1].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.GeneralParameters">
+      <summary>
+            General parameters for the drive
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralParameters.CurrentMeasurementResolution">
+      <summary>
+            Resolution of current measurement [A/inc].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralParameters.CycleTimeCurrentController">
+      <summary>
+            Cycle time of current controller [s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralParameters.CycleTimePathPlanner">
+      <summary>
+            Cycle time of path planner [s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralParameters.CycleTimePositionController">
+      <summary>
+            Cycle time of position controller [s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralParameters.DriveName">
+      <summary>
+            The name of this drive node.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralParameters.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralParameters.Localbus">
+      <summary>
+            Specify persistent localbus settings here, followed by commit.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralParameters.Options">
+      <summary>
+            Option bits.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralParameters.PowerBridgeVoltageHardwareLimit">
+      <summary>
+            Hardware limit for the power bridge voltage (BridgeVdd-BridgeVss) [V].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralParameters.PowerBridgeVoltageLowerLimit">
+      <summary>
+            Lower limit for the power bridge voltage (BridgeVdd-BridgeVss) [V].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralParameters.PowerBridgeVoltageUpperLimit">
+      <summary>
+            Upper limit for the power bridge voltage (BridgeVdd-BridgeVss) [V].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralParameters.PwmTimeResolution">
+      <summary>
+            Time resolution for PWM switch time [inc/pwmPeriod].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralParameters.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralParameters.StartupAddress">
+      <summary>
+            Dedicated drive address assigned during startup.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralParameters.StartupAsynchronousTama">
+      <summary>
+            Start the Asynchronous Tama during startup when persistent.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralParameters.StartupGroupAddresses">
+      <summary>
+            The group addresses. Should be 255 for standard operation mode.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralParameters.StartupIsochronousTama">
+      <summary>
+            Start the Isochronous Tama during startup when persistent.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralParameters.StartupManualAddress">
+      <summary>
+            Give the drive a dedicated address during startup.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralParameters.StartupNoLink">
+      <summary>
+            Do not enforce Tria-Link or USB connection during startup.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.GeneralPurposeSignals">
+      <summary>
+            General purpose test signals to scope
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralPurposeSignals.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralPurposeSignals.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralPurposeSignals.TestSignal0">
+      <summary>
+            Test signal 0 [depends on test signal].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralPurposeSignals.TestSignal1">
+      <summary>
+            Test signal 1 [depends on test signal].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralPurposeSignals.TestSignal2">
+      <summary>
+            Test signal 2 [depends on test signal].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralPurposeSignals.TestSignal3">
+      <summary>
+            Test signal 3 [depends on test signal].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralPurposeSignals.TestSignal4">
+      <summary>
+            Test signal 4 [depends on test signal].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralPurposeSignals.TestSignal5">
+      <summary>
+            Test signal 5 [depends on test signal].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralPurposeSignals.TestSignal6">
+      <summary>
+            Test signal 6 [depends on test signal].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralPurposeSignals.TestSignal7">
+      <summary>
+            Test signal 7 [depends on test signal].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.GeneralSignals">
+      <summary>
+            General signals of the drive
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralSignals.ActualBridgeVoltage">
+      <summary>
+            Actual bridge voltage [V].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralSignals.CommandTimestamp">
+      <summary>
+            Timestamp when the last axis command was copied [10us]. Conforms to the <see cref="T:Triamec.TriaLink.Timestamp" /> type.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralSignals.DriveError">
+      <summary>
+            The drive error state.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralSignals.DriveState">
+      <summary>
+            The drive state.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralSignals.Duration100kHz">
+      <summary>
+            Duration of controller task [1=cycle].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralSignals.Duration100kHzMax">
+      <summary>
+            Duration of controller task, maximum since last commit [1=cycle].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralSignals.Duration100kHzMin">
+      <summary>
+            Duration of controller task, minimum since last commit [1=cycle].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralSignals.Duration10kHz">
+      <summary>
+            Duration of 10kHz task [1=cycle].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralSignals.Duration10kHzMax">
+      <summary>
+            Duration of 10kHz task, maximum since last commit. Depends on setting in timingSelectorLowPriorityTask [1=cycle].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralSignals.Duration10kHzMin">
+      <summary>
+            Duration of 10kHz task, minimum since last commit. Depends on setting in timingSelectorLowPriorityTask [1=cycle].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralSignals.DurationAsy">
+      <summary>
+            duration of last asy call in Tria-Link ticks [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralSignals.Internals">
+      <summary>
+            General internal signals.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralSignals.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralSignals.LedSystem">
+      <summary>
+            Control for LED Power, Green=1, Red=2 .
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralSignals.LocalbusState">
+      <summary>
+            State of the localbus interface.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralSignals.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralSignals.Supervision">
+      <summary>
+            Over current and limit supervision input bits.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.GeneralSignals.TriaLinkTimestamp">
+      <summary>
+            Timestamp which is used for cyclical Tria-Link messages. It is incremented each 10us [10us]. Conforms to the <see cref="T:Triamec.TriaLink.Timestamp" /> type.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.LedColor">
+      <summary>
+            LED colors.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.LedColor.Off">
+      <summary>
+            Not lighted
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.LedColor.Green">
+      <summary>
+            Green
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.LedColor.Red">
+      <summary>
+            Red
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.LedColor.RedGreen">
+      <summary>
+            Red and Green
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.LocalbusAccess">
+      <summary>
+            Provides access to registers of peripheral devices
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.LocalbusAccess.Address">
+      <summary>
+            32-bit word address within the peripheral device register space.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.LocalbusAccess.Comment">
+      <summary>
+            The description of the peripheral register, when supplied by the user.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.LocalbusAccess.Data">
+      <summary>
+            Content of the register.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.LocalbusAccess.Device">
+      <summary>
+            Peripheral device [].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.LocalbusAccess.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.LocalbusAccess.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.LocalbusAccessArray">
+      <summary>
+            A TAM register array with element type <see cref="T:Triamec.Tam.Rlid17.LocalbusAccess" />
+            on <see cref="T:Triamec.Tam.ITamDevice" />s.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.LocalbusAccessArray.IsArray">
+      <summary>
+            Indicates if this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is an array.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.LocalbusAccessArray.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.LocalbusAccessArray.Item(System.Int32)">
+      <summary>
+            Gets an array element
+            at a specified index.
+            </summary>
+      <param name="index">The index of the array element.</param>
+      <returns>Returns the array element at the given <paramref name="index" />.</returns>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.LocalbusAccessArray.Length">
+      <summary>
+            Gets the number of elements
+            in this register array.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.LocalbusAccessArray.PredefinedImage">
+      <summary>
+            Gets the predefined image specification
+            to use for this <see cref="T:Triamec.Tam.ITamNode" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.LocalbusAccessArray.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.LocalbusDeviceType">
+      <summary>
+            Local bus device type.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.LocalbusDeviceType.NoOperation">
+      <summary>
+            Localbus Device.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.LocalbusDeviceType.CurrentFilter">
+      <summary>
+            Device for the current filter data.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.LocalbusDeviceType.PositionFilter">
+      <summary>
+            Device for the position filter data.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.LocalbusDeviceType.Encoder1">
+      <summary>
+            Encoder function device on axis 1.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.LocalbusDeviceType.Encoder2">
+      <summary>
+            Encoder function device on axis 2.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.LocalbusDeviceType.AnalogEncoder">
+      <summary>
+            Analog encoder registers.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.LocalbusDeviceType.PhysicalLink">
+      <summary>
+            Ethernet PHY1 device.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.LocalbusDeviceType.SerialEncoder1">
+      <summary>
+            Device for EnDat and other 3d party serial encoder interfaces on axis 1.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.LocalbusDeviceType.SerialEncoder2">
+      <summary>
+            Device for EnDat and other 3d party serial encoder interfaces on axis 2.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.LocalbusDeviceType.Management">
+      <summary>
+            Device for the link management bus.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.LocalbusDeviceType.Pwm1">
+      <summary>
+            Device for the PWM output device configuration on axis 1.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.LocalbusDeviceType.Pwm2">
+      <summary>
+            Device for the PWM output device configuration on axis 2.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.LocalbusDeviceType.MonitorTc">
+      <summary>
+            TC monitor.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.LocalbusDeviceType.MonitorBridge">
+      <summary>
+            Bridge monitor.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.LocalbusDeviceType.MonitorDigIo">
+      <summary>
+            Digital I/O monitor.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.LocalbusDeviceType.MonitorSafetyA">
+      <summary>
+            Safety monitor A.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.LocalbusDeviceType.MonitorSafetyB">
+      <summary>
+            Safety monitor B.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.LocalbusDeviceType.MonitorOption1">
+      <summary>
+            Option module 1.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.LocalbusDeviceType.MonitorOption2">
+      <summary>
+            Option module 2.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.ModuloTranslation">
+      <summary>
+            Modulo translation data type
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.ModuloTranslation.Counts">
+      <summary>
+            Position translation increments 31bit [inc].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.ModuloTranslation.Ident">
+      <summary>
+            identifies if type of the translation data.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.ModuloTranslation.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.ModuloTranslation.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.MotorBaseConfiguration">
+      <summary>
+            Connected motor type
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.MotorBaseConfiguration.NoMotor">
+      <summary>
+            The unspecified configuration.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.MotorBaseConfiguration.DCMotor">
+      <summary>
+            DC motor connected between lines A and B (h-bridge).
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.MotorBaseConfiguration.SynchronousACMotor">
+      <summary>
+            Synchronous 3-phase motor connected at lines A, B, and C.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.MotorBaseConfiguration.SynchronousTwoPhaseACMotor">
+      <summary>
+            Synchronous 2-phase motor connected at lines AB and CB.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.MotorBaseConfiguration.AsynchronousACMotor">
+      <summary>
+            Asynchronous 3-phase motor connected at lines A, B, and C.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.MotorBaseConfiguration.AsynchronousTwoPhaseACMotor">
+      <summary>
+            Asynchronous 2-phase motor connected at lines AB and CB.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.MotorTemperatureSensorType">
+      <summary>
+            Type of the motor temperature sensor
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.MotorTemperatureSensorType.None">
+      <summary>
+            None
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.MotorTemperatureSensorType.KTY84">
+      <summary>
+            KTY84
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.MotorTemperatureSensorType.PT1000">
+      <summary>
+            PT1000
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.MotorTemperatureSensorType.PT100">
+      <summary>
+            PT100
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.OriginTranslationCommands">
+      <summary>
+            Origin translation commands for position controller and interpolator
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.OriginTranslationCommands.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.OriginTranslationCommands.PositionTranslation">
+      <summary>
+            The position translation to apply (xTranslated = xOld + positionTranslation) [u or inc].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.OriginTranslationCommands.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.OriginTranslationCommands.TranslatePositions">
+      <summary>
+            Translates the positions of interpolator, position controller and path planner coordinated.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.OriginTranslationCommands.TranslatePositionsInPositionController">
+      <summary>
+            Translates the positions of position controller.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.PathInterpolatorOutput">
+      <summary>
+            Path interpolator signals
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathInterpolatorOutput.Acceleration">
+      <summary>
+            Interpolated desired acceleration [u/s²].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathInterpolatorOutput.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathInterpolatorOutput.Position">
+      <summary>
+            Desired position [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathInterpolatorOutput.PositionFloat">
+      <summary>
+            Desired position [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathInterpolatorOutput.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathInterpolatorOutput.Velocity">
+      <summary>
+            Interpolated desired velocity [u/s].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.PathPlannerCommands">
+      <summary>
+            Path planner commands
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerCommands.Anew">
+      <summary>
+            New desired acceleration (all motion types) [u/s²].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerCommands.AnewCoupled">
+      <summary>
+            New coupled desired acceleration (synchron motion only) [u/s²].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerCommands.Command">
+      <summary>
+            Path planner command.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerCommands.CommitParameter">
+      <summary>
+            Commit prepared parameters and calc internal parameters (commitGroup=PathPlanner).
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerCommands.Direction">
+      <summary>
+            Path planner direction attribute.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerCommands.ExecutionOption">
+      <summary>
+            Path planner execution time option .
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerCommands.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerCommands.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerCommands.Vnew">
+      <summary>
+            New desired velocity (all motion types) [u/s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerCommands.VnewCoupled">
+      <summary>
+            New coupled desired velocity (synchron motion only) [u/s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerCommands.Xnew">
+      <summary>
+            New desired position (all motion types) [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerCommands.XnewCoupled">
+      <summary>
+            New coupled desired position (synchron motion only) [u].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.PathPlannerOutput">
+      <summary>
+            Path planner signals
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerOutput.Acceleration">
+      <summary>
+            Desired acceleration [u/s²].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerOutput.Done">
+      <summary>
+            Indicates the end of a pathplanner move.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerOutput.EndPosition">
+      <summary>
+            End position of the running move [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerOutput.EndPositionFloat">
+      <summary>
+            End position of the running move [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerOutput.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerOutput.PathValuesTimestamp">
+      <summary>
+            Timestamp of the pathplanner path values [1]. Conforms to the <see cref="T:Triamec.TriaLink.Timestamp" /> type.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerOutput.Position">
+      <summary>
+            Desired position [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerOutput.PositionFloat">
+      <summary>
+            Desired position [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerOutput.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerOutput.Velocity">
+      <summary>
+            Desired velocity [u/s].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.PathPlannerParameter">
+      <summary>
+            Path planner parameters
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerParameter.AccelerationMaximum">
+      <summary>
+            Maximal acceleration (unsigned)  [u/s²].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerParameter.DecelerationMaximum">
+      <summary>
+            Maximal deceleration (unsigned) [u/s²].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerParameter.DynamicReductionFactor">
+      <summary>
+            Dynamic reduction factor [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerParameter.EmergencyDeceleration">
+      <summary>
+            Maximal emergency deceleration (unsigned) [u/s²].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerParameter.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerParameter.JerkMaximum">
+      <summary>
+            Maximal jerk (unsigned) [u/s³].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerParameter.ModuloPositionMaximum">
+      <summary>
+            Maximal position used for modulo position [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerParameter.ModuloPositionMinimum">
+      <summary>
+            Minimal position used for modulo position [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerParameter.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PathPlannerParameter.VelocityMaximum">
+      <summary>
+            Maximal velocity (unsigned) [u/s].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.PhaseMembers">
+      <summary>
+            Motor phases
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PhaseMembers.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PhaseMembers.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PhaseMembers.U">
+      <summary>
+            Motor phase a.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PhaseMembers.V">
+      <summary>
+            Motor phase b.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PhaseMembers.W">
+      <summary>
+            Motor phase c.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.PositionControllerCommands">
+      <summary>
+            Position controller commands
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerCommands.CommitParameter">
+      <summary>
+            Commit prepared parameters and calc internal parameters (commitGroup=PositionController).
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerCommands.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerCommands.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.PositionControllerOutput">
+      <summary>
+            Position controller signals
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerOutput.ActualPosition">
+      <summary>
+            Actual measured position [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerOutput.ActualPositionFloat">
+      <summary>
+            Actual measured position [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerOutput.AlignAngle">
+      <summary>
+            Angle which was found by automatic rotor alignment [rad].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerOutput.Aligned">
+      <summary>
+            Indicates if rotor is aligned during startup phase.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerOutput.ControllerOutput">
+      <summary>
+            Controller output (positionControlOutput+feedForwardOutput) [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerOutput.ControlOutputCurrentD">
+      <summary>
+            Control output current iD [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerOutput.ControlOutputCurrentQ">
+      <summary>
+            Position control output current iQ plus testsignal [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerOutput.Enabled">
+      <summary>
+            Indicates enabled state.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerOutput.Error">
+      <summary>
+            Indicates error state.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerOutput.FeedForwardOutput">
+      <summary>
+            Feed forward output [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerOutput.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerOutput.LatchedPosition">
+      <summary>
+            Latched position at last index position [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerOutput.LatchedPositionFloat">
+      <summary>
+            Latched position at last index position [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerOutput.PositionControlOutput">
+      <summary>
+            Position controller output [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerOutput.PositionError">
+      <summary>
+            Actual position error [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerOutput.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.PositionControllerParameter">
+      <summary>
+            Position controller specific parameters
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerParameter.Ffa">
+      <summary>
+            Feed-forward-factor acceleration [As²/u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerParameter.Ffv">
+      <summary>
+            Feed-forward-factor velocity [As/u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerParameter.Ffx">
+      <summary>
+            Feed-forward-factor position [A/u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerParameter.FfxOffset">
+      <summary>
+            Feed-forward-offset on position [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerParameter.Filters">
+      <summary>
+            Array of biquad filters in the position controller path.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerParameter.IntegratorOutputLimit">
+      <summary>
+            Limitation of integrator output (anti windup) of position PID controller [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerParameter.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerParameter.Kr">
+      <summary>
+            Gain of position PID controller [A/u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerParameter.OutputLimit">
+      <summary>
+            Limitation of the position controller output [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerParameter.PositionErrorLimit">
+      <summary>
+            Error Limit (desiredPosition-actualPosition) of position PID controller [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerParameter.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerParameter.T1">
+      <summary>
+            Differentiator filter time constant (lag) of position PID controller [s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerParameter.Tn">
+      <summary>
+            Integrator time constant of position PID controller [s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PositionControllerParameter.Tv">
+      <summary>
+            Differentiator time constant (lead) of position PID controller [s].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.PublicationParameters">
+      <summary>
+            Publication parameters
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PublicationParameters.Activation">
+      <summary>
+            Activation and trigger condition of a publication.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PublicationParameters.DownsamplingTicks">
+      <summary>
+            Downsampling in Tria-Link ticks which defines the publication rate [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PublicationParameters.EndpointOne">
+      <summary>
+            Address the endpoint one if this selector is set, otherwise endpoint two is used.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PublicationParameters.HighSpeed">
+      <summary>
+            Selector for high speed publication.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PublicationParameters.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PublicationParameters.PRegister">
+      <summary>
+            Word addresses of the publication registers [bytes].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PublicationParameters.PublicationDestination">
+      <summary>
+            Destination address of the publication [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PublicationParameters.PublicationDestinationPort">
+      <summary>
+            Destination address port of the publication.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PublicationParameters.PublicationId">
+      <summary>
+            Identification of the publication [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PublicationParameters.PublicationOwner">
+      <summary>
+            Address of the publication owner [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PublicationParameters.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PublicationParameters.TriggerLevelOrEpsilon">
+      <summary>
+            Trigger level or AnyEdge Epsilon of the publication [trigger level or epsilon depends on trigger signal].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PublicationParameters.TriggerSignalDataType">
+      <summary>
+            Data type of the trigger signal.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PublicationParameters.TriggerSignalOffset">
+      <summary>
+            Word address of the trigger signal register [1].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.PublicationParametersArray">
+      <summary>
+            A TAM register array with element type <see cref="T:Triamec.Tam.Rlid17.PublicationParameters" />
+            on <see cref="T:Triamec.Tam.ITamDevice" />s.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PublicationParametersArray.IsArray">
+      <summary>
+            Indicates if this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is an array.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PublicationParametersArray.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PublicationParametersArray.Item(System.Int32)">
+      <summary>
+            Gets an array element
+            at a specified index.
+            </summary>
+      <param name="index">The index of the array element.</param>
+      <returns>Returns the array element at the given <paramref name="index" />.</returns>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PublicationParametersArray.Length">
+      <summary>
+            Gets the number of elements
+            in this register array.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PublicationParametersArray.PredefinedImage">
+      <summary>
+            Gets the predefined image specification
+            to use for this <see cref="T:Triamec.Tam.ITamNode" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.PublicationParametersArray.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.RCTtPositionTranslation">
+      <summary>
+            Position translation data type
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.RCTtPositionTranslation.F40Translation">
+      <summary>
+            Position double translation usage.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.RCTtPositionTranslation.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.RCTtPositionTranslation.ModuloTranslation">
+      <summary>
+            Modulo translation usage.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.RCTtPositionTranslation.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.Register">
+      <summary>
+            Register layout
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Register.Application">
+      <summary>
+            Application Specific .
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Register.Axes">
+      <summary>
+            Array of axis registers.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.Register.CODE_SIZE">
+      <summary>
+            Maximum size of Tama code
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Register.General">
+      <summary>
+            General registers used for the whole drive.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.Register.HighSpeedSubscriptionBufferSize">
+      <summary>
+            Number of 32-bit words that the high-speed buffer can contain multiplied by 2 (dual buffer) = MaximumNumberOfSubscriptions*10*2. Must be a multiple of 8 for cash line alignment
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Register.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.Register.MaximumNumberOfAxesOnThisDriveType">
+      <summary>
+            Maximum number of supported axes per drive
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.Register.MaximumNumberOfSubscriptions">
+      <summary>
+            Maximum number of subscriptions per drive
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.Register.MaximumValuesPerSubscription">
+      <summary>
+            Maximum number of values per subscription
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.Register.NumberOfApplicationParDouble">
+      <summary>
+            Number of double application parameters 
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.Register.NumberOfApplicationParFloat">
+      <summary>
+            Number of float application parameters 
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.Register.NumberOfApplicationParInt">
+      <summary>
+            Number of integer application parameters 
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.Register.NumberOfApplicationVarDouble">
+      <summary>
+            Number of double application variables 
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.Register.NumberOfApplicationVarFloat">
+      <summary>
+            Number of float application variables 
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.Register.NumberOfApplicationVarInt">
+      <summary>
+            Number of integer application variables 
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.Register.NumberOfBiquadFilters">
+      <summary>
+            Number of BiQuad filters in the position controller
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.Register.NumberOfLocalbusParameters">
+      <summary>
+            Number of local bus parameters
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.Register.NumberOfOptionAnalogInputs">
+      <summary>
+            Number of analog inputs of the option module
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.Register.NumberOfWordsInTransportMsg">
+      <summary>
+            Number of words in one transport message
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid17.Register.RegisterLayoutId">
+      <summary>
+            The register layout id
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Register.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.SubscriptionParameters">
+      <summary>
+            Subscriber parameters
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.SubscriptionParameters.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.SubscriptionParameters.PRegister">
+      <summary>
+            Register address word offset of the subscription values 1..k [bytes].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.SubscriptionParameters.PRegisterTimestamp">
+      <summary>
+            Register address word offset of the timestamp value [bytes].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.SubscriptionParameters.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.SubscriptionParameters.SubscriptionId">
+      <summary>
+            Identification of the subscription [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.SubscriptionParameters.SubscriptionOwner">
+      <summary>
+            Address of the subscription owner [1].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.SubscriptionParametersArray">
+      <summary>
+            A TAM register array with element type <see cref="T:Triamec.Tam.Rlid17.SubscriptionParameters" />
+            on <see cref="T:Triamec.Tam.ITamDevice" />s.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.SubscriptionParametersArray.IsArray">
+      <summary>
+            Indicates if this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is an array.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.SubscriptionParametersArray.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.SubscriptionParametersArray.Item(System.Int32)">
+      <summary>
+            Gets an array element
+            at a specified index.
+            </summary>
+      <param name="index">The index of the array element.</param>
+      <returns>Returns the array element at the given <paramref name="index" />.</returns>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.SubscriptionParametersArray.Length">
+      <summary>
+            Gets the number of elements
+            in this register array.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.SubscriptionParametersArray.PredefinedImage">
+      <summary>
+            Gets the predefined image specification
+            to use for this <see cref="T:Triamec.Tam.ITamNode" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.SubscriptionParametersArray.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.Subscriptions">
+      <summary>
+            Subscription parameters for the drive
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Subscriptions.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Subscriptions.Publishers">
+      <summary>
+            Publisher parameters.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Subscriptions.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Subscriptions.Subscribers">
+      <summary>
+            Subscriber parameters.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.Tama">
+      <summary>
+            Tama application code related register area
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Tama.AsynchronousMainCommand">
+      <summary>
+            Command for the asynchronous Tama main application.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Tama.AsynchronousMainState">
+      <summary>
+            State of the asynchronous Tama main application. State value must be in range [0..63] for proper state change events!.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Tama.AsynchronousStackOffset">
+      <summary>
+            The word offset from the register memory to the stack memory of the asynchronous Tama main application.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Tama.AsynchronousVirtualMachineState">
+      <summary>
+            State of the asynchronous Tama virtual machine.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Tama.CodeMemory">
+      <summary>
+            Memory for Tama binary code.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Tama.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Tama.IsochronousMainCommand">
+      <summary>
+            Command for the isochronous Tama main application.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Tama.IsochronousMainState">
+      <summary>
+            State of the isochronous Tama main application. State value must be in range [0..63] for proper state change events!.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Tama.IsochronousStackOffset">
+      <summary>
+            The word offset from the register memory to the stack memory of the isochronous Tama main application.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Tama.IsochronousVirtualMachineState">
+      <summary>
+            State of the isochronous Tama virtual machine.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.Tama.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.TestGeneratorCommands">
+      <summary>
+            Current controller test signal commands
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.TestGeneratorCommands.Amplitude">
+      <summary>
+            Amplitude of test signal after ramp-up. (Modulation amplitude in case of vector length modulation. Dont'care in case of vector rotation.) [].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.TestGeneratorCommands.Angle">
+      <summary>
+            Vector angle in case of vector length modulation. (Don't care with other test signals.) [rad].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.TestGeneratorCommands.Command">
+      <summary>
+            Test signal generator command.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.TestGeneratorCommands.FrameSize">
+      <summary>
+            Duration of test signal sequence. (Test signal is applied at least 10 seconds) [CurCtrlCycles].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.TestGeneratorCommands.Frequency">
+      <summary>
+            Frequency of test signal. (Modulation frequency in case of vector length modulation. Rotation frequency in case of vector rotation.) [Hz].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.TestGeneratorCommands.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.TestGeneratorCommands.RampTime">
+      <summary>
+             Ramp-up time of test signal sequence [s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.TestGeneratorCommands.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.TestGeneratorCommands.SignalOffset">
+      <summary>
+            Offset of test signal after ramp-up. (Start vector length in case of vector length modulation. Length of vector in case of vector rotation.) [].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid17.TestGeneratorOutput">
+      <summary>
+            Test signal generator signals
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.TestGeneratorOutput.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.TestGeneratorOutput.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid17.TestGeneratorOutput.TestSignal">
+      <summary>
+            Test signal added to the specified output [].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.AngleSearchParameter">
+      <summary>Current modulation for angle search</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AngleSearchParameter.CurrentAmplitude">
+      <summary>Current amplitude applied during angle search [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AngleSearchParameter.RampConstTime">
+      <summary>Constant phase time for angle search current [s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AngleSearchParameter.RampRiseTime">
+      <summary>First ramp time for angle search current [s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AngleSearchParameter.SineAmplitude">
+      <summary>Sine amplitude for angle search versor modulation (electrical) [rad].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AngleSearchParameter.SineFrequency">
+      <summary>Sine frequency for angle search versor modulation [Hz].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AngleSearchParameter.StartTime">
+      <summary>Start time for the modulation ramps [s].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.AngleSearchSignalOutput">
+      <summary>Angle search signal generator output signals</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AngleSearchSignalOutput.SignalAmplitude">
+      <summary>Amplitude of gererated signal [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AngleSearchSignalOutput.SignalAngle">
+      <summary>Complex electrical angle of generated signal [rad].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.Application">
+      <summary>Application specific registers</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Application.Parameters">
+      <summary>Application specific parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Application.TamaControl">
+      <summary>Application tama code states.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Application.Variables">
+      <summary>Application specific variables.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.ApplicationParameters">
+      <summary>Application specific parameters</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.ApplicationParameters.Doubles">
+      <summary>Application specific double precision floating point parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.ApplicationParameters.Floats">
+      <summary>Application specific single precision floating point parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.ApplicationParameters.Integers">
+      <summary>Application specific integer parameters.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.ApplicationVariables">
+      <summary>Application specific parameters</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.ApplicationVariables.Doubles">
+      <summary>Application specific double precision floating point variables.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.ApplicationVariables.Floats">
+      <summary>Application specific single precision floating point variables.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.ApplicationVariables.Integers">
+      <summary>Application specific integer variables.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.Axis">
+      <summary>Register part of axis</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Axis.Calibration">
+      <summary>Calibration data.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Axis.Commands">
+      <summary>Input commands for blocks.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Axis.Parameters">
+      <summary>Input parameters for blocks.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Axis.Signals">
+      <summary>Output signals of blocks.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.AxisCalibration">
+      <summary>Path planner parameters</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AxisCalibration.OffsetCommutationAngleEncoderAngle">
+      <summary>Electrical offset angle between commutation angle and commutation angle derived from actual position [rad].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.AxisCommands">
+      <summary>Input commands for blocks</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AxisCommands.CurrentController">
+      <summary>Current controller commands.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AxisCommands.General">
+      <summary>General Axis and Environment (sensor, motor, encoder) commands.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AxisCommands.OriginTranslation">
+      <summary>Origintranslation commands.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AxisCommands.PathPlanner">
+      <summary>Path planner commands.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AxisCommands.PositionController">
+      <summary>Position controller commands.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AxisCommands.TestGenerator">
+      <summary>Test signal commands.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.AxisParameters">
+      <summary>Input parameters for blocks</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AxisParameters.AngleSearch">
+      <summary>Is modulation for angle search.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AxisParameters.CurrentController">
+      <summary>Current controller parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AxisParameters.Environment">
+      <summary>Environment (sensors, motor, encoder) parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AxisParameters.PathPlanner">
+      <summary>Path planner parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AxisParameters.PositionController">
+      <summary>Position controller specific parameters.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.AxisSignals">
+      <summary>Output signals of blocks</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AxisSignals.AngleSearch">
+      <summary>Angle search signal generator output signals.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AxisSignals.CurrentController">
+      <summary>Current controller output signals.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AxisSignals.General">
+      <summary>Axis general output signals.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AxisSignals.OptionModuleAnalogInput">
+      <summary>Option module analog input voltage [V].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AxisSignals.PathInterpolator">
+      <summary>Path interpolator output signals.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AxisSignals.PathPlanner">
+      <summary>Path planner output signals.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AxisSignals.PositionController">
+      <summary>Position controller output signals.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.AxisSignals.TestGenerator">
+      <summary>Test signal generator signals.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.BiquadFilter">
+      <summary>Parameters used for on biquad filter</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.BiquadFilter.DampingFactor1">
+      <summary>Damping factor denominator [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.BiquadFilter.DampingFactor2">
+      <summary>Damping factor numerator [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.BiquadFilter.EdgeFrequency1">
+      <summary>Edge frequency denominator [Hz].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.BiquadFilter.EdgeFrequency2">
+      <summary>Edge frequency numerator [Hz].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.BiquadFilter.FilterType">
+      <summary>Selected filter type.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.CurrentControllerCommands">
+      <summary>Current controller commands</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.CurrentControllerCommands.CommitParameter">
+      <summary>Commit prepared parameters and calc internal parameters (commitGroup=CurrentController).</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.CurrentControllerCommands.InjectedId">
+      <summary>Current added to the position controller output, including linear interpolation [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.CurrentControllerCommands.InjectedIq">
+      <summary>Current added to the position controller output, including linear interpolation [A].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.CurrentControllerOutput">
+      <summary>Current controller signals</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.CurrentControllerOutput.ActualCurrent">
+      <summary>Actual current of motor phases [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.CurrentControllerOutput.ActualCurrentD">
+      <summary>Actual current of the iD controller [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.CurrentControllerOutput.ActualCurrentQ">
+      <summary>Actual current of the iQ controller [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.CurrentControllerOutput.ActualCurrentSquare">
+      <summary>Actual current squared [A²].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.CurrentControllerOutput.CommutationAngle">
+      <summary>The actual electrical commutation angle [rad].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.CurrentControllerOutput.ContinuousCurrentSquaredDrive">
+      <summary>Current square filtered by drive time constant [A²].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.CurrentControllerOutput.ContinuousCurrentSquaredMotor">
+      <summary>Current square filtered by motor time constant [A²].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.CurrentControllerOutput.ControlOutputVoltageD">
+      <summary>Control output voltage uD [V].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.CurrentControllerOutput.ControlOutputVoltageQ">
+      <summary>Control output voltage uQ [V].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.CurrentControllerOutput.CosinePhi">
+      <summary>Cosine of the commutation angle [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.CurrentControllerOutput.CurrentErrorD">
+      <summary>Current error of the iD controller [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.CurrentControllerOutput.CurrentErrorQ">
+      <summary>Current error of the iQ controller [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.CurrentControllerOutput.Enabled">
+      <summary>Indicates enabled state.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.CurrentControllerOutput.Error">
+      <summary>Indicates error state.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.CurrentControllerOutput.PwmRatio">
+      <summary>PWM/SVM output phases.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.CurrentControllerOutput.SinePhi">
+      <summary>Sine of the commutation angle [1].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.CurrentControllerParameter">
+      <summary>Current controller parameters</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.CurrentControllerParameter.CurrentErrorLimit">
+      <summary>Error Limit (desiredCurrent-actualCurrent) of current PI controller channel D and Q [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.CurrentControllerParameter.IntegratorOutputLimit">
+      <summary>Error Limit of integrator output (anti windup) of current PI controller channel D and Q [V].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.CurrentControllerParameter.Kr">
+      <summary>Gain of the current PI controller channel D and Q [V/A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.CurrentControllerParameter.OutputLimit">
+      <summary>Limitation of the current controller output channel D and Q [V].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.CurrentControllerParameter.Tn">
+      <summary>Integrator time constant of current PI controller channel D and Q [s].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.EncoderType">
+      <summary>
+            Characterization of the connected encoder
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.EncoderType.None">
+      <summary>
+            No encoder used
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.EncoderType.Digital">
+      <summary>
+            Digital encoder used
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.EncoderType.Analog">
+      <summary>
+            Analog encoder used
+            </summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.EnvironmentParameter">
+      <summary>Environment (sensors, motor, encoder) parameters</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.AxisName">
+      <summary>The name of this axis.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.CommutationPhasingMethod">
+      <summary>Selected commutation phasing method.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.DoIndexLatchHoming">
+      <summary>This switch controls the usage if index latching mechanism during homing.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.DriveContinuousCurrentLimit">
+      <summary>Drive continuous current limit (Is_Vector) [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.DriveI2tTimeConstant">
+      <summary>Drive I2t supervision time constant [s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.DrivePeakCurrentLimit">
+      <summary>Drive peak current limit (Is_Vector) [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.EconomicModulation">
+      <summary>Needs less switching cycles if economic modulation is activated.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.EnablingMethod">
+      <summary>Selected enabling method.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.EncoderCountsPerRevolution">
+      <summary>Number of encoder counts per mechanical revolution [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.EncoderInvertDirection">
+      <summary>Switch for encoder direction inversion. Positive application movement must rise actual position feedback.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.EncoderPitch">
+      <summary>Pitch of the position measurement encoder [u/inc].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.EncoderType">
+      <summary>Connected encoder type.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.MaxContinuousCurrentSquare">
+      <summary>Resulting squared continuous current limit [A²].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.MaxPeakCurrentSquare">
+      <summary>Resulting squared peak current limit [A²].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.ModulationMethod">
+      <summary>Modulation method for SpaceVectorModulation and PulseWidthModulation.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.MotorBaseConfiguration">
+      <summary>Connected motor type.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.MotorBrakeReleaseAction">
+      <summary>Action needed for the release of the motor brake during axis enabling.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.MotorI2tTimeConstant">
+      <summary>Motor I2T supervision time constant  [s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.MotorInvertDirection">
+      <summary>Switch for motor direction inversion. Positive current/moment must increase encoder counts and commutation angle.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.MotorNominalCurrent">
+      <summary>Motor nominal current [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.MotorNumberOfPolePairs">
+      <summary>Number of pole pairs of the motor [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.MotorPeakCurrent">
+      <summary>Motor peak current [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.PositionResolutionH">
+      <summary>The encoder resolution high [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.PositionResolutionL">
+      <summary>The encoder resolution low [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.EnvironmentParameter.ReferencePosition">
+      <summary>Absolute position of reference mark to set during homing [u].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.General">
+      <summary>General register part used for the whole drive</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.General.Commands">
+      <summary>General commands for the drive.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.General.Parameters">
+      <summary>General parameters for drive.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.General.Signals">
+      <summary>General signals in the drive.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.General.Subscriptions">
+      <summary>Subscription parameters for the drive.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.GeneralAxisCommands">
+      <summary>General Axis and Environment (sensors, motor, encoder) commands</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisCommands.EncoderIndexLatchEnable">
+      <summary>This bit controls the state of the encoder index latch function.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisCommands.Event">
+      <summary>Event for the axis state machine .</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisCommands.EventParameter">
+      <summary>Event parameter for the axis state machine .</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisCommands.Output1">
+      <summary>Control for output 1.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisCommands.Output2">
+      <summary>Control for output 2.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisCommands.PowerBridgeShutdown">
+      <summary>Control for PowerBridge Shutdown.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisCommands.PowerSwitchDisable1">
+      <summary>Control for power switch channel 1.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisCommands.PowerSwitchDisable2">
+      <summary>Control for power switch channel 2.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisCommands.TamRequest">
+      <summary>Identifies a new axis control request to serve [struct].. Conforms to the <see cref="P:Triamec.Tama.Rlid17.GeneralAxisCommands.TamRequest" /> type.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.GeneralAxisOutput">
+      <summary>Axis general and axis environment signals</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisOutput.ActualPositionCount">
+      <summary>Actual measured position count [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisOutput.ActualPositionCountHigh">
+      <summary>Actual measured position count highword [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisOutput.AnalogEncoderCosine">
+      <summary>Analog encoder cosine signal after compensation [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisOutput.AnalogEncoderSine">
+      <summary>Analog encoder sine signal after compensation [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisOutput.AxisError">
+      <summary>Axis error identification.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisOutput.AxisState">
+      <summary>Axis state.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisOutput.CommandTimestamp">
+      <summary>Timestamp when the last axis command was copied [10us].. Conforms to the <see cref="T:Triamec.TriaLink.Timestamp" /> type.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisOutput.CommutationAngleCount">
+      <summary>Actual measured commutation angle count [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisOutput.EncoderAmplitudeState">
+      <summary>State of the encoder amplitude (0=good, 1=warning, 2=error, 4=supply short).</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisOutput.EncoderIndex">
+      <summary>State of encoder index.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisOutput.EncoderIndexLatch">
+      <summary>State of encoder index latch.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisOutput.InputBits">
+      <summary>Digital input bits (ExtIn(1:0) [b7:b6]; DigIn(5:0) [b5:b0]).</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisOutput.InternalSignals">
+      <summary>Internal signals to scope at 100kHz.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisOutput.LatchedPositionCount">
+      <summary>Latched position count at last index position [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisOutput.LatchedPositionCountHigh">
+      <summary>Latched position count highword at last index position [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisOutput.LedStatus">
+      <summary>Control for LED Status, Green=1, Red=2.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisOutput.MergedPlcStates">
+      <summary>The merged drive, axis and isoTama states used for PLC applications [struct].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisOutput.MotorTemperature">
+      <summary>Temperature of the motor [°C].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisOutput.PowerStageTemperature">
+      <summary>Temperature of power stage [°C].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralAxisOutput.TamRequest">
+      <summary>Identifies the last axis command request [struct].. Conforms to the <see cref="P:Triamec.Tama.Rlid17.GeneralAxisOutput.TamRequest" /> type.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.GeneralCommands">
+      <summary>General commands for the drive</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralCommands.CommitParameter">
+      <summary>Commit prepared parameters and calc internal parameters (commitGroup=General).</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralCommands.ExternalError">
+      <summary>input for external error.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralCommands.Internals">
+      <summary>General internal commands.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralCommands.LedLink1">
+      <summary>Control for LED Link1, Green=1, Red=2 .</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralCommands.LedLink2">
+      <summary>Control for LED Link2, Green=1, Red=2 .</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralCommands.Localbus">
+      <summary>Command localbus settings here, followed by commit.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralCommands.LocalbusCommit">
+      <summary>Commit localbus.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.GeneralInternalCommands">
+      <summary>General internal commands</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalCommands.DebugAddress">
+      <summary>Debug asynchronous.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalCommands.DebugCommitRead">
+      <summary>Debug asynchronous.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalCommands.DebugCommitWrite">
+      <summary>Debug asynchronous.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalCommands.DebugData">
+      <summary>Debug asynchronous.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalCommands.Event">
+      <summary>Event for the drive state machine.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalCommands.EventParameter">
+      <summary>Event parameter for the drive state machine.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalCommands.MonitorRow2">
+      <summary>Monitor cyclic abo values.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalCommands.MonitorRow3">
+      <summary>Monitor cyclic abo values.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalCommands.TamRequest">
+      <summary>Identifies a new axis control request to serve [struct].. Conforms to the <see cref="P:Triamec.Tama.Rlid17.GeneralInternalCommands.TamRequest" /> type.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.GeneralInternalSignals">
+      <summary>General internal signals</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignals.CpuTemperature">
+      <summary>Temperature of the main CPU [°C].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignals.GeneralSignalsFast">
+      <summary>General purpose test signals to scope at 100kHz.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignals.GeneralSignalsSlow">
+      <summary>General purpose test signals to scope at 10kHz.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignals.MergedErrors">
+      <summary>The merged drive and axes error identification [struct].. Conforms to the <see cref="P:Triamec.Tama.Rlid17.GeneralInternalSignals.MergedErrors" /> type.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignals.MergedStates">
+      <summary>The merged drive and axes states and the transition bit set [struct].. Conforms to the <see cref="P:Triamec.Tama.Rlid17.GeneralInternalSignals.MergedStates" /> type.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignals.MonitorErrors">
+      <summary>Monitor cyclic abo values.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignals.MonitorRow2">
+      <summary>Monitor cyclic abo values.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignals.MonitorRow3">
+      <summary>Monitor cyclic abo values.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignals.MonitorRow4">
+      <summary>Monitor cyclic abo values.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignals.MonitorRow5">
+      <summary>Monitor cyclic abo values.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignals.MonitorRow6">
+      <summary>Monitor cyclic abo values.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignals.ParameterChecksum">
+      <summary>The checksum over all persistent parameters. Calculated during startup [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignals.TamRequest">
+      <summary>Identifies the last executed drive control request [struct].. Conforms to the <see cref="P:Triamec.Tama.Rlid17.GeneralInternalSignals.TamRequest" /> type.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignals.WasPersistent">
+      <summary>The drive did startup from persistent parameters [1].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.GeneralInternalSignalsMonitorsFloat">
+      <summary>General internal monitor signals of type float</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignalsMonitorsFloat.BridgeMonitor">
+      <summary>internal [].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignalsMonitorsFloat.DigIoMonitor">
+      <summary>internal [].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignalsMonitorsFloat.NotUsed">
+      <summary>internal [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignalsMonitorsFloat.OptionModuleA">
+      <summary>internal [].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignalsMonitorsFloat.OptionModuleB">
+      <summary>internal [].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignalsMonitorsFloat.SafetyMonitorA">
+      <summary>internal [].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignalsMonitorsFloat.SafetyMonitorB">
+      <summary>internal [].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignalsMonitorsFloat.TcMonitor">
+      <summary>internal [].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.GeneralInternalSignalsMonitorsInt">
+      <summary>General internal monitor signals of type unsigned integer</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignalsMonitorsInt.BridgeMonitor">
+      <summary>internal [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignalsMonitorsInt.DigIoMonitor">
+      <summary>internal [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignalsMonitorsInt.NotUsed">
+      <summary>internal [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignalsMonitorsInt.OptionModuleA">
+      <summary>internal [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignalsMonitorsInt.OptionModuleB">
+      <summary>internal [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignalsMonitorsInt.SafetyMonitorA">
+      <summary>internal [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignalsMonitorsInt.SafetyMonitorB">
+      <summary>internal [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralInternalSignalsMonitorsInt.TcMonitor">
+      <summary>internal [1].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.GeneralParameters">
+      <summary>General parameters for the drive</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralParameters.CurrentMeasurementResolution">
+      <summary>Resolution of current measurement [A/inc].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralParameters.CycleTimeCurrentController">
+      <summary>Cycle time of current controller [s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralParameters.CycleTimePathPlanner">
+      <summary>Cycle time of path planner [s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralParameters.CycleTimePositionController">
+      <summary>Cycle time of position controller [s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralParameters.DriveName">
+      <summary>The name of this drive node.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralParameters.Localbus_0">
+      <summary>Specify persistent localbus settings here, followed by commit.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralParameters.Localbus_1">
+      <summary>Specify persistent localbus settings here, followed by commit.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralParameters.Localbus_2">
+      <summary>Specify persistent localbus settings here, followed by commit.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralParameters.Localbus_3">
+      <summary>Specify persistent localbus settings here, followed by commit.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralParameters.Localbus_4">
+      <summary>Specify persistent localbus settings here, followed by commit.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralParameters.Localbus_5">
+      <summary>Specify persistent localbus settings here, followed by commit.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralParameters.Localbus_6">
+      <summary>Specify persistent localbus settings here, followed by commit.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralParameters.Localbus_7">
+      <summary>Specify persistent localbus settings here, followed by commit.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralParameters.Options">
+      <summary>Option bits.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralParameters.PowerBridgeVoltageHardwareLimit">
+      <summary>Hardware limit for the power bridge voltage (BridgeVdd-BridgeVss) [V].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralParameters.PowerBridgeVoltageLowerLimit">
+      <summary>Lower limit for the power bridge voltage (BridgeVdd-BridgeVss) [V].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralParameters.PowerBridgeVoltageUpperLimit">
+      <summary>Upper limit for the power bridge voltage (BridgeVdd-BridgeVss) [V].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralParameters.PwmTimeResolution">
+      <summary>Time resolution for PWM switch time [inc/pwmPeriod].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralParameters.StartupAddress">
+      <summary>Dedicated drive address assigned during startup.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralParameters.StartupAsynchronousTama">
+      <summary>Start the Asynchronous Tama during startup when persistent.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralParameters.StartupGroupAddresses">
+      <summary>The group addresses. Should be 255 for standard operation mode.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralParameters.StartupIsochronousTama">
+      <summary>Start the Isochronous Tama during startup when persistent.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralParameters.StartupManualAddress">
+      <summary>Give the drive a dedicated address during startup.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralParameters.StartupNoLink">
+      <summary>Do not enforce Tria-Link or USB connection during startup.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.GeneralPurposeSignals">
+      <summary>General purpose test signals to scope</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralPurposeSignals.TestSignal0">
+      <summary>Test signal 0 [depends on test signal].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralPurposeSignals.TestSignal1">
+      <summary>Test signal 1 [depends on test signal].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralPurposeSignals.TestSignal2">
+      <summary>Test signal 2 [depends on test signal].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralPurposeSignals.TestSignal3">
+      <summary>Test signal 3 [depends on test signal].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralPurposeSignals.TestSignal4">
+      <summary>Test signal 4 [depends on test signal].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralPurposeSignals.TestSignal5">
+      <summary>Test signal 5 [depends on test signal].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralPurposeSignals.TestSignal6">
+      <summary>Test signal 6 [depends on test signal].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralPurposeSignals.TestSignal7">
+      <summary>Test signal 7 [depends on test signal].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.GeneralSignals">
+      <summary>General signals of the drive</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralSignals.ActualBridgeVoltage">
+      <summary>Actual bridge voltage [V].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralSignals.CommandTimestamp">
+      <summary>Timestamp when the last axis command was copied [10us].. Conforms to the <see cref="T:Triamec.TriaLink.Timestamp" /> type.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralSignals.DriveError">
+      <summary>The drive error state.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralSignals.DriveState">
+      <summary>The drive state.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralSignals.Duration100kHz">
+      <summary>Duration of controller task [1=cycle].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralSignals.Duration100kHzMax">
+      <summary>Duration of controller task, maximum since last commit [1=cycle].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralSignals.Duration100kHzMin">
+      <summary>Duration of controller task, minimum since last commit [1=cycle].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralSignals.Duration10kHz">
+      <summary>Duration of 10kHz task [1=cycle].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralSignals.Duration10kHzMax">
+      <summary>Duration of 10kHz task, maximum since last commit. Depends on setting in timingSelectorLowPriorityTask [1=cycle].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralSignals.Duration10kHzMin">
+      <summary>Duration of 10kHz task, minimum since last commit. Depends on setting in timingSelectorLowPriorityTask [1=cycle].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralSignals.DurationAsy">
+      <summary>duration of last asy call in Tria-Link ticks [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralSignals.Internals">
+      <summary>General internal signals.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralSignals.LedSystem">
+      <summary>Control for LED Power, Green=1, Red=2 .</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralSignals.LocalbusState">
+      <summary>State of the localbus interface.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralSignals.Supervision">
+      <summary>Over current and limit supervision input bits.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.GeneralSignals.TriaLinkTimestamp">
+      <summary>Timestamp which is used for cyclical Tria-Link messages. It is incremented each 10us [10us].. Conforms to the <see cref="T:Triamec.TriaLink.Timestamp" /> type.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.LedColor">
+      <summary>
+            LED colors.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.LedColor.Off">
+      <summary>
+            Not lighted
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.LedColor.Green">
+      <summary>
+            Green
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.LedColor.Red">
+      <summary>
+            Red
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.LedColor.RedGreen">
+      <summary>
+            Red and Green
+            </summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.LocalbusAccess">
+      <summary>Provides access to registers of peripheral devices</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.LocalbusAccess.Address">
+      <summary>32-bit word address within the peripheral device register space.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.LocalbusAccess.Comment">
+      <summary>The description of the peripheral register, when supplied by the user.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.LocalbusAccess.Data">
+      <summary>Content of the register.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.LocalbusAccess.Device">
+      <summary>Peripheral device [].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.LocalbusDeviceType">
+      <summary>
+            Local bus device type.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.LocalbusDeviceType.NoOperation">
+      <summary>
+            Localbus Device.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.LocalbusDeviceType.CurrentFilter">
+      <summary>
+            Device for the current filter data.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.LocalbusDeviceType.PositionFilter">
+      <summary>
+            Device for the position filter data.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.LocalbusDeviceType.Encoder1">
+      <summary>
+            Encoder function device on axis 1.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.LocalbusDeviceType.Encoder2">
+      <summary>
+            Encoder function device on axis 2.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.LocalbusDeviceType.AnalogEncoder">
+      <summary>
+            Analog encoder registers.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.LocalbusDeviceType.PhysicalLink">
+      <summary>
+            Ethernet PHY1 device.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.LocalbusDeviceType.SerialEncoder1">
+      <summary>
+            Device for EnDat and other 3d party serial encoder interfaces on axis 1.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.LocalbusDeviceType.SerialEncoder2">
+      <summary>
+            Device for EnDat and other 3d party serial encoder interfaces on axis 2.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.LocalbusDeviceType.Management">
+      <summary>
+            Device for the link management bus.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.LocalbusDeviceType.Pwm1">
+      <summary>
+            Device for the PWM output device configuration on axis 1.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.LocalbusDeviceType.Pwm2">
+      <summary>
+            Device for the PWM output device configuration on axis 2.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.LocalbusDeviceType.MonitorTc">
+      <summary>
+            TC monitor.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.LocalbusDeviceType.MonitorBridge">
+      <summary>
+            Bridge monitor.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.LocalbusDeviceType.MonitorDigIo">
+      <summary>
+            Digital I/O monitor.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.LocalbusDeviceType.MonitorSafetyA">
+      <summary>
+            Safety monitor A.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.LocalbusDeviceType.MonitorSafetyB">
+      <summary>
+            Safety monitor B.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.LocalbusDeviceType.MonitorOption1">
+      <summary>
+            Option module 1.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.LocalbusDeviceType.MonitorOption2">
+      <summary>
+            Option module 2.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.ModuloTranslation">
+      <summary>Modulo translation data type</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.ModuloTranslation.Counts">
+      <summary>Position translation increments 31bit [inc].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.ModuloTranslation.Ident">
+      <summary>identifies if type of the translation data.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.MotorBaseConfiguration">
+      <summary>
+            Connected motor type
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.MotorBaseConfiguration.NoMotor">
+      <summary>
+            The unspecified configuration.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.MotorBaseConfiguration.DCMotor">
+      <summary>
+            DC motor connected between lines A and B (h-bridge).
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.MotorBaseConfiguration.SynchronousACMotor">
+      <summary>
+            Synchronous 3-phase motor connected at lines A, B, and C.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.MotorBaseConfiguration.SynchronousTwoPhaseACMotor">
+      <summary>
+            Synchronous 2-phase motor connected at lines AB and CB.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.MotorBaseConfiguration.AsynchronousACMotor">
+      <summary>
+            Asynchronous 3-phase motor connected at lines A, B, and C.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.MotorBaseConfiguration.AsynchronousTwoPhaseACMotor">
+      <summary>
+            Asynchronous 2-phase motor connected at lines AB and CB.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.MotorTemperatureSensorType">
+      <summary>
+            Type of the motor temperature sensor
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.MotorTemperatureSensorType.None">
+      <summary>
+            None
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.MotorTemperatureSensorType.KTY84">
+      <summary>
+            KTY84
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.MotorTemperatureSensorType.PT1000">
+      <summary>
+            PT1000
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.MotorTemperatureSensorType.PT100">
+      <summary>
+            PT100
+            </summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.OriginTranslationCommands">
+      <summary>Origin translation commands for position controller and interpolator</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.OriginTranslationCommands.PositionTranslation">
+      <summary>The position translation to apply (xTranslated = xOld + positionTranslation) [u or inc].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.OriginTranslationCommands.TranslatePositions">
+      <summary>Translates the positions of interpolator, position controller and path planner coordinated.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.OriginTranslationCommands.TranslatePositionsInPositionController">
+      <summary>Translates the positions of position controller.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.PathInterpolatorOutput">
+      <summary>Path interpolator signals</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathInterpolatorOutput.Acceleration">
+      <summary>Interpolated desired acceleration [u/s²].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathInterpolatorOutput.Position">
+      <summary>Desired position [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathInterpolatorOutput.PositionFloat">
+      <summary>Desired position [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathInterpolatorOutput.Velocity">
+      <summary>Interpolated desired velocity [u/s].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.PathPlannerCommands">
+      <summary>Path planner commands</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerCommands.Anew">
+      <summary>New desired acceleration (all motion types) [u/s²].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerCommands.AnewCoupled">
+      <summary>New coupled desired acceleration (synchron motion only) [u/s²].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerCommands.Command">
+      <summary>Path planner command.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerCommands.CommitParameter">
+      <summary>Commit prepared parameters and calc internal parameters (commitGroup=PathPlanner).</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerCommands.Direction">
+      <summary>Path planner direction attribute.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerCommands.ExecutionOption">
+      <summary>Path planner execution time option .</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerCommands.Vnew">
+      <summary>New desired velocity (all motion types) [u/s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerCommands.VnewCoupled">
+      <summary>New coupled desired velocity (synchron motion only) [u/s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerCommands.Xnew">
+      <summary>New desired position (all motion types) [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerCommands.XnewCoupled">
+      <summary>New coupled desired position (synchron motion only) [u].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.PathPlannerOutput">
+      <summary>Path planner signals</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerOutput.Acceleration">
+      <summary>Desired acceleration [u/s²].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerOutput.Done">
+      <summary>Indicates the end of a pathplanner move.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerOutput.EndPosition">
+      <summary>End position of the running move [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerOutput.EndPositionFloat">
+      <summary>End position of the running move [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerOutput.PathValuesTimestamp">
+      <summary>Timestamp of the pathplanner path values [1].. Conforms to the <see cref="T:Triamec.TriaLink.Timestamp" /> type.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerOutput.Position">
+      <summary>Desired position [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerOutput.PositionFloat">
+      <summary>Desired position [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerOutput.Velocity">
+      <summary>Desired velocity [u/s].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.PathPlannerParameter">
+      <summary>Path planner parameters</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerParameter.AccelerationMaximum">
+      <summary>Maximal acceleration (unsigned)  [u/s²].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerParameter.DecelerationMaximum">
+      <summary>Maximal deceleration (unsigned) [u/s²].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerParameter.DynamicReductionFactor">
+      <summary>Dynamic reduction factor [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerParameter.EmergencyDeceleration">
+      <summary>Maximal emergency deceleration (unsigned) [u/s²].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerParameter.JerkMaximum">
+      <summary>Maximal jerk (unsigned) [u/s³].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerParameter.ModuloPositionMaximum">
+      <summary>Maximal position used for modulo position [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerParameter.ModuloPositionMinimum">
+      <summary>Minimal position used for modulo position [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PathPlannerParameter.VelocityMaximum">
+      <summary>Maximal velocity (unsigned) [u/s].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.PhaseMembers">
+      <summary>Motor phases</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PhaseMembers.U">
+      <summary>Motor phase a.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PhaseMembers.V">
+      <summary>Motor phase b.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PhaseMembers.W">
+      <summary>Motor phase c.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.PositionControllerCommands">
+      <summary>Position controller commands</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerCommands.CommitParameter">
+      <summary>Commit prepared parameters and calc internal parameters (commitGroup=PositionController).</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.PositionControllerOutput">
+      <summary>Position controller signals</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerOutput.ActualPosition">
+      <summary>Actual measured position [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerOutput.ActualPositionFloat">
+      <summary>Actual measured position [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerOutput.AlignAngle">
+      <summary>Angle which was found by automatic rotor alignment [rad].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerOutput.Aligned">
+      <summary>Indicates if rotor is aligned during startup phase.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerOutput.ControllerOutput">
+      <summary>Controller output (positionControlOutput+feedForwardOutput) [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerOutput.ControlOutputCurrentD">
+      <summary>Control output current iD [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerOutput.ControlOutputCurrentQ">
+      <summary>Position control output current iQ plus testsignal [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerOutput.Enabled">
+      <summary>Indicates enabled state.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerOutput.Error">
+      <summary>Indicates error state.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerOutput.FeedForwardOutput">
+      <summary>Feed forward output [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerOutput.LatchedPosition">
+      <summary>Latched position at last index position [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerOutput.LatchedPositionFloat">
+      <summary>Latched position at last index position [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerOutput.PositionControlOutput">
+      <summary>Position controller output [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerOutput.PositionError">
+      <summary>Actual position error [u].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.PositionControllerParameter">
+      <summary>Position controller specific parameters</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerParameter.Ffa">
+      <summary>Feed-forward-factor acceleration [As²/u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerParameter.Ffv">
+      <summary>Feed-forward-factor velocity [As/u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerParameter.Ffx">
+      <summary>Feed-forward-factor position [A/u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerParameter.FfxOffset">
+      <summary>Feed-forward-offset on position [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerParameter.Filters_0">
+      <summary>Array of biquad filters in the position controller path.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerParameter.Filters_1">
+      <summary>Array of biquad filters in the position controller path.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerParameter.Filters_2">
+      <summary>Array of biquad filters in the position controller path.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerParameter.Filters_3">
+      <summary>Array of biquad filters in the position controller path.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerParameter.Filters_4">
+      <summary>Array of biquad filters in the position controller path.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerParameter.IntegratorOutputLimit">
+      <summary>Limitation of integrator output (anti windup) of position PID controller [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerParameter.Kr">
+      <summary>Gain of position PID controller [A/u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerParameter.OutputLimit">
+      <summary>Limitation of the position controller output [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerParameter.PositionErrorLimit">
+      <summary>Error Limit (desiredPosition-actualPosition) of position PID controller [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerParameter.T1">
+      <summary>Differentiator filter time constant (lag) of position PID controller [s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerParameter.Tn">
+      <summary>Integrator time constant of position PID controller [s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PositionControllerParameter.Tv">
+      <summary>Differentiator time constant (lead) of position PID controller [s].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.PublicationParameters">
+      <summary>Publication parameters</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PublicationParameters.Activation">
+      <summary>Activation and trigger condition of a publication.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PublicationParameters.DownsamplingTicks">
+      <summary>Downsampling in Tria-Link ticks which defines the publication rate [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PublicationParameters.EndpointOne">
+      <summary>Address the endpoint one if this selector is set, otherwise endpoint two is used.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PublicationParameters.HighSpeed">
+      <summary>Selector for high speed publication.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PublicationParameters.PRegister">
+      <summary>Word addresses of the publication registers [bytes].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PublicationParameters.PublicationDestination">
+      <summary>Destination address of the publication [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PublicationParameters.PublicationDestinationPort">
+      <summary>Destination address port of the publication.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PublicationParameters.PublicationId">
+      <summary>Identification of the publication [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PublicationParameters.PublicationOwner">
+      <summary>Address of the publication owner [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PublicationParameters.TriggerLevelOrEpsilon">
+      <summary>Trigger level or AnyEdge Epsilon of the publication [trigger level or epsilon depends on trigger signal].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PublicationParameters.TriggerSignalDataType">
+      <summary>Data type of the trigger signal.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.PublicationParameters.TriggerSignalOffset">
+      <summary>Word address of the trigger signal register [1].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.RCTtPositionTranslation">
+      <summary>Position translation data type</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.RCTtPositionTranslation.F40Translation">
+      <summary>Position double translation usage.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.RCTtPositionTranslation.ModuloTranslation">
+      <summary>Modulo translation usage.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.Register">
+      <summary>Register layout</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Register.Application">
+      <summary>Application Specific .</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Register.Axes_0">
+      <summary>Array of axis registers.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Register.Axes_1">
+      <summary>Array of axis registers.</summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.Register.CODE_SIZE">
+      <summary>
+            Maximum size of Tama code
+            </summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Register.General">
+      <summary>General registers used for the whole drive.</summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.Register.HighSpeedSubscriptionBufferSize">
+      <summary>
+            Number of 32-bit words that the high-speed buffer can contain multiplied by 2 (dual buffer) = MaximumNumberOfSubscriptions*10*2. Must be a multiple of 8 for cash line alignment
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.Register.MaximumNumberOfAxesOnThisDriveType">
+      <summary>
+            Maximum number of supported axes per drive
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.Register.MaximumNumberOfSubscriptions">
+      <summary>
+            Maximum number of subscriptions per drive
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.Register.MaximumValuesPerSubscription">
+      <summary>
+            Maximum number of values per subscription
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.Register.NumberOfApplicationParDouble">
+      <summary>
+            Number of double application parameters 
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.Register.NumberOfApplicationParFloat">
+      <summary>
+            Number of float application parameters 
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.Register.NumberOfApplicationParInt">
+      <summary>
+            Number of integer application parameters 
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.Register.NumberOfApplicationVarDouble">
+      <summary>
+            Number of double application variables 
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.Register.NumberOfApplicationVarFloat">
+      <summary>
+            Number of float application variables 
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.Register.NumberOfApplicationVarInt">
+      <summary>
+            Number of integer application variables 
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.Register.NumberOfBiquadFilters">
+      <summary>
+            Number of BiQuad filters in the position controller
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.Register.NumberOfLocalbusParameters">
+      <summary>
+            Number of local bus parameters
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.Register.NumberOfOptionAnalogInputs">
+      <summary>
+            Number of analog inputs of the option module
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.Register.NumberOfWordsInTransportMsg">
+      <summary>
+            Number of words in one transport message
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid17.Register.RegisterLayoutId">
+      <summary>
+            The register layout id
+            </summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.SubscriptionParameters">
+      <summary>Subscriber parameters</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.SubscriptionParameters.PRegister">
+      <summary>Register address word offset of the subscription values 1..k [bytes].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.SubscriptionParameters.PRegisterTimestamp">
+      <summary>Register address word offset of the timestamp value [bytes].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.SubscriptionParameters.SubscriptionId">
+      <summary>Identification of the subscription [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.SubscriptionParameters.SubscriptionOwner">
+      <summary>Address of the subscription owner [1].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.Subscriptions">
+      <summary>Subscription parameters for the drive</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Publishers_0">
+      <summary>Publisher parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Publishers_1">
+      <summary>Publisher parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Publishers_10">
+      <summary>Publisher parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Publishers_11">
+      <summary>Publisher parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Publishers_12">
+      <summary>Publisher parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Publishers_13">
+      <summary>Publisher parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Publishers_14">
+      <summary>Publisher parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Publishers_15">
+      <summary>Publisher parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Publishers_2">
+      <summary>Publisher parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Publishers_3">
+      <summary>Publisher parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Publishers_4">
+      <summary>Publisher parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Publishers_5">
+      <summary>Publisher parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Publishers_6">
+      <summary>Publisher parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Publishers_7">
+      <summary>Publisher parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Publishers_8">
+      <summary>Publisher parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Publishers_9">
+      <summary>Publisher parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Subscribers_0">
+      <summary>Subscriber parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Subscribers_1">
+      <summary>Subscriber parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Subscribers_10">
+      <summary>Subscriber parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Subscribers_11">
+      <summary>Subscriber parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Subscribers_12">
+      <summary>Subscriber parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Subscribers_13">
+      <summary>Subscriber parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Subscribers_14">
+      <summary>Subscriber parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Subscribers_15">
+      <summary>Subscriber parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Subscribers_2">
+      <summary>Subscriber parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Subscribers_3">
+      <summary>Subscriber parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Subscribers_4">
+      <summary>Subscriber parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Subscribers_5">
+      <summary>Subscriber parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Subscribers_6">
+      <summary>Subscriber parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Subscribers_7">
+      <summary>Subscriber parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Subscribers_8">
+      <summary>Subscriber parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Subscriptions.Subscribers_9">
+      <summary>Subscriber parameters.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.Tama">
+      <summary>Tama application code related register area</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Tama.AsynchronousMainCommand">
+      <summary>Command for the asynchronous Tama main application.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Tama.AsynchronousMainState">
+      <summary>State of the asynchronous Tama main application. State value must be in range [0..63] for proper state change events!.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Tama.AsynchronousStackOffset">
+      <summary>The word offset from the register memory to the stack memory of the asynchronous Tama main application.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Tama.AsynchronousVirtualMachineState">
+      <summary>State of the asynchronous Tama virtual machine.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Tama.CodeMemory">
+      <summary>Memory for Tama binary code.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Tama.IsochronousMainCommand">
+      <summary>Command for the isochronous Tama main application.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Tama.IsochronousMainState">
+      <summary>State of the isochronous Tama main application. State value must be in range [0..63] for proper state change events!.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Tama.IsochronousStackOffset">
+      <summary>The word offset from the register memory to the stack memory of the isochronous Tama main application.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.Tama.IsochronousVirtualMachineState">
+      <summary>State of the isochronous Tama virtual machine.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.TestGeneratorCommands">
+      <summary>Current controller test signal commands</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.TestGeneratorCommands.Amplitude">
+      <summary>Amplitude of test signal after ramp-up. (Modulation amplitude in case of vector length modulation. Dont'care in case of vector rotation.) [].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.TestGeneratorCommands.Angle">
+      <summary>Vector angle in case of vector length modulation. (Don't care with other test signals.) [rad].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.TestGeneratorCommands.Command">
+      <summary>Test signal generator command.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.TestGeneratorCommands.FrameSize">
+      <summary>Duration of test signal sequence. (Test signal is applied at least 10 seconds) [CurCtrlCycles].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.TestGeneratorCommands.Frequency">
+      <summary>Frequency of test signal. (Modulation frequency in case of vector length modulation. Rotation frequency in case of vector rotation.) [Hz].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.TestGeneratorCommands.RampTime">
+      <summary> Ramp-up time of test signal sequence [s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.TestGeneratorCommands.SignalOffset">
+      <summary>Offset of test signal after ramp-up. (Start vector length in case of vector length modulation. Length of vector in case of vector rotation.) [].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid17.TestGeneratorOutput">
+      <summary>Test signal generator signals</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid17.TestGeneratorOutput.TestSignal">
+      <summary>Test signal added to the specified output [].</summary>
+    </member>
+  </members>
+</doc>
