@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\VMC",
+    "\\VMC\\Measurement",
+    "\\VMC\\Measurement\\Measure"
   ],
-  "SelectedNode": "\\C:\\git\\vmc-app",
+  "SelectedNode": "\\VMC\\Measurement\\Measure\\AccRep2D.cs",
   "PreviewInSolutionExplorer": false
 }
