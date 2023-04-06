@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright © 2017 Triamec Motion AG
+-->
+
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- Hand-crafted simple and robust alternative for contentFiles and lib paths not working as advertised
+       in https://docs.microsoft.com/en-us/nuget/create-packages/select-assemblies-referenced-by-projects.
+       as opposed to contentFiles, this approach allows hiding the assets from the GUI.
+       
+       Place all files not used during compile-time in the build\runtime path instead of the lib path.
+       
+       You can use this script as top-level NuGet script by renaming it accordingly in the .nuspec.
+       -->
+  <ItemGroup>
+
+    <!-- Note that Content with Link metadata also works except when the package store is inside the project -->
+    <ContentWithTargetPath Include="$(MSBuildThisFileDirectory)runtime\**\*">
+      <TargetPath>%(RecursiveDir)%(FileName)%(Extension)</TargetPath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>false</Visible>
+    </ContentWithTargetPath>
+  </ItemGroup>
+</Project>

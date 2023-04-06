@@ -1,0 +1,1552 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Tam.UI</name>
+  </assembly>
+  <members>
+    <member name="T:Triamec.Acquisitions.CsvExporter">
+      <summary>
+            Exports <see langword="double" /> typed <see cref="T:Triamec.Acquisitions.IVariable`1" />s to comma-separated values files.
+            </summary>
+    </member>
+    <member name="M:Triamec.Acquisitions.CsvExporter.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>Triamec.Acquisitions.CsvExporter</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:Triamec.Acquisitions.CsvExporter.EmitColumnHeaders(System.IO.TextWriter,System.Collections.Generic.IEnumerable{Triamec.Acquisitions.IVariable},System.Collections.Generic.IEnumerable{System.TimeSpan})">
+      <summary>
+            When <see cref="P:Triamec.Acquisitions.CsvExporter.OmitColumnHeaders" /> is <see langword="false" />, emits the column headers.
+            </summary>
+      <param name="writer">The writer to write to.</param>
+      <param name="timeBarAndData">The data, where the first variable represents the time bar.</param>
+      <param name="originalSamplingTimes">
+            The original <see cref="P:Triamec.Acquisitions.IVariableSegment.SamplingTime" />s of the variables in <paramref name="timeBarAndData" />.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="timeBarAndData" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.Acquisitions.CsvExporter.EmitSystemHeaders(System.IO.TextWriter,System.Collections.Generic.IEnumerable{Triamec.Acquisitions.IVariable})">
+      <summary>
+            When <see cref="P:Triamec.Acquisitions.CsvExporter.OmitSystemHeaders" /> is <see langword="false" />, emits system headers.
+            </summary>
+      <param name="writer">The writer to write to.</param>
+      <param name="timeBarAndData">The data, where the first variable represents the time bar.</param>
+      <param name="originalSamplingTimes">
+            The original <see cref="P:Triamec.Acquisitions.IVariableSegment.SamplingTime" />s of the variables in <paramref name="timeBarAndData" />.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="timeBarAndData" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="P:Triamec.Acquisitions.CsvExporter.Encoding">
+      <summary>
+            Gets or sets the character encoding to use.
+            </summary>
+    </member>
+    <member name="M:Triamec.Acquisitions.CsvExporter.ExportTo(System.Collections.Generic.IEnumerable{Triamec.Acquisitions.IVariable{System.Double}},System.String)">
+      <summary>
+            Exports the specified data to the specified file.
+            </summary>
+      <param name="data">The data.</param>
+      <param name="fileName">The absolute or relative path to the file.</param>
+      <exception cref="T:System.ArgumentException">
+        <para>
+          <paramref name="fileName" /> is <see cref="F:System.String.Empty" />.</para>
+        <para>-or-</para>
+        <para>
+          <paramref name="fileName" /> contains the name of a system device (com1, com2, and so on).</para>
+      </exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="fileName" /> is <see langword="null" />.</exception>
+      <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.
+            </exception>
+      <exception cref="T:System.UnauthorizedAccessException">Access is denied.</exception>
+      <exception cref="T:System.IO.DirectoryNotFoundException">
+        <paramref name="fileName" /> is invalid, such as being on an
+            unmapped drive.</exception>
+      <exception cref="T:System.IO.PathTooLongException">
+        <paramref name="fileName" /> exceeds the system-defined maximum
+                length. For example, on Windows-based platforms, paths must be less than 248 characters, and file names
+            must be less than 260 characters.</exception>
+      <exception cref="T:System.IO.IOException">
+        <paramref name="fileName" /> includes an incorrect or invalid syntax for file
+            name, directory name, or volume label syntax.</exception>
+    </member>
+    <member name="P:Triamec.Acquisitions.CsvExporter.ForceOptionalColumnHeaders">
+      <summary>
+            Gets or sets a value indicating whether to force the output of column headers whose output otherwise depends
+            on data properties.
+            </summary>
+    </member>
+    <member name="P:Triamec.Acquisitions.CsvExporter.FormatProvider">
+      <summary>
+            Gets or sets an <see cref="T:System.IFormatProvider" /> object that controls formatting.
+            </summary>
+    </member>
+    <member name="M:Triamec.Acquisitions.CsvExporter.GetListSeparator(System.IO.TextWriter)">
+      <summary>
+            Gets the list separator to use.
+            </summary>
+      <param name="writer">The writer.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="writer" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="P:Triamec.Acquisitions.CsvExporter.MinimalSystemHeaderCount">
+      <summary>
+            Gets or sets the minimal number of lines emitted system header count.
+            </summary>
+    </member>
+    <member name="P:Triamec.Acquisitions.CsvExporter.OmitColumnHeaders">
+      <summary>
+            Gets or sets a value indicating whether to omit column headers.
+            </summary>
+    </member>
+    <member name="P:Triamec.Acquisitions.CsvExporter.OmitSystemHeaders">
+      <summary>
+            Gets or sets a value indicating whether to omit header lines containing system information.
+            </summary>
+    </member>
+    <member name="T:Triamec.Acquisitions.CsvImporter">
+      <summary>
+            Imports <see langword="double" /> typed <see cref="T:Triamec.Acquisitions.IVariable`1" />s from comma-separated values files.
+            </summary>
+    </member>
+    <member name="M:Triamec.Acquisitions.CsvImporter.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Acquisitions.CsvImporter" /> class.
+            </summary>
+    </member>
+    <member name="P:Triamec.Acquisitions.CsvImporter.ContainsTimeBarFallback">
+      <summary>
+            Gets or sets a value indicating whether to assume that the first column contains the time bar.
+            </summary>
+    </member>
+    <member name="P:Triamec.Acquisitions.CsvImporter.Culture">
+      <summary>
+            Gets or sets a <see cref="T:System.Globalization.CultureInfo" /> object that controls formatting.
+            </summary>
+    </member>
+    <member name="P:Triamec.Acquisitions.CsvImporter.Encoding">
+      <summary>
+            Gets or sets the character encoding to use.
+            </summary>
+    </member>
+    <member name="P:Triamec.Acquisitions.CsvImporter.FavorHeaderTimeOverTimeBarOrigin">
+      <summary>
+            Gets or sets a value indicating whether the time found in the header should be used to determine the
+            <see cref="P:Triamec.Acquisitions.IVariableSegment.StartTime" /> instead of taking the first value in the time bar.
+            </summary>
+    </member>
+    <member name="P:Triamec.Acquisitions.CsvImporter.HeaderTimeFormats">
+      <summary>
+            Gets a list of possible time formats used in the file header.
+            </summary>
+    </member>
+    <member name="M:Triamec.Acquisitions.CsvImporter.Import(System.String)">
+      <summary>
+            Imports the specified file.
+            </summary>
+      <param name="file">The file.</param>
+      <returns></returns>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="file" />is a zero-length string, contains only white
+            space, or contains one or more invalid characters as defined by <see cref="F:System.IO.Path.InvalidPathChars" />.
+              </exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="file" /> is <see langword="null" />.</exception>
+      <exception cref="T:System.IO.PathTooLongException">
+        <paramref name="file" /> exceeds the system-defined maximum length.
+            For example, on Windows-based platforms, paths must be less than 248 characters, and file names must be less
+            than 260 characters.</exception>
+      <exception cref="T:System.IO.DirectoryNotFoundException">The specified path is invalid (for example, it is on an
+            unmapped drive).</exception>
+      <exception cref="T:System.IO.IOException">An I/O error occurred while opening the file.</exception>
+      <exception cref="T:System.UnauthorizedAccessException">
+        <para>
+          <paramref name="file" /> specified a directory.</para>
+        <para>-or-</para>
+        <para>The caller does not have the required permission</para>
+      </exception>
+      <exception cref="T:System.IO.FileNotFoundException">
+        <paramref name="file" /> was not found.</exception>
+      <exception cref="T:System.NotSupportedException">
+        <paramref name="file" /> is in an invalid format.</exception>
+      <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.
+              </exception>
+    </member>
+    <member name="P:Triamec.Acquisitions.CsvImporter.IncludeNonEquidistantTimeBar">
+      <summary>
+            Gets or sets a value indicating whether to include a non-equidistant time bar as first imported variable.
+            </summary>
+    </member>
+    <member name="P:Triamec.Acquisitions.CsvImporter.SamplingTimeFallback">
+      <summary>
+            Gets or sets the value used if the sampling time cannot be determined from data.
+            </summary>
+    </member>
+    <member name="P:Triamec.Acquisitions.CsvImporter.TimeBarHeaders">
+      <summary>
+            Gets a list of possible column headers used for the time bar.
+            </summary>
+    </member>
+    <member name="F:Triamec.Acquisitions.CsvImporter.TimeBarName">
+      <summary>
+            The default name of the time bar variable.
+            <para>The value is <c>"time"</c>.</para></summary>
+    </member>
+    <member name="T:Triamec.Acquisitions.Protobuf">
+      <summary>
+            Protocol buffer serializer for <see langword="double" /> valued <see cref="T:Triamec.Acquisitions.IVariable`1" />s.
+            </summary>
+    </member>
+    <member name="M:Triamec.Acquisitions.Protobuf.Acquire(System.IO.Stream)">
+      <summary>
+            Shapes the specified stream as an <see cref="T:Triamec.Acquisitions.IAcquisition`1" /> with <see langword="double" /> values.
+            </summary>
+      <param name="stream">The stream.</param>
+      <returns>
+            A new acquisition.
+            </returns>
+    </member>
+    <member name="M:Triamec.Acquisitions.Protobuf.Deserialize(System.IO.Stream)">
+      <summary>
+            Deserializes the specified protocol buffer stream.
+            </summary>
+      <param name="stream">The protocol buffer stream.</param>
+      <returns>
+            If <paramref name="stream" /> contains several blocks of data, call this method multiple times,
+            or use <see cref="M:Triamec.Acquisitions.Protobuf.Acquire(System.IO.Stream)" />.
+            </returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="stream" /> is <see langword="null" />.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="stream" /> has <see cref="P:System.IO.Stream.CanRead" /> set to <see langword="false" />.
+              </exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <paramref name="stream" /> has been closed.</exception>
+      <exception cref="T:Triamec.Acquisitions.AcquisitionException">An I/O operation failed.</exception>
+    </member>
+    <member name="M:Triamec.Acquisitions.Protobuf.Serialize(System.IO.Stream,System.Collections.Generic.IEnumerable{Triamec.Acquisitions.IVariable{System.Double}})">
+      <summary>
+            Writes the specified variables to the specified stream.
+            </summary>
+      <param name="stream">The stream.</param>
+      <param name="variables">The variables.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <para>
+          <paramref name="stream" /> or <paramref name="variables" /> is <see langword="null" />.</para>
+        <para>-or-</para>
+        <para>One of the elements in <paramref name="variables" /> is <see langword="null" />.</para>
+      </exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="stream" /> has <see cref="P:System.IO.Stream.CanWrite" /> set to <see langword="false" />.
+              </exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <paramref name="stream" /> has been closed.</exception>
+      <exception cref="T:Triamec.Acquisitions.AcquisitionException">An I/O operation failed.</exception>
+    </member>
+    <member name="T:Triamec.Acquisitions.Slope">
+      <summary>
+            Defines when a sample is let through.
+            </summary>
+    </member>
+    <member name="F:Triamec.Acquisitions.Slope.Default">
+      <summary>
+            Lets data through unconditionally.
+            </summary>
+    </member>
+    <member name="F:Triamec.Acquisitions.Slope.Raising">
+      <summary>
+            Lets data through as soon as it crosses a specified level with a raising slope.
+            </summary>
+    </member>
+    <member name="F:Triamec.Acquisitions.Slope.Falling">
+      <summary>
+            Lets data through as soon as it crosses a specified level with a falling slope.
+            </summary>
+    </member>
+    <member name="F:Triamec.Acquisitions.Slope.Any">
+      <summary>
+            Lets data through as soon as it crosses a specified level with a falling or raising slope.
+            </summary>
+    </member>
+    <member name="F:Triamec.Acquisitions.Slope.Equal">
+      <summary>
+            Lets data through as soon as it reaches a specified level.
+            </summary>
+    </member>
+    <member name="F:Triamec.Acquisitions.Slope.NotEqual">
+      <summary>
+            Lets data through as soon as it leaves a specified level.
+            </summary>
+    </member>
+    <member name="T:Triamec.Configuration.UI.InvalidPreferenceHandler">
+      <summary>
+            Default UI handler for the <see cref="E:Triamec.Configuration.ICorrectableSettings.InvalidSettingDetected" /> events of preferences.
+            </summary>
+    </member>
+    <member name="M:Triamec.Configuration.UI.InvalidPreferenceHandler.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Configuration.UI.InvalidPreferenceHandler" /> class.
+            </summary>
+    </member>
+    <member name="M:Triamec.Configuration.UI.InvalidPreferenceHandler.Dispose">
+      <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+    </member>
+    <member name="T:Triamec.Configuration.UI.PreferencesDialog">
+      <summary>
+            Dialog showing the preferences made available using <see cref="T:Triamec.Configuration.PreferencesAttribute" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Configuration.UI.PreferencesDialog.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Configuration.UI.PreferencesDialog" /> class.
+            </summary>
+    </member>
+    <member name="T:Triamec.IO.Compressor">
+      <summary>
+            Compresses files.
+            </summary>
+    </member>
+    <member name="M:Triamec.IO.Compressor.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>Triamec.IO.Compressor</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:Triamec.IO.Compressor.Cancel">
+      <summary>
+            Cancels the <see cref="T:Triamec.IO.Compressor" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.IO.Compressor.Compress(System.String,System.String,System.String)">
+      <summary>
+            Compresses a directory in a file.
+            </summary>
+      <param name="source">The source directory.</param>
+      <param name="destination">The destination file.</param>
+      <param name="exclusionPattern">A string to exclude items which contain it.</param>
+      <exception cref="T:System.IO.IOException">Compression failed.</exception>
+    </member>
+    <member name="E:Triamec.IO.Compressor.ProgressChanged">
+      <summary>
+            Occurs when the progress of the <see cref="T:Triamec.IO.Compressor" /> changed.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.UI.ConfigurationLoadedEventArgs">
+      <summary>
+            The arguments of the <see cref="E:Triamec.Tam.UI.TamTreeView.ConfigurationLoaded" /> event.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.ConfigurationLoadedEventArgs.Programmatically">
+      <summary>
+            Gets a value indicating whether a TAM configuration was loaded programmatically.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.UI.CreatingReportEventArgs">
+      <summary>
+            Argument of the <see cref="E:Triamec.Tam.UI.LogViewer.CreatingReport" /> event.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.CreatingReportEventArgs.ReportSourceDirectory">
+      <summary>
+            Gets the directory whose contents will be comprised into the report.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.UI.EmergencyController">
+      <summary>
+            Provides methods to let emergency key codes control the whole TAM system.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.UI.EmergencyController.EmergencyKeyCode">
+      <summary>
+            The key code to emergently switch all power section off.
+            <para>The value is <see cref="F:System.Windows.Forms.Keys.F12" />.</para></summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.EmergencyController.EmergencyStopAllAxes">
+      <summary>
+            Enforces a controlled stop on all axes.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.UI.EmergencyController.EmergencyStopKeyCode">
+      <summary>
+            The key code to emergently stop all axes and then switch power sections off.
+            <para>The value is <see cref="F:System.Windows.Forms.Keys.F12" />.</para></summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.EmergencyController.GetInstance(Triamec.Tam.ITamNode)">
+      <summary>
+            Gets or creates the singleton instance associated with the root of the specified <paramref name="node" />.
+            </summary>
+      <exception cref="T:System.ArgumentNullException">
+        <para>
+          <paramref name="node" /> is <see langword="null" />.</para>
+      </exception>
+    </member>
+    <member name="M:Triamec.Tam.UI.EmergencyController.HandleGlobalKeys(System.Windows.Forms.KeyEventArgs)">
+      <summary>
+            Handles the emergency keys.
+            </summary>
+      <param name="args">The <see cref="T:System.Windows.Forms.KeyEventArgs" /> instance containing the event data.</param>
+    </member>
+    <member name="P:Triamec.Tam.UI.EmergencyController.Root">
+      <summary>
+            Gets the system root this controller works with.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.EmergencyController.SwitchAllPowerSectionsOff">
+      <summary>
+            Switches all power sections off.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.UI.FirmwareDownloadController">
+      <summary>
+            The UI component for <see cref="P:Triamec.Tam.UI.FirmwareDownloadController.FirmwareDownloader" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.FirmwareDownloadController.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Tam.UI.FirmwareDownloadController" /> class.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.FirmwareDownloadController.#ctor(System.ComponentModel.IContainer)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Tam.UI.FirmwareDownloadController" /> class.
+            </summary>
+      <param name="container">The container.</param>
+    </member>
+    <member name="M:Triamec.Tam.UI.FirmwareDownloadController.Dispose(System.Boolean)">
+      <summary> 
+            Clean up any resources being used.
+            </summary>
+      <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    </member>
+    <member name="P:Triamec.Tam.UI.FirmwareDownloadController.FirmwareDownloader">
+      <summary>
+            Gets or sets the Firmware downloader
+            that this UI component operates on.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.FirmwareDownloadController.SelectFiles(Triamec.Firmware.FirmwareFileQuery[])">
+      <summary>
+            Presents one or more open file dialog to select a firmware file and prepares the firmware downloader.
+            </summary>
+      <param name="queries">The queries providing information for the open file dialog.</param>
+      <returns>
+            	The relevant query if file selection was successful.
+            </returns>
+    </member>
+    <member name="M:Triamec.Tam.UI.FirmwareDownloadController.SelectFirmwareBuildFiles">
+      <summary>
+            Presents an open file dialog to select one or multiple firmware files.
+            </summary>
+      <returns>
+            A possibly empty list of selected files.
+            </returns>
+    </member>
+    <member name="M:Triamec.Tam.UI.FirmwareDownloadController.SetFile(System.String)">
+      <summary>
+            Sets the file to download to the specified path.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.FirmwareDownloadController.ShowDownloadDialog(System.Boolean)">
+      <summary>
+            Downloads a previously selected Firmware file.
+            </summary>
+      <param name="autoAdvance">If set to <see langword="true" />, automatically starts and completes in absence of
+            errors.</param>
+      <returns>
+        <see cref="F:System.Windows.Forms.DialogResult.OK" /> on success; another value, otherwise.
+            </returns>
+    </member>
+    <member name="P:Triamec.Tam.UI.FirmwareDownloadController.WindowOwner">
+      <summary>
+            Gets or sets the window owner.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.FirmwareDownloadController.WriteLog(System.String,System.Diagnostics.TraceEventType)">
+      <summary>
+            Traces the specified text based on an event type.
+            </summary>
+      <param name="message">The text to log.</param>
+      <param name="eventType">The severity of the event to log.</param>
+    </member>
+    <member name="T:Triamec.Tam.UI.ITamPropertyPages">
+      <summary>
+            Detailed properties for a <see cref="T:Triamec.Tam.UI.TamTreeView" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.ITamPropertyPages.Commit(Triamec.Tam.Registers.IRegisterComponent)">
+      <summary>Commits the specified component.</summary>
+      <exception cref="T:System.ObjectDisposedException">The component was disposed.</exception>
+    </member>
+    <member name="M:Triamec.Tam.UI.ITamPropertyPages.InsertPage(System.Int32,System.Windows.Forms.TabPage,System.Drawing.Image)">
+      <summary>
+            Adds the specified page at the end of the property pages.
+            </summary>
+      <param name="index">The zero-based index location where the tab page is inserted.</param>
+      <param name="page">The <see cref="T:System.Windows.Forms.TabPage" /> to insert into the collection.</param>
+      <param name="image">The image to show on the tab or <see langword="null" /> in order to not show any
+            image.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="page" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="M:Triamec.Tam.UI.ITamPropertyPages.RefreshGrids">
+      <summary>
+            Refreshes the parameter or register grids dependent on their visibility.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.ITamPropertyPages.Revert(Triamec.Tam.Registers.IRegisterComponent)">
+      <summary>Reverts the specified component.</summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.ITamPropertyPages.SelectPage(System.Windows.Forms.TabPage)">
+      <summary>
+            Selects the specified page in the property pages.
+            </summary>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="page" /> is not in the current
+            collection of property pages.
+            </exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="page" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="M:Triamec.Tam.UI.ITamPropertyPages.Synchronize(Triamec.Tam.ITamNode,Triamec.Tam.ITamNode,System.Boolean)">
+      <summary>
+            Synchronizes this instance with a <see cref="P:Triamec.Tam.UI.ITamTree.SelectedTamNode" />.
+            </summary>
+      <param name="previouslySelectedTamNode">The previously selected node.</param>
+      <param name="selectedTamNode">The now selected node.</param>
+      <param name="refillRows">
+            If set to <see langword="true" />, allow to clear and fill rows. Must be set to <see langword="false" /> when
+            called from an event handler of the <see cref="P:System.Windows.Forms.DataGridView.Rows" /> that does now allow a
+            <see cref="M:System.Windows.Forms.DataGridViewRowCollection.Clear" /> operation.
+            </param>
+    </member>
+    <member name="P:Triamec.Tam.UI.ITamPropertyPages.TamTree">
+      <summary>
+            Gets a reference to a TAM explorer tree.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.UI.ITamTree">
+      <summary>
+            View of a tree of TAM nodes.
+            </summary>
+    </member>
+    <member name="E:Triamec.Tam.UI.ITamTree.ConfigurationLoaded">
+      <summary>
+            Fired whenever the TAM configuration is successfully loaded.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.ITamTree.RootNode">
+      <summary>
+            Gets the root node in the tree.
+            </summary>
+    </member>
+    <member name="E:Triamec.Tam.UI.ITamTree.RootNodeChanged">
+      <summary>
+            Occurs after <see cref="P:Triamec.Tam.UI.ITamTree.RootNode" /> changed.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.ITamTree.SelectedTamNode">
+      <summary>
+            Gets or sets the selected <see cref="T:Triamec.Tam.ITamNode" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.ITamTree.SelectTamNode(Triamec.Tam.ITamNode,System.Boolean)">
+      <summary>
+            Sets the selected <see cref="T:Triamec.Tam.ITamNode" />.
+            </summary>
+      <param name="nodeToSelect">The node to select.</param>
+      <param name="refillRows">If set to <see langword="true" />,
+            allow to clear and fill rows.
+            Must be set to <see langword="false" /> when called from an event handler
+            of the <see cref="P:System.Windows.Forms.DataGridView.Rows" /> that does now allow a
+            <see cref="M:System.Windows.Forms.DataGridViewRowCollection.Clear" /> operation.</param>
+      <param name="takeFocus">Whether the tree should have focus after selection.</param>
+    </member>
+    <member name="M:Triamec.Tam.UI.ITamTree.SelectTamNode(Triamec.Tam.ITamNode,System.Boolean,System.Boolean)">
+      <summary>
+            Sets the selected <see cref="T:Triamec.Tam.ITamNode" />.
+            </summary>
+      <param name="nodeToSelect">The node to select.</param>
+      <param name="refillRows">If set to <see langword="true" />,
+            allow to clear and fill rows.
+            Must be set to <see langword="false" /> when called from an event handler
+            of the <see cref="P:System.Windows.Forms.DataGridView.Rows" /> that does now allow a
+            <see cref="M:System.Windows.Forms.DataGridViewRowCollection.Clear" /> operation.</param>
+      <param name="takeFocus">Whether the tree should have focus after selection.</param>
+    </member>
+    <member name="T:Triamec.Tam.UI.LoadSurveyor">
+      <summary>
+            The user interface for initialization, observation and interception of the importing of a persisted
+            configuration into the running application and the underlying hardware or simulation.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.UI.LogViewer">
+      <summary>
+            Shows log messages.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.LogViewer.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Tam.UI.LogViewer" /> class.
+            </summary>
+    </member>
+    <member name="E:Triamec.Tam.UI.LogViewer.CreatingReport">
+      <summary>
+            Called before a report archive is generated from a specified directory.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.LogViewer.MainMenu">
+      <summary>
+            Gets or sets a reference to the main menu used by this <see cref="T:Triamec.Tam.UI.LogViewer" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.LogViewer.ShowReportFailureDialog(System.Windows.Forms.Control,System.Exception,System.Boolean)">
+      <summary>
+            Shows a feedback dialog allowing the user to create a report for the specified failure.
+            </summary>
+      <param name="owner">The window that will be the owner of the dialog, if any.</param>
+      <param name="failure">The failure to report.</param>
+      <param name="recoverable">Whether the user can attempt to continue her work after the failure.</param>
+    </member>
+    <member name="T:Triamec.Tam.UI.ModuleManagerForm">
+      <summary>
+            A form to operate with a <see cref="T:Triamec.Tam.Modules.ModuleManager" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.ModuleManagerForm.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Tam.UI.ModuleManagerForm" /> class.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.ModuleManagerForm.Dispose(System.Boolean)">
+      <summary>
+            Clean up any resources being used.
+            </summary>
+      <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    </member>
+    <member name="T:Triamec.Tam.UI.PeripheryAccessDialog">
+      <summary>
+            A dialog to configure stand-alone drives.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.PeripheryAccessDialog.#ctor(Triamec.Tam.Periphery.IPeripheryLayoutOwner)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Tam.UI.PeripheryAccessDialog" /> class.
+            </summary>
+      <param name="peripheryLayoutOwner">The instance where the periphery registers reside.</param>
+    </member>
+    <member name="M:Triamec.Tam.UI.PeripheryAccessDialog.Dispose(System.Boolean)">
+      <summary>
+            Clean up any resources being used.
+            </summary>
+      <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    </member>
+    <member name="T:Triamec.Tam.UI.RegisterViewFlavor">
+      <summary>
+            Different values for the <see cref="P:Triamec.Tam.UI.TamRegisterView.Appearance" /> property.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.UI.RegisterViewFlavor.TextBox">
+      <summary>Show register value in a simple text box which is read only as applicable.
+            <para>This only makes sense for leaf registers.</para></summary>
+    </member>
+    <member name="F:Triamec.Tam.UI.RegisterViewFlavor.ListBox">
+      <summary>Show register value in a list box.
+            <para>This only makes sense for enumerated registers.</para></summary>
+    </member>
+    <member name="F:Triamec.Tam.UI.RegisterViewFlavor.RadioButtons">
+      <summary>Show register value as a selected radio button.
+            <para>This is only feasible for enumerated registers or composites.</para><para>This flavor makes selection possible in one click, but uses more space.</para></summary>
+    </member>
+    <member name="F:Triamec.Tam.UI.RegisterViewFlavor.DropDown">
+      <summary>Show register value in a drop down list.
+            <para>This is only feasible for writable enumerated registers.</para></summary>
+    </member>
+    <member name="T:Triamec.Tam.UI.RegisterViewUnitDisplay">
+      <summary>
+            How to show the register unit.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.UI.RegisterViewUnitDisplay.Never">
+      <summary>Never show the unit.</summary>
+    </member>
+    <member name="F:Triamec.Tam.UI.RegisterViewUnitDisplay.Label">
+      <summary>Show the unit in the label.</summary>
+    </member>
+    <member name="F:Triamec.Tam.UI.RegisterViewUnitDisplay.ToolTip">
+      <summary>
+            Show the unit in the tool tip.
+            <para>This is like <see cref="F:Triamec.Tam.UI.RegisterViewUnitDisplay.Never" /> when <see cref="F:Triamec.Tam.UI.RegisterViewUnitDisplay.ToolTip" /> is set to a value.</para></summary>
+    </member>
+    <member name="T:Triamec.Tam.UI.SaveDialog">
+      <summary>
+            The user interface for saving a <see cref="T:Triamec.Tam.TamTopology" /> or parts of it to a XML file.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.SaveDialog.#ctor(Triamec.Tam.Configuration.TamSerializer)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Tam.UI.SaveDialog" /> class.
+            </summary>
+      <param name="serializer">An instantiated business logic of this dialog.</param>
+    </member>
+    <member name="T:Triamec.Tam.UI.TamaNodeController">
+      <summary>
+            The UI component for <see cref="T:Triamec.Tam.TamaNode" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamaNodeController.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Tam.UI.TamaNodeController" /> class.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamaNodeController.#ctor(System.ComponentModel.IContainer)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Tam.UI.TamaNodeController" /> class.
+            </summary>
+      <param name="container">The container.</param>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamaNodeController.Dispose(System.Boolean)">
+      <summary> 
+            Clean up any resources being used.
+            </summary>
+      <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamaNodeController.SelectTamaAssembly">
+      <summary>
+            Presents an open file dialog
+            to select a Tama assembly file.
+            </summary>
+      <returns>Whether selection succeeded.</returns>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamaNodeController.ShowDownloadDialog(System.Boolean)">
+      <summary>
+            Downloads a previously selected Tama assembly.
+            </summary>
+    </member>
+    <member name="E:Triamec.Tam.UI.TamaNodeController.TamaAssemblyPathEvent">
+      <summary>
+            The event thrown whenever the <see cref="P:Triamec.Tam.TamaNode.TamaAssemblyPath" /> 
+            or the <see cref="P:Triamec.Tam.TamaNode.VerifiedTamaAssemblyPath" /> is set to a new value.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamaNodeController.TamaManager">
+      <summary>
+            Gets or sets the Tama manager
+            that this UI component operates on.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamaNodeController.WindowOwner">
+      <summary>
+            Gets or sets the window owner.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.UI.TamExplorerControl">
+      <summary>
+            Three-paned user control with tree view, scope, and properties editor
+            to explore, configurate and analyze TAM systems.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamExplorerControl.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Tam.UI.TamExplorerControl" /> class.
+            </summary>
+      <exception cref="T:System.Configuration.ConfigurationErrorsException">There is an error in the application
+            configuration.</exception>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamExplorerControl.HandleGlobalKeys(System.Windows.Forms.KeyEventArgs)">
+      <summary>
+            Handles globally defined key presses from a <see cref="T:System.Windows.Forms.Form" />.
+            </summary>
+      <param name="args">The <see cref="T:System.Windows.Forms.KeyEventArgs" /> instance containing the event data.</param>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamExplorerControl.MainMenu">
+      <summary>
+            Gets or sets a reference to the main menu used by this <see cref="T:Triamec.Tam.UI.TamExplorerControl" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamExplorerControl.Topology">
+      <summary>
+            Gets or sets the topology.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamExplorerControl.TreeView">
+      <summary>
+            Gets the tree view part of this control.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.UI.TamExplorerForm">
+      <summary>
+            A form with
+            a three-paned user control with tree view, scope, and properties editor
+            to explore, configurate and analyze TAM systems.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamExplorerForm.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Tam.UI.TamExplorerForm" /> class.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamExplorerForm.AutoLoadTamConfiguration">
+      <summary>
+            Gets or sets a flag indicating whether
+            to load the TAM configuration automatically
+            whenever the TAM system was booted.
+            </summary>
+    </member>
+    <member name="E:Triamec.Tam.UI.TamExplorerForm.ConfigurationLoaded">
+      <summary>
+            Fired whenever the TAM configuration is successfully loaded.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamExplorerForm.Dispose(System.Boolean)">
+      <summary>
+            Clean up any resources being used.
+            </summary>
+      <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    </member>
+    <member name="F:Triamec.Tam.UI.TamExplorerForm.MainStatusStripName">
+      <summary>
+            The design name of the application status strip to merge the <see cref="T:System.Windows.Forms.StatusStrip" /> of custom controls.
+            <para>The value is <c>"mainStatusStrip"</c>.</para></summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamExplorerForm.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
+      <summary>Checks for some special hot keys.</summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamExplorerForm.SelectedTamNode">
+      <summary>
+            Gets or sets the selected <see cref="T:Triamec.Tam.ITamNode" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamExplorerForm.Topology">
+      <summary>
+            Gets or sets the topology.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.UI.TamExplorerTreeNode">
+      <summary>
+            A custom <see cref="T:System.Windows.Forms.TreeNode" />
+            with the ability to handle events from 
+            associated business objects.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamExplorerTreeNode.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Tam.UI.TamExplorerTreeNode" /> class.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamExplorerTreeNode.#ctor(Triamec.Tam.ITamNode,System.Int32,System.Int32,Triamec.Tam.UI.TamExplorerTreeNode[])">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Tam.UI.TamExplorerTreeNode" /> class
+            with the specified label text.
+            </summary>
+      <param name="node">The <see cref="P:Triamec.Tam.UI.TamExplorerTreeNode.Tag" /> of the new tree node.</param>
+      <param name="imageIndex">The index value of <see cref="T:System.Drawing.Image" /> to display when the tree node is
+            unselected.</param>
+      <param name="selectedImageIndex">The index value of <see cref="T:System.Drawing.Image" /> to display when the tree node is
+            selected.</param>
+      <param name="children">An array of child <see cref="T:Triamec.Tam.UI.TamExplorerTreeNode" /> objects.</param>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamExplorerTreeNode.#ctor(Triamec.Tam.ITamNode,Triamec.Tam.UI.TamExplorerTreeNode[])">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Tam.UI.TamExplorerTreeNode" /> class with the specified children.
+            </summary>
+      <param name="node">The <see cref="P:Triamec.Tam.UI.TamExplorerTreeNode.Tag" /> of the new tree node.</param>
+      <param name="children">An array of child <see cref="T:Triamec.Tam.UI.TamExplorerTreeNode" /> objects.</param>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamExplorerTreeNode.CommitOrRevert">
+      <summary>
+            If this is a register view, show the underlying register as unmodified.
+            </summary>
+      <exception cref="T:System.InvalidOperationException">The <see cref="P:System.Windows.Forms.TreeNode.Tag" /> is not an
+            <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />.</exception>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamExplorerTreeNode.Dispose">
+      <summary>
+            Removes from the parent and unsubscribes from events.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamExplorerTreeNode.IsModified">
+      <summary>
+            Cache indicating whether any of the descendants of this <see cref="T:Triamec.Tam.Registers.RegisterComponent" />
+            including itself has a modified shadow value that can be committed.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamExplorerTreeNode.IsRecursivelyExpanded">
+      <summary>
+            Gets a value indicating whether this instance <see cref="P:System.Windows.Forms.TreeNode.IsExpanded" /> as well as all descendants.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamExplorerTreeNode.SetModified(System.Boolean,Triamec.Tam.UI.TreeNodeModificationChange)">
+      <summary>
+            Changes the <see cref="P:Triamec.Tam.UI.TamExplorerTreeNode.IsModified" /> property.
+            </summary>
+      <param name="value">if set to <see langword="true" />, a modification has been made; otherwise,
+            an unmodified state is signaled. The meaning depends on the <paramref name="mode" /> parameter.</param>
+      <param name="mode">How this node is affected.</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="value" /> is <see langword="true" /> and <paramref name="mode" /> is
+            <see cref="F:Triamec.Tam.UI.TreeNodeModificationChange.OffRecursiveDown" />. This is not allowed as setting a modification to
+            <see langword="true" /> must always end up in parent navigation.
+            </exception>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamExplorerTreeNode.Tag">
+      <summary>
+            Gets or sets the business logic <see cref="T:Triamec.Tam.ITamNode" />
+            visualized by this <see cref="T:Triamec.Tam.UI.TamExplorerTreeNode" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamExplorerTreeNode.Text">
+      <summary>
+            Gets the text displayed in the label of the tree node.
+            </summary>
+      <returns>The text displayed in the label of the tree node.</returns>
+    </member>
+    <member name="T:Triamec.Tam.UI.TamRegisterView">
+      <summary>
+            Editable view of a register.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamRegisterView.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Tam.UI.TamRegisterView" /> class.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamRegisterView.Appearance">
+      <summary>
+            Gets or sets the arrangement of the value display.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamRegisterView.Children">
+      <summary>
+            Gets a read-only list of <see cref="T:Triamec.Tam.UI.TamRegisterView" /> instances related to child registers of this
+            <see cref="P:Triamec.Tam.UI.TamRegisterView.Register" /> array.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.UI.TamRegisterView.DefaultValueWidth">
+      <summary>
+            The default width for <see cref="P:Triamec.Tam.UI.TamRegisterView.ValueWidth" />.
+            <para>The value is <c>81</c>.</para></summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamRegisterView.DisplayName">
+      <summary>
+            Gets or sets a shorter name for the register.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamRegisterView.IsModified">
+      <summary>
+            Gets a value indicating whether the underlying register needs to be committed.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamRegisterView.ItemName">
+      <summary>
+            Gets or sets a shorter name for array elements.
+            </summary>
+    </member>
+    <member name="E:Triamec.Tam.UI.TamRegisterView.ModifiedChanged">
+      <summary>
+            Occurs when <see cref="P:Triamec.Tam.UI.TamRegisterView.IsModified" /> changed.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.UI.TamRegisterView.ModifiedColor">
+      <summary>
+            Gets the color to use for the background of a view showing a modified register value.
+            <para>The value is <c><see cref="P:System.Drawing.Color.SandyBrown" /></c>.</para></summary>
+    </member>
+    <member name="F:Triamec.Tam.UI.TamRegisterView.ModifiedReadOnlyColor">
+      <summary>
+            Gets the color to use for the background of a read-only view showing a modified register value.
+            <para>The value is <c><see cref="P:System.Drawing.Color.Tan" /></c>.</para></summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamRegisterView.ReadOnly">
+      <summary>
+            Gets or sets a value indicating whether <see cref="P:Triamec.Tam.UI.TamRegisterView.Value" /> can not be changed by means of the UI.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamRegisterView.RefreshAfterCommitOrRevert">
+      <summary>
+            Refreshes the view after a commit or revert has been executed.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamRegisterView.RefreshModified">
+      <summary>
+            Updates the modified view according to the <see cref="P:Triamec.Tam.UI.TamRegisterView.Register" /> and its <see cref="P:Triamec.Tam.UI.TamRegisterView.Value" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamRegisterView.Register">
+      <summary>
+            Gets or sets the underlying register.
+            </summary>
+      <exception cref="T:System.ArgumentException">
+        <see cref="P:Triamec.Tam.UI.TamRegisterView.Children" /> are set and this register does not comply with
+            that collection, as described there.</exception>
+    </member>
+    <member name="E:Triamec.Tam.UI.TamRegisterView.RegisterChanced">
+      <summary>
+            Occurs when <see cref="P:Triamec.Tam.UI.TamRegisterView.Register" /> changed.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamRegisterView.SetChildren(Triamec.Tam.UI.TamRegisterView[])">
+      <summary>
+            Removes or replaces the current <see cref="P:Triamec.Tam.UI.TamRegisterView.Children" />.
+            </summary>
+      <param name="children">
+        <para>A read-only wrapper will be created around this value in order to maintain consistency.
+            However, you can break consistency when changing array elements afterwards using the original
+            <paramref name="children" /> reference.</para>
+      </param>
+      <exception cref="T:System.NotSupportedException">The <see cref="P:Triamec.Tam.UI.TamRegisterView.Register" /> is not a
+            <see cref="T:Triamec.Tam.Registers.RegisterComposite" /> having <see cref="P:Triamec.Tam.Registers.IRegisterComponent.IsArray" /> set to
+            <see langword="true" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <para>The elements of the <see cref="P:Triamec.Tam.UI.TamRegisterView.Register" /> array are <see cref="T:Triamec.Tam.Registers.ITamReadonlyRegister`1" />
+            instances and <paramref name="children" /> contains more than a single <see cref="T:Triamec.Tam.UI.TamRegisterView" />
+            element.</para>
+        <para>-or-</para>
+        <para>The elements of the <see cref="P:Triamec.Tam.UI.TamRegisterView.Register" /> array are <see cref="T:Triamec.Tam.Registers.RegisterComposite" />s and their
+            <see cref="P:Triamec.Tam.Registers.RegisterComposite.Count" /> doesn't equal the <see cref="P:System.Collections.Generic.ICollection`1.Count" /> of the specified
+            <paramref name="children" />.
+            <see cref="T:Triamec.Tam.UI.TamRegisterView" />s.</para>
+      </exception>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamRegisterView.ShowLabel">
+      <summary>
+            Gets or sets a value indicating whether to show a label beneath of the input control.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamRegisterView.ShowUnit">
+      <summary>
+            Gets or sets a value indicating whether to show the <see cref="P:Triamec.Tam.UI.TamRegisterView.Register" />'s unit.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamRegisterView.System#ComponentModel#ISupportInitialize#BeginInit">
+      <summary>Signals the object that initialization is starting.</summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamRegisterView.System#ComponentModel#ISupportInitialize#EndInit">
+      <summary>Signals the object that initialization is complete.</summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamRegisterView.ToolTip">
+      <summary>
+            Gets or sets a custom text for the tool tip shown within this control.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamRegisterView.Value">
+      <summary>
+            Gets or sets the value maintained by this instance.
+            </summary>
+    </member>
+    <member name="E:Triamec.Tam.UI.TamRegisterView.ValueChanged">
+      <summary>
+            Occurs when the register value changed.
+            </summary>
+      <exception cref="T:Triamec.Tam.TimeoutException">A communication timeout occurred.</exception>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamRegisterView.ValueWidth">
+      <summary>
+            Gets or sets the width of the value display.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.UI.TamTreeView">
+      <summary>
+            Hierarchical tree view and control of the TAM topology including tool bar.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamTreeView.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Tam.UI.TamExplorerControl" /> class.
+            </summary>
+      <exception cref="T:System.Configuration.ConfigurationErrorsException">There is an error in the application
+            configuration.</exception>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamTreeView.AutoLoadTamConfiguration">
+      <summary>
+            Gets or sets a flag indicating whether
+            to load the TAM configuration automatically
+            whenever the TAM system was booted.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamTreeView.BootAsync(Triamec.Tam.TamLink,Triamec.TriaLink.TriaLinkBootMode,System.Boolean,System.Boolean)">
+      <summary>
+            Boots the Tria-Link.
+            </summary>
+      <param name="link">The Tria-Link instance.</param>
+      <param name="bootMode">The boot mode to apply to the Tria-Link <paramref name="link" />.</param>
+      <param name="skipResetAllFaults">If set to <see langword="true" />, does not reset all faults.</param>
+      <param name="doConfirm">If set to <see langword="true" />, asks the user for a confirmation.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="link" /> is <see langword="null" />.
+              </exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="link" /> does not belong to the current
+              <see cref="P:Triamec.Tam.UI.TamTreeView.Topology" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+            An illegal parameter is passed to <paramref name="bootMode" />.
+            </exception>
+      <exception cref="T:System.InvalidOperationException">Booting is already in progress.</exception>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamTreeView.BootAsync(Triamec.TriaLink.TriaLinkBootMode,System.Boolean,System.Boolean)">
+      <summary>
+            Boots all Tria-Links in the topology.
+            </summary>
+      <param name="bootMode">The boot mode to apply.</param>
+      <param name="skipResetAllFaults">If set to <see langword="true" />, does not reset all faults.</param>
+      <param name="doConfirm">If set to <see langword="true" />, asks the user for a confirmation.</param>
+      <exception cref="T:System.InvalidOperationException">Booting is already in progress.</exception>
+    </member>
+    <member name="E:Triamec.Tam.UI.TamTreeView.ConfigurationLoaded">
+      <summary>
+            Fired whenever the TAM configuration is successfully loaded.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamTreeView.Dispose(System.Boolean)">
+      <summary> 
+            Clean up any resources being used.
+            </summary>
+      <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamTreeView.HideSplash">
+      <summary>
+            Hides the splash screen such that the tree is again visible.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamTreeView.MainMenu">
+      <summary>
+            Gets or sets a reference to the main menu used by this <see cref="T:Triamec.Tam.UI.TamExplorerControl" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamTreeView.MoveSplash(System.Windows.Forms.Control)">
+      <summary>
+            Moves the splash screen to the top of another control.
+            </summary>
+      <param name="newOwner">The new owner.</param>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamTreeView.OnFontChanged(System.EventArgs)">
+      <summary>Raises the <see cref="E:System.Windows.Forms.Control.FontChanged" /> event.</summary>
+      <param name="e">An <see cref="T:System.EventArgs" /> that contains the event data.</param>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamTreeView.OnLoad(System.EventArgs)">
+      <summary>
+            Raises the <see cref="E:System.Windows.Forms.UserControl.Load"></see> event.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamTreeView.PropertyPages">
+      <summary>
+            Gets or sets a reference to show a detailed view of this nodes properties.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamTreeView.ResetAsync(Triamec.Tam.TamAdapter,Triamec.TriaLink.Adapter.TriaLinkRole,System.Boolean)">
+      <summary>
+            Reset a given Tria-Link adapter.
+            </summary>
+      <param name="adapter">The Tria-Link adapter.</param>
+      <param name="role">The role of the Tria-Link <paramref name="adapter" />.
+            Set to <see cref="F:Triamec.TriaLink.Adapter.TriaLinkRole.Unknown" /> to leave the current role untouched.</param>
+      <param name="doConfirm">If set to <see langword="true" />, asks the user for a confirmation.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="adapter" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="adapter" /> does not belong to the current
+            <exception cref="T:Triamec.Tam.TamException"><para>Failed to remove the current <see cref="T:Triamec.Tam.TamLink" /> instances.</para><para>Failed to add the new <see cref="T:Triamec.Tam.TamLink" /> instances.</para></exception><exception cref="T:System.InvalidOperationException"><see cref="P:Triamec.Tam.TamFullAdapter.CanChangeRole" /> is <see langword="false" /> and <paramref name="role" /> is not
+            <see cref="F:Triamec.TriaLink.Adapter.TriaLinkRole.Unknown" /> or <see cref="F:Triamec.TriaLink.Adapter.TriaLinkRole.Untouched" />.
+            </exception><see cref="P:Triamec.Tam.UI.TamTreeView.Topology" />.</exception>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamTreeView.RootNode">
+      <summary>
+            Gets the root node in the tree.
+            </summary>
+    </member>
+    <member name="E:Triamec.Tam.UI.TamTreeView.RootNodeChanged">
+      <summary>
+            Occurs after <see cref="P:Triamec.Tam.UI.ITamTree.RootNode" /> changed.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamTreeView.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)">
+      <summary>Scales a control's location, size, padding and margin.</summary>
+      <param name="factor">The factor by which the height and width of the control will be scaled.
+</param>
+      <param name="specified">A <see cref="T:System.Windows.Forms.BoundsSpecified" /> value that specifies the bounds of the control to use when defining its size and position.</param>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamTreeView.SelectedTamNode">
+      <summary>
+            Gets or sets the selected <see cref="T:Triamec.Tam.ITamNode" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamTreeView.SelectTamNode(Triamec.Tam.ITamNode,System.Boolean)">
+      <summary>
+            Sets the selected <see cref="T:Triamec.Tam.ITamNode" />.
+            </summary>
+      <param name="nodeToSelect">The node to select.</param>
+      <param name="refillRows">If set to <see langword="true" />,
+            allow to clear and fill rows.
+            Must be set to <see langword="false" /> when called from an event handler
+            of the <see cref="P:System.Windows.Forms.DataGridView.Rows" /> that does now allow a
+            <see cref="M:System.Windows.Forms.DataGridViewRowCollection.Clear" /> operation.</param>
+      <param name="takeFocus">Whether the tree should have focus after selection.</param>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamTreeView.SelectTamNode(Triamec.Tam.ITamNode,System.Boolean,System.Boolean)">
+      <summary>
+            Sets the selected <see cref="T:Triamec.Tam.ITamNode" />.
+            </summary>
+      <param name="nodeToSelect">The node to select.</param>
+      <param name="refillRows">If set to <see langword="true" />,
+            allow to clear and fill rows.
+            Must be set to <see langword="false" /> when called from an event handler
+            of the <see cref="P:System.Windows.Forms.DataGridView.Rows" /> that does now allow a
+            <see cref="M:System.Windows.Forms.DataGridViewRowCollection.Clear" /> operation.</param>
+      <param name="takeFocus">Whether the tree should have focus after selection.</param>
+    </member>
+    <member name="M:Triamec.Tam.UI.TamTreeView.ShowSplash(System.String)">
+      <summary>
+            Hides the tree with a splash screen showing the specified text.
+            </summary>
+      <param name="message">The message to show on the splash.</param>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamTreeView.Topology">
+      <summary>
+            Gets or sets the topology.
+            </summary>
+      <exception cref="T:System.ObjectDisposedException">
+            The action is set and the instance <see cref="P:System.Windows.Forms.Control.IsDisposed" />.
+            </exception>
+    </member>
+    <member name="P:Triamec.Tam.UI.TamTreeView.TreeView">
+      <summary>
+            Gets the enclosed tree view control.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.UI.TreeNodeModificationChange">
+      <summary>
+            Modification change types for the <see cref="T:Triamec.Tam.UI.TamExplorerTreeNode" />.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.UI.TreeNodeModificationChange.Itself">
+      <summary>
+            The change affects the modification state of a <see cref="T:Triamec.Tam.UI.TamExplorerTreeNode" /> itself,
+            not of its child <see cref="P:System.Windows.Forms.TreeNode.Nodes" />.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.UI.TreeNodeModificationChange.CompletelyOff">
+      <summary>
+            The change is from modified to unmodified and affects a <see cref="T:Triamec.Tam.UI.TamExplorerTreeNode" /> with all of its
+            descendants.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.UI.TreeNodeModificationChange.OffRecursiveDown">
+      <summary>
+            The change is from modified to unmodified and affects a <see cref="T:Triamec.Tam.UI.TamExplorerTreeNode" /> with all of its
+            descendants, but parent nodes must not be notified.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.UI.TreeNodeModificationChange.FromChild">
+      <summary>
+            The change affects a child of a <see cref="T:Triamec.Tam.UI.TamExplorerTreeNode" />, possibly changing the composite
+            modification state.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.UI.WorkspaceMenus">
+      <summary>
+            GUI functionality regarding a <see cref="T:Triamec.Configuration.Workspace" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.WorkspaceMenus.DisableWorkspaceChange">
+      <summary>
+            Disables all menus causing a <see cref="T:Triamec.Configuration.Workspace" /> change.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.WorkspaceMenus.EnableWorkspaceChange">
+      <summary>
+            Enables all menus causing a <see cref="T:Triamec.Configuration.Workspace" /> change.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.UI.WorkspaceMenus.Merge(System.Windows.Forms.ToolStrip)">
+      <summary>
+            Merges the workspace menus into the specified target.
+            </summary>
+      <returns>Whether merging succeeded.</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="target" /> is <see langword="null" /></exception>
+    </member>
+    <member name="T:Triamec.Threading.MarshallingTimer">
+      <summary>
+            Timer which allows to periodically do some work asynchronously from the main <see cref="T:System.Threading.Thread" />, while
+            showing the result of the work in a different <see cref="T:System.Threading.Thread" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Threading.MarshallingTimer.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Threading.MarshallingTimer" /> class.
+            </summary>
+    </member>
+    <member name="M:Triamec.Threading.MarshallingTimer.#ctor(System.ComponentModel.IContainer)">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>Triamec.Threading.MarshallingTimer</parameter>
+          </include>
+        </markup>
+      </summary>
+      <param name="container">The container.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="container" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.Threading.MarshallingTimer.Change(System.Int32,System.Int32)">
+      <summary>Changes the start time and the interval between method invocations for a timer, using 32-bit signed integers to measure time intervals.</summary>
+      <param name="dueTime">The amount of time to delay before the invoking the callback method specified when the <see cref="T:System.Threading.Timer" /> was constructed, in milliseconds. Specify <see cref="F:System.Threading.Timeout.Infinite" /> to prevent the timer from restarting. Specify zero (0) to restart the timer immediately. </param>
+      <param name="period">The time interval between invocations of the callback method specified when the <see cref="T:System.Threading.Timer" /> was constructed, in milliseconds. Specify <see cref="F:System.Threading.Timeout.Infinite" /> to disable periodic signaling. </param>
+      <returns>true if the timer was successfully updated; otherwise, false.</returns>
+      <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Threading.Timer" /> has already been disposed. </exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="dueTime" /> or <paramref name="period" /> parameter is negative and is not equal to <see cref="F:System.Threading.Timeout.Infinite" />. </exception>
+    </member>
+    <member name="M:Triamec.Threading.MarshallingTimer.Change(System.TimeSpan,System.TimeSpan)">
+      <summary>Changes the start time and the interval between method invocations for a timer, using <see cref="T:System.TimeSpan" /> values to measure time intervals.</summary>
+      <param name="dueTime">A <see cref="T:System.TimeSpan" /> representing the amount of time to delay before invoking the callback method specified when the <see cref="T:System.Threading.Timer" /> was constructed. Specify negative one (-1) milliseconds to prevent the timer from restarting. Specify zero (0) to restart the timer immediately. </param>
+      <param name="period">The time interval between invocations of the callback method specified when the <see cref="T:System.Threading.Timer" /> was constructed. Specify negative one (-1) milliseconds to disable periodic signaling. </param>
+      <returns>true if the timer was successfully updated; otherwise, false.</returns>
+      <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Threading.Timer" /> has already been disposed. </exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="dueTime" /> or <paramref name="period" /> parameter, in milliseconds, is less than -1. </exception>
+      <exception cref="T:System.NotSupportedException">The <paramref name="dueTime" /> or <paramref name="period" /> parameter, in milliseconds, is greater than 4294967294. </exception>
+    </member>
+    <member name="P:Triamec.Threading.MarshallingTimer.DefaultRefreshPeriod">
+      <summary>
+            Gets the default period to refresh displayed values which are configured to be reread periodically.
+            </summary>
+    </member>
+    <member name="E:Triamec.Threading.MarshallingTimer.DoWork">
+      <summary>
+            Occurs when the timer is elapsed.
+            </summary>
+    </member>
+    <member name="P:Triamec.Threading.MarshallingTimer.Marshal">
+      <summary>
+            Gets or sets the instance to marshal the <see cref="E:Triamec.Threading.MarshallingTimer.RunWorkerCompleted" /> event to.
+            </summary>
+    </member>
+    <member name="E:Triamec.Threading.MarshallingTimer.RunWorkerCompleted">
+      <summary>
+            Occurs when <see cref="E:Triamec.Threading.MarshallingTimer.DoWork" /> is completed.
+            </summary>
+    </member>
+    <member name="T:Triamec.UI.Scope.Forms.BetterWaveformGraph">
+      <summary>
+            Let <see cref="F:NationalInstruments.UI.GraphAction.InteractiveEdit" /> trigger <see cref="E:NationalInstruments.UI.WindowsForms.Graph.InteractionHistoryCountChanged" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.UI.Scope.Forms.BetterWaveformGraph.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>Triamec.UI.Scope.Forms.BetterWaveformGraph</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:Triamec.UI.Scope.Forms.BetterWaveformGraph.OnXAxisRangeChanged(NationalInstruments.UI.XAxisEventArgs)">
+      <summary>
+            Raises the <see cref="E:NationalInstruments.UI.WindowsForms.XYGraph.XAxisRangeChanged" /> event and ensures that the
+            <see cref="E:NationalInstruments.UI.WindowsForms.Graph.InteractionHistoryCountChanged" /> event is called also when
+            <see cref="P:NationalInstruments.UI.XAxisEventArgs.Action" /> is <see cref="F:NationalInstruments.UI.GraphAction.InteractiveEdit" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.UI.Scope.Forms.BetterWaveformGraph.OnYAxisRangeChanged(NationalInstruments.UI.YAxisEventArgs)">
+      <summary>
+            Raises the <see cref="E:NationalInstruments.UI.WindowsForms.XYGraph.YAxisRangeChanged" /> event and ensures that the
+            <see cref="E:NationalInstruments.UI.WindowsForms.Graph.InteractionHistoryCountChanged" /> event is called also when
+            <see cref="P:NationalInstruments.UI.YAxisEventArgs.Action" /> is <see cref="F:NationalInstruments.UI.GraphAction.InteractiveEdit" />.
+            </summary>
+    </member>
+    <member name="T:Triamec.Windows.Forms.FormsExtensions">
+      <summary>
+            Extension methods for the <see cref="N:System.Windows.Forms" /> namespace.
+            </summary>
+    </member>
+    <member name="M:Triamec.Windows.Forms.FormsExtensions.AppendText(System.Windows.Forms.RichTextBox,System.String,System.Drawing.Color,System.Drawing.FontStyle)">
+      <summary>
+            Appends colored text.
+            </summary>
+    </member>
+    <member name="M:Triamec.Windows.Forms.FormsExtensions.InvokeCorrectly(System.Windows.Forms.Control,System.Delegate,System.Object[])">
+      <summary>
+            Invokes a specified function on the main thread, while maintaining correct exception info upon failure.
+            </summary>
+    </member>
+    <member name="M:Triamec.Windows.Forms.FormsExtensions.IsInDesignMode(System.ComponentModel.IComponent)">
+      <summary>
+            Determines whether the specified component is in design mode.
+            </summary>
+      <param name="component">The component to inspect.</param>
+    </member>
+    <member name="M:Triamec.Windows.Forms.FormsExtensions.ScaleFont(System.Windows.Forms.Control,System.Drawing.FontFamily,System.Single,System.Drawing.FontStyle)">
+      <summary>
+            Scales the <see cref="P:System.Windows.Forms.Control.Font" /> of this <see cref="T:System.Windows.Forms.Control" />.
+            </summary>
+      <param name="control">The <see cref="T:System.Windows.Forms.Control" /> whose <see cref="P:System.Windows.Forms.Control.Font" /> to scale.</param>
+      <param name="family">The family to use.</param>
+      <param name="factor">The ratio between the scaled <see cref="T:System.Drawing.Font" />'s <see cref="P:System.Drawing.Font.SizeInPoints" /> and
+            the original <see cref="T:System.Drawing.Font" />'s <see cref="P:System.Drawing.Font.SizeInPoints" />.</param>
+      <param name="newStyle">The new style to use.</param>
+    </member>
+    <member name="M:Triamec.Windows.Forms.FormsExtensions.ScaleFont(System.Windows.Forms.Control,System.Single)">
+      <summary>
+            Scales the <see cref="P:System.Windows.Forms.Control.Font" /> of this <see cref="T:System.Windows.Forms.Control" />.
+            </summary>
+      <param name="control">The <see cref="T:System.Windows.Forms.Control" /> whose <see cref="P:System.Windows.Forms.Control.Font" /> to scale.</param>
+      <param name="family">The family to use.</param>
+      <param name="factor">The ratio between the scaled <see cref="T:System.Drawing.Font" />'s <see cref="P:System.Drawing.Font.SizeInPoints" /> and
+            the original <see cref="T:System.Drawing.Font" />'s <see cref="P:System.Drawing.Font.SizeInPoints" />.</param>
+      <param name="newStyle">The new style to use.</param>
+    </member>
+    <member name="M:Triamec.Windows.Forms.FormsExtensions.ScaleFont(System.Windows.Forms.Control,System.Single,System.Drawing.FontStyle)">
+      <summary>
+            Scales the <see cref="P:System.Windows.Forms.Control.Font" /> of this <see cref="T:System.Windows.Forms.Control" />.
+            </summary>
+      <param name="control">The <see cref="T:System.Windows.Forms.Control" /> whose <see cref="P:System.Windows.Forms.Control.Font" /> to scale.</param>
+      <param name="family">The family to use.</param>
+      <param name="factor">The ratio between the scaled <see cref="T:System.Drawing.Font" />'s <see cref="P:System.Drawing.Font.SizeInPoints" /> and
+            the original <see cref="T:System.Drawing.Font" />'s <see cref="P:System.Drawing.Font.SizeInPoints" />.</param>
+      <param name="newStyle">The new style to use.</param>
+    </member>
+    <member name="M:Triamec.Windows.Forms.FormsExtensions.ShowFailure(System.Windows.Forms.IWin32Window,System.String,System.Exception,System.Boolean,System.Boolean)">
+      <summary>
+            Shows a failure.
+            </summary>
+      <param name="control">The control or <see langword="null" /> if no control is available.</param>
+      <param name="title">The title of the <see cref="T:System.Windows.Forms.MessageBox" />.</param>
+      <param name="failure">The failure to visualize.</param>
+      <param name="fatal">Whether this is an unrecoverable error.</param>
+      <param name="suppressLog">Whether the error shouldn't be logged.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <para>
+          <paramref name="title" /> is <see langword="null" />.</para>
+        <para>-or-</para>
+        <para>
+          <paramref name="failure" /> is <see langword="null" />.</para>
+      </exception>
+    </member>
+    <member name="M:Triamec.Windows.Forms.FormsExtensions.ShowLogMessage(System.Windows.Forms.IWin32Window,System.Diagnostics.TraceEventType,System.String,System.String,System.Object[])">
+      <summary>
+            Shows the log message.
+            </summary>
+      <param name="control">The control or <see langword="null" /> if no control is available.</param>
+      <param name="level">The level of the message.</param>
+      <param name="title">The title of the <see cref="T:System.Windows.Forms.MessageBox" />.</param>
+      <param name="format">A composite format string.</param>
+      <param name="args">An array containing zero or more objects to format.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <para>
+          <paramref name="title" /> is <see langword="null" />.</para>
+        <para>-or-</para>
+        <para>
+          <paramref name="format" /> is <see langword="null" />.</para>
+      </exception>
+    </member>
+    <member name="T:Triamec.Windows.Forms.InputBox">
+      <summary>
+            Text box tracking <see cref="P:System.Windows.Forms.TextBox.Text" /> changes.
+            </summary>
+    </member>
+    <member name="M:Triamec.Windows.Forms.InputBox.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>Triamec.Windows.Forms.InputBox</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:Triamec.Windows.Forms.InputBox.CommittedText">
+      <summary>
+            Gets the last accepted text.
+            </summary>
+    </member>
+    <member name="P:Triamec.Windows.Forms.InputBox.Text">
+      <summary>Gets or sets the text associated with this control.</summary>
+      <returns>The text associated with this control.</returns>
+    </member>
+    <member name="T:Triamec.Windows.Forms.MenuStrip">
+      <summary>
+            This class adds to the functionality provided in <see cref="T:System.Windows.Forms.MenuStrip" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Windows.Forms.MenuStrip.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>Triamec.Windows.Forms.MenuStrip</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:Triamec.Windows.Forms.MenuStrip.ClickThrough">
+      <summary>
+            Gets or sets whether the control honors item clicks when its containing form does not have input focus.
+            </summary>
+    </member>
+    <member name="M:Triamec.Windows.Forms.MenuStrip.WndProc(System.Windows.Forms.Message@)">
+      <summary>
+            This method overrides the procedure that responds to Windows messages.
+            It intercepts the <c>WM_MOUSEMOVE</c> message
+            and ignores it if <see cref="P:Triamec.Windows.Forms.MenuStrip.ClickThrough" /> is <see langword="false" />
+            and the <see cref="P:System.Windows.Forms.Control.TopLevelControl" /> does not contain the focus.
+            Otherwise, it calls the base class procedure to handle the message.
+            It also intercepts the <c>WM_MOUSEACTIVATE</c> message 
+            and replaces a <c>MA_ACTIVATEANDEAT</c> result with
+            a <c>MA_ACTIVATE</c> result if <see cref="P:Triamec.Windows.Forms.MenuStrip.ClickThrough" /> is <see langword="true" />.
+            </summary>
+      <param name="m">The Windows <see cref="T:System.Windows.Forms.Message" /> to process.</param>
+    </member>
+    <member name="T:Triamec.Windows.Forms.TableImportForm">
+      <summary>
+            A general purpose import wizard for float tables from files.
+            </summary>
+    </member>
+    <member name="M:Triamec.Windows.Forms.TableImportForm.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Windows.Forms.TableImportForm" /> class.
+            </summary>
+    </member>
+    <member name="M:Triamec.Windows.Forms.TableImportForm.Dispose(System.Boolean)">
+      <summary>
+            Clean up any resources being used.
+            </summary>
+      <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    </member>
+    <member name="P:Triamec.Windows.Forms.TableImportForm.Import">
+      <summary>
+            Gets or sets a value indicating whether 
+            to execute the import when the import button is clicked.
+            </summary>
+    </member>
+    <member name="P:Triamec.Windows.Forms.TableImportForm.ImportedRowCount">
+      <summary>
+            Gets the number of imported rows
+            from the last click of the import button.
+            </summary>
+    </member>
+    <member name="P:Triamec.Windows.Forms.TableImportForm.Importer">
+      <summary>
+            Gets or sets the <see cref="T:Triamec.TamMath.TableImporter" /> business logic instance
+            to visualize and to control by this <see cref="T:Triamec.Windows.Forms.TableImportForm" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Windows.Forms.TableImportForm.Reset">
+      <summary>
+            Clears all user input
+            and resets all controls
+            to their default values.
+            </summary>
+    </member>
+    <member name="P:Triamec.Windows.Forms.TableImportForm.SelectedEncoding">
+      <summary>
+            Gets the selected encoding.
+            </summary>
+    </member>
+  </members>
+</doc>

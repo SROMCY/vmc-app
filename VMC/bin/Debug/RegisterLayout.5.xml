@@ -1,0 +1,3567 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>RegisterLayout.5</name>
+  </assembly>
+  <members>
+    <member name="T:Triamec.Tam.Rlid5.AngleSearchParameter">
+      <summary>
+            Current modulation for angle search
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AngleSearchParameter.CurrentAmplitude">
+      <summary>
+            Current amplitude applied during angle search [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AngleSearchParameter.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AngleSearchParameter.RampConstTime">
+      <summary>
+            Constant phase time for angle search current [s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AngleSearchParameter.RampRiseTime">
+      <summary>
+            First ramp time for angle search current [s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AngleSearchParameter.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AngleSearchParameter.SineAmplitude">
+      <summary>
+            Sine amplitude for angle search versor modulation [rad].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AngleSearchParameter.SineFrequency">
+      <summary>
+            Sine frequency for angle search versor modulation [Hz].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AngleSearchParameter.StartTime">
+      <summary>
+            Start time for the modulation ramps [s].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.AngleSearchSignalOutput">
+      <summary>
+            Angle search signal generator output signals
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AngleSearchSignalOutput.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AngleSearchSignalOutput.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AngleSearchSignalOutput.SignalAmplitude">
+      <summary>
+            Amplitude of generated signal [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AngleSearchSignalOutput.SignalAngle">
+      <summary>
+            Complex angle of generated signal [rad].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.Axis">
+      <summary>
+            Register part of axis
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Axis.Commands">
+      <summary>
+            Input commands for blocks.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Axis.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Axis.Parameters">
+      <summary>
+            Input parameters for blocks.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Axis.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Axis.Signals">
+      <summary>
+            Output signals of blocks.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.AxisArray">
+      <summary>
+            A TAM register array with element type <see cref="T:Triamec.Tam.Rlid5.Axis" />
+            on <see cref="T:Triamec.Tam.ITamDevice" />s.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisArray.IsArray">
+      <summary>
+            Indicates if this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is an array.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisArray.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisArray.Item(System.Int32)">
+      <summary>
+            Gets an array element
+            at a specified index.
+            </summary>
+      <param name="index">The index of the array element.</param>
+      <returns>Returns the array element at the given <paramref name="index" />.</returns>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisArray.Length">
+      <summary>
+            Gets the number of elements
+            in this register array.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisArray.PredefinedImage">
+      <summary>
+            Gets the predefined image specification
+            to use for this <see cref="T:Triamec.Tam.ITamNode" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisArray.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.AxisCommands">
+      <summary>
+            Input commands for blocks
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisCommands.CurrentController">
+      <summary>
+            Current controller commands.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisCommands.General">
+      <summary>
+            General Axis and Environment (sensor, motor, encoder) commands.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisCommands.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisCommands.OriginTranslation">
+      <summary>
+            Origin translation commands.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisCommands.PathPlanner">
+      <summary>
+            Path planner commands.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisCommands.PositionController">
+      <summary>
+            Position controller commands.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisCommands.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.AxisParameters">
+      <summary>
+            Input parameters for blocks
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisParameters.AngleSearch">
+      <summary>
+            Is modulation for angle search.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisParameters.CurrentController">
+      <summary>
+            Current controller parameters.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisParameters.Environment">
+      <summary>
+            Environment (sensors, motor, encoder) parameters.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisParameters.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisParameters.PathPlanner">
+      <summary>
+            Path planner parameters.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisParameters.PositionController">
+      <summary>
+            Position controller specific parameters.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisParameters.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.AxisSignals">
+      <summary>
+            Output signals of blocks
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisSignals.AngleSearch">
+      <summary>
+            Angle search signal generator output signals.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisSignals.CurrentController">
+      <summary>
+            Current controller output signals.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisSignals.General">
+      <summary>
+            Axis general output signals.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisSignals.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisSignals.PathInterpolator">
+      <summary>
+            Path interpolator output signals.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisSignals.PathPlanner">
+      <summary>
+            Path planner output signals.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisSignals.PositionController">
+      <summary>
+            Position controller output signals.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.AxisSignals.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.BiquadFilter">
+      <summary>
+            Parameters used for on biquad filter.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.BiquadFilter.DampingFactor1">
+      <summary>
+            Damping factor denominator [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.BiquadFilter.DampingFactor2">
+      <summary>
+            Damping factor numerator [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.BiquadFilter.EdgeFrequency1">
+      <summary>
+            Edge frequency denominator [Hz].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.BiquadFilter.EdgeFrequency2">
+      <summary>
+            Edge frequency numerator [Hz].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.BiquadFilter.FilterType">
+      <summary>
+            Selected filter type.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.BiquadFilter.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.BiquadFilter.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.BiquadFilterArray">
+      <summary>
+            A TAM register array with element type <see cref="T:Triamec.Tam.Rlid5.BiquadFilter" />
+            on <see cref="T:Triamec.Tam.ITamDevice" />s.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.BiquadFilterArray.IsArray">
+      <summary>
+            Indicates if this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is an array.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.BiquadFilterArray.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.BiquadFilterArray.Item(System.Int32)">
+      <summary>
+            Gets an array element
+            at a specified index.
+            </summary>
+      <param name="index">The index of the array element.</param>
+      <returns>Returns the array element at the given <paramref name="index" />.</returns>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.BiquadFilterArray.Length">
+      <summary>
+            Gets the number of elements
+            in this register array.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.BiquadFilterArray.PredefinedImage">
+      <summary>
+            Gets the predefined image specification
+            to use for this <see cref="T:Triamec.Tam.ITamNode" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.BiquadFilterArray.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.CurrentControllerCommands">
+      <summary>
+            Current controller commands
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerCommands.CommitParameter">
+      <summary>
+            Commit prepared parameters and calc internal parameters (commitGroup=CurrentController).
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerCommands.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerCommands.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerCommands.TestSignal">
+      <summary>
+            Test-signal generator commands.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.CurrentControllerOutput">
+      <summary>
+            Current controller signals
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerOutput.ActualCurrentD">
+      <summary>
+            Actual current of the D controller [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerOutput.ActualCurrentIsSquare">
+      <summary>
+            Square of actual current vector Is^2 = IQ^2 + ID^2 [A^2].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerOutput.ActualCurrentIsSquareI2t">
+      <summary>
+            Square of actual current vector Is^2 = IQ^2 + ID^2 after I2t filter [A^2].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerOutput.ActualCurrentQ">
+      <summary>
+            Actual current of the Q controller [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerOutput.CommutationAngle">
+      <summary>
+            The actual commutation angle [rad].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerOutput.ControllerOutputQ">
+      <summary>
+            PI-Controller output Voltage Q [V].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerOutput.ControlOutputVoltageD">
+      <summary>
+            Control output Voltage uD [V].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerOutput.ControlOutputVoltageQ">
+      <summary>
+            Control output Voltage uQ [V].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerOutput.CosinePhi">
+      <summary>
+            Cosine of the commutation angle [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerOutput.CurrentErrorD">
+      <summary>
+            Current error of the D controller [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerOutput.CurrentErrorQ">
+      <summary>
+            Current error of the Q controller [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerOutput.Enabled">
+      <summary>
+            Indicates enabled state.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerOutput.Error">
+      <summary>
+            Indicates error state.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerOutput.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerOutput.PosControlOutputCurrentQAndTestSignal">
+      <summary>
+            Position control output current Q plus test-signal [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerOutput.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerOutput.SinePhi">
+      <summary>
+            Sine of the commutation angle [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerOutput.TestSignal">
+      <summary>
+            Test Signal added to the current controller controlOutputVoltageQ [V].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerOutput.TestSignalFrameCount">
+      <summary>
+            Actual frame count of the test signal [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerOutput.TestSignalFrameCountSampled">
+      <summary>
+            at publish time sampled frame count of the test signal [1].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.CurrentControllerParameter">
+      <summary>
+            Current controller parameters
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerParameter.CurrentErrorLimitD">
+      <summary>
+            Error Limit (desiredCurrent-actualCurrent) of current PI controller channel D [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerParameter.CurrentErrorLimitQ">
+      <summary>
+            Limit (desiredCurrent-actualCurrent) of current PI controller channel Q [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerParameter.IntegratorOutputLimitD">
+      <summary>
+            Error Limit of integrator output (anti windup) of current PI controller channel D [V].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerParameter.IntegratorOutputLimitQ">
+      <summary>
+            Error Limit of integrator output (anti windup) of current PI controller channel Q [V].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerParameter.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerParameter.KrD">
+      <summary>
+            Gain of the current PI controller channel D [V/A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerParameter.KrQ">
+      <summary>
+            Gain of the current PI controller channel Q [V/A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerParameter.OutputLimitD">
+      <summary>
+            Limitation of the current controller output channel D [V].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerParameter.OutputLimitQ">
+      <summary>
+            Limitation of the current controller output channel Q [V].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerParameter.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerParameter.TnD">
+      <summary>
+            Integrator time constant of current PI controller channel D [s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerParameter.TnQ">
+      <summary>
+            Integrator time constant of current PI controller channel Q [s].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.CurrentControllerTestSignalCommands">
+      <summary>
+            Current controller test signal commands
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerTestSignalCommands.AddTestSignalToInput">
+      <summary>
+            Controls the input point for the test signal. If true, added to the input of the current controller; otherwise, added to the ouput of the current controller.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerTestSignalCommands.Amplitude">
+      <summary>
+            New desired amplitude of next test signal sequence. (Modulation amplitude in case of vector length modulation. dont'care in case of vector rotation.) [V].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerTestSignalCommands.Angle">
+      <summary>
+            New desired angle of next test signal sequence. (Static vector angle in case of vector length modulation. don't care with other test signals.) [rad].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerTestSignalCommands.Command">
+      <summary>
+            Test signal generator command.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerTestSignalCommands.FrameSize">
+      <summary>
+            New desired frameSize of next test signal sequence. (Test signal is applied atleast 10 seconds) [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerTestSignalCommands.Frequency">
+      <summary>
+            New desired frequency of next test signal sequence. (Modulation frequency in case of vector length modulation. Rotation frequency in case of vector rotation.) [Hz].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerTestSignalCommands.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerTestSignalCommands.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerTestSignalCommands.SignalOffset">
+      <summary>
+            New desired offset of next test signal sequence. (Start vector length in case of vector length modulation. Length of vector in case of vector rotation.) [V].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.CurrentControllerTestSignalCommands.WaitSize">
+      <summary>
+            New desired waitSize of next test signal sequence [1].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.EncoderType">
+      <summary>
+            Characterization of the connected encoder
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid5.EncoderType.NoEncoder">
+      <summary>
+            No encoder used
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid5.EncoderType.Digital1">
+      <summary>
+            First digital encoder used
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid5.EncoderType.Digital2">
+      <summary>
+            Second digital encoder used
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid5.EncoderType.Analog">
+      <summary>
+            Analog encoder used
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.EnvironmentParameter">
+      <summary>
+            Environment (sensors, motor, encoder) parameters
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.EnvironmentParameter.CommutationPhasingMethod">
+      <summary>
+            Selected commutation phasing method.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.EnvironmentParameter.DoIndexLatchHoming">
+      <summary>
+            This switch controls the usage if index latching mechanism during homing.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.EnvironmentParameter.EnablingMethod">
+      <summary>
+            Selected enabling method.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.EnvironmentParameter.EncoderCountsPerRevolution">
+      <summary>
+            Number of encoder counts per mechanical revolution [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.EnvironmentParameter.EncoderInvertDirection">
+      <summary>
+            Switch for encoder direction inversion. Positive application movement must rise actual position feedback.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.EnvironmentParameter.EncoderPitch">
+      <summary>
+            Pitch of the position measurement encoder [u/inc].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.EnvironmentParameter.EncoderType">
+      <summary>
+            Connected encoder type.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.EnvironmentParameter.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.EnvironmentParameter.MotorBrakeReleaseAction">
+      <summary>
+            Action needed for the release of the motor brake during axis enabling.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.EnvironmentParameter.MotorI2tTimeConstant">
+      <summary>
+            Motor I2T supervision time constant  [s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.EnvironmentParameter.MotorInvertDirection">
+      <summary>
+            Switch for motor direction inversion. Positive current/moment must increase encoder counts and commutation angle.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.EnvironmentParameter.MotorNominalCurrent">
+      <summary>
+            Motor nominal current [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.EnvironmentParameter.MotorNumberOfPolePairs">
+      <summary>
+            Number of pole pairs of the motor [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.EnvironmentParameter.MotorPeakCurrent">
+      <summary>
+            Motor peak current [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.EnvironmentParameter.ReferencePosition">
+      <summary>
+            Absolute position of reference mark to set during homing [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.EnvironmentParameter.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.FirmwareFeatureType">
+      <summary>
+            Selection for special firmware features
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid5.FirmwareFeatureType.Standard">
+      <summary>
+            Standard behaviour, no special feature active
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid5.FirmwareFeatureType.TwoStageControlAndFieldWeakening">
+      <summary>
+            Supports special feature for two stage position control and field weakening(former FW version _1)
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid5.FirmwareFeatureType.NonlinearPwmCompensation">
+      <summary>
+            Supports special feature for nonlinear output voltage for linearisation of the PWM output stage (former FW version _2)
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.General">
+      <summary>
+            General register part used for the whole drive
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.General.Commands">
+      <summary>
+            General commands for the drive.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.General.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.General.Parameters">
+      <summary>
+            General parameters for drive.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.General.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.General.Signals">
+      <summary>
+            General signals in the drive.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.General.Subscriptions">
+      <summary>
+            Subscription parameters for the drive.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.GeneralAxisCommands">
+      <summary>
+            General Axis and Environment (sensors, motor, encoder) commands
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralAxisCommands.EncoderIndexLatchEnable">
+      <summary>
+            This bit controls the state of the encoder index latch function.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralAxisCommands.Event">
+      <summary>
+            Event for the axis state machine .
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralAxisCommands.EventParameter">
+      <summary>
+            Event parameter for the axis state machine .
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralAxisCommands.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralAxisCommands.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralAxisCommands.TamRequest">
+      <summary>
+            Identifies a new axis control request to serve [struct]. Conforms to the <see cref="P:Triamec.Tam.Rlid5.GeneralAxisCommands.TamRequest" /> type.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.GeneralAxisOutput">
+      <summary>
+            Axis general and axis environment signals
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralAxisOutput.ActualCurrentA">
+      <summary>
+            Actual measured current IA [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralAxisOutput.ActualCurrentC">
+      <summary>
+            Actual measured current IC (for BLDC and AC only) [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralAxisOutput.ActualPositionCount">
+      <summary>
+            Actual measured position/angle count [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralAxisOutput.ActualPositionCountHigh">
+      <summary>
+            Actual measured position/angle count highword [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralAxisOutput.AnalogEncoderCosine">
+      <summary>
+            Analog encoder cosine signal before compensation [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralAxisOutput.AnalogEncoderSine">
+      <summary>
+            Analog encoder sine signal before compensation [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralAxisOutput.AxisError">
+      <summary>
+            Axis error identification.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralAxisOutput.AxisState">
+      <summary>
+            Axis state.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralAxisOutput.CommandTimestamp">
+      <summary>
+            Timestamp when the last axis command was copied [10us]. Conforms to the <see cref="T:Triamec.TriaLink.Timestamp" /> type.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralAxisOutput.CommutationAngleCount">
+      <summary>
+            Actual measured commutation angle count [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralAxisOutput.EncoderIndex">
+      <summary>
+            State of encoder index.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralAxisOutput.EncoderIndexLatch">
+      <summary>
+            State of encoder index latch.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralAxisOutput.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralAxisOutput.LatchedPositionCount">
+      <summary>
+            Latched position/angle count at last index position [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralAxisOutput.LatchedPositionCountHigh">
+      <summary>
+            Latched position/angle count highword at last index position [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralAxisOutput.OffsetCommutationAngleEncoderAngle">
+      <summary>
+            Offset between commutation angle and commutation angle derived from actual position [rad].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralAxisOutput.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralAxisOutput.TamRequest">
+      <summary>
+            Identifies the last axis command request [struct]. Conforms to the <see cref="P:Triamec.Tam.Rlid5.GeneralAxisOutput.TamRequest" /> type.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.GeneralCommands">
+      <summary>
+            General commands for the drive
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralCommands.CommitParameter">
+      <summary>
+            Commit prepared parameters and calc internal parameters (commitGroup=General).
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralCommands.ExternalError">
+      <summary>
+            input for external error.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralCommands.Internals">
+      <summary>
+            General internal commands.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralCommands.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralCommands.LedPowerGreen">
+      <summary>
+            Control for LED PowerGreen .
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralCommands.LedPowerRed">
+      <summary>
+            Control for LED PowerRed.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralCommands.LedStatusGreen">
+      <summary>
+            Control for LED StatusGreen.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralCommands.LedStatusRed">
+      <summary>
+            Control for LED StatusRed.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralCommands.Output1">
+      <summary>
+            Control for output 1.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralCommands.Output2">
+      <summary>
+            Control for output 2.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralCommands.PowerBridgeShutdown">
+      <summary>
+            Control for PowerBridge Shutdown.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralCommands.PowerSwitchDisable1">
+      <summary>
+            Control for power switch channel 1.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralCommands.PowerSwitchDisable2">
+      <summary>
+            Control for power switch channel 2.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralCommands.PulseTrainCyclicOutputValue1">
+      <summary>
+            The cyclic output value to transfer to the pulse train device.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralCommands.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.GeneralInternalCommands">
+      <summary>
+            General internal commands.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralInternalCommands.Event">
+      <summary>
+            Event for the drive state machine.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralInternalCommands.EventParameter">
+      <summary>
+            Event parameter for the drive state machine.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralInternalCommands.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralInternalCommands.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralInternalCommands.TamRequest">
+      <summary>
+            Identifies a new axis control request to serve [struct]. Conforms to the <see cref="P:Triamec.Tam.Rlid5.GeneralInternalCommands.TamRequest" /> type.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralInternalCommands.TimingSelectorHighPriorityTask">
+      <summary>
+            Timing analysis selection for high priority task. Measured time is available in general internal signals.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralInternalCommands.TimingSelectorLowPriorityTask">
+      <summary>
+            Timing analysis selection for low priority task. Measured time is available in general internal signals.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.GeneralInternalSignals">
+      <summary>
+            General internal signals.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralInternalSignals.GeneralSignals">
+      <summary>
+            General purpose test signals to scope.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralInternalSignals.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralInternalSignals.MergedErrors">
+      <summary>
+            The merged drive and axes error identification [struct]. Conforms to the <see cref="P:Triamec.Tam.Rlid5.GeneralInternalSignals.MergedErrors" /> type.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralInternalSignals.MergedStates">
+      <summary>
+            The merged drive and axes states and the transition bit set [struct]. Conforms to the <see cref="P:Triamec.Tam.Rlid5.GeneralInternalSignals.MergedStates" /> type.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralInternalSignals.OutputPhases">
+      <summary>
+            PWM/SVM output phases [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralInternalSignals.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralInternalSignals.StreamGapCount">
+      <summary>
+            Number of missing stream data packets [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralInternalSignals.SupervisionBridgeMonitor">
+      <summary>
+            Supervision bits of bridge monitor (PWR(b15:14);Temperatures(b13:b10);Voltages(b9:b0)).
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralInternalSignals.SupervisionLogicMonitor">
+      <summary>
+            Supervision bits of logic monitor (STO(b15:14);Temperatures(b13:b10);Voltages(b9:b0)).
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralInternalSignals.TamRequest">
+      <summary>
+            Identifies the last executed drive control request [struct]. Conforms to the <see cref="P:Triamec.Tam.Rlid5.GeneralInternalSignals.TamRequest" /> type.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralInternalSignals.TimingHighPriorityTask">
+      <summary>
+            Timing analysis of high priority task. Depends on setting in timingSelectorHighPriorityTask [us].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralInternalSignals.TimingLowPriorityTask">
+      <summary>
+            Timing analysis of low priority task. Depends on setting in timingSelectorLowPriorityTask [us].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.GeneralParameters">
+      <summary>
+            General parameters for the drive
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralParameters.CommonVoltage">
+      <summary>
+            Common Voltage of channel B if MotorBaseConfiguration is TWO_BRUSH_DC_MOTORS [V].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralParameters.CurrentMeasurementResolution">
+      <summary>
+            Resolution of current measurement [A/inc].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralParameters.CycleTimeCurrentController">
+      <summary>
+            Cycle time of current controller [s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralParameters.CycleTimePathPlanner">
+      <summary>
+            Cycle time of path planner [s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralParameters.CycleTimePositionController">
+      <summary>
+            Cycle time of position controller [s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralParameters.DriveContinuousCurrentLimit">
+      <summary>
+            Drive continuous current limit (Is_Vector) [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralParameters.DriveI2tTimeConstant">
+      <summary>
+            Drive I2t supervision time constant [s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralParameters.DrivePeakCurrentLimit">
+      <summary>
+            Drive peak current limit (Is_Vector) [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralParameters.EconomicModulation">
+      <summary>
+            Needs less switching cycles if economic modulation is activated.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralParameters.FirmwareFeature">
+      <summary>
+            Selection for special firmware features [-].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralParameters.I2tTimeConstant">
+      <summary>
+            Resulting I2t supervision time constant [s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralParameters.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralParameters.MaxContinuousCurrentSquare">
+      <summary>
+            Resulting squared continuous current limit [A^2].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralParameters.MaxPeakCurrentSquare">
+      <summary>
+            Resulting squared peak current limit [A^2].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralParameters.ModulationMethod">
+      <summary>
+            Modulation method for SpaceVectorModulation and PulseWidthModulation.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralParameters.MotorBaseConfiguration">
+      <summary>
+            Type of connected motors configuration.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralParameters.PowerBridgeVoltageHardwareLimit">
+      <summary>
+            Hardware limit for the DC-bus voltage (BridgeVdd-BridgeVss) [V].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralParameters.PowerBridgeVoltageLowerLimit">
+      <summary>
+            Lower limit for the DC-bus voltage (BridgeVdd-BridgeVss) [V].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralParameters.PowerBridgeVoltageUpperLimit">
+      <summary>
+            Upper limit for the DC-bus voltage (BridgeVdd-BridgeVss) [V].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralParameters.PwmTimeResolution">
+      <summary>
+            Time resolution for PWM switch time [inc/pwmPeriod].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralParameters.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralParameters.VoltageMeasurementResolution">
+      <summary>
+            Resolution of voltage measurement [V/inc].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.GeneralPurposeSignals">
+      <summary>
+            General purpose test signals to scope
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralPurposeSignals.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralPurposeSignals.MergedPlcStates1">
+      <summary>
+            The merged drive, axis1 and isoTama states used for PLC applications [struct].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralPurposeSignals.MergedPlcStates2">
+      <summary>
+            The merged drive, axis2 and asyTama states used for PLC applications [struct].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralPurposeSignals.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralPurposeSignals.TestSignal0">
+      <summary>
+            Test signal 0 [depends on test signal].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralPurposeSignals.TestSignal1">
+      <summary>
+            Test signal 1 [depends on test signal].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralPurposeSignals.TestSignal2">
+      <summary>
+            Test signal 2 [depends on test signal].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralPurposeSignals.TestSignal3">
+      <summary>
+            Test signal 3 [depends on test signal].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralPurposeSignals.TestSignal4">
+      <summary>
+            Test signal 4 [depends on test signal].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralPurposeSignals.TestSignal5">
+      <summary>
+            Test signal 5 [depends on test signal].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralPurposeSignals.TestSignal6">
+      <summary>
+            Test signal 6 [depends on test signal].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralPurposeSignals.TestSignal7">
+      <summary>
+            Test signal 7 [depends on test signal].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.GeneralSignals">
+      <summary>
+            General signals of the drive
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralSignals.ActualBridgeVoltage">
+      <summary>
+            Actual DC-bus Voltage [V].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralSignals.CommandTimestamp">
+      <summary>
+            Timestamp when the last axis command was copied [10us]. Conforms to the <see cref="T:Triamec.TriaLink.Timestamp" /> type.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralSignals.DriveError">
+      <summary>
+            The drive error state.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralSignals.DriveState">
+      <summary>
+            The drive state.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralSignals.InputBits">
+      <summary>
+            Digital input bits (ExtIn(3:0) [b9:b6]; DigIn(5:0) [b5:b0]).
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralSignals.Internals">
+      <summary>
+            General internal signals.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralSignals.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralSignals.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralSignals.Supervision">
+      <summary>
+            supervision input bits (supervision2(b31:b16);supervision(b15:b0)).
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.GeneralSignals.TriaLinkTimestamp">
+      <summary>
+            Timestamp which is used for cyclical Tria-Link messages. It is incremented each 10us [10us]. Conforms to the <see cref="T:Triamec.TriaLink.Timestamp" /> type.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.OriginTranslationCommands">
+      <summary>
+            Origin translation commands for position controller and interpolator
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.OriginTranslationCommands.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.OriginTranslationCommands.PositionTranslation">
+      <summary>
+            The position translation to apply (xTranslated = xOld + positionTranslation) [u or inc].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.OriginTranslationCommands.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.OriginTranslationCommands.TranslatePositions">
+      <summary>
+            Translates the positions of interpolator, position controller and path planner coordinated.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.OriginTranslationCommands.TranslatePositionsInPositionController">
+      <summary>
+            Translates the positions of position controller.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.PathInterpolatorOutput">
+      <summary>
+            Path interpolator signals
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathInterpolatorOutput.Acceleration">
+      <summary>
+            Interpolated desired acceleration [u/s^2].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathInterpolatorOutput.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathInterpolatorOutput.Position">
+      <summary>
+            Desired position [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathInterpolatorOutput.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathInterpolatorOutput.Velocity">
+      <summary>
+            Interpolated desired velocity [u/s].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.PathPlannerCommands">
+      <summary>
+            Path planner commands
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerCommands.Anew">
+      <summary>
+            New desired acceleration (all motion types) [u/s^2].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerCommands.AnewCoupled">
+      <summary>
+            New coupled desired acceleration (synchronous motion only) [u/s^2].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerCommands.Command">
+      <summary>
+            Path planner command.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerCommands.CommitParameter">
+      <summary>
+            Commit prepared parameters and calc internal parameters (commitGroup=PathPlanner).
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerCommands.Direction">
+      <summary>
+            Path planner direction attribute.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerCommands.ExecutionOption">
+      <summary>
+            Path planner execution time option .
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerCommands.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerCommands.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerCommands.Vnew">
+      <summary>
+            New desired velocity (all motion types) [u/s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerCommands.VnewCoupled">
+      <summary>
+            New coupled desired velocity (synchronous motion only) [u/s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerCommands.Xnew">
+      <summary>
+            New desired position (all motion types) [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerCommands.XnewCoupled">
+      <summary>
+            New coupled desired position (synchronous motion only) [u].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.PathPlannerOutput">
+      <summary>
+            Path planner signals
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerOutput.Acceleration">
+      <summary>
+            Desired acceleration [u/s^2].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerOutput.Done">
+      <summary>
+            Indicates the end of a path-planner move.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerOutput.EndPosition">
+      <summary>
+            End position of the running move [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerOutput.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerOutput.PathValuesTimestamp">
+      <summary>
+            Timestamp of the path-planner path values [1]. Conforms to the <see cref="T:Triamec.TriaLink.Timestamp" /> type.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerOutput.Position">
+      <summary>
+            Desired position [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerOutput.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerOutput.Velocity">
+      <summary>
+            Desired velocity [u/s].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.PathPlannerParameter">
+      <summary>
+            Path planner parameters
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerParameter.AccelerationMaximum">
+      <summary>
+            Maximal acceleration (unsigned)  [u/s^2].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerParameter.DecelerationMaximum">
+      <summary>
+            Maximal deceleration (unsigned) [u/s^2].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerParameter.DynamicReductionFactor">
+      <summary>
+            Dynamic reduction factor [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerParameter.EmergencyDeceleration">
+      <summary>
+            Maximal emergency deceleration (unsigned) [u/s^2].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerParameter.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerParameter.JerkMaximum">
+      <summary>
+            Maximal jerk (unsigned) [u/s^3].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerParameter.ModuloPositionMaximum">
+      <summary>
+            Maximal position used for modulo position [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerParameter.ModuloPositionMinimum">
+      <summary>
+            Minimal position used for modulo position [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerParameter.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PathPlannerParameter.VelocityMaximum">
+      <summary>
+            Maximal velocity (unsigned) [u/s].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.PositionControllerCommands">
+      <summary>
+            Position controller commands
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerCommands.CommitParameter">
+      <summary>
+            Commit prepared parameters and calc internal parameters (commitGroup=PositionController).
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerCommands.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerCommands.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerCommands.TestSignal">
+      <summary>
+            Test-signal generator commands.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.PositionControllerOutput">
+      <summary>
+            Position controller signals
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerOutput.ActualPosition">
+      <summary>
+            Actual measured position/angle [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerOutput.AlignAngle">
+      <summary>
+            Angle which was found by automatic rotor alignment [rad].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerOutput.Aligned">
+      <summary>
+            Indicates if rotor is aligned during startup phase.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerOutput.ControllerOutput">
+      <summary>
+            Controller output (positionControlOutput+feedForwardOutput) [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerOutput.ControlOutputCurrentD">
+      <summary>
+            Control output current iD [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerOutput.ControlOutputCurrentQ">
+      <summary>
+            Control output current iQ [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerOutput.Enabled">
+      <summary>
+            Indicates enabled state.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerOutput.Error">
+      <summary>
+            Indicates error state.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerOutput.FeedForwardOutput">
+      <summary>
+            Feed forward output [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerOutput.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerOutput.LatchedPosition">
+      <summary>
+            Latched position/angle at last index position [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerOutput.PositionControlOutput">
+      <summary>
+            Position controller output [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerOutput.PositionError">
+      <summary>
+            Actual position/angle error [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerOutput.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerOutput.TestSignal">
+      <summary>
+            Test signal added to the position controller input or output [u or A].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.PositionControllerParameter">
+      <summary>
+            Position controller specific parameters
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerParameter.Ffa">
+      <summary>
+            Feed-forward-factor acceleration [A*s^2/m].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerParameter.Ffv">
+      <summary>
+            Feed-forward-factor velocity [A*s/m].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerParameter.Ffx">
+      <summary>
+            Feed-forward-factor position [A/m].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerParameter.FfxOffset">
+      <summary>
+            Feed-forward-offset on position [A/m].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerParameter.Filters">
+      <summary>
+            Array of biquad filters in the position controller path.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerParameter.IntegratorOutputLimit">
+      <summary>
+            Limitation of integrator output (anti windup) of position PID controller [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerParameter.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerParameter.Kr">
+      <summary>
+            Gain of position PID controller [A/u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerParameter.OutputLimit">
+      <summary>
+            Limitation of the position controller output [A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerParameter.PositionErrorLimit">
+      <summary>
+            Error Limit (position-actualPosition) of position PID controller [u].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerParameter.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerParameter.T1">
+      <summary>
+            Differentiator filter time constant (lag) of position PID controller [s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerParameter.Tdelay">
+      <summary>
+            Delay-time position reference [s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerParameter.Tn">
+      <summary>
+            Integrator time constant of position PID controller [s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerParameter.Tv">
+      <summary>
+            Differentiator time constant (lead) of position PID controller [s].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.PositionControllerTestSignalCommands">
+      <summary>
+            Position controller test signal commands.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerTestSignalCommands.AddToOutput">
+      <summary>
+            Defines where the test signal is to add (add to the position controller input or output).
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerTestSignalCommands.Amplitude">
+      <summary>
+            Amplitude of the test signal added to the position controller input or output [u or A].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerTestSignalCommands.Command">
+      <summary>
+            Test-signal generator command.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerTestSignalCommands.Duration">
+      <summary>
+            Duration that the test signal is applied after enabling it [s].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerTestSignalCommands.Frequency0">
+      <summary>
+            Start frequency of the test signal [Hz].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerTestSignalCommands.Frequency1">
+      <summary>
+            End frequency of sweep of the test signal [Hz].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerTestSignalCommands.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerTestSignalCommands.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PositionControllerTestSignalCommands.SineSignal">
+      <summary>
+            Defines if the test signal is sine [true] or rectangular pulse train [false].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.PublicationParameters">
+      <summary>
+            Publication parameters
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PublicationParameters.Activation">
+      <summary>
+            Activation and trigger condition of a publication.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PublicationParameters.DownsamplingFactor">
+      <summary>
+            Downsampling factor which defines the publication rate [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PublicationParameters.EndpointOne">
+      <summary>
+            Address the endpoint one if this selector is set, otherwise endpoint two is used.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PublicationParameters.HighSpeed">
+      <summary>
+            Selector for high speed publication.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PublicationParameters.HighSpeedSignalBuffer">
+      <summary>
+            Signal buffer for high speed publication [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PublicationParameters.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PublicationParameters.PublicationDestination">
+      <summary>
+            Destination address of the publication [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PublicationParameters.PublicationDestinationPort">
+      <summary>
+            Destination address type of the publication.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PublicationParameters.PublicationId">
+      <summary>
+            Identification of the publication [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PublicationParameters.PublicationOwner">
+      <summary>
+            Address of the publication owner [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PublicationParameters.RegisterOffsets">
+      <summary>
+            Word addresses of the publication registers [32bit words].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PublicationParameters.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PublicationParameters.TriggerLevelOrEpsilon">
+      <summary>
+            Trigger level or AnyEdge Epsilon of the publication [trigger level or epsilon depends on trigger signal].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PublicationParameters.TriggerSignalDataType">
+      <summary>
+            Data type of the trigger signal.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PublicationParameters.TriggerSignalOffset">
+      <summary>
+            Word address of the trigger signal register [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PublicationParameters.WriteIndexBase">
+      <summary>
+            Actual write index base used in high speed publication [1].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.PublicationParametersArray">
+      <summary>
+            A TAM register array with element type <see cref="T:Triamec.Tam.Rlid5.PublicationParameters" />
+            on <see cref="T:Triamec.Tam.ITamDevice" />s.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PublicationParametersArray.IsArray">
+      <summary>
+            Indicates if this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is an array.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PublicationParametersArray.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PublicationParametersArray.Item(System.Int32)">
+      <summary>
+            Gets an array element
+            at a specified index.
+            </summary>
+      <param name="index">The index of the array element.</param>
+      <returns>Returns the array element at the given <paramref name="index" />.</returns>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PublicationParametersArray.Length">
+      <summary>
+            Gets the number of elements
+            in this register array.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PublicationParametersArray.PredefinedImage">
+      <summary>
+            Gets the predefined image specification
+            to use for this <see cref="T:Triamec.Tam.ITamNode" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.PublicationParametersArray.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.RCTtModuloTranslation">
+      <summary>
+            Modulo translation data type
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.RCTtModuloTranslation.Counts">
+      <summary>
+            position/angle translation increments 31bit [inc].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.RCTtModuloTranslation.Ident">
+      <summary>
+            identifies if type of the translation data.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.RCTtModuloTranslation.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.RCTtModuloTranslation.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.RCTtPositionTranslation">
+      <summary>
+            Position translation data type
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.RCTtPositionTranslation.F40Translation">
+      <summary>
+            Position/angle float40 translation usage.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.RCTtPositionTranslation.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.RCTtPositionTranslation.ModuloTranslation">
+      <summary>
+            Modulo translation usage.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.RCTtPositionTranslation.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.Register">
+      <summary>
+            Register layout
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Register.Axes">
+      <summary>
+            Array of axis registers.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid5.Register.CODE_SIZE">
+      <summary>
+            Maximum size of Tama code
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Register.General">
+      <summary>
+            General registers used for the whole drive.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid5.Register.HighSpeedSubscriptionBufferSize">
+      <summary>
+            Number of 32-bit words that the high-speed buffer can contain
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Register.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid5.Register.MaximumNumberOfAxesOnThisDriveType">
+      <summary>
+            Maximum number of supported axes per drive
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid5.Register.MaximumNumberOfSubscriptions">
+      <summary>
+            Maximum number of subscriptions per drive
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid5.Register.MaximumValuesPerSubscription">
+      <summary>
+            Maximum number of values per subscription
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid5.Register.NumberOfBiquadFilters">
+      <summary>
+            Number of BiQuad filters in the position controller
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid5.Register.NumberOfOutputPhases">
+      <summary>
+            Number of PWM/SVM voltage output phases
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Rlid5.Register.RegisterLayoutId">
+      <summary>
+            The register layout id
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Register.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Register.Tama">
+      <summary>
+            Tama area (Tama control and memory for Tama object code) .
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.SubscriptionParameters">
+      <summary>
+            Subscriber parameters
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.SubscriptionParameters.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.SubscriptionParameters.RegisterOffsets">
+      <summary>
+            Register address word offset of the subscription values 1..k [32bit words].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.SubscriptionParameters.RegisterOffsetTimestamp">
+      <summary>
+            Register address word offset of the timestamp value [32bit words].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.SubscriptionParameters.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.SubscriptionParameters.SubscriptionId">
+      <summary>
+            Identification of the subscription [1].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.SubscriptionParameters.SubscriptionOwner">
+      <summary>
+            Address of the subscription owner [1].
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.SubscriptionParametersArray">
+      <summary>
+            A TAM register array with element type <see cref="T:Triamec.Tam.Rlid5.SubscriptionParameters" />
+            on <see cref="T:Triamec.Tam.ITamDevice" />s.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.SubscriptionParametersArray.IsArray">
+      <summary>
+            Indicates if this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is an array.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.SubscriptionParametersArray.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.SubscriptionParametersArray.Item(System.Int32)">
+      <summary>
+            Gets an array element
+            at a specified index.
+            </summary>
+      <param name="index">The index of the array element.</param>
+      <returns>Returns the array element at the given <paramref name="index" />.</returns>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.SubscriptionParametersArray.Length">
+      <summary>
+            Gets the number of elements
+            in this register array.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.SubscriptionParametersArray.PredefinedImage">
+      <summary>
+            Gets the predefined image specification
+            to use for this <see cref="T:Triamec.Tam.ITamNode" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.SubscriptionParametersArray.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.Subscriptions">
+      <summary>
+            Subscription parameters for the drive
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Subscriptions.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Subscriptions.Publishers">
+      <summary>
+            Publisher parameters.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Subscriptions.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Subscriptions.Subscribers">
+      <summary>
+            Subscriber parameters.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.Tama">
+      <summary>
+            Tama related register area
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Tama.AsynchronousMainCommand">
+      <summary>
+            Command for the asynchronous Tama main application.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Tama.AsynchronousMainState">
+      <summary>
+            State of the asynchronous Tama main application. State value must be in range [0..63] for proper state change events!.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Tama.AsynchronousStackOffset">
+      <summary>
+            The word offset from the register memory to the stack memory of the asynchronous Tama main application.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Tama.AsynchronousTamaVirtualMachineState">
+      <summary>
+            State of the asynchronous Tama virtual machine.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Tama.CodeMemory">
+      <summary>
+            Memory for Tama binary code.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Tama.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Tama.IsochronousMainCommand">
+      <summary>
+            Command for the isochronous Tama main application.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Tama.IsochronousMainState">
+      <summary>
+            State of the isochronous Tama main application. State value must be in range [0..63] for proper state change events!.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Tama.IsochronousStackOffset">
+      <summary>
+            The word offset from the register memory to the stack memory of the isochronous Tama main application.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Tama.IsochronousTamaVirtualMachineState">
+      <summary>
+            State of the isochronous Tama virtual machine.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Tama.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.Tama.Variables">
+      <summary>
+            General purpose variables usable for data transfer between c# application and Tama applications.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Rlid5.TamaVariables">
+      <summary>
+            General purpose variables usable for data transfer between c# application and Tama applications
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeIntVar0">
+      <summary>
+            General purpose integer variable 0.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeIntVar1">
+      <summary>
+            General purpose integer variable 1.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeIntVar2">
+      <summary>
+            General purpose integer variable 2.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeIntVar3">
+      <summary>
+            General purpose integer variable 3.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeIntVar4">
+      <summary>
+            General purpose integer variable 4.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar0">
+      <summary>
+            General purpose variable 0 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar1">
+      <summary>
+            General purpose variable 1 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar10">
+      <summary>
+            General purpose variable 10 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar11">
+      <summary>
+            General purpose variable 11 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar12">
+      <summary>
+            General purpose variable 12 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar13">
+      <summary>
+            General purpose variable 13 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar14">
+      <summary>
+            General purpose variable 14 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar15">
+      <summary>
+            General purpose variable 15 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar16">
+      <summary>
+            General purpose variable 16 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar17">
+      <summary>
+            General purpose variable 17 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar18">
+      <summary>
+            General purpose variable 18 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar19">
+      <summary>
+            General purpose variable 19 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar2">
+      <summary>
+            General purpose variable 2 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar20">
+      <summary>
+            General purpose variable 20 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar21">
+      <summary>
+            General purpose variable 21 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar22">
+      <summary>
+            General purpose variable 22 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar23">
+      <summary>
+            General purpose variable 23 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar24">
+      <summary>
+            General purpose variable 24 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar3">
+      <summary>
+            General purpose variable 3 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar4">
+      <summary>
+            General purpose variable 4 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar5">
+      <summary>
+            General purpose variable 5 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar6">
+      <summary>
+            General purpose variable 6 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar7">
+      <summary>
+            General purpose variable 7 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar8">
+      <summary>
+            General purpose variable 8 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.GenPurposeVar9">
+      <summary>
+            General purpose variable 9 [depends on usage].
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.IsCommittable">
+      <summary>
+            Indicates whether updating the value of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" /> is done indirectly.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Rlid5.TamaVariables.ShadowOffset">
+      <summary>
+            Gets the register offset of the shadow register 
+            of this <see cref="T:Triamec.Tam.Registers.IRegisterComponent" />, in bytes.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.AngleSearchParameter">
+      <summary>Current modulation for angle search</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.AngleSearchParameter.CurrentAmplitude">
+      <summary>Current amplitude applied during angle search [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.AngleSearchParameter.RampConstTime">
+      <summary>Constant phase time for angle search current [s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.AngleSearchParameter.RampRiseTime">
+      <summary>First ramp time for angle search current [s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.AngleSearchParameter.SineAmplitude">
+      <summary>Sine amplitude for angle search versor modulation [rad].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.AngleSearchParameter.SineFrequency">
+      <summary>Sine frequency for angle search versor modulation [Hz].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.AngleSearchParameter.StartTime">
+      <summary>Start time for the modulation ramps [s].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.AngleSearchSignalOutput">
+      <summary>Angle search signal generator output signals</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.AngleSearchSignalOutput.SignalAmplitude">
+      <summary>Amplitude of generated signal [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.AngleSearchSignalOutput.SignalAngle">
+      <summary>Complex angle of generated signal [rad].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.Axis">
+      <summary>Register part of axis</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Axis.Commands">
+      <summary>Input commands for blocks.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Axis.Parameters">
+      <summary>Input parameters for blocks.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Axis.Signals">
+      <summary>Output signals of blocks.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.AxisCommands">
+      <summary>Input commands for blocks</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.AxisCommands.CurrentController">
+      <summary>Current controller commands.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.AxisCommands.General">
+      <summary>General Axis and Environment (sensor, motor, encoder) commands.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.AxisCommands.OriginTranslation">
+      <summary>Origin translation commands.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.AxisCommands.PathPlanner">
+      <summary>Path planner commands.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.AxisCommands.PositionController">
+      <summary>Position controller commands.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.AxisParameters">
+      <summary>Input parameters for blocks</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.AxisParameters.AngleSearch">
+      <summary>Is modulation for angle search.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.AxisParameters.CurrentController">
+      <summary>Current controller parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.AxisParameters.Environment">
+      <summary>Environment (sensors, motor, encoder) parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.AxisParameters.PathPlanner">
+      <summary>Path planner parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.AxisParameters.PositionController">
+      <summary>Position controller specific parameters.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.AxisSignals">
+      <summary>Output signals of blocks</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.AxisSignals.AngleSearch">
+      <summary>Angle search signal generator output signals.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.AxisSignals.CurrentController">
+      <summary>Current controller output signals.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.AxisSignals.General">
+      <summary>Axis general output signals.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.AxisSignals.PathInterpolator">
+      <summary>Path interpolator output signals.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.AxisSignals.PathPlanner">
+      <summary>Path planner output signals.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.AxisSignals.PositionController">
+      <summary>Position controller output signals.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.BiquadFilter">
+      <summary>Parameters used for on biquad filter.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.BiquadFilter.DampingFactor1">
+      <summary>Damping factor denominator [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.BiquadFilter.DampingFactor2">
+      <summary>Damping factor numerator [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.BiquadFilter.EdgeFrequency1">
+      <summary>Edge frequency denominator [Hz].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.BiquadFilter.EdgeFrequency2">
+      <summary>Edge frequency numerator [Hz].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.BiquadFilter.FilterType">
+      <summary>Selected filter type.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.CurrentControllerCommands">
+      <summary>Current controller commands</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerCommands.CommitParameter">
+      <summary>Commit prepared parameters and calc internal parameters (commitGroup=CurrentController).</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerCommands.TestSignal">
+      <summary>Test-signal generator commands.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.CurrentControllerOutput">
+      <summary>Current controller signals</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerOutput.ActualCurrentD">
+      <summary>Actual current of the D controller [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerOutput.ActualCurrentIsSquare">
+      <summary>Square of actual current vector Is^2 = IQ^2 + ID^2 [A^2].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerOutput.ActualCurrentIsSquareI2t">
+      <summary>Square of actual current vector Is^2 = IQ^2 + ID^2 after I2t filter [A^2].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerOutput.ActualCurrentQ">
+      <summary>Actual current of the Q controller [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerOutput.CommutationAngle">
+      <summary>The actual commutation angle [rad].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerOutput.ControllerOutputQ">
+      <summary>PI-Controller output Voltage Q [V].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerOutput.ControlOutputVoltageD">
+      <summary>Control output Voltage uD [V].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerOutput.ControlOutputVoltageQ">
+      <summary>Control output Voltage uQ [V].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerOutput.CosinePhi">
+      <summary>Cosine of the commutation angle [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerOutput.CurrentErrorD">
+      <summary>Current error of the D controller [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerOutput.CurrentErrorQ">
+      <summary>Current error of the Q controller [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerOutput.Enabled">
+      <summary>Indicates enabled state.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerOutput.Error">
+      <summary>Indicates error state.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerOutput.PosControlOutputCurrentQAndTestSignal">
+      <summary>Position control output current Q plus test-signal [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerOutput.SinePhi">
+      <summary>Sine of the commutation angle [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerOutput.TestSignal">
+      <summary>Test Signal added to the current controller controlOutputVoltageQ [V].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerOutput.TestSignalFrameCount">
+      <summary>Actual frame count of the test signal [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerOutput.TestSignalFrameCountSampled">
+      <summary>at publish time sampled frame count of the test signal [1].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.CurrentControllerParameter">
+      <summary>Current controller parameters</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerParameter.CurrentErrorLimitD">
+      <summary>Error Limit (desiredCurrent-actualCurrent) of current PI controller channel D [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerParameter.CurrentErrorLimitQ">
+      <summary>Limit (desiredCurrent-actualCurrent) of current PI controller channel Q [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerParameter.IntegratorOutputLimitD">
+      <summary>Error Limit of integrator output (anti windup) of current PI controller channel D [V].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerParameter.IntegratorOutputLimitQ">
+      <summary>Error Limit of integrator output (anti windup) of current PI controller channel Q [V].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerParameter.KrD">
+      <summary>Gain of the current PI controller channel D [V/A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerParameter.KrQ">
+      <summary>Gain of the current PI controller channel Q [V/A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerParameter.OutputLimitD">
+      <summary>Limitation of the current controller output channel D [V].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerParameter.OutputLimitQ">
+      <summary>Limitation of the current controller output channel Q [V].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerParameter.TnD">
+      <summary>Integrator time constant of current PI controller channel D [s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerParameter.TnQ">
+      <summary>Integrator time constant of current PI controller channel Q [s].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.CurrentControllerTestSignalCommands">
+      <summary>Current controller test signal commands</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerTestSignalCommands.AddTestSignalToInput">
+      <summary>Controls the input point for the test signal. If true, added to the input of the current controller; otherwise, added to the ouput of the current controller..</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerTestSignalCommands.Amplitude">
+      <summary>New desired amplitude of next test signal sequence. (Modulation amplitude in case of vector length modulation. dont'care in case of vector rotation.) [V].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerTestSignalCommands.Angle">
+      <summary>New desired angle of next test signal sequence. (Static vector angle in case of vector length modulation. don't care with other test signals.) [rad].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerTestSignalCommands.Command">
+      <summary>Test signal generator command.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerTestSignalCommands.FrameSize">
+      <summary>New desired frameSize of next test signal sequence. (Test signal is applied atleast 10 seconds) [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerTestSignalCommands.Frequency">
+      <summary>New desired frequency of next test signal sequence. (Modulation frequency in case of vector length modulation. Rotation frequency in case of vector rotation.) [Hz].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerTestSignalCommands.SignalOffset">
+      <summary>New desired offset of next test signal sequence. (Start vector length in case of vector length modulation. Length of vector in case of vector rotation.) [V].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.CurrentControllerTestSignalCommands.WaitSize">
+      <summary>New desired waitSize of next test signal sequence [1].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.EncoderType">
+      <summary>
+            Characterization of the connected encoder
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid5.EncoderType.NoEncoder">
+      <summary>
+            No encoder used
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid5.EncoderType.Digital1">
+      <summary>
+            First digital encoder used
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid5.EncoderType.Digital2">
+      <summary>
+            Second digital encoder used
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid5.EncoderType.Analog">
+      <summary>
+            Analog encoder used
+            </summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.EnvironmentParameter">
+      <summary>Environment (sensors, motor, encoder) parameters</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.EnvironmentParameter.CommutationPhasingMethod">
+      <summary>Selected commutation phasing method.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.EnvironmentParameter.DoIndexLatchHoming">
+      <summary>This switch controls the usage if index latching mechanism during homing.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.EnvironmentParameter.EnablingMethod">
+      <summary>Selected enabling method.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.EnvironmentParameter.EncoderCountsPerRevolution">
+      <summary>Number of encoder counts per mechanical revolution [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.EnvironmentParameter.EncoderInvertDirection">
+      <summary>Switch for encoder direction inversion. Positive application movement must rise actual position feedback.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.EnvironmentParameter.EncoderPitch">
+      <summary>Pitch of the position measurement encoder [u/inc].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.EnvironmentParameter.EncoderType">
+      <summary>Connected encoder type.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.EnvironmentParameter.MotorBrakeReleaseAction">
+      <summary>Action needed for the release of the motor brake during axis enabling.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.EnvironmentParameter.MotorI2tTimeConstant">
+      <summary>Motor I2T supervision time constant  [s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.EnvironmentParameter.MotorInvertDirection">
+      <summary>Switch for motor direction inversion. Positive current/moment must increase encoder counts and commutation angle.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.EnvironmentParameter.MotorNominalCurrent">
+      <summary>Motor nominal current [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.EnvironmentParameter.MotorNumberOfPolePairs">
+      <summary>Number of pole pairs of the motor [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.EnvironmentParameter.MotorPeakCurrent">
+      <summary>Motor peak current [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.EnvironmentParameter.ReferencePosition">
+      <summary>Absolute position of reference mark to set during homing [u].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.FirmwareFeatureType">
+      <summary>
+            Selection for special firmware features
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid5.FirmwareFeatureType.Standard">
+      <summary>
+            Standard behaviour, no special feature active
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid5.FirmwareFeatureType.TwoStageControlAndFieldWeakening">
+      <summary>
+            Supports special feature for two stage position control and field weakening(former FW version _1)
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid5.FirmwareFeatureType.NonlinearPwmCompensation">
+      <summary>
+            Supports special feature for nonlinear output voltage for linearisation of the PWM output stage (former FW version _2)
+            </summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.Float40">
+      <summary>Position data type</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Float40.Extension">
+      <summary>position/angle lower word includes 8bit extension to build the 40bit float.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Float40.Float32">
+      <summary>position/angle upper word includes 32bit float [u].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.General">
+      <summary>General register part used for the whole drive</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.General.Commands">
+      <summary>General commands for the drive.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.General.Parameters">
+      <summary>General parameters for drive.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.General.Signals">
+      <summary>General signals in the drive.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.General.Subscriptions">
+      <summary>Subscription parameters for the drive.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.GeneralAxisCommands">
+      <summary>General Axis and Environment (sensors, motor, encoder) commands</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralAxisCommands.EncoderIndexLatchEnable">
+      <summary>This bit controls the state of the encoder index latch function.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralAxisCommands.Event">
+      <summary>Event for the axis state machine .</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralAxisCommands.EventParameter">
+      <summary>Event parameter for the axis state machine .</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralAxisCommands.TamRequest">
+      <summary>Identifies a new axis control request to serve [struct].. Conforms to the <see cref="P:Triamec.Tama.Rlid5.GeneralAxisCommands.TamRequest" /> type.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.GeneralAxisOutput">
+      <summary>Axis general and axis environment signals</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralAxisOutput.ActualCurrentA">
+      <summary>Actual measured current IA [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralAxisOutput.ActualCurrentC">
+      <summary>Actual measured current IC (for BLDC and AC only) [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralAxisOutput.ActualPositionCount">
+      <summary>Actual measured position/angle count [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralAxisOutput.ActualPositionCountHigh">
+      <summary>Actual measured position/angle count highword [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralAxisOutput.AnalogEncoderCosine">
+      <summary>Analog encoder cosine signal before compensation [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralAxisOutput.AnalogEncoderSine">
+      <summary>Analog encoder sine signal before compensation [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralAxisOutput.AxisError">
+      <summary>Axis error identification.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralAxisOutput.AxisState">
+      <summary>Axis state.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralAxisOutput.CommandTimestamp">
+      <summary>Timestamp when the last axis command was copied [10us].. Conforms to the <see cref="T:Triamec.TriaLink.Timestamp" /> type.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralAxisOutput.CommutationAngleCount">
+      <summary>Actual measured commutation angle count [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralAxisOutput.EncoderIndex">
+      <summary>State of encoder index.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralAxisOutput.EncoderIndexLatch">
+      <summary>State of encoder index latch.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralAxisOutput.LatchedPositionCount">
+      <summary>Latched position/angle count at last index position [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralAxisOutput.LatchedPositionCountHigh">
+      <summary>Latched position/angle count highword at last index position [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralAxisOutput.OffsetCommutationAngleEncoderAngle">
+      <summary>Offset between commutation angle and commutation angle derived from actual position [rad].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralAxisOutput.TamRequest">
+      <summary>Identifies the last axis command request [struct].. Conforms to the <see cref="P:Triamec.Tama.Rlid5.GeneralAxisOutput.TamRequest" /> type.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.GeneralCommands">
+      <summary>General commands for the drive</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralCommands.CommitParameter">
+      <summary>Commit prepared parameters and calc internal parameters (commitGroup=General).</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralCommands.ExternalError">
+      <summary>input for external error.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralCommands.Internals">
+      <summary>General internal commands.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralCommands.LedPowerGreen">
+      <summary>Control for LED PowerGreen .</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralCommands.LedPowerRed">
+      <summary>Control for LED PowerRed.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralCommands.LedStatusGreen">
+      <summary>Control for LED StatusGreen.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralCommands.LedStatusRed">
+      <summary>Control for LED StatusRed.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralCommands.Output1">
+      <summary>Control for output 1.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralCommands.Output2">
+      <summary>Control for output 2.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralCommands.PowerBridgeShutdown">
+      <summary>Control for PowerBridge Shutdown.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralCommands.PowerSwitchDisable1">
+      <summary>Control for power switch channel 1.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralCommands.PowerSwitchDisable2">
+      <summary>Control for power switch channel 2.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralCommands.PulseTrainCyclicOutputValue1">
+      <summary>The cyclic output value to transfer to the pulse train device.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.GeneralInternalCommands">
+      <summary>General internal commands.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralInternalCommands.Event">
+      <summary>Event for the drive state machine.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralInternalCommands.EventParameter">
+      <summary>Event parameter for the drive state machine.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralInternalCommands.TamRequest">
+      <summary>Identifies a new axis control request to serve [struct].. Conforms to the <see cref="P:Triamec.Tama.Rlid5.GeneralInternalCommands.TamRequest" /> type.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralInternalCommands.TimingSelectorHighPriorityTask">
+      <summary>Timing analysis selection for high priority task. Measured time is available in general internal signals.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralInternalCommands.TimingSelectorLowPriorityTask">
+      <summary>Timing analysis selection for low priority task. Measured time is available in general internal signals.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.GeneralInternalSignals">
+      <summary>General internal signals.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralInternalSignals.GeneralSignals">
+      <summary>General purpose test signals to scope.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralInternalSignals.MergedErrors">
+      <summary>The merged drive and axes error identification [struct].. Conforms to the <see cref="P:Triamec.Tama.Rlid5.GeneralInternalSignals.MergedErrors" /> type.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralInternalSignals.MergedStates">
+      <summary>The merged drive and axes states and the transition bit set [struct].. Conforms to the <see cref="P:Triamec.Tama.Rlid5.GeneralInternalSignals.MergedStates" /> type.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralInternalSignals.OutputPhases">
+      <summary>PWM/SVM output phases [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralInternalSignals.StreamGapCount">
+      <summary>Number of missing stream data packets [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralInternalSignals.SupervisionBridgeMonitor">
+      <summary>Supervision bits of bridge monitor (PWR(b15:14);Temperatures(b13:b10);Voltages(b9:b0)).</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralInternalSignals.SupervisionLogicMonitor">
+      <summary>Supervision bits of logic monitor (STO(b15:14);Temperatures(b13:b10);Voltages(b9:b0)).</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralInternalSignals.TamRequest">
+      <summary>Identifies the last executed drive control request [struct].. Conforms to the <see cref="P:Triamec.Tama.Rlid5.GeneralInternalSignals.TamRequest" /> type.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralInternalSignals.TimingHighPriorityTask">
+      <summary>Timing analysis of high priority task. Depends on setting in timingSelectorHighPriorityTask [us].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralInternalSignals.TimingLowPriorityTask">
+      <summary>Timing analysis of low priority task. Depends on setting in timingSelectorLowPriorityTask [us].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.GeneralParameters">
+      <summary>General parameters for the drive</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralParameters.CommonVoltage">
+      <summary>Common Voltage of channel B if MotorBaseConfiguration is TWO_BRUSH_DC_MOTORS [V].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralParameters.CurrentMeasurementResolution">
+      <summary>Resolution of current measurement [A/inc].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralParameters.CycleTimeCurrentController">
+      <summary>Cycle time of current controller [s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralParameters.CycleTimePathPlanner">
+      <summary>Cycle time of path planner [s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralParameters.CycleTimePositionController">
+      <summary>Cycle time of position controller [s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralParameters.DriveContinuousCurrentLimit">
+      <summary>Drive continuous current limit (Is_Vector) [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralParameters.DriveI2tTimeConstant">
+      <summary>Drive I2t supervision time constant [s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralParameters.DrivePeakCurrentLimit">
+      <summary>Drive peak current limit (Is_Vector) [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralParameters.EconomicModulation">
+      <summary>Needs less switching cycles if economic modulation is activated.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralParameters.FirmwareFeature">
+      <summary>Selection for special firmware features [-].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralParameters.I2tTimeConstant">
+      <summary>Resulting I2t supervision time constant [s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralParameters.MaxContinuousCurrentSquare">
+      <summary>Resulting squared continuous current limit [A^2].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralParameters.MaxPeakCurrentSquare">
+      <summary>Resulting squared peak current limit [A^2].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralParameters.ModulationMethod">
+      <summary>Modulation method for SpaceVectorModulation and PulseWidthModulation.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralParameters.MotorBaseConfiguration">
+      <summary>Type of connected motors configuration.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralParameters.PowerBridgeVoltageHardwareLimit">
+      <summary>Hardware limit for the DC-bus voltage (BridgeVdd-BridgeVss) [V].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralParameters.PowerBridgeVoltageLowerLimit">
+      <summary>Lower limit for the DC-bus voltage (BridgeVdd-BridgeVss) [V].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralParameters.PowerBridgeVoltageUpperLimit">
+      <summary>Upper limit for the DC-bus voltage (BridgeVdd-BridgeVss) [V].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralParameters.PwmTimeResolution">
+      <summary>Time resolution for PWM switch time [inc/pwmPeriod].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralParameters.VoltageMeasurementResolution">
+      <summary>Resolution of voltage measurement [V/inc].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.GeneralPurposeSignals">
+      <summary>General purpose test signals to scope</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralPurposeSignals.MergedPlcStates1">
+      <summary>The merged drive, axis1 and isoTama states used for PLC applications [struct].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralPurposeSignals.MergedPlcStates2">
+      <summary>The merged drive, axis2 and asyTama states used for PLC applications [struct].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralPurposeSignals.TestSignal0">
+      <summary>Test signal 0 [depends on test signal].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralPurposeSignals.TestSignal1">
+      <summary>Test signal 1 [depends on test signal].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralPurposeSignals.TestSignal2">
+      <summary>Test signal 2 [depends on test signal].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralPurposeSignals.TestSignal3">
+      <summary>Test signal 3 [depends on test signal].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralPurposeSignals.TestSignal4">
+      <summary>Test signal 4 [depends on test signal].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralPurposeSignals.TestSignal5">
+      <summary>Test signal 5 [depends on test signal].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralPurposeSignals.TestSignal6">
+      <summary>Test signal 6 [depends on test signal].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralPurposeSignals.TestSignal7">
+      <summary>Test signal 7 [depends on test signal].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.GeneralSignals">
+      <summary>General signals of the drive</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralSignals.ActualBridgeVoltage">
+      <summary>Actual DC-bus Voltage [V].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralSignals.CommandTimestamp">
+      <summary>Timestamp when the last axis command was copied [10us].. Conforms to the <see cref="T:Triamec.TriaLink.Timestamp" /> type.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralSignals.DriveError">
+      <summary>The drive error state.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralSignals.DriveState">
+      <summary>The drive state.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralSignals.InputBits">
+      <summary>Digital input bits (ExtIn(3:0) [b9:b6]; DigIn(5:0) [b5:b0]).</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralSignals.Internals">
+      <summary>General internal signals.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralSignals.Supervision">
+      <summary>supervision input bits (supervision2(b31:b16);supervision(b15:b0)).</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.GeneralSignals.TriaLinkTimestamp">
+      <summary>Timestamp which is used for cyclical Tria-Link messages. It is incremented each 10us [10us].. Conforms to the <see cref="T:Triamec.TriaLink.Timestamp" /> type.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.OriginTranslationCommands">
+      <summary>Origin translation commands for position controller and interpolator</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.OriginTranslationCommands.PositionTranslation">
+      <summary>The position translation to apply (xTranslated = xOld + positionTranslation) [u or inc].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.OriginTranslationCommands.TranslatePositions">
+      <summary>Translates the positions of interpolator, position controller and path planner coordinated.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.OriginTranslationCommands.TranslatePositionsInPositionController">
+      <summary>Translates the positions of position controller.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.PathInterpolatorOutput">
+      <summary>Path interpolator signals</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathInterpolatorOutput.Acceleration">
+      <summary>Interpolated desired acceleration [u/s^2].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathInterpolatorOutput.Position">
+      <summary>Desired position [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathInterpolatorOutput.Velocity">
+      <summary>Interpolated desired velocity [u/s].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.PathPlannerCommands">
+      <summary>Path planner commands</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathPlannerCommands.Anew">
+      <summary>New desired acceleration (all motion types) [u/s^2].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathPlannerCommands.AnewCoupled">
+      <summary>New coupled desired acceleration (synchronous motion only) [u/s^2].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathPlannerCommands.Command">
+      <summary>Path planner command.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathPlannerCommands.CommitParameter">
+      <summary>Commit prepared parameters and calc internal parameters (commitGroup=PathPlanner).</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathPlannerCommands.Direction">
+      <summary>Path planner direction attribute.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathPlannerCommands.ExecutionOption">
+      <summary>Path planner execution time option .</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathPlannerCommands.Vnew">
+      <summary>New desired velocity (all motion types) [u/s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathPlannerCommands.VnewCoupled">
+      <summary>New coupled desired velocity (synchronous motion only) [u/s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathPlannerCommands.Xnew">
+      <summary>New desired position (all motion types) [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathPlannerCommands.XnewCoupled">
+      <summary>New coupled desired position (synchronous motion only) [u].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.PathPlannerOutput">
+      <summary>Path planner signals</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathPlannerOutput.Acceleration">
+      <summary>Desired acceleration [u/s^2].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathPlannerOutput.Done">
+      <summary>Indicates the end of a path-planner move.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathPlannerOutput.EndPosition">
+      <summary>End position of the running move [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathPlannerOutput.PathValuesTimestamp">
+      <summary>Timestamp of the path-planner path values [1].. Conforms to the <see cref="T:Triamec.TriaLink.Timestamp" /> type.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathPlannerOutput.Position">
+      <summary>Desired position [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathPlannerOutput.Velocity">
+      <summary>Desired velocity [u/s].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.PathPlannerParameter">
+      <summary>Path planner parameters</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathPlannerParameter.AccelerationMaximum">
+      <summary>Maximal acceleration (unsigned)  [u/s^2].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathPlannerParameter.DecelerationMaximum">
+      <summary>Maximal deceleration (unsigned) [u/s^2].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathPlannerParameter.DynamicReductionFactor">
+      <summary>Dynamic reduction factor [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathPlannerParameter.EmergencyDeceleration">
+      <summary>Maximal emergency deceleration (unsigned) [u/s^2].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathPlannerParameter.JerkMaximum">
+      <summary>Maximal jerk (unsigned) [u/s^3].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathPlannerParameter.ModuloPositionMaximum">
+      <summary>Maximal position used for modulo position [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathPlannerParameter.ModuloPositionMinimum">
+      <summary>Minimal position used for modulo position [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PathPlannerParameter.VelocityMaximum">
+      <summary>Maximal velocity (unsigned) [u/s].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.PositionControllerCommands">
+      <summary>Position controller commands</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerCommands.CommitParameter">
+      <summary>Commit prepared parameters and calc internal parameters (commitGroup=PositionController).</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerCommands.TestSignal">
+      <summary>Test-signal generator commands.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.PositionControllerOutput">
+      <summary>Position controller signals</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerOutput.ActualPosition">
+      <summary>Actual measured position/angle [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerOutput.AlignAngle">
+      <summary>Angle which was found by automatic rotor alignment [rad].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerOutput.Aligned">
+      <summary>Indicates if rotor is aligned during startup phase.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerOutput.ControllerOutput">
+      <summary>Controller output (positionControlOutput+feedForwardOutput) [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerOutput.ControlOutputCurrentD">
+      <summary>Control output current iD [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerOutput.ControlOutputCurrentQ">
+      <summary>Control output current iQ [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerOutput.Enabled">
+      <summary>Indicates enabled state.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerOutput.Error">
+      <summary>Indicates error state.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerOutput.FeedForwardOutput">
+      <summary>Feed forward output [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerOutput.LatchedPosition">
+      <summary>Latched position/angle at last index position [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerOutput.PositionControlOutput">
+      <summary>Position controller output [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerOutput.PositionError">
+      <summary>Actual position/angle error [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerOutput.TestSignal">
+      <summary>Test signal added to the position controller input or output [u or A].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.PositionControllerParameter">
+      <summary>Position controller specific parameters</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerParameter.Ffa">
+      <summary>Feed-forward-factor acceleration [A*s^2/m].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerParameter.Ffv">
+      <summary>Feed-forward-factor velocity [A*s/m].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerParameter.Ffx">
+      <summary>Feed-forward-factor position [A/m].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerParameter.FfxOffset">
+      <summary>Feed-forward-offset on position [A/m].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerParameter.Filters_0">
+      <summary>Array of biquad filters in the position controller path.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerParameter.Filters_1">
+      <summary>Array of biquad filters in the position controller path.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerParameter.Filters_2">
+      <summary>Array of biquad filters in the position controller path.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerParameter.Filters_3">
+      <summary>Array of biquad filters in the position controller path.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerParameter.Filters_4">
+      <summary>Array of biquad filters in the position controller path.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerParameter.IntegratorOutputLimit">
+      <summary>Limitation of integrator output (anti windup) of position PID controller [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerParameter.Kr">
+      <summary>Gain of position PID controller [A/u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerParameter.OutputLimit">
+      <summary>Limitation of the position controller output [A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerParameter.PositionErrorLimit">
+      <summary>Error Limit (position-actualPosition) of position PID controller [u].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerParameter.T1">
+      <summary>Differentiator filter time constant (lag) of position PID controller [s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerParameter.Tdelay">
+      <summary>Delay-time position reference [s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerParameter.Tn">
+      <summary>Integrator time constant of position PID controller [s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerParameter.Tv">
+      <summary>Differentiator time constant (lead) of position PID controller [s].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.PositionControllerTestSignalCommands">
+      <summary>Position controller test signal commands.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerTestSignalCommands.AddToOutput">
+      <summary>Defines where the test signal is to add (add to the position controller input or output).</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerTestSignalCommands.Amplitude">
+      <summary>Amplitude of the test signal added to the position controller input or output [u or A].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerTestSignalCommands.Command">
+      <summary>Test-signal generator command.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerTestSignalCommands.Duration">
+      <summary>Duration that the test signal is applied after enabling it [s].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerTestSignalCommands.Frequency0">
+      <summary>Start frequency of the test signal [Hz].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerTestSignalCommands.Frequency1">
+      <summary>End frequency of sweep of the test signal [Hz].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PositionControllerTestSignalCommands.SineSignal">
+      <summary>Defines if the test signal is sine [true] or rectangular pulse train [false].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.PublicationParameters">
+      <summary>Publication parameters</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PublicationParameters.Activation">
+      <summary>Activation and trigger condition of a publication.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PublicationParameters.DownsamplingFactor">
+      <summary>Downsampling factor which defines the publication rate [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PublicationParameters.EndpointOne">
+      <summary>Address the endpoint one if this selector is set, otherwise endpoint two is used.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PublicationParameters.HighSpeed">
+      <summary>Selector for high speed publication.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PublicationParameters.HighSpeedSignalBuffer">
+      <summary>Signal buffer for high speed publication [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PublicationParameters.PublicationDestination">
+      <summary>Destination address of the publication [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PublicationParameters.PublicationDestinationPort">
+      <summary>Destination address type of the publication.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PublicationParameters.PublicationId">
+      <summary>Identification of the publication [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PublicationParameters.PublicationOwner">
+      <summary>Address of the publication owner [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PublicationParameters.RegisterOffsets">
+      <summary>Word addresses of the publication registers [32bit words].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PublicationParameters.TriggerLevelOrEpsilon">
+      <summary>Trigger level or AnyEdge Epsilon of the publication [trigger level or epsilon depends on trigger signal].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PublicationParameters.TriggerSignalDataType">
+      <summary>Data type of the trigger signal.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PublicationParameters.TriggerSignalOffset">
+      <summary>Word address of the trigger signal register [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.PublicationParameters.WriteIndexBase">
+      <summary>Actual write index base used in high speed publication [1].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.RCTtModuloTranslation">
+      <summary>Modulo translation data type</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.RCTtModuloTranslation.Counts">
+      <summary>position/angle translation increments 31bit [inc].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.RCTtModuloTranslation.Ident">
+      <summary>identifies if type of the translation data.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.RCTtPositionTranslation">
+      <summary>Position translation data type</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.RCTtPositionTranslation.F40Translation">
+      <summary>Position/angle float40 translation usage.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.RCTtPositionTranslation.ModuloTranslation">
+      <summary>Modulo translation usage.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.ReadonlyFloat40">
+      <summary>Position data type, readonly version</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.ReadonlyFloat40.Extension">
+      <summary>position/angle lower word includes 8bit extension to build the 40bit float.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.ReadonlyFloat40.Float32">
+      <summary>position/angle upper word includes 32bit float [u].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.Register">
+      <summary>Register layout</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Register.Axes_0">
+      <summary>Array of axis registers.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Register.Axes_1">
+      <summary>Array of axis registers.</summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid5.Register.CODE_SIZE">
+      <summary>
+            Maximum size of Tama code
+            </summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Register.General">
+      <summary>General registers used for the whole drive.</summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid5.Register.HighSpeedSubscriptionBufferSize">
+      <summary>
+            Number of 32-bit words that the high-speed buffer can contain
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid5.Register.MaximumNumberOfAxesOnThisDriveType">
+      <summary>
+            Maximum number of supported axes per drive
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid5.Register.MaximumNumberOfSubscriptions">
+      <summary>
+            Maximum number of subscriptions per drive
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid5.Register.MaximumValuesPerSubscription">
+      <summary>
+            Maximum number of values per subscription
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid5.Register.NumberOfBiquadFilters">
+      <summary>
+            Number of BiQuad filters in the position controller
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid5.Register.NumberOfOutputPhases">
+      <summary>
+            Number of PWM/SVM voltage output phases
+            </summary>
+    </member>
+    <member name="F:Triamec.Tama.Rlid5.Register.RegisterLayoutId">
+      <summary>
+            The register layout id
+            </summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Register.Tama">
+      <summary>Tama area (Tama control and memory for Tama object code) .</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.SubscriptionParameters">
+      <summary>Subscriber parameters</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.SubscriptionParameters.RegisterOffsets">
+      <summary>Register address word offset of the subscription values 1..k [32bit words].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.SubscriptionParameters.RegisterOffsetTimestamp">
+      <summary>Register address word offset of the timestamp value [32bit words].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.SubscriptionParameters.SubscriptionId">
+      <summary>Identification of the subscription [1].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.SubscriptionParameters.SubscriptionOwner">
+      <summary>Address of the subscription owner [1].</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.Subscriptions">
+      <summary>Subscription parameters for the drive</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Subscriptions.Publishers_0">
+      <summary>Publisher parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Subscriptions.Publishers_1">
+      <summary>Publisher parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Subscriptions.Publishers_2">
+      <summary>Publisher parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Subscriptions.Publishers_3">
+      <summary>Publisher parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Subscriptions.Subscribers_0">
+      <summary>Subscriber parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Subscriptions.Subscribers_1">
+      <summary>Subscriber parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Subscriptions.Subscribers_2">
+      <summary>Subscriber parameters.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Subscriptions.Subscribers_3">
+      <summary>Subscriber parameters.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.Tama">
+      <summary>Tama related register area</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Tama.AsynchronousMainCommand">
+      <summary>Command for the asynchronous Tama main application.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Tama.AsynchronousMainState">
+      <summary>State of the asynchronous Tama main application. State value must be in range [0..63] for proper state change events!.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Tama.AsynchronousStackOffset">
+      <summary>The word offset from the register memory to the stack memory of the asynchronous Tama main application.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Tama.AsynchronousTamaVirtualMachineState">
+      <summary>State of the asynchronous Tama virtual machine.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Tama.CodeMemory">
+      <summary>Memory for Tama binary code.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Tama.IsochronousMainCommand">
+      <summary>Command for the isochronous Tama main application.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Tama.IsochronousMainState">
+      <summary>State of the isochronous Tama main application. State value must be in range [0..63] for proper state change events!.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Tama.IsochronousStackOffset">
+      <summary>The word offset from the register memory to the stack memory of the isochronous Tama main application.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Tama.IsochronousTamaVirtualMachineState">
+      <summary>State of the isochronous Tama virtual machine.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.Tama.Variables">
+      <summary>General purpose variables usable for data transfer between c# application and Tama applications.</summary>
+    </member>
+    <member name="T:Triamec.Tama.Rlid5.TamaVariables">
+      <summary>General purpose variables usable for data transfer between c# application and Tama applications</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeIntVar0">
+      <summary>General purpose integer variable 0.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeIntVar1">
+      <summary>General purpose integer variable 1.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeIntVar2">
+      <summary>General purpose integer variable 2.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeIntVar3">
+      <summary>General purpose integer variable 3.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeIntVar4">
+      <summary>General purpose integer variable 4.</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar0">
+      <summary>General purpose variable 0 [depends on usage].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar1">
+      <summary>General purpose variable 1 [depends on usage].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar10">
+      <summary>General purpose variable 10 [depends on usage].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar11">
+      <summary>General purpose variable 11 [depends on usage].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar12">
+      <summary>General purpose variable 12 [depends on usage].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar13">
+      <summary>General purpose variable 13 [depends on usage].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar14">
+      <summary>General purpose variable 14 [depends on usage].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar15">
+      <summary>General purpose variable 15 [depends on usage].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar16">
+      <summary>General purpose variable 16 [depends on usage].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar17">
+      <summary>General purpose variable 17 [depends on usage].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar18">
+      <summary>General purpose variable 18 [depends on usage].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar19">
+      <summary>General purpose variable 19 [depends on usage].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar2">
+      <summary>General purpose variable 2 [depends on usage].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar20">
+      <summary>General purpose variable 20 [depends on usage].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar21">
+      <summary>General purpose variable 21 [depends on usage].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar22">
+      <summary>General purpose variable 22 [depends on usage].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar23">
+      <summary>General purpose variable 23 [depends on usage].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar24">
+      <summary>General purpose variable 24 [depends on usage].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar3">
+      <summary>General purpose variable 3 [depends on usage].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar4">
+      <summary>General purpose variable 4 [depends on usage].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar5">
+      <summary>General purpose variable 5 [depends on usage].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar6">
+      <summary>General purpose variable 6 [depends on usage].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar7">
+      <summary>General purpose variable 7 [depends on usage].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar8">
+      <summary>General purpose variable 8 [depends on usage].</summary>
+    </member>
+    <member name="P:Triamec.Tama.Rlid5.TamaVariables.GenPurposeVar9">
+      <summary>General purpose variable 9 [depends on usage].</summary>
+    </member>
+  </members>
+</doc>

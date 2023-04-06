@@ -1,0 +1,1625 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Triamec.Firmware</name>
+  </assembly>
+  <members>
+    <member name="T:Triamec.ICancelableProgress`1">
+      <summary>
+            Defines a provider for progress updates with support for cancellation.
+            </summary>
+      <typeparam name="T">The type of progress update value.</typeparam>
+    </member>
+    <member name="P:Triamec.ICancelableProgress`1.CancellationToken">
+      <summary>
+            Gets the token propagating notification that operations should be canceled.
+            </summary>
+    </member>
+    <member name="M:Triamec.ICancelableProgress`1.Nest(System.Action{Triamec.ICancelableProgress{`0},`0})">
+      <summary>
+            Creates a new progress object routing messages to this progress object.
+            </summary>
+      <param name="nestedAction">
+            Provides a progress handler receiving this instance and the progress update value.
+            </param>
+    </member>
+    <member name="M:Triamec.ICancelableProgress`1.ThrowIfCancellationRequested">
+      <summary>
+            Checks whether the upgrade has had cancellation requested.
+            </summary>
+      <exception cref="T:System.OperationCanceledException">The upgrade has had cancellation requested.</exception>
+    </member>
+    <member name="T:Triamec.Firmware.FirmwareDatabase">
+      <summary>
+            Represents the database containing firmware specific information.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDatabase.Connect">
+      <summary>
+            Connect to the firmware database.
+            </summary>
+      <exception cref="T:Triamec.Firmware.FirmwareException">No working database found.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDatabase.Connect(System.String,System.Boolean)">
+      <summary>
+            Connect to the specified firmware database.
+            </summary>
+      <param name="path">The location of the database.</param>
+      <param name="readOnly">Whether to open the database for reading only.</param>
+      <exception cref="T:Triamec.Firmware.FirmwareException">Connection failed.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDatabase.Connect(System.String,System.String)">
+      <summary>
+            Connect to the specified firmware database.
+            </summary>
+      <param name="providerName">The type of the provider.</param>
+      <param name="connectionString">The connection string.</param>
+      <exception cref="T:Triamec.Firmware.FirmwareException">Connection failed.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDatabase.Dispose">
+      <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDatabase.Enumerate``1">
+      <summary>
+            Returns all rows from a specified table as an enumerable entity.
+            </summary>
+      <typeparam name="T">
+            Represents the table by means of the type's <see cref="P:System.Reflection.MemberInfo.Name" />.
+            </typeparam>
+      <returns>The enumerable entity.</returns>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDatabase.ExportDatabase(System.IO.FileInfo)">
+      <summary>
+            Exports the public parts of the database into an SQLite database.
+            </summary>
+      <param name="destination">Where to save the database.</param>
+      <param name="customTableCopier">Optional method to export custom tables.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="destination" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.Data.Common.DbException">The connection to the database failed.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDatabase.ExportDatabase``1(System.IO.FileInfo)">
+      <summary>
+            Exports the public parts and a specified table of the database into an SQLite database.
+            </summary>
+      <param name="destination">Where to save the database.</param>
+      <typeparam name="T">The type of the additional table or view to export.</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="destination" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.Data.Common.DbException">The connection to the database failed.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDatabase.ExportDatabase(System.IO.FileInfo,System.Action{Triamec.Database.Db,Triamec.Database.Db})">
+      <summary>
+            Exports the public parts of the database into an SQLite database.
+            </summary>
+      <param name="destination">Where to save the database.</param>
+      <param name="customTableCopier">Optional method to export custom tables.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="destination" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.Data.Common.DbException">The connection to the database failed.</exception>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareDatabase.FileName">
+      <summary>
+            Gets the name of the firmware database file.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDatabase.IsOutdated(Triamec.Firmware.FirmwareDatabase)">
+      <summary>
+            Determines whether the specified database is more recent than in this one.
+            </summary>
+      <returns>
+            Whether this <see cref="T:Triamec.Firmware.FirmwareDatabase" /> is outdated with respect to <paramref name="source" />.
+            </returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="source" /> is <see langword="null" />.</exception>
+      <exception cref="T:System.Data.Common.DbException" />
+    </member>
+    <member name="F:Triamec.Firmware.FirmwareDatabase.LocalDbConnection">
+      <summary>
+            The name of the connection string for accessing the central firmware database.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDatabase.Query``1">
+      <summary>
+            Reads data from a table.
+            </summary>
+      <typeparam name="T">
+            Represents the table by means of the type's <see cref="P:System.Reflection.MemberInfo.Name" />.
+            </typeparam>
+      <returns>The sequence of table rows.</returns>
+    </member>
+    <member name="T:Triamec.Firmware.FirmwareDownloader">
+      <summary>
+            This class associates a firmware file to an <see cref="T:Triamec.Firmware.IFlashArea" /> and manages the download of the file 
+            to the <see cref="T:Triamec.Firmware.IFlashArea" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDownloader.#ctor(Triamec.Firmware.IFlashArea)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Firmware.FirmwareDownloader" /> class.
+            </summary>
+      <param name="target">The updatable device.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="target" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDownloader.Cache(System.IO.Stream)">
+      <summary>
+            Caches a stream in memory.
+            </summary>
+      <param name="original">The original stream.</param>
+      <returns>A cache stream.</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="original" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDownloader.CheckFirmwareFile(System.String)">
+      <summary>
+            Checks the given firmware file if it may be downloaded.
+            </summary>
+      <param name="firmwareFile">Path to the firmware file to check.</param>
+      <param name="progress">The progress maintainer.</param>
+      <returns>
+        <see langword="null" /> if the check was successful; otherwise, a mismatch message.
+            </returns>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDownloader.CheckFirmwareFile(System.String,System.IProgress{System.String})">
+      <summary>
+            Checks the given firmware file if it may be downloaded.
+            </summary>
+      <param name="firmwareFile">Path to the firmware file to check.</param>
+      <param name="progress">The progress maintainer.</param>
+      <returns>
+        <see langword="null" /> if the check was successful; otherwise, a mismatch message.
+            </returns>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDownloader.Compose(System.IProgress{System.String},Triamec.Firmware.Composition.Package,Triamec.Firmware.Composition.FirmwareEntry,System.Boolean@)">
+      <summary>
+            Composes firmware for the <see cref="P:Triamec.Firmware.FirmwareDownloader.Target" /> and optionally additional firmwares to a desired format.
+            </summary>
+      <param name="progress">The progress maintainer.</param>
+      <param name="package">The composed firmware package.</param>
+      <param name="mainEntry">Contains the image specific to the <see cref="P:Triamec.Firmware.FirmwareDownloader.Target" />.</param>
+      <param name="firmwareChangeExpected">
+            Whether it's expected that the firmware name changes. If not overridden, returns <see langword="false" />.
+            </param>
+      <returns>If not overridden, doesn't compose anything, but just reads <paramref name="mainEntry" />.</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <para>This method is overridden and <paramref name="package" /> is <see langword="null" />.</para>
+        <para>-or-</para>
+        <para>
+          <paramref name="mainEntry" /> is <see langword="null" />.</para>
+      </exception>
+      <exception cref="T:Triamec.Firmware.FirmwareException">Composition failed.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDownloader.Compose(System.IProgress{Triamec.Firmware.FirmwareProgressState},System.String[])">
+      <summary>
+            Compose the firmware specified by file paths.
+            </summary>
+      <param name="progress">The progress service.</param>
+      <param name="paths">One or more paths.</param>
+      <returns>A composed firmware stream. If not overridden, the content of the first path.</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="paths" /> is <see langword="null" />.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="paths" /> is empty.</exception>
+    </member>
+    <member name="F:Triamec.Firmware.FirmwareDownloader.DefaultFileExtension">
+      <summary>
+            Gets the default file extension for firmware files.
+            <para>The value is <c>"TAMfw"</c>.</para></summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDownloader.DoDownload(System.IO.Stream,System.String[])">
+      <summary>
+            Performs the firmware download.
+            </summary>
+      <param name="firmware">The stream providing the firmware.</param>
+      <param name="progress">The progress service.</param>
+      <param name="originPaths">The list of the file paths where <paramref name="firmware" /> originates.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <para>
+          <paramref name="firmware" /> is <see langword="null" />.</para>
+        <para>-or-</para>
+        <para>
+          <paramref name="progress" /> is <see langword="null" />.</para>
+        <para>-or-</para>
+        <para>
+          <paramref name="originPaths" /> is <see langword="null" />.</para>
+      </exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="originPaths" /> is empty.</exception>
+      <exception cref="T:System.InvalidOperationException">A download is already in progress.</exception>
+      <exception cref="T:System.OperationCanceledException">
+        <paramref name="progress" /> indicates to cancel the operation.
+            </exception>
+      <exception cref="T:Triamec.Firmware.FirmwareException">The download failed.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDownloader.DoDownload(System.IO.Stream,Triamec.ICancelableProgress{Triamec.Firmware.FirmwareProgressState},System.String[])">
+      <summary>
+            Performs the firmware download.
+            </summary>
+      <param name="firmware">The stream providing the firmware.</param>
+      <param name="progress">The progress service.</param>
+      <param name="originPaths">The list of the file paths where <paramref name="firmware" /> originates.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <para>
+          <paramref name="firmware" /> is <see langword="null" />.</para>
+        <para>-or-</para>
+        <para>
+          <paramref name="progress" /> is <see langword="null" />.</para>
+        <para>-or-</para>
+        <para>
+          <paramref name="originPaths" /> is <see langword="null" />.</para>
+      </exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="originPaths" /> is empty.</exception>
+      <exception cref="T:System.InvalidOperationException">A download is already in progress.</exception>
+      <exception cref="T:System.OperationCanceledException">
+        <paramref name="progress" /> indicates to cancel the operation.
+            </exception>
+      <exception cref="T:Triamec.Firmware.FirmwareException">The download failed.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDownloader.DoDownload(System.String[])">
+      <summary>
+            Performs the firmware download.
+            </summary>
+      <param name="paths">The list of the file paths, containing at least one element.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="paths" /> is <see langword="null" />.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="paths" /> is empty.</exception>
+      <exception cref="T:System.InvalidOperationException">A download is already in progress.</exception>
+      <exception cref="T:Triamec.Firmware.FirmwareException">The download failed.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDownloader.DoDownload(Triamec.ICancelableProgress{Triamec.Firmware.FirmwareProgressState},System.String[])">
+      <summary>
+            Performs the firmware download.
+            </summary>
+      <param name="progress">The progress service.</param>
+      <param name="paths">The list of file paths containing firmwares.</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="paths" /> is empty.</exception>
+      <exception cref="T:System.InvalidOperationException">Another asynchronous download is pending.</exception>
+      <exception cref="T:Triamec.Firmware.FirmwareException">The download failed.</exception>
+      <exception cref="T:System.OperationCanceledException">The download was canceled.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDownloader.DoDownloadAsync(System.IO.Stream,System.String[])">
+      <summary>
+            Starts a firmware upgrade of a device asynchronously.
+            </summary>
+      <param name="firmware">The stream providing the firmware.</param>
+      <param name="progress">The progress service.</param>
+      <param name="originPaths">The list of the file paths where <paramref name="firmware" /> originates.</param>
+      <returns>
+            The asynchronous workload.
+            If the operation is canceled before it completes, contains the <see cref="F:System.Threading.Tasks.TaskStatus.Canceled" /> value for
+            the <see cref="P:System.Threading.Tasks.Task.Status" /> property.
+            If the download failed, contains the <see cref="T:Triamec.Firmware.FirmwareException" /> in the <see cref="P:System.Threading.Tasks.Task.Exception" />
+            property.
+            </returns>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDownloader.DoDownloadAsync(System.IO.Stream,Triamec.ICancelableProgress{Triamec.Firmware.FirmwareProgressState},System.Boolean,System.String[])">
+      <summary>
+            Starts a firmware upgrade of a device asynchronously.
+            </summary>
+      <param name="firmware">The stream providing the firmware.</param>
+      <param name="progress">The progress service.</param>
+      <param name="originPaths">The list of the file paths where <paramref name="firmware" /> originates.</param>
+      <returns>
+            The asynchronous workload.
+            If the operation is canceled before it completes, contains the <see cref="F:System.Threading.Tasks.TaskStatus.Canceled" /> value for
+            the <see cref="P:System.Threading.Tasks.Task.Status" /> property.
+            If the download failed, contains the <see cref="T:Triamec.Firmware.FirmwareException" /> in the <see cref="P:System.Threading.Tasks.Task.Exception" />
+            property.
+            </returns>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDownloader.DoDownloadAsync(System.IO.Stream,Triamec.ICancelableProgress{Triamec.Firmware.FirmwareProgressState},System.String[])">
+      <summary>
+            Starts a firmware upgrade of a device asynchronously.
+            </summary>
+      <param name="firmware">The stream providing the firmware.</param>
+      <param name="progress">The progress service.</param>
+      <param name="originPaths">The list of the file paths where <paramref name="firmware" /> originates.</param>
+      <returns>
+            The asynchronous workload.
+            If the operation is canceled before it completes, contains the <see cref="F:System.Threading.Tasks.TaskStatus.Canceled" /> value for
+            the <see cref="P:System.Threading.Tasks.Task.Status" /> property.
+            If the download failed, contains the <see cref="T:Triamec.Firmware.FirmwareException" /> in the <see cref="P:System.Threading.Tasks.Task.Exception" />
+            property.
+            </returns>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDownloader.DoDownloadAsync(System.String[])"></member>
+    <member name="M:Triamec.Firmware.FirmwareDownloader.DoDownloadAsync(Triamec.ICancelableProgress{Triamec.Firmware.FirmwareProgressState},System.String[])">
+      <summary>
+            Starts a firmware upgrade of a device asynchronously.
+            </summary>
+      <param name="progress">The progress service.</param>
+      <param name="paths">The list of file paths containing firmwares.</param>
+      <returns>
+            The asynchronous workload.
+            If the operation is canceled before it completes, contains the <see cref="F:System.Threading.Tasks.TaskStatus.Canceled" /> value for
+            the <see cref="P:System.Threading.Tasks.Task.Status" /> property.
+            If the download failed, contains the <see cref="T:Triamec.Firmware.FirmwareException" /> in the <see cref="P:System.Threading.Tasks.Task.Exception" />
+            property.
+            </returns>
+      <exception cref="T:System.ArgumentNullException">
+        <para>
+          <paramref name="progress" /> is <see langword="null" />.</para>
+        <para>-or-</para>
+        <para>
+          <paramref name="paths" /> is <see langword="null" />.</para>
+      </exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="paths" /> is empty.</exception>
+      <exception cref="T:System.InvalidOperationException">A download is already in progress.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDownloader.DownloadAsync(System.IO.Stream,Triamec.ICancelableProgress{Triamec.Firmware.FirmwareProgressState})">
+      <summary>
+            Executes the download.
+            </summary>
+      <param name="firmware">The firmware to program.</param>
+      <param name="progress">The progress service.</param>
+      <exception cref="T:Triamec.Firmware.FirmwareException">The download operation could not complete successfully.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDownloader.Epilogue(System.IProgress{Triamec.Firmware.FirmwareProgressState},System.Boolean)">
+      <summary>
+            Concludes final tasks after all downloads have completed.
+            </summary>
+      <param name="progress">An object to report progress.</param>
+      <param name="isRootDownload">
+            The download completed by the epilogue is not part of a composite download.
+            </param>
+    </member>
+    <member name="F:Triamec.Firmware.FirmwareDownloader.EscapeSequenceWarning">
+      <summary>
+            Marks a line within the result of <see cref="M:Triamec.Firmware.FirmwareDownloader.GetTransferInformation(System.String[])" /> and progress messages beginning with
+            this string as warning.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareDownloader.FileQueries">
+      <summary>
+            Indicates how to find matching firmware for this downloader.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDownloader.GetTargetReadiness">
+      <summary>
+            Determines whether the <see cref="P:Triamec.Firmware.FirmwareDownloader.Target" /> is ready to be updated.
+            </summary>
+      <returns>
+        <see langword="null" /> if the <see cref="P:Triamec.Firmware.FirmwareDownloader.Target" /> is ready; a reason otherwise.</returns>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDownloader.GetTransferInformation(System.String[])">
+      <summary>
+            Gets information about the chosen firmware file as well as the download location.
+            </summary>
+      <param name="paths">The list of paths to the files containing firmwares.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="paths" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:Triamec.Firmware.FirmwareException">Getting information failed.</exception>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareDownloader.IsBusy">
+      <summary>
+            Gets a value indicating whether a download is currently pending.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDownloader.IsTargetIntact">
+      <summary>
+            Gets a value indicating whether the firmware is running normally on this flash area.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareDownloader.KnownExtensions">
+      <summary>
+            Gets all known firmware file extensions.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareDownloader.PermitAnomalies">
+      <summary>
+            Indicates whether to attempt to continue operation despite of inconsistent input.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareDownloader.RegisterExtension(System.String)">
+      <summary>
+            Adds an extension to <see cref="P:Triamec.Firmware.FirmwareDownloader.KnownExtensions" />.
+            </summary>
+      <param name="extension">The extension, without period, to register.</param>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareDownloader.SlownessReason">
+      <summary>
+            Gets a reason why the download is slower than usual in the given context.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareDownloader.Target">
+      <summary>
+            Gets the device where this <see cref="T:Triamec.Firmware.FirmwareDownloader" /> belongs to.
+            </summary>
+    </member>
+    <member name="T:Triamec.Firmware.FirmwareException">
+      <summary>
+            Exception thrown by calls into the firmware API.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareException.#ctor">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.FirmwareException" /> class.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>Creates a new instance of the <see cref="T:Triamec.Firmware.FirmwareException" /> class.</summary>
+      <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown. </param>
+      <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination. </param>
+      <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareException.#ctor(System.String)">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.FirmwareException" /> class.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareException.#ctor(System.String,System.Exception)">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.FirmwareException" /> class.
+            </summary>
+    </member>
+    <member name="T:Triamec.Firmware.FirmwareFileQuery">
+      <summary>
+            Provides information about how to find matching firmware files.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareFileQuery.#ctor(Triamec.Firmware.FirmwareDownloader,Triamec.Firmware.FirmwareFileQuery.Relevance,System.String,System.String,System.String,System.Type,Triamec.Firmware.FirmwareFileQuery,System.Boolean)">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.FirmwareFileQuery" /> class.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareFileQuery.Area">
+      <summary>Gets a short name of the target where the firmware will run.</summary>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareFileQuery.AreaClosure">
+      <summary>Gets the areas of this and all chained queries, joined by <c>'/'</c>.</summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareFileQuery.CheckFile(System.String,System.IProgress{System.String})">
+      <summary>
+            Determines whether the specified file matches this <see cref="T:Triamec.Firmware.FirmwareFileQuery" />.
+            </summary>
+      <returns>
+        <see cref="F:System.String.Empty" /> if the file matches the query; otherwise, a message.</returns>
+    </member>
+    <member name="F:Triamec.Firmware.FirmwareFileQuery.DefaultSettingsArtifactType">
+      <summary>Default type for firmware related settings.</summary>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareFileQuery.Downloader">
+      <summary>
+            Gets the <see cref="T:Triamec.Firmware.FirmwareDownloader" /> capable to download the files discovered by this query.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareFileQuery.Extension">
+      <summary>Gets the file extension, without preceding dot (<c>.</c>), of the firmware.</summary>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareFileQuery.Next">
+      <summary>Gets the next firmware file query.</summary>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareFileQuery.Pattern">
+      <summary>Gets the file name pattern, without extension, to search for the firmware.</summary>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareFileQuery.RelevanceValue">
+      <summary>
+            Gets the relevance of the firmware file format referred to by this <see cref="T:Triamec.Firmware.FirmwareFileQuery" />.
+            </summary>
+    </member>
+    <member name="T:Triamec.Firmware.FirmwareFileQuery.Relevance">
+      <summary>
+            The relevance of a firmware file format.
+            </summary>
+    </member>
+    <member name="F:Triamec.Firmware.FirmwareFileQuery.Relevance.Standard">
+      <summary>
+            Refers to the state-of-the-art firmware file format.
+            </summary>
+    </member>
+    <member name="F:Triamec.Firmware.FirmwareFileQuery.Relevance.Legacy">
+      <summary>
+            Refers to an obsolete yet supported firmware file format.
+            </summary>
+    </member>
+    <member name="F:Triamec.Firmware.FirmwareFileQuery.Relevance.Advanced">
+      <summary>
+            Refers to a firmware file format not released to the standard user.
+            </summary>
+    </member>
+    <member name="T:Triamec.Firmware.FirmwareInfo">
+      <summary>
+            Identification of a firmware.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareInfo.#ctor(System.String,System.Byte,Triamec.Firmware.IFirmwareRelease)">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.FirmwareInfo" /> class.
+            </summary>
+      <param name="name">The name of the firmware.</param>
+      <param name="hardwareCompatibility">
+            The index of the running firmware related to the support of different product revisions.
+            </param>
+      <param name="release">
+            The version of the running firmware which distinguishes it from other releases from the same development.
+            </param>
+    </member>
+    <member name="F:Triamec.Firmware.FirmwareInfo.Empty">
+      <summary>
+            Represents unknown or blank firmware.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareInfo.HardwareCompatibility">
+      <summary>
+            Gets the index of the running firmware related to the support of different product revisions.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareInfo.Name">
+      <summary>
+            Gets the unique name of the running firmware used to discriminate applicable firmwares from others.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareInfo.Release">
+      <summary>
+            Gets the version of the running firmware which distinguishes it from other releases from the same development.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareInfo.ToString">
+      <summary>Returns a string that represents the current object.</summary>
+      <returns>A string that represents the current object.</returns>
+    </member>
+    <member name="T:Triamec.Firmware.FirmwareProgress">
+      <summary>
+            Progress report and cancellation service for firmware upgrades.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareProgress.#ctor">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.FirmwareProgress" /> class.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareProgress.#ctor(System.Action{Triamec.Firmware.FirmwareProgressState})">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.FirmwareProgress" /> class specifying a handler.
+            </summary>
+      <param name="handler">A handler to be directly invoked for each reported progress value.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="handler" /> is <see langword="null" /> .</exception>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareProgress.#ctor(System.Action{Triamec.Firmware.FirmwareProgressState},System.Threading.CancellationToken)">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.FirmwareProgress" /> class specifying a handler and
+            allowing for cancellation.
+            </summary>
+      <param name="handler">A handler to be directly invoked for each reported progress value.</param>
+      <param name="cancellationToken">Allows to cancel the running firmware upgrade.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="handler" /> is <see langword="null" /> .</exception>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareProgress.#ctor(System.Threading.CancellationToken)">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.FirmwareProgress" /> class allowing for cancellation.
+            </summary>
+      <param name="cancellationToken">Allows to cancel the running firmware upgrade.</param>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareProgress.CancellationToken">
+      <summary>
+            Gets the token propagating notification that operations should be canceled.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareProgress.Nest(System.Action{Triamec.ICancelableProgress{Triamec.Firmware.FirmwareProgressState},Triamec.Firmware.FirmwareProgressState})">
+      <summary>
+            Creates a new progress object routing messages to this progress object.
+            </summary>
+      <param name="nestedAction">
+            Provides a progress handler receiving this instance and the progress update value.
+            </param>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareProgress.ThrowIfCancellationRequested">
+      <summary>
+            Checks whether the upgrade has had cancellation requested.
+            </summary>
+      <exception cref="T:System.OperationCanceledException">The upgrade has had cancellation requested.</exception>
+    </member>
+    <member name="T:Triamec.Firmware.FirmwareProgressState">
+      <summary>
+            Reflects the progress of a firmware upgrade.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareProgressState.#ctor(System.Single,System.Object)">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.FirmwareProgressState" /> structure.
+            </summary>
+      <param name="fraction">The fraction of the upgrade which is completed.</param>
+      <param name="status">An instance reflecting the state of the upgrade or <see langword="null" />.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="fraction" /> is not in the domain [0..1].
+            </exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="status" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareProgressState.Equals(System.Object)">
+      <summary>Indicates whether this instance and a specified object are equal.</summary>
+      <param name="obj">The object to compare with the current instance. </param>
+      <returns>true if <paramref name="obj" /> and this instance are the same type and represent the same value; otherwise, false. </returns>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareProgressState.Equals(Triamec.Firmware.FirmwareProgressState)">
+      <summary>Indicates whether the current object is equal to another object of the same type.</summary>
+      <param name="other">An object to compare with this object.</param>
+      <returns>true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.</returns>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareProgressState.Fraction">
+      <summary>
+            Gets the fraction of the upgrade which is completed.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareProgressState.GetHashCode">
+      <summary>Returns the hash code for this instance.</summary>
+      <returns>A 32-bit signed integer that is the hash code for this instance.</returns>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareProgressState.op_Equality(Triamec.Firmware.FirmwareProgressState,Triamec.Firmware.FirmwareProgressState)">
+      <summary>
+            Compares the two instances for equality.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareProgressState.op_Inequality(Triamec.Firmware.FirmwareProgressState,Triamec.Firmware.FirmwareProgressState)">
+      <summary>
+            Compares the two instances for inequality.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareProgressState.Percentage">
+      <summary>
+            Gets the percentage of the upgrade which is completed.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareProgressState.Status">
+      <summary>
+            Gets an instance reflecting the state of the upgrade.
+            </summary>
+    </member>
+    <member name="T:Triamec.Firmware.FirmwareRelease">
+      <summary>
+            Implementation for <see cref="T:Triamec.Firmware.IFirmwareRelease" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareRelease.Compare(Triamec.Firmware.FirmwareRelease,Triamec.Firmware.FirmwareRelease)">
+      <summary>
+            Compares two releases.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareRelease.CompareTo(Triamec.Firmware.IFirmwareRelease)">
+      <summary>Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object. </summary>
+      <param name="other">An object to compare with this instance. </param>
+      <returns>A value that indicates the relative order of the objects being compared. The return value has these meanings: Value Meaning Less than zero This instance precedes <paramref name="other" /> in the sort order.  Zero This instance occurs in the same position in the sort order as <paramref name="other" />. Greater than zero This instance follows <paramref name="other" /> in the sort order. </returns>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareRelease.Create(McSherry.SemanticVersioning.SemanticVersion,System.String)">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.FirmwareRelease" /> class.
+            </summary>
+      <param name="version">The semantic version to use as prototype.</param>
+      <param name="family">
+            The product family, or <see langword="null" /> if you don't care about <see cref="P:Triamec.Firmware.IFeatureSet.Name" />.
+            </param>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareRelease.Create(System.Int32,System.String)">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.FirmwareRelease" /> class.
+            </summary>
+      <param name="version">The serialized information.</param>
+      <param name="family">
+            The product family, or <see langword="null" /> if you don't care about <see cref="T:Triamec.Firmware.IFeatureSet" /> specific
+            release nomenclature.
+            </param>
+    </member>
+    <member name="F:Triamec.Firmware.FirmwareRelease.Default">
+      <summary>
+            The unspecified firmware release.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareRelease.Equals(System.Object)">
+      <summary>Determines whether the specified object is equal to the current object.</summary>
+      <param name="obj">The object to compare with the current object. </param>
+      <returns>true if the specified object  is equal to the current object; otherwise, false.</returns>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareRelease.Equals(Triamec.Firmware.IFirmwareRelease)">
+      <summary>Indicates whether the current object is equal to another object of the same type.</summary>
+      <param name="other">An object to compare with this object.</param>
+      <returns>true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.</returns>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareRelease.FeatureSet">
+      <summary>
+            Gets a value distinguishing assets having the same version but providing different functionality.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareRelease.GetHashCode">
+      <summary>Serves as the default hash function. </summary>
+      <returns>A hash code for the current object.</returns>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareRelease.op_Equality(Triamec.Firmware.FirmwareRelease,Triamec.Firmware.FirmwareRelease)">
+      <summary>
+            Compares two firmware releases for equality.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareRelease.op_GreaterThan(Triamec.Firmware.FirmwareRelease,Triamec.Firmware.FirmwareRelease)">
+      <summary>
+            Determines whether one release is greater than another.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareRelease.op_GreaterThanOrEqual(Triamec.Firmware.FirmwareRelease,Triamec.Firmware.FirmwareRelease)">
+      <summary>
+            Determines whether one release is greater or equal than another.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareRelease.op_Inequality(Triamec.Firmware.FirmwareRelease,Triamec.Firmware.FirmwareRelease)">
+      <summary>
+            Compares two firmware releases for inequality.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareRelease.op_LessThan(Triamec.Firmware.FirmwareRelease,Triamec.Firmware.FirmwareRelease)">
+      <summary>
+            Determines whether one release is smaller than another.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareRelease.op_LessThanOrEqual(Triamec.Firmware.FirmwareRelease,Triamec.Firmware.FirmwareRelease)">
+      <summary>
+            Determines whether one release is smaller or equal than another.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareRelease.Serialize">
+      <summary>Computes the binary representation of this firmware release.</summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareRelease.ToString">
+      <summary>Returns a string that represents the current object.</summary>
+      <returns>A string that represents the current object.</returns>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareRelease.ToString(System.String,System.IFormatProvider)">
+      <summary>Formats the value of the current instance using the specified format.</summary>
+      <param name="format">The format to use.-or- A null reference (Nothing in Visual Basic) to use the default format defined for the type of the <see cref="T:System.IFormattable" /> implementation. </param>
+      <param name="formatProvider">The provider to use to format the value.-or- A null reference (Nothing in Visual Basic) to obtain the numeric format information from the current locale setting of the operating system. </param>
+      <returns>The value of the current instance in the specified format.</returns>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareRelease.TryParse(System.String,System.String,Triamec.Firmware.IFirmwareRelease@)">
+      <summary>
+            Attempts to parse a <see cref="T:Triamec.Firmware.FirmwareRelease" />.
+            </summary>
+      <param name="format">The string representing the release.</param>
+      <param name="family">
+            The product family, or <see langword="null" /> if you don't care about <see cref="T:Triamec.Firmware.IFeatureSet" /> specific
+            release nomenclature.
+            </param>
+      <param name="version">The parsed result.</param>
+      <returns>Whether parsing succeeded.</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="format" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="T:Triamec.Firmware.FirmwareType">
+      <summary>
+            Represents a type of firmware.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareType.Create(System.UInt32,Triamec.Firmware.FirmwareDatabase)">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.FirmwareType" /> class from the specified raw value.
+            </summary>
+      <param name="value">The identifier of the <see cref="T:Triamec.Firmware.FirmwareType" />.</param>
+      <param name="db">The database to get necessary information from.</param>
+      <returns>
+            The desired <see cref="T:Triamec.Firmware.FirmwareType" /> or an instance having <see cref="P:Triamec.Firmware.FirmwareType.IsFallback" /> set to
+            <see langword="true" /> if <paramref name="value" /> is unknown to <paramref name="db" />.
+            </returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="db" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareType.DescribeOptionModule(Triamec.Firmware.FirmwareDatabase,System.String@,System.String@,System.String@)">
+      <summary>
+            If this firmware runs on an option module, gets the option module name.
+            </summary>
+      <param name="db">The database.</param>
+      <param name="name">
+            The advertised name of the option module or <see langword="null" /> if the firmware doesn't run on an option
+            module.
+            </param>
+      <param name="description">
+            The description of the option module or <see langword="null" /> if the firmware doesn't run on an option
+            module.
+            </param>
+      <param name="category">The option module category.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="db" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareType.IsFallback">
+      <summary>Gets a value indicating whether the firmware type is not known to the database.</summary>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareType.Name">
+      <summary>Gets the unique name of this <see cref="T:Triamec.Firmware.FirmwareType" />.</summary>
+    </member>
+    <member name="T:Triamec.Firmware.FirmwareUnit">
+      <summary>
+            Represents a product for firmware update purposes.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareUnit.#ctor(System.UInt32,System.UInt64,System.Collections.Generic.IEnumerable{Triamec.Firmware.IFlashArea},System.Boolean)">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.FirmwareUnit" /> class.
+            </summary>
+      <param name="productId">The product ID.</param>
+      <param name="featureFlags">The secondary product ID.</param>
+      <param name="flashAreaQuery">
+            The targets within this <see cref="T:Triamec.Firmware.FirmwareUnit" /> where an individual firmware image can be updated.
+            </param>
+      <param name="isLive">Whether the <see cref="P:Triamec.Firmware.FirmwareUnit.FlashAreas" /> are accessed via running firmware.</param>
+      <exception cref="T:System.ArgumentNullException">Any of the arguments is <see langword="null" />.</exception>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareUnit.Configuration">
+      <summary>
+            Gets the product configuration.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareUnit.CreateDownloader">
+      <summary>
+            Creates a new instance of a <see cref="T:Triamec.Firmware.FirmwareDownloader" /> capable of updating this
+            <see cref="T:Triamec.Firmware.FirmwareUnit" />.
+            </summary>
+      <returns>A new downloader or <see langword="null" /> if updating is not possible.</returns>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareUnit.EnumeratePeripherals(System.Boolean)">
+      <summary>
+            Searches for newly appeared <see cref="T:Triamec.Firmware.IFlashArea" /> instances.
+            </summary>
+      <param name="aggressively">
+            Whether to exhaust the possibilities to find flash areas. For example, a flash might be unpowered unless
+            some specific action is performed.
+            </param>
+      <returns>When <paramref name="aggressively" /> is <see langword="true" />, an optional report.</returns>
+      <exception cref="T:Triamec.Firmware.FirmwareException">A communication timeout occurred.</exception>
+    </member>
+    <member name="P:Triamec.Firmware.FirmwareUnit.Family">
+      <summary>
+            Gets the name of the product family which is needed for choosing a file for a firmware update.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareUnit.Filter``1(Triamec.Firmware.FirmwareDatabase)">
+      <summary>
+            Gets related information from a secondary table about this product.
+            </summary>
+      <param name="db">The firmware database.</param>
+      <typeparam name="T">Specifies a query part of the <c>TQuery</c> table.</typeparam>
+      <returns>
+            A query returning all entries of the specified table related to this <see cref="T:Triamec.Firmware.FirmwareUnit" />.
+            </returns>
+    </member>
+    <member name="M:Triamec.Firmware.FirmwareUnit.ToString(System.String,System.IFormatProvider)">
+      <summary>
+            Formats the value of this <see cref="T:Triamec.Firmware.FirmwareUnit" /> using the specified format.
+            </summary>
+      <param name="format">
+        <para>
+          <c>"P"</c> to get the product name and the major revision number, including the major revisions from
+            		any installed option modules.
+            	</para>
+        <para>-or-</para>
+        <para>
+          <c>"p"</c> to get the product name and complete revision number, including revisions from any
+            		installed option modules.
+            	</para>
+        <para>-or-</para>
+        <para>
+          <c>"R"</c> to get the major revision number, including the major revisions from any installed option
+            		modules.
+            	</para>
+        <para>-or-</para>
+        <para>
+          <c>"r"</c> to get the complete revision number, including revisions from any installed option
+            		modules.
+            	</para>
+        <para>-or-</para>
+        <para>
+            		Any other <see langword="string" /> or <see langword="null" /> to use a default, verbose format.
+            	</para>
+      </param>
+      <param name="formatProvider">
+        <para>The provider to use to format the value.</para>
+        <para>-or-</para>
+        <para>
+          <see langword="null" /> to obtain the numeric format information from the current locale setting of
+            	the operating system.
+            	</para>
+      </param>
+    </member>
+    <member name="T:Triamec.Firmware.IFeatureSet">
+      <summary>
+            Distinguish firmware for the same hardware, but exposing different functionality.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.IFeatureSet.Name">
+      <summary>Gets the name of this feature set.</summary>
+    </member>
+    <member name="M:Triamec.Firmware.IFeatureSet.Serialize">
+      <summary>
+            Computes the binary representation of this feature set.
+            </summary>
+    </member>
+    <member name="T:Triamec.Firmware.IFirmwareRelease">
+      <summary>
+            Firmware version.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.IFirmwareRelease.FeatureSet">
+      <summary>
+            Gets a value distinguishing assets having the same version but providing different functionality.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.IFirmwareRelease.Serialize">
+      <summary>Computes the binary representation of this firmware release.</summary>
+    </member>
+    <member name="T:Triamec.Firmware.IFlashArea">
+      <summary>
+            Target where a firmware can run.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.IFlashArea.Address">
+      <summary>
+            Gets the address of this <see cref="T:Triamec.Firmware.IFlashArea" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.IFlashArea.FirmwareDownloader">
+      <summary>
+            Provides a means to update the firmware of this <see cref="T:Triamec.Firmware.IFlashArea" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.IFlashArea.FirmwareInfo">
+      <summary>
+            Gets the firmware identification.
+            </summary>
+      <exception cref="T:System.TimeoutException">A communication timeout occurred.</exception>
+    </member>
+    <member name="P:Triamec.Firmware.IFlashArea.FlashName">
+      <summary>
+            Gets the name of this flash area.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.IFlashArea.MajorRevision">
+      <summary>
+            Gets the encoded major revision of the product this flash represents.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.IFlashArea.Ping">
+      <summary>
+            Tests whether the area is accessible.
+            </summary>
+      <returns>
+        <see langword="true" /> iff communication succeeded.</returns>
+    </member>
+    <member name="P:Triamec.Firmware.IFlashArea.Position">
+      <summary>
+            Gets the position in the product naming scheme this flash area addresses.
+            </summary>
+    </member>
+    <member name="T:Triamec.Firmware.IncoherentFirmwareRelease">
+      <summary>
+            An undefined firmware version.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.IncoherentFirmwareRelease.Instance">
+      <summary>
+            Gets the singleton instance of this class.
+            </summary>
+    </member>
+    <member name="F:Triamec.Firmware.IncoherentFirmwareRelease.Tag">
+      <summary>
+            The display name of an <see cref="T:Triamec.Firmware.IncoherentFirmwareRelease" />.
+            </summary>
+    </member>
+    <member name="T:Triamec.Firmware.ProductConfiguration">
+      <summary>
+            Positions and revisions of a product.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.ProductConfiguration.Create(System.UInt32,System.UInt64,System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,System.UInt16}},Triamec.Firmware.FirmwareDatabase)">
+      <exception cref="T:System.ArgumentNullException">
+        <para>
+          <paramref name="db" /> is <see langword="null" />.</para>
+      </exception>
+    </member>
+    <member name="M:Triamec.Firmware.ProductConfiguration.GetLegacyProductName(System.UInt32,Triamec.Firmware.FirmwareDatabase)">
+      <exception cref="T:System.ArgumentNullException">
+        <para>
+          <paramref name="db" /> is <see langword="null" />.</para>
+      </exception>
+    </member>
+    <member name="M:Triamec.Firmware.ProductConfiguration.HasProperty(System.String)">
+      <summary>
+            Gets a value indicating whether the product has the specified property configured.
+            </summary>
+      <param name="name">The name of the property.</param>
+    </member>
+    <member name="T:Triamec.Firmware.ProductSpec">
+      <summary>
+            Product specification.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.ProductSpec.AllowUpdateWhenOperational">
+      <summary>
+            Gets a value indicating whether this product may receive a firmware update while in operational state.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.ProductSpec.CreateAdhoc(System.String)">
+      <summary>
+            Creates an ad-hoc specification for the specified product name.
+            </summary>
+      <returns>An instance with an ad-hoc <see cref="P:Triamec.Firmware.ProductSpec.Identity" />.</returns>
+    </member>
+    <member name="M:Triamec.Firmware.ProductSpec.CreateAdhoc(System.String,System.UInt32)">
+      <summary>
+            Creates a ad-hoc specification with specified prefixed <see cref="P:Triamec.Firmware.ProductSpec.Name" /> for the specified encoded ID.
+            </summary>
+      <returns>An instance with an ad-hoc name.</returns>
+    </member>
+    <member name="M:Triamec.Firmware.ProductSpec.CreateAdhoc(System.UInt32)">
+      <summary>
+            Creates an ad-hoc specification for the specified encoded ID.
+            </summary>
+      <returns>An instance with an ad-hoc name.</returns>
+    </member>
+    <member name="M:Triamec.Firmware.ProductSpec.CreateAdhoc(System.UInt32,System.String,System.String,System.String,System.Boolean)">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.ProductSpec" /> class.
+            </summary>
+      <param name="id">The encoded value of the product.</param>
+      <param name="name">The name of the product.</param>
+      <param name="stationType">The fundamental type of the hardware.</param>
+      <param name="manufacturer">The manufacturer of the product.</param>
+      <param name="allowUpdateWhenOperational">
+            Whether this product may receive a firmware update while in operational state.
+            </param>
+    </member>
+    <member name="F:Triamec.Firmware.ProductSpec.Default">
+      <summary>The singular empty specification.</summary>
+    </member>
+    <member name="P:Triamec.Firmware.ProductSpec.Identity">
+      <summary>
+            Gets the key of the product spec.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.ProductSpec.Manufacturer">
+      <summary>Gets the manufacturer of the product.</summary>
+    </member>
+    <member name="P:Triamec.Firmware.ProductSpec.Name">
+      <summary>Gets the name of the product.</summary>
+    </member>
+    <member name="M:Triamec.Firmware.ProductSpec.Query(System.UInt32,Triamec.Firmware.FirmwareDatabase)">
+      <summary>
+            Queries a new instance of the <see cref="T:Triamec.Firmware.ProductSpec" /> class from database and ad-hoc specs for the
+            specified binary value.
+            </summary>
+      <param name="productId">Encoded value of the product.</param>
+      <param name="db">The database connection.</param>
+      <returns>
+            The product specification or <see cref="F:Triamec.Firmware.ProductSpec.Default" /> if no according information is found in
+            <paramref name="db" /> or in ad-hoc specs.
+            </returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="db" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.ProductSpec.QueryAdhoc(System.UInt32)">
+      <summary>
+            Queries a new instance of the <see cref="T:Triamec.Firmware.ProductSpec" /> class from ad-hoc specs.
+            </summary>
+      <param name="value">Encoded value of the product.</param>
+      <returns>
+            The product specification or <see cref="F:Triamec.Firmware.ProductSpec.Default" /> if no according information is found in ad-hoc specs.
+            </returns>
+    </member>
+    <member name="P:Triamec.Firmware.ProductSpec.StationType">
+      <summary>
+            Gets the fundamental type of the hardware.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.ProductSpec.ToString">
+      <summary>Gets <see cref="P:Triamec.Firmware.ProductSpec.Name" />.</summary>
+    </member>
+    <member name="T:Triamec.Firmware.ProgressExtensions">
+      <summary>
+            Enables syntactic sugar for <see cref="T:System.IProgress`1" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.ProgressExtensions.Report(System.IProgress{Triamec.Firmware.FirmwareProgressState},System.Single,System.Object)">
+      <summary>
+            Reports the progress using a tuple.
+            </summary>
+      <param name="progress">The progress service.</param>
+      <param name="fraction">The fraction of the upgrade which is completed.</param>
+      <param name="status">An instance reflecting the state of the upgrade or <see langword="null" />.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="progress" /> is <see langword="null" />.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="fraction" /> is not in the domain [0..1].
+            </exception>
+    </member>
+    <member name="T:Triamec.Firmware.SemanticVersionExtensions">
+      <summary>
+            Extends the <see cref="T:McSherry.SemanticVersioning.SemanticVersion" /> class.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.SemanticVersionExtensions.AssertPrereleaseConstraints(McSherry.SemanticVersioning.SemanticVersion)">
+      <summary>
+            Checks whether this version is one of the prerelease identifiers supported by Triamec.
+            </summary>
+      <exception cref="T:Triamec.Firmware.FirmwareException">The constraints are hurt.</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="version" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.SemanticVersionExtensions.ConstrainedPrerelease(McSherry.SemanticVersioning.SemanticVersion)">
+      <summary>
+            Gets the first prerelease identifier of the specified version.
+            </summary>
+      <returns>
+            The first prerelease identifier or <see langword="null" /> if the version doesn't represent a prerelease.
+            </returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="version" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.SemanticVersionExtensions.ParseBackwardsCompatible(System.String)">
+      <summary>
+            Parses the specified serialized semantic version, supporting previous version numbering.
+            </summary>
+      <exception cref="T:Triamec.Firmware.FirmwareException">Failed to parse release number.</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="version" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="F:Triamec.Firmware.SemanticVersionExtensions.Prereleases">
+      <summary>
+            The supported set of prerelease identifiers.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.SemanticVersionExtensions.StripPrerelease(McSherry.SemanticVersioning.SemanticVersion)">
+      <summary>
+            Returns a version like the specified, but without prerelease specifiers.
+            </summary>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="version" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.SemanticVersionExtensions.ToBackwardsCompatible(McSherry.SemanticVersioning.SemanticVersion)">
+      <summary>
+            Serializes the specified semantic version taking into account previous version numbering.
+            </summary>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="semanticVersion" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="M:Triamec.Firmware.SemanticVersionExtensions.TryParseBackwardsCompatible(System.String,McSherry.SemanticVersioning.SemanticVersion@)">
+      <summary>
+            Tries to parse the specified serialized semantic version, supporting previous version numbering.
+            </summary>
+      <param name="version">The string to parse.</param>
+      <param name="semanticVersion">The parsed version or <see langword="null" /> in case parsing fails.</param>
+      <param name="packageMode">
+            Whether the result is to be used for creating a <see cref="T:Triamec.Firmware.Composition.Package" />.
+            </param>
+      <returns>Whether parsing succeeded.</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="version" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.SemanticVersionExtensions.TryParseBackwardsCompatible(System.String,McSherry.SemanticVersioning.SemanticVersion@,System.Boolean)">
+      <summary>
+            Tries to parse the specified serialized semantic version, supporting previous version numbering.
+            </summary>
+      <param name="version">The string to parse.</param>
+      <param name="semanticVersion">The parsed version or <see langword="null" /> in case parsing fails.</param>
+      <param name="packageMode">
+            Whether the result is to be used for creating a <see cref="T:Triamec.Firmware.Composition.Package" />.
+            </param>
+      <returns>Whether parsing succeeded.</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="version" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="T:Triamec.Firmware.Composition.CompositionException">
+      <summary>
+            Exception thrown all over this library.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.CompositionException.#ctor">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.Composition.CompositionException" /> class.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.CompositionException.#ctor(System.String)">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.Composition.CompositionException" /> class.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.CompositionException.#ctor(System.String,System.Exception)">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.Composition.CompositionException" /> class.
+            </summary>
+    </member>
+    <member name="T:Triamec.Firmware.Composition.DefinitionMode">
+      <summary>Specifies how the firmware for a package gets chosen.</summary>
+    </member>
+    <member name="F:Triamec.Firmware.Composition.DefinitionMode.Actual">
+      <summary>The firmware gets chosen based on the contents of the designated firmware release folder.</summary>
+    </member>
+    <member name="F:Triamec.Firmware.Composition.DefinitionMode.Specified">
+      <summary>The firmware gets chosen based on a registered package.</summary>
+    </member>
+    <member name="T:Triamec.Firmware.Composition.FirmwareBaseSpec">
+      <summary>Base class specifying aspects of a firmware.</summary>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.FirmwareBaseSpec.#ctor(System.String,System.Byte,System.String)">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.Composition.FirmwareBaseSpec" /> class.
+            </summary>
+      <param name="name">The name of the firmware, or <see langword="null" /> to express an unknown firmware.</param>
+      <param name="hardwareCompatibilityId">The hardware compatibility identifier of the firmware.</param>
+      <param name="firmwareReleaseRangeSpecifier">Specification of the permitted releases of the firmware.</param>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.FirmwareBaseSpec.#ctor(System.String,System.Byte,Triamec.Firmware.Composition.FirmwareReleaseRange)">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.Composition.FirmwareBaseSpec" /> class.
+            </summary>
+      <param name="name">The name of the firmware, or <see langword="null" /> to express an unknown firmware.</param>
+      <param name="hardwareCompatibilityId">The hardware compatibility identifier of the firmware.</param>
+      <param name="releaseRange">The permitted releases of the firmware.</param>
+    </member>
+    <member name="F:Triamec.Firmware.Composition.FirmwareBaseSpec.CaptureFeatureSet">
+      <summary>Regular expression capture group name for feature sets.</summary>
+    </member>
+    <member name="F:Triamec.Firmware.Composition.FirmwareBaseSpec.CaptureFirmwareRelease">
+      <summary>Regular expression capture group name for release specifiers.</summary>
+    </member>
+    <member name="F:Triamec.Firmware.Composition.FirmwareBaseSpec.CaptureFirmwareType">
+      <summary>Regular expression capture group name for firmware names.</summary>
+    </member>
+    <member name="F:Triamec.Firmware.Composition.FirmwareBaseSpec.CaptureHardwareCompatibility">
+      <summary>Regular expression capture group name for hardware compatibility identifiers.</summary>
+    </member>
+    <member name="F:Triamec.Firmware.Composition.FirmwareBaseSpec.CaptureIds">
+      <summary>Regular expression capture group name for release specifiers.</summary>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.FirmwareBaseSpec.FileFeatureSet(System.String,System.Text.RegularExpressions.Match)">
+      <summary>
+            Gets the feature set implemented by a firmware file.
+            </summary>
+      <param name="firmware">The name of the firmware.</param>
+      <param name="fileMatch">The regular expression match resulting from the file name.</param>
+      <returns>The feature set or <see cref="F:System.String.Empty" /> for a non-specific feature set.</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="firmware" /> is <see langword="null" />.
+            <para>-or-</para><paramref name="fileMatch" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.FirmwareBaseSpec.FileFeatureSet(System.Text.RegularExpressions.Match)">
+      <summary>
+            Gets the feature set implemented by a firmware file.
+            </summary>
+      <param name="firmware">The name of the firmware.</param>
+      <param name="fileMatch">The regular expression match resulting from the file name.</param>
+      <returns>The feature set or <see cref="F:System.String.Empty" /> for a non-specific feature set.</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="fileMatch" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.FirmwareBaseSpec.FormatFirmware(System.String,System.Byte)">
+      <summary>
+            Formats a firmware specification.
+            </summary>
+      <param name="name">The name of the firmware.</param>
+      <param name="hardwareCompatibilityId">The hardware compatibility identifier of the firmware.</param>
+    </member>
+    <member name="P:Triamec.Firmware.Composition.FirmwareBaseSpec.HardwareCompatibilityId">
+      <summary>
+            Gets the identifier distinguishing between similar firmware supporting different revisions of a product.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.Composition.FirmwareBaseSpec.Name">
+      <summary>Gets the identifying name of this firmware.</summary>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.FirmwareBaseSpec.ParseVersion(System.String,System.Text.RegularExpressions.Match)">
+      <summary>
+            Parses the version from a firmware path based on a regular expression match.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.Composition.FirmwareBaseSpec.ReleaseRange">
+      <summary>
+            Gets a range of firmware releases.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.FirmwareBaseSpec.ToString">
+      <summary>Returns a string that represents the current object.</summary>
+      <returns>A string that represents the current object.</returns>
+    </member>
+    <member name="T:Triamec.Firmware.Composition.FirmwareEntry">
+      <summary>
+            Represents a firmware within a <see cref="T:Triamec.Firmware.Composition.Package" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.Composition.FirmwareEntry.FirmwareType">
+      <summary>
+            Gets the firmware name of the firmware.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.Composition.FirmwareEntry.HardwareCompatibility">
+      <summary>
+            Gets the hardware compatibility identifier of the firmware.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.Composition.FirmwareEntry.Item(System.String)">
+      <summary>
+            Gets the value of the specified firmware identifier.
+            </summary>
+      <param name="id">The name of the identifier.</param>
+      <returns>The value of the identifier.</returns>
+      <exception cref="T:System.Collections.Generic.KeyNotFoundException">The firmware doesn't have such an identifier.</exception>
+    </member>
+    <member name="P:Triamec.Firmware.Composition.FirmwareEntry.Name">
+      <summary>
+            Gets the name of the firmware file, including extension.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.FirmwareEntry.Read">
+      <summary>Opens the firmware data for reading.</summary>
+      <returns>The data stream, which you are responsible to <see cref="M:System.IO.Stream.Close" /> after usage.</returns>
+      <exception cref="T:Triamec.Firmware.FirmwareException">Failed to open the firmware.</exception>
+    </member>
+    <member name="P:Triamec.Firmware.Composition.FirmwareEntry.Release">
+      <summary>Gets the release version of the firmware.</summary>
+    </member>
+    <member name="T:Triamec.Firmware.Composition.FirmwareRange">
+      <summary>
+            Describes a range of firmware releases.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.FirmwareRange.Create(Triamec.Firmware.FirmwareUnit,System.String,Triamec.Firmware.FirmwareDatabase)">
+      <summary>
+            Creates an instance representing a firmware over a range of releases.
+            </summary>
+      <param name="productInfo">Information about the targeted product.</param>
+      <param name="flashArea">The name of the targeted flash.</param>
+      <param name="db">The database connection.</param>
+      <returns>
+            The instance, which may have <see cref="P:Triamec.Firmware.Composition.FirmwareBaseSpec.Name" /> set to <see langword="null" />
+            if no information is found.
+            </returns>
+      <exception cref="T:System.ArgumentNullException">
+        <para>
+          <paramref name="productInfo" /> is <see langword="null" />.</para>
+        <para>-or-</para>
+        <para>
+          <paramref name="db" /> is <see langword="null" />.</para>
+      </exception>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.FirmwareRange.Create(Triamec.Firmware.FirmwareUnit,Triamec.Firmware.IFlashArea,Triamec.Firmware.FirmwareDatabase)">
+      <summary>
+            Gets an instance representing the firmware supporting the specified product on a target flash.
+            </summary>
+      <param name="product">Information about the targeted product.</param>
+      <param name="flashArea">The targeted flash.</param>
+      <param name="db">The database connection.</param>
+      <returns>A range of firmware supporting the targeted flash on the specified product.</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <para>
+          <paramref name="product" /> is <see langword="null" />.</para>
+        <para>-or-</para>
+        <para>
+          <paramref name="flashArea" /> is <see langword="null" />.</para>
+        <para>-or-</para>
+        <para>
+          <paramref name="db" /> is <see langword="null" />.</para>
+      </exception>
+    </member>
+    <member name="F:Triamec.Firmware.Composition.FirmwareRange.FileRegex">
+      <summary>
+            The regular expression used to match firmware files using canonical names.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.FirmwareRange.ToString">
+      <summary>Returns a string that represents the current object.</summary>
+      <returns>A string that represents the current object.</returns>
+    </member>
+    <member name="T:Triamec.Firmware.Composition.FirmwareReleaseRange">
+      <summary>Describes a range of firmware releases.</summary>
+    </member>
+    <member name="P:Triamec.Firmware.Composition.FirmwareReleaseRange.IsEmpty">
+      <summary>
+            Indicates whether no release of the firmware provides support.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.FirmwareReleaseRange.IsSatisfiedBy(McSherry.SemanticVersioning.SemanticVersion)">
+      <summary>
+            Determines whether this <see cref="T:Triamec.Firmware.Composition.FirmwareReleaseRange" /> is satisfied by the specified version.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.Composition.FirmwareReleaseRange.IsSpecific">
+      <summary>
+            Indicates whether the range represents exactly one specific release.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.Composition.FirmwareReleaseRange.IsUnbounded">
+      <summary>
+            Indicates whether all releases of a firmware are permitted.
+            </summary>
+    </member>
+    <member name="F:Triamec.Firmware.Composition.FirmwareReleaseRange.MaxVersion">
+      <summary>
+            The minimum supported version.
+            </summary>
+    </member>
+    <member name="F:Triamec.Firmware.Composition.FirmwareReleaseRange.MinVersion">
+      <summary>
+            The maximum supported version.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.FirmwareReleaseRange.ToString">
+      <summary>Returns a string that represents the current object.</summary>
+      <returns>A string that represents the current object.</returns>
+    </member>
+    <member name="T:Triamec.Firmware.Composition.Package">
+      <summary>
+            Represents a built firmware package.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.Package.#ctor(System.IO.Stream)">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.Composition.Package" /> class from a stream.
+            </summary>
+      <param name="stream">The stream delivering the package.</param>
+      <exception cref="T:Triamec.Firmware.Composition.CompositionException">The package could not be opened.</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="stream" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.Package.#ctor(System.String)">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.Composition.Package" /> class from a file.
+            </summary>
+      <param name="path">The path to the file.</param>
+      <exception cref="T:Triamec.Firmware.Composition.CompositionException">The package could not be opened.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.Package.Contains(Triamec.Firmware.Composition.FirmwareRange,System.Boolean)">
+      <summary>
+            Gets a value indicating whether this <see cref="T:Triamec.Firmware.Composition.Package" /> contains the specified firmware.
+            </summary>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="M:Triamec.Firmware.Composition.Package.Dispose" /> has been called.</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="specification" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="P:Triamec.Firmware.Composition.Package.Contents">
+      <summary>
+            Gets all firmware contained in the archive.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.Package.Dispose">
+      <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+    </member>
+    <member name="P:Triamec.Firmware.Composition.Package.Family">
+      <summary>
+            Gets the family this package belongs to.
+            </summary>
+      <exception cref="T:Triamec.Firmware.Composition.CompositionException">The package manifest could not be read.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.Package.GetFirmware(Triamec.Firmware.Composition.FirmwareRange)">
+      <summary>
+            Gets the specified firmware contained in this <see cref="T:Triamec.Firmware.Composition.Package" />.
+            </summary>
+      <returns>The firmware or <see langword="null" /> if not found.</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="specification" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="M:Triamec.Firmware.Composition.Package.Dispose" /> has been called.</exception>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.Package.GetFirmwareEntry(System.String)">
+      <summary>
+            Gets the name to use for a firmware entry given a firmware file name.
+            </summary>
+      <param name="fileName">The file name including extension.</param>
+    </member>
+    <member name="F:Triamec.Firmware.Composition.Package.LayoutVersion">
+      <summary>The package layout version.</summary>
+    </member>
+    <member name="F:Triamec.Firmware.Composition.Package.ManifestEntry">
+      <summary>The name of the manifest.</summary>
+    </member>
+    <member name="P:Triamec.Firmware.Composition.Package.Release">
+      <summary>
+            Gets the release version of this package.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.Package.Verify">
+      <summary>
+            Determines whether the signature of this <see cref="T:Triamec.Firmware.Composition.Package" /> is intact.
+            </summary>
+      <returns>
+        <see cref="F:System.String.Empty" /> in case the signature is intact; otherwise a message.</returns>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="M:Triamec.Firmware.Composition.Package.Dispose" /> has been called.</exception>
+      <exception cref="T:Triamec.Firmware.FirmwareException">A failure occurred during verification.</exception>
+    </member>
+    <member name="T:Triamec.Firmware.Composition.XmlSignatureService">
+      <summary>
+            Service for verifying XML signatures.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.XmlSignatureService.#ctor(System.String)">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.Composition.XmlSignatureService" /> class.
+            </summary>
+      <param name="publicKeyXml">An XML element specifying the public key.</param>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.XmlSignatureService.Dispose">
+      <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.XmlSignatureService.Dispose(System.Boolean)">
+      <summary>
+            Releases all resources used by this <see cref="T:Triamec.Firmware.Composition.XmlSignatureService" /> instance.
+            </summary>
+      <param name="disposing"></param>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.XmlSignatureService.Finalize">
+      <summary>
+            Releases unmanaged resources used by this <see cref="T:Triamec.Firmware.Composition.XmlSignatureService" /> instance.
+            </summary>
+    </member>
+    <member name="P:Triamec.Firmware.Composition.XmlSignatureService.PublicKey">
+      <summary>
+            Gets the public key algorithm.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.XmlSignatureService.Verify(System.Xml.XmlDocument)">
+      <summary>
+            Verifies a signed XML document.
+            </summary>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="document" /> is <see langword="null" />.</exception>
+      <exception cref="T:System.Security.Cryptography.CryptographicException">
+        <para>
+          <paramref name="document" /> isn't signed.</para>
+        <para>-or-</para>
+        <para>
+          <paramref name="document" /> does not contain a valid signature.</para>
+        <para>
+          <paramref name="document" /> was modified since it was signed.</para>
+      </exception>
+    </member>
+    <member name="T:Triamec.Firmware.Composition.XmlSigningService">
+      <summary>
+            Service for signing XML documents.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.XmlSigningService.#ctor(System.String,System.String)">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.Composition.XmlSignatureService" /> class.
+            </summary>
+      <param name="cryptographicKeyContainerName"></param>
+      <param name="publicKeyXml">An XML element specifying the public key.</param>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.XmlSigningService.Sign(System.Xml.XmlDocument)">
+      <summary>
+            Signs an XML document.
+            </summary>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="document" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="T:Triamec.Firmware.Composition.Legacy.FirmwareImageComposer">
+      <summary>
+            Combines CPU and FPGA images.
+            </summary>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.Legacy.FirmwareImageComposer.#ctor(System.Boolean)">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Firmware.Composition.Legacy.FirmwareImageComposer" /> class.
+            </summary>
+      <param name="hasCpu">Whether the image will hold a CPU image.</param>
+    </member>
+    <member name="M:Triamec.Firmware.Composition.Legacy.FirmwareImageComposer.Compose(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.IO.Stream,System.IO.Stream)">
+      <summary>
+            Composes the firmware.
+            </summary>
+      <returns>The composed firmware.</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="cpu" /> (if this instance was constructed with <c>hasCpu == <see langword="true" /></c>),
+            <paramref name="fpga" /> or <paramref name="hardwareName" /> is <see langword="null" />.
+            </exception>
+    </member>
+  </members>
+</doc>

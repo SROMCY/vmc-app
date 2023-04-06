@@ -1,0 +1,1700 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>ModuleCatalog</name>
+  </assembly>
+  <members>
+    <member name="T:Triamec.Bode.AcquisitionAvailableEventArgs">
+      <summary>
+            Information about the state of an <see cref="T:Triamec.Bode.IBodeLogic" /> instance during acquirement.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.AcquisitionAvailableEventArgs.#ctor(Triamec.Bode.BodeException,Triamec.Bode.BodeSpectrum,Triamec.Bode.IAcquisitionSignals,Triamec.Bode.TestSignalParameters)">
+      <summary>
+            	Creates a new instance of the <see cref="T:Triamec.Bode.AcquisitionAvailableEventArgs" /> class.
+            </summary>
+      <param name="error">
+            	In order to indicate success, <see langword="null" />.
+            	Otherwise, the cause of the rejection or failure.
+            </param>
+      <param name="spectrum">
+            	The partly computed bode frequency response. 
+            	Can be <see langword="null" /> if <paramref name="error" /> is not <see langword="null" />.
+            </param>
+      <param name="signals">
+            	The measured signals. 
+            	Can be <see langword="null" /> if <paramref name="error" /> is not <see langword="null" />.
+            </param>
+      <param name="parameters">
+            	The parameters supplied to the test signal generator. 
+            	Can be <see langword="null" /> if <paramref name="error" /> is not <see langword="null" />.
+            </param>
+      <exception cref="T:System.ArgumentNullException">
+        <see langword="null" /> was spuriously supplied.
+            </exception>
+    </member>
+    <member name="P:Triamec.Bode.AcquisitionAvailableEventArgs.Error">
+      <summary>
+            If anything is allright, gets <see langword="null" />.
+            Otherwise, gets the cause of the rejection or failure.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.AcquisitionAvailableEventArgs.Parameters">
+      <summary>
+            Gets the parameters supplied to the test signal generator.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.AcquisitionAvailableEventArgs.Signals">
+      <summary>
+            Gets the measured signals.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.AcquisitionAvailableEventArgs.Spectrum">
+      <summary>
+            Gets the partly computed bode frequency response.
+            </summary>
+    </member>
+    <member name="T:Triamec.Bode.BodeException">
+      <summary>
+            Bode Exception.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.BodeException.#ctor">
+      <summary>
+            Initializes a recoverable new instance of the <see cref="T:Triamec.Bode.BodeException" /> class.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.BodeException.#ctor(System.Int32)">
+      <summary>
+            Initializes a recoverable new instance of the <see cref="T:Triamec.Bode.BodeException" /> class.
+            </summary>
+      <param name="frequency">The number of the frequency where the error occurred.</param>
+    </member>
+    <member name="M:Triamec.Bode.BodeException.#ctor(System.Int32,System.Boolean)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Bode.BodeException" /> class.
+            </summary>
+      <param name="frequency">The number of the frequency where the error occurred.</param>
+      <param name="unrecoverable">Whether the process may recover from the exception and retry operation.</param>
+    </member>
+    <member name="M:Triamec.Bode.BodeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>
+            Constructor 
+            </summary>
+      <param name="info">The object that holds the serialized object data.</param>
+      <param name="context">The contextual information about the source or destination.</param>
+    </member>
+    <member name="M:Triamec.Bode.BodeException.#ctor(System.String)">
+      <summary>
+            Initializes a recoverable new instance of the <see cref="T:Triamec.Bode.BodeException" /> class.
+            </summary>
+      <param name="message">A message that describes the error.</param>
+    </member>
+    <member name="M:Triamec.Bode.BodeException.#ctor(System.String,System.Exception)">
+      <summary>
+            Initializes a recoverable new instance of the <see cref="T:Triamec.Bode.BodeException" /> class.
+            </summary>
+      <param name="message">A message that describes the error.</param>
+      <param name="inner">The exception that is the cause of the current exception.
+            If the innerException parameter is not a null reference,
+            the current exception is raised in a catch block that handles the inner exception.</param>
+    </member>
+    <member name="M:Triamec.Bode.BodeException.#ctor(System.String,System.Exception,System.Boolean)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Bode.BodeException" /> class.
+            </summary>
+      <param name="message">A message that describes the error.</param>
+      <param name="inner">The exception that is the cause of the current exception.
+            If the innerException parameter is not a null reference,
+            the current exception is raised in a catch block that handles the inner exception.</param>
+      <param name="unrecoverable">Whether the process may recover from the exception and retry operation.</param>
+    </member>
+    <member name="M:Triamec.Bode.BodeException.#ctor(System.String,System.Exception,System.Int32)">
+      <summary>
+            Initializes a recoverable new instance of the <see cref="T:Triamec.Bode.BodeException" /> class.
+            </summary>
+      <param name="message">A message that describes the error.</param>
+      <param name="inner">The exception that is the cause of the current exception.
+            If the innerException parameter is not a null reference,
+            the current exception is raised in a catch block that handles the inner exception.</param>
+      <param name="frequency">The number of the frequency where the error occurred.</param>
+    </member>
+    <member name="M:Triamec.Bode.BodeException.#ctor(System.String,System.Exception,System.Int32,System.Boolean)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Bode.BodeException" /> class.
+            </summary>
+      <param name="message">A message that describes the error.</param>
+      <param name="inner">The exception that is the cause of the current exception.
+            If the innerException parameter is not a null reference,
+            the current exception is raised in a catch block that handles the inner exception.</param>
+      <param name="frequency">The number of the frequency where the error occurred.</param>
+      <param name="unrecoverable">Whether the process may recover from the exception and retry operation.</param>
+    </member>
+    <member name="M:Triamec.Bode.BodeException.#ctor(System.String,System.Int32)">
+      <summary>
+            Initializes a recoverable new instance of the <see cref="T:Triamec.Bode.BodeException" /> class.
+            </summary>
+      <param name="message">A message that describes the error.</param>
+      <param name="frequency">The number of the frequency where the error occurred.</param>
+    </member>
+    <member name="P:Triamec.Bode.BodeException.Frequency">
+      <summary>
+            Gets the number of the frequency where the error occurred.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.BodeException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>
+            Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.
+            </summary>
+      <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the
+            exception being thrown.</param>
+      <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the
+            source or destination.</param>
+    </member>
+    <member name="P:Triamec.Bode.BodeException.Unrecoverable">
+      <summary>
+            Gets a value indicating whether the process may recover from the exception and retry operation.
+            </summary>
+    </member>
+    <member name="T:Triamec.Bode.BodeLogic">
+      <summary>
+            Business logic for the bode measurement.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.BodeLogic.#ctor">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Bode.BodeLogic" /> class.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.BodeLogic.#ctor(System.ComponentModel.IContainer)">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Bode.BodeLogic" /> class.
+            </summary>
+      <param name="container">The container.</param>
+    </member>
+    <member name="F:Triamec.Bode.BodeLogic.DISPOSE_TIMEOUT">
+      <summary>
+            The maximal duration to wait in <see cref="M:System.ComponentModel.Component.Dispose" /> when an instance <see cref="P:Triamec.Bode.BodeLogic.IsBusy" />.
+            <para>The value equals 10 seconds.</para></summary>
+    </member>
+    <member name="F:Triamec.Bode.BodeLogic.DYNAMIC_RANGE">
+      <summary>
+            The dynamic range of the modulation carrier.
+            <para>The value is <c>1000</c>.</para></summary>
+    </member>
+    <member name="M:Triamec.Bode.BodeLogic.GetBodeSpectrum(Triamec.Bode.IBodeAxis,Triamec.Bode.BodeParameters)">
+      <summary>
+            Gets the Bode frequency response of the provided axis using <see cref="T:Triamec.Bode.BodeParameters" />.
+            </summary>
+      <param name="axis">The axis to measure.</param>
+      <param name="parameters">The user parameterization object.</param>
+      <returns>The Bode frequency response.</returns>
+      <exception cref="T:System.NotSupportedException">
+            This method is called while <see cref="P:Triamec.Bode.BodeLogic.IsBusy" /> indicates <see langword="true" />.
+            </exception>
+      <exception cref="T:System.ArgumentNullException">
+        <see langword="null" /> was passed in one ore both arguments or a clone of them.
+            </exception>
+      <exception cref="T:Triamec.Bode.BodeException">
+            The acquisition cannot be created.
+            </exception>
+      <exception cref="T:System.ObjectDisposedException">
+        <see cref="M:System.ComponentModel.Component.Dispose" /> has been called beforehand.
+            </exception>
+    </member>
+    <member name="M:Triamec.Bode.BodeLogic.GetBodeSpectrumAsync(Triamec.Bode.IBodeAxis,Triamec.Bode.BodeParameters)">
+      <summary>
+            Gets the Bode frequency response of the specified axis in an asynchronous manner using
+            specified <see cref="T:Triamec.Bode.BodeParameters" />.
+            </summary>
+      <param name="axis">The axis to measure.</param>
+      <param name="parameters">The user parameterization object.</param>
+      <exception cref="T:System.NotSupportedException">
+            This method is called while <see cref="P:Triamec.Bode.BodeLogic.IsBusy" /> indicates <see langword="true" />.
+            </exception>
+    </member>
+    <member name="M:Triamec.Bode.BodeLogic.GetBodeSpectrumCancel">
+      <summary>
+            Cancels the current bode measurement.
+            </summary>
+    </member>
+    <member name="E:Triamec.Bode.BodeLogic.GetBodeSpectrumCompleted">
+      <summary>
+            	Occurs when the bode measurement completes or is canceled using <see cref="M:Triamec.Bode.BodeLogic.GetBodeSpectrumCancel" />.
+            </summary>
+    </member>
+    <member name="E:Triamec.Bode.BodeLogic.GetBodeSpectrumProgressChanged">
+      <summary>
+            	Occurs when the acquisition of the response to one frequency completes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.BodeLogic.IsBusy">
+      <summary>
+            Indicates whether a bode measurement is ongoing.
+            </summary>
+    </member>
+    <member name="F:Triamec.Bode.BodeLogic.RETRY_LIMIT">
+      <summary>
+            A limit for automatic tests to give up when the acquisition fails every time.
+            <para>The value is <c>8</c>.</para></summary>
+    </member>
+    <member name="F:Triamec.Bode.BodeLogic.SCALE">
+      <summary>
+            The auto range up/down scale factor.
+            <para>The value is <c>1.3</c>.</para></summary>
+    </member>
+    <member name="T:Triamec.Bode.BodeParameters">
+      <summary>
+            User parameterization of the bode test.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.BodeParameters.#ctor(System.Double[],NationalInstruments.UI.Range,System.Int32,NationalInstruments.UI.ScaleType,System.TimeSpan)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Bode.BodeParameters" /> class.
+            </summary>
+      <param name="measuringPointMaxima">The maximum values to measure at the measuring points.</param>
+      <param name="frequencyRange">The frequency range of the bode measurement [Hz].</param>
+      <param name="frequencySteps">The number of frequencies that will be measured with.</param>
+      <param name="spacing">Gets or sets the type of distribution of the frequencies over <paramref name="frequencyRange" />.</param>
+      <param name="waitBeforeAcquire">The time to wait between activating the system and measuring its outputs.</param>
+    </member>
+    <member name="M:Triamec.Bode.BodeParameters.#ctor(System.Int32)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Bode.BodeParameters" /> class.
+            </summary>
+      <param name="measuringPointCount">The number of measuring points to parametrize.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="measuringPointCount" /> is smaller than <c>2</c>.
+            </exception>
+    </member>
+    <member name="M:Triamec.Bode.BodeParameters.Clone">
+      <summary>
+            Clones this instance.
+            </summary>
+      <returns>The clone.</returns>
+    </member>
+    <member name="P:Triamec.Bode.BodeParameters.FrequencyRange">
+      <summary>
+            Gets or sets the frequency range of the bode measurement [Hz].
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.BodeParameters.FrequencySteps">
+      <summary>
+            Gets or sets the number of frequencies that will be measured with.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.BodeParameters.GetMeasuringPointMaximum(System.Int32)">
+      <summary>Gets the upper bound for the specified measuring point before autoranging begins.</summary>
+      <param name="measuringPointIndex">Index of the measuring point.</param>
+      <returns>The value in the unit specified by the measuring point.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+            No measuring point with the index specified in <paramref name="measuringPointIndex" /> exists.
+            </exception>
+    </member>
+    <member name="M:Triamec.Bode.BodeParameters.GetUseDefaultMaximumForIncrementCalculation(System.Int32)">
+      <summary>
+            Gets a value indicating whether to consider the default maximum when calculating the default increment of
+            the specified measuring point.
+            </summary>
+      <param name="measuringPointIndex">Index of the measuring point.</param>
+      <returns>
+        <see langword="false" /> to use the maximum maximum, <see langword="false" /> to use the default maximum.
+            </returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+            No measuring point with the index specified in <paramref name="measuringPointIndex" /> exists.
+            </exception>
+    </member>
+    <member name="M:Triamec.Bode.BodeParameters.SetMeasuringPointMaximum(System.Int32,System.Double)">
+      <summary>Sets the upper bound for the specified measuring point before autoranging begins.</summary>
+      <param name="measuringPointIndex">Index of the measuring point.</param>
+      <param name="value">The value in the unit specified by the measuring point.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+            No measuring point with the index specified in <paramref name="measuringPointIndex" /> exists.
+            </exception>
+    </member>
+    <member name="M:Triamec.Bode.BodeParameters.SetUseDefaultMaximumForIncrementCalculation(System.Int32,System.Boolean)">
+      <summary>
+            Sets a value indicating whether to consider the default maximum when calculating the default increment of
+            the specified measuring point.
+            </summary>
+      <param name="measuringPointIndex">Index of the measuring point.</param>
+      <param name="value">
+        <see langword="false" /> to use the maximum maximum, <see langword="false" /> to use the
+            default maximum.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+            No measuring point with the index specified in <paramref name="measuringPointIndex" /> exists.
+            </exception>
+    </member>
+    <member name="P:Triamec.Bode.BodeParameters.Spacing">
+      <summary>
+            Gets or sets the type of distribution of the frequencies over <see cref="P:Triamec.Bode.BodeParameters.FrequencyRange" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.BodeParameters.WaitBeforeAcquire">
+      <summary>
+            Gets or sets the time to wait between activating the system and measuring its outputs.
+            </summary>
+    </member>
+    <member name="T:Triamec.Bode.BodeSpectrum">
+      <summary>
+            The bode spectrum of a bode measurement.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.BodeSpectrum.#ctor(Triamec.Bode.IBodeAxis,Triamec.Bode.BodeParameters)">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Bode.BodeSpectrum" /> class.
+            </summary>
+      <param name="axis">The axis of the spectrum.</param>
+      <param name="parameterization">The parameterization of the bode measurement.</param>
+      <exception cref="T:System.ArgumentNullException">A <see langword="null" /> reference was provided.</exception>
+    </member>
+    <member name="P:Triamec.Bode.BodeSpectrum.Axis">
+      <summary>
+            Gets the measured axis.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.BodeSpectrum.Count">
+      <summary>
+            Gets or sets the count of successfully supplied frequencies.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.BodeSpectrum.FileName">
+      <summary>
+            Gets the file name or <see langword="null" /> if never persisted.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.BodeSpectrum.Frequencies">
+      <summary>
+            Gets the frequencies of this spectrum.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.BodeSpectrum.GetFrequency(System.Int32)">
+      <summary>
+            Gets a frequency of <see cref="P:Triamec.Bode.BodeSpectrum.Frequencies" />, in Hertz.
+            </summary>
+      <param name="index">The number of the frequency.</param>
+      <returns>The desired frequency in Hertz.</returns>
+    </member>
+    <member name="M:Triamec.Bode.BodeSpectrum.GetInput">
+      <summary>
+            Gets the input signal, or an empty array if not available.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.BodeSpectrum.GetMagnitudeAndPhase(System.Int32)">
+      <summary>
+            Gets a spectrum of the bode measurement divided in a magnitude and a phase component.
+            </summary>
+      <param name="index">Specifies the desired spectrum.</param>
+      <returns>
+            Two vectors, the first is the magnitude [db], the second the phase [grad].
+            Infinite damping is returned as <see cref="F:System.Double.NaN" />.
+            </returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">No spectrum with the specified <paramref name="index" />
+            exists.</exception>
+    </member>
+    <member name="M:Triamec.Bode.BodeSpectrum.GetSpectrum(System.Int32)">
+      <summary>
+            Gets a spectrum of the bode measurement.
+            </summary>
+      <param name="index">Specifies the desired spectrum.</param>
+      <returns>The desired spectrum.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">No spectrum with the specified <paramref name="index" />
+            exists.</exception>
+    </member>
+    <member name="M:Triamec.Bode.BodeSpectrum.InvertSignIfNeeded">
+      <summary>
+            Inverts the sign if needed.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.BodeSpectrum.Load(System.String,System.Globalization.CultureInfo)">
+      <summary>
+            Loads the specified spectrum file.
+            </summary>
+      <param name="fileName">Name of the file.</param>
+      <param name="culture">The culture to use to interprete values.</param>
+      <returns>The spectrum</returns>
+      <exception cref="T:System.IO.IOException">File could not be loaded or read.</exception>
+      <exception cref="T:System.FormatException">The file has an illegal format.</exception>
+    </member>
+    <member name="P:Triamec.Bode.BodeSpectrum.Parameterization">
+      <summary>
+            Gets the parameterization of the measurement.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.BodeSpectrum.ResponseCount">
+      <summary>Gets the number of frequency responses.</summary>
+    </member>
+    <member name="M:Triamec.Bode.BodeSpectrum.Save(System.String)">
+      <summary>
+            Saves the bode spectrum to a given file.
+            </summary>
+      <param name="fileName">The name of the given file.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="fileName" /> is <see langword="null" />.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="fileName" /> is a zero-length string, contains only white
+            space, or contains one or more invalid characters as defined by <see cref="F:System.IO.Path.InvalidPathChars" />.
+            </exception>
+      <exception cref="T:Triamec.Bode.BodeException">Saving failed.</exception>
+    </member>
+    <member name="T:Triamec.Bode.BodeSpectrumCompletedEventArgs">
+      <summary>
+            The result of the <see cref="M:Triamec.Bode.IBodeLogic.GetBodeSpectrumAsync(Triamec.Bode.IBodeAxis,Triamec.Bode.BodeParameters)" /> method of <see cref="T:Triamec.Bode.IBodeLogic" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.BodeSpectrumCompletedEventArgs.#ctor(System.Boolean,Triamec.Bode.BodeSpectrum)">
+      <summary>
+            	Creates a new instance of the <see cref="T:Triamec.Bode.BodeSpectrumCompletedEventArgs" /> class.
+            </summary>
+      <param name="canceled">
+            	Whether the asynchronous operation has been canceled.
+            </param>
+      <param name="spectrum">
+            	The partly computed bode frequency response. 
+            	May be <see langword="null" /> when <paramref name="canceled" />.
+            </param>
+      <exception cref="T:System.ArgumentNullException">
+        <see langword="null" /> was spuriously supplied.
+            </exception>
+    </member>
+    <member name="P:Triamec.Bode.BodeSpectrumCompletedEventArgs.Canceled">
+      <summary>
+            Indicates whether the asynchronous operation has been canceled.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.BodeSpectrumCompletedEventArgs.Spectrum">
+      <summary>
+            Gets the actual bode frequency response.
+            </summary>
+    </member>
+    <member name="T:Triamec.Bode.FrequencyResponseInfo">
+      <summary>
+            Definition of a frequency response.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.FrequencyResponseInfo.Denominator">
+      <summary>
+            Gets the denominator measuring point.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.FrequencyResponseInfo.DenominatorIndex">
+      <summary>Gets the index of the denominator measuring point.</summary>
+    </member>
+    <member name="P:Triamec.Bode.FrequencyResponseInfo.InvertSign">
+      <summary>Gets a value indicating whether to invert the denominator.</summary>
+    </member>
+    <member name="P:Triamec.Bode.FrequencyResponseInfo.LineColor">
+      <summary>Gets the color to use when plotting the frequency response.</summary>
+    </member>
+    <member name="P:Triamec.Bode.FrequencyResponseInfo.LineWidth">
+      <summary>Gets the line width to use when plotting the frequency response.</summary>
+    </member>
+    <member name="P:Triamec.Bode.FrequencyResponseInfo.Name">
+      <summary>Gets the description of the frequency response.</summary>
+    </member>
+    <member name="P:Triamec.Bode.FrequencyResponseInfo.Numerator">
+      <summary>
+            Gets the numerator measuring point.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.FrequencyResponseInfo.NumeratorIndex">
+      <summary>Gets the index of the numerator measuring point.</summary>
+    </member>
+    <member name="T:Triamec.Bode.IAcquisitionSignals">
+      <summary>
+            Interface to read out the signals of one bode measurement.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.IAcquisitionSignals.GetSignalBuffers(System.Int32)">
+      <summary>
+            Gets a response signal of one measurement.
+            </summary>
+      <param name="signalIndex">
+            You can choose from three indices:
+            <list type="number"><item><description>The input frequency signal (index 0).</description></item><item><description>The first response (index 1).</description></item><item><description>The second response (index 2).</description></item></list></param>
+      <returns>
+            One signal buffer.
+            </returns>
+    </member>
+    <member name="M:Triamec.Bode.IAcquisitionSignals.Save(System.IO.TextWriter,System.String)">
+      <summary>
+            Saves the acquired signals on the given writer.
+            </summary>
+      <param name="writer">A writer for saving the acquired signals.</param>
+      <param name="customPrefix">Prefix for each written line.</param>
+    </member>
+    <member name="T:Triamec.Bode.IBodeAxis">
+      <summary>
+            Describes the functionality a bode test needs to communicate with the underlying hardware.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.IBodeAxis.AbortRequests">
+      <summary>
+            Aborts pending requests to the device.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.IBodeAxis.CreateAcquisition">
+      <summary>Creates the instance used to acquire data from the measuring points.</summary>
+    </member>
+    <member name="M:Triamec.Bode.IBodeAxis.CreateTestSignalEmitter">
+      <summary>Creates the instance used to stimulate the system.</summary>
+    </member>
+    <member name="P:Triamec.Bode.IBodeAxis.DefaultParameters">
+      <summary>
+            Gets reasonable default parameters for this axis.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.IBodeAxis.FrameCountPeriod">
+      <summary>
+            Gets the period of the frame counter of the drive where this axis resides, in seconds.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.IBodeAxis.FrameCountResolution">
+      <summary>
+            Gets the proportion between the frame counter period and the period of the measurement points acquired by the bode test.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.IBodeAxis.FrequencyResponses">
+      <summary>Gets the frequency response descriptions.</summary>
+    </member>
+    <member name="P:Triamec.Bode.IBodeAxis.LongCharacteristics">
+      <summary>
+            Gets an object containing detailed characteristics about the axis.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.IBodeAxis.MaximumParameters">
+      <summary>
+            Gets upper bounds for the parameters for this axis.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.IBodeAxis.MeasuringPoints">
+      <summary>Gets the read-only list of measuring points.</summary>
+    </member>
+    <member name="P:Triamec.Bode.IBodeAxis.MinimumParameters">
+      <summary>
+            Gets lower bounds for the parameters for this axis.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.IBodeAxis.Prepare">
+      <summary>
+            Enables the axis to do Bode measurements.
+            </summary>
+      <exception cref="T:System.ObjectDisposedException">The instance has been disposed.</exception>
+      <exception cref="T:Triamec.Bode.BodeException">Failed to enable the axis.</exception>
+    </member>
+    <member name="P:Triamec.Bode.IBodeAxis.SamplingTime">
+      <summary>Gets the sampling time to use for the acquisition.</summary>
+    </member>
+    <member name="P:Triamec.Bode.IBodeAxis.ShortCharacteristics">
+      <summary>
+            Gets an object containing minimal characteristics about the axis.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.IBodeAxis.Sleep(System.TimeSpan)">
+      <summary>Sleeps at least for the specified duration.</summary>
+      <param name="timeSpan">The duration to sleep.</param>
+    </member>
+    <member name="P:Triamec.Bode.IBodeAxis.Stimulus">
+      <summary>Gets information about the stimulus for the Bode measurement.</summary>
+    </member>
+    <member name="M:Triamec.Bode.IBodeAxis.ThrowError(System.String,System.Exception)">
+      <summary>
+            Checks for an axis error and throws a <see cref="T:Triamec.Bode.BodeException" /> with the specified message.
+            </summary>
+      <param name="errorMessage">The error message.</param>
+      <param name="innerException">The inner exception or <see langword="null" />.</param>
+    </member>
+    <member name="M:Triamec.Bode.IBodeAxis.Tidy">
+      <summary>
+             Counterpart of <see cref="M:Triamec.Bode.IBodeAxis.Prepare" />. Restores the state of the axis.
+             </summary>
+      <exception cref="T:System.ObjectDisposedException">The instance has been disposed.</exception>
+      <exception cref="T:Triamec.Bode.BodeException">Clean up failed.</exception>
+    </member>
+    <member name="T:Triamec.Bode.IBodeLogic">
+      <summary>
+            Describes the bode test black box.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.IBodeLogic.GetBodeSpectrum(Triamec.Bode.IBodeAxis,Triamec.Bode.BodeParameters)">
+      <summary>
+            Gets the Bode frequency response of the provided axis using <see cref="T:Triamec.Bode.BodeParameters" />.
+            </summary>
+      <param name="axis">The axis to measure.</param>
+      <param name="parameters">The user parameterization object.</param>
+      <returns>The acquired and calculated Bode frequency response.</returns>
+      <exception cref="T:System.NotSupportedException">This method is called while <see cref="P:Triamec.Bode.IBodeLogic.IsBusy" /> indicates <see langword="true" />.</exception>
+      <exception cref="T:System.NullReferenceException">
+        <see langword="null" /> was passed in one ore both argumtents.</exception>
+    </member>
+    <member name="M:Triamec.Bode.IBodeLogic.GetBodeSpectrumAsync(Triamec.Bode.IBodeAxis,Triamec.Bode.BodeParameters)">
+      <summary>
+            Gets the Bode frequency response of the provided axis using <see cref="T:Triamec.Bode.BodeParameters" />.
+            </summary>
+      <param name="parameters">The user parameterization object.</param>
+      <exception cref="T:System.NotSupportedException">This method is called while <see cref="P:Triamec.Bode.IBodeLogic.IsBusy" /> indicates <see langword="true" />.</exception>
+      <exception cref="T:System.NullReferenceException">
+        <see langword="null" /> was passed in one ore both argumtents.</exception>
+    </member>
+    <member name="M:Triamec.Bode.IBodeLogic.GetBodeSpectrumCancel">
+      <summary>
+            Cancels the current bode measurement.
+            </summary>
+    </member>
+    <member name="E:Triamec.Bode.IBodeLogic.GetBodeSpectrumCompleted">
+      <summary>
+            	Occurs when the bode measurement completes or is canceled using <see cref="M:Triamec.Bode.IBodeLogic.GetBodeSpectrumCancel" />.
+            </summary>
+    </member>
+    <member name="E:Triamec.Bode.IBodeLogic.GetBodeSpectrumProgressChanged">
+      <summary>
+            	Occurs when the acquisition of the response to one frequency completes.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.IBodeLogic.IsBusy">
+      <summary>
+            Indicates whether a bode measurement is ongoing.
+            </summary>
+    </member>
+    <member name="T:Triamec.Bode.StimulusInfo">
+      <summary>
+            Information about the stimulus.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.StimulusInfo.#ctor(Triamec.Acquisitions.IVariableInfo,System.Double,Triamec.Acquisitions.IVariable)">
+      <summary>Initializes a new instance of the <see cref="T:Triamec.Bode.StimulusInfo" /> class.</summary>
+      <param name="input">The variable information representing the place where the stimulus is injected.</param>
+      <param name="defaultValue">A feasible stimulus amplitude.</param>
+      <param name="measuringPoint">
+            Where the stimulus is measured, or <see langword="null" /> if the stimulus isn't directly measured.
+            </param>
+    </member>
+    <member name="P:Triamec.Bode.StimulusInfo.DefaultValue">
+      <summary>Gets a feasible stimulus amplitude.</summary>
+    </member>
+    <member name="P:Triamec.Bode.StimulusInfo.Input">
+      <summary>Gets variable information representing the place where the stimulus is injected.</summary>
+    </member>
+    <member name="P:Triamec.Bode.StimulusInfo.MeasuringPoint">
+      <summary>
+            Gets the index determining where the stimulus is measured, or <see langword="null" /> if the stimulus isn't
+            directly measured.
+            </summary>
+    </member>
+    <member name="T:Triamec.Bode.TestSignalEmitter">
+      <summary>
+            The functionality to send test signals.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.TestSignalEmitter.Dispose">
+      <summary>
+            Calls subsequently <see cref="M:Triamec.Bode.TestSignalEmitter.StopGenerator" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.TestSignalEmitter.IssueCommand(Triamec.Bode.TestSignalParameters)">
+      <summary>Sends a test signal request and waits for the response.</summary>
+      <param name="testRequestData">The parameters for the request.</param>
+      <exception cref="T:System.ObjectDisposedException">The instance has been disposed.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="testRequestData" />.<see cref="P:Triamec.Bode.TestSignalParameters.FrameSize" /> exceeds boundaries.
+            </exception>
+      <exception cref="T:Triamec.Bode.BodeException">Issuing the command failed.</exception>
+    </member>
+    <member name="M:Triamec.Bode.TestSignalEmitter.SendRequest(Triamec.Bode.TestSignalParameters,Triamec.TriaLink.CurrentControllerTestSignalCommand)">
+      <summary>
+            Sends a parametrized test signal request.
+            </summary>
+      <param name="testData">The test data.</param>
+      <param name="command">Which command to use.</param>
+      <exception cref="T:Triamec.Tam.CommandRejectedException">The test signal command was rejected.</exception>
+      <exception cref="T:Triamec.Tam.AxisCommandRejectedException">The axis to which the request is sent does not exist.
+              </exception>
+      <exception cref="T:Triamec.Tam.TamException">A communication timeout occurred.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="testData" />.<see cref="P:Triamec.Bode.TestSignalParameters.FrameSize" /> exceeds boundaries.
+              </exception>
+    </member>
+    <member name="T:Triamec.Bode.TestSignalParameters">
+      <summary>
+            The data used to send a test signal request on the drive.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.TestSignalParameters.#ctor(System.Double,System.Double,System.Boolean,System.TimeSpan,System.TimeSpan)">
+      <summary>Creates a new instance of the <see cref="T:Triamec.Bode.TestSignalParameters" /> class.</summary>
+      <param name="frequency">The frequency of the test signal in Hertz.</param>
+      <param name="amplitude">The amplitude of the test signal.</param>
+      <param name="amplitudeIsRamping">Whether <paramref name="amplitude" /> changed until the last usage.</param>
+      <param name="frameSize">The desired test signal duration.</param>
+      <param name="waitTime">The period to wait after the test signal.</param>
+    </member>
+    <member name="M:Triamec.Bode.TestSignalParameters.#ctor(System.Double,System.Double,System.TimeSpan,System.TimeSpan)">
+      <summary>Creates a new instance of the <see cref="T:Triamec.Bode.TestSignalParameters" /> class.</summary>
+      <param name="frequency">The frequency of the test signal in Hertz.</param>
+      <param name="amplitude">The amplitude of the test signal.</param>
+      <param name="amplitudeIsRamping">Whether <paramref name="amplitude" /> changed until the last usage.</param>
+      <param name="frameSize">The desired test signal duration.</param>
+      <param name="waitTime">The period to wait after the test signal.</param>
+    </member>
+    <member name="P:Triamec.Bode.TestSignalParameters.Amplitude">
+      <summary>
+            Gets the amplitude to apply.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.TestSignalParameters.FrameSize">
+      <summary>
+            Gets the desired test signal duration.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.TestSignalParameters.Frequency">
+      <summary>
+            Gets the frequency, in Hertz.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.TestSignalParameters.MeasurementDuration">
+      <summary>
+            Gets the required data size.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.TestSignalParameters.SettleDuration">
+      <summary>
+            Gets the duration between the test signal command and the start of the measurement.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.TestSignalParameters.WaitTime">
+      <summary>
+            Gets the period to wait after the test signal.
+            </summary>
+    </member>
+    <member name="T:Triamec.Bode.UI.BodeControl">
+      <summary>
+            Bode measurement GUI.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.UI.BodeControl.#ctor">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Bode.UI.BodeControl" /> class.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.UI.BodeControl.Axis">
+      <summary>
+            Gets or sets the chosen axis.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.UI.BodeControl.BusinessLogic">
+      <summary>
+            Gets or sets the bode measurement instance.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.UI.BodeControl.Dispose(System.Boolean)">
+      <summary>
+            Clean up any resources being used.
+            </summary>
+      <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    </member>
+    <member name="T:Triamec.Bode.UI.BodeForm">
+      <summary>
+            Bode measurement front end.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.UI.BodeForm.#ctor">
+      <summary>
+            Creates a new instance of the <see cref="T:Triamec.Bode.UI.BodeForm" /> class.
+            </summary>
+    </member>
+    <member name="P:Triamec.Bode.UI.BodeForm.Axis">
+      <summary>
+            Gets or sets the axis to work with.
+            </summary>
+    </member>
+    <member name="M:Triamec.Bode.UI.BodeForm.Dispose(System.Boolean)">
+      <summary>
+            Clean up any resources being used.
+            </summary>
+      <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    </member>
+    <member name="T:Triamec.Tam.Bode.BodeAxis">
+      <summary>
+        <see cref="P:Triamec.TriaLink.Groups.TriaLinkStation.RegisterLayoutId" /> (RLID) dependent implementation of
+            <see cref="T:Triamec.Bode.IBodeAxis" /> with functionality a bode test needs to communicate with the underlying hardware.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.Bode.BodeAxis.#ctor(Triamec.Tam.TamAxis,Triamec.TriaLink.Subscriptions.SubscriptionSpeed)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Tam.Bode.BodeAxis" /> class.
+            </summary>
+      <exception cref="T:Triamec.Bode.BodeException">Failed to initialize Bode measurement.</exception>
+    </member>
+    <member name="M:Triamec.Tam.Bode.BodeAxis.CreateAcquisition">
+      <summary>Creates the instance used to acquire data from the measuring points.</summary>
+    </member>
+    <member name="M:Triamec.Tam.Bode.BodeAxis.CreateTestSignalEmitter">
+      <summary>Creates the instance used to stimulate the system.</summary>
+    </member>
+    <member name="P:Triamec.Tam.Bode.BodeAxis.DefaultParameters">
+      <summary>
+            Gets reasonable default parameters for this axis.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Bode.BodeAxis.FrameCountPeriod">
+      <summary>
+            Gets the period of the frame counter of the drive where this axis resides, in seconds.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Bode.BodeAxis.FrameCountResolution">
+      <summary>
+            Gets the proportion between the frame counter period and the period of the measurement points acquired by the bode test.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Bode.BodeAxis.FrequencyResponses">
+      <summary>Gets the frequency response descriptions.</summary>
+    </member>
+    <member name="P:Triamec.Tam.Bode.BodeAxis.LongCharacteristics">
+      <summary>
+            Gets an object containing detailed characteristics about the axis.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Bode.BodeAxis.MaximumParameters">
+      <summary>
+            Gets upper bounds for the parameters for this axis.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Bode.BodeAxis.MeasuringPoints">
+      <summary>Gets the read-only list of measuring points.</summary>
+    </member>
+    <member name="P:Triamec.Tam.Bode.BodeAxis.MinimumParameters">
+      <summary>
+            Gets lower bounds for the parameters for this axis.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Bode.BodeAxis.PositionErrorLimit">
+      <summary>
+            The position error limit of the axis during bode measurings, in Radian.
+            <para>The value is <c><see cref="F:System.Single.MaxValue" /></c>.</para></summary>
+    </member>
+    <member name="M:Triamec.Tam.Bode.BodeAxis.Prepare">
+      <summary>
+            Enables the axis to do Bode measurements.
+            </summary>
+      <exception cref="T:System.ObjectDisposedException">The instance has been disposed.</exception>
+      <exception cref="T:Triamec.Bode.BodeException">Failed to enable the axis.</exception>
+    </member>
+    <member name="P:Triamec.Tam.Bode.BodeAxis.SamplingTime">
+      <summary>Gets the sampling time to use for the acquisition.</summary>
+    </member>
+    <member name="P:Triamec.Tam.Bode.BodeAxis.ShortCharacteristics">
+      <summary>
+            Gets an object containing minimal characteristics about the axis.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.Bode.BodeAxis.Sleep(System.TimeSpan)">
+      <summary>Sleeps at least for the specified duration.</summary>
+      <param name="timeSpan">The duration to sleep.</param>
+    </member>
+    <member name="P:Triamec.Tam.Bode.BodeAxis.Speed">
+      <summary>
+            Indicates or sets whether the axis will be measured with highspeed subscriptions.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Bode.BodeAxis.Stimulus">
+      <summary>Gets information about the stimulus for the Bode measurement.</summary>
+    </member>
+    <member name="M:Triamec.Tam.Bode.BodeAxis.ThrowError(System.String,System.Exception)">
+      <summary>
+            Checks for an axis error and throws a <see cref="T:Triamec.Bode.BodeException" /> with the specified message.
+            </summary>
+      <param name="errorMessage">The error message.</param>
+      <param name="innerException">The inner exception or <see langword="null" />.</param>
+    </member>
+    <member name="M:Triamec.Tam.Bode.BodeAxis.Tidy">
+      <summary>
+             Counterpart of <see cref="M:Triamec.Bode.IBodeAxis.Prepare" />. Restores the state of the axis.
+             </summary>
+      <exception cref="T:System.ObjectDisposedException">The instance has been disposed.</exception>
+      <exception cref="T:Triamec.Bode.BodeException">Clean up failed.</exception>
+    </member>
+    <member name="M:Triamec.Tam.Bode.BodeAxis.ToString">
+      <summary>Returns a <see langword="string" /> that represents this instance.</summary>
+    </member>
+    <member name="M:Triamec.Tam.Bode.BodeAxis.Triamec#Bode#IBodeAxis#AbortRequests">
+      <summary>
+            Aborts pending requests to the device.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Bode.BodeTuning">
+      <summary>
+            Module for controller tuning using Bode measurement data.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.Bode.BodeTuning.#ctor(Triamec.Tam.ITamDevice)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Tam.Bode.BodeTuning" /> class  mapping to the first axis of a specified
+            <see cref="T:Triamec.Tam.ITamDrive" />.
+            </summary>
+      <param name="parentDevice">The parent device.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="parentDevice" /> is not an <see cref="T:Triamec.Tam.ITamDrive" />.
+            </exception>
+      <exception cref="T:Triamec.Tam.TamException">Some controller parameters weren't found.</exception>
+      <exception cref="T:Triamec.Tam.TimeoutException">A communication timeout occurs.</exception>
+    </member>
+    <member name="M:Triamec.Tam.Bode.BodeTuning.#ctor(Triamec.Tam.ITamDrive,System.Int32)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Tam.Bode.BodeTuning" /> class.
+            </summary>
+      <param name="parentDrive">The parent drive.</param>
+      <param name="axisIndex">Index of the axis.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="parentDrive" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="axisIndex" /> is negative
+            or greater or equal than the number of existing axes.</exception>
+      <exception cref="T:Triamec.Tam.TamException">Some controller parameters weren't found.</exception>
+      <exception cref="T:Triamec.Tam.TimeoutException">A communication timeout occurs.</exception>
+    </member>
+    <member name="P:Triamec.Tam.Bode.BodeTuning.Axis">
+      <summary>
+            Gets the axis used by this instance.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.Bode.BodeTuning.CreateControl">
+      <summary>
+            Factory method providing a <see cref="T:System.Windows.Forms.Control" /> that may be displayed by a GUI application.
+            </summary>
+      <returns>The instantiated control.
+            <para>The default is <see langword="null" />.</para></returns>
+    </member>
+    <member name="M:Triamec.Tam.Bode.BodeTuning.IsApplicableTo(Triamec.Tam.ITamDevice)">
+      <summary>
+            Determines whether the specified TAM device is supported.
+            </summary>
+      <param name="tamDevice">The TAM device to examine.</param>
+      <returns>
+        <see langword="true" /> if the <paramref name="tamDevice" /> is an <see cref="T:Triamec.Tam.ITamDrive" /> instance and
+            has at least one <see cref="T:Triamec.Tam.TamAxis" />; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="P:Triamec.Tam.Bode.BodeTuning.ProvidesControl">
+      <summary>
+            Gets a value indicating whether a specific implementation of this abstract
+            <see cref="T:Triamec.Tam.Modules.ModuleComponent" /> provides 
+            a <see cref="T:System.Windows.Forms.Control" /> that may be displayed by a GUI application.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Bode.BodeTuning.Spectra">
+      <summary>
+            Gets the Bode spectra available to help for tuning.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Modules.Axis">
+      <summary>
+            A logical axis.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.Modules.Axis.#ctor(Triamec.Tam.ITamDevice)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Tam.Modules.Axis" /> class 
+            mapping to the first axis of a specified <see cref="T:Triamec.Tam.ITamDrive" />.
+            </summary>
+      <param name="parentDevice">The parent device.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="parentDevice" /> is not an <see cref="T:Triamec.Tam.ITamDrive" />.
+            </exception>
+      <exception cref="T:Triamec.Tam.TamException">Failed to create the instance.</exception>
+      <exception cref="T:Triamec.Tam.Subscriptions.SubscriptionException">
+        <para>An underlying subscription could not be created or enabled.</para>
+        <para>Try to lower device wide usage of subscriptions or use a polling mechanism.</para>
+      </exception>
+    </member>
+    <member name="M:Triamec.Tam.Modules.Axis.#ctor(Triamec.Tam.ITamDrive,System.Int32)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Tam.Modules.Axis" /> class.
+            </summary>
+      <param name="parentDrive">The parent drive.</param>
+      <param name="axisIndex">Index of the axis.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="parentDrive" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="axisIndex" /> is negative
+            or greater or equal than the number of existing axes.</exception>
+      <exception cref="T:Triamec.Tam.TamException">Failed to create the instance.</exception>
+      <exception cref="T:Triamec.Tam.Subscriptions.SubscriptionException">
+        <para>An underlying subscription could not be created or enabled.</para>
+        <para>Try to lower device wide usage of subscriptions or use a polling mechanism.</para>
+      </exception>
+    </member>
+    <member name="M:Triamec.Tam.Modules.Axis.#ctor(Triamec.Tam.Modules.ITamModule,System.String,System.Int32)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Tam.Modules.Axis" /> class.
+            </summary>
+      <param name="parentModule">
+            The parent module or <see langword="null" /> if and only if <paramref name="drive" /> should become the parent
+            node.
+            </param>
+      <param name="parentPropertyName">Name of the property on the parent where this instance will be retrieved or
+            <see langword="null" /> if and only if <paramref name="drive" /> should
+            become the parent node.</param>
+      <param name="drive">The owning drive.</param>
+      <param name="axisIndex">Index of the axis.</param>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Axis.AccelerationFraction">
+      <summary>
+            Specifies the fraction of the maximum acceleration to use with the <see cref="M:Triamec.Tam.Modules.Axis.MoveAbsolute(System.Double[])" /> and
+             <see cref="M:Triamec.Tam.Modules.Axis.MoveRelative(System.Double[])" /> commands.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Axis.ActualPosition">
+      <summary>
+            Gets the actually measured position of the axis.
+            </summary>
+      <exception cref="T:Triamec.Tam.TimeoutException">A timeout occurred.</exception>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Axis.AxisIndex">
+      <summary>
+            Gets the index of the axis on the drive.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Axis.AxisType">
+      <summary>
+            Gets or sets the type of the axis.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Axis.BodeTuning">
+      <summary>
+            Gets the bode tuning module.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Axis.CanEditName">
+      <summary>
+            Gets a value indicating whether the <see cref="P:Triamec.Tam.ITamNode.Name" /> property 
+            of this instance can be set.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.Modules.Axis.Couple">
+      <summary>
+            Couples this axis to another axis.
+            </summary>
+      <exception cref="T:System.ObjectDisposedException">The instance has been disposed.</exception>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Axis.CouplingManager">
+      <summary>
+            Gets the coupling manager.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.Modules.Axis.CreateControl">
+      <summary>
+            Factory method providing a <see cref="T:System.Windows.Forms.Control" /> that may be displayed by a GUI application.
+            </summary>
+      <returns>The instantiated control.
+            <para>The default is <see langword="null" />.</para></returns>
+    </member>
+    <member name="M:Triamec.Tam.Modules.Axis.Disable">
+      <summary>
+            Disables the axis.
+            </summary>
+      <exception cref="T:System.ObjectDisposedException">The instance has been disposed.</exception>
+    </member>
+    <member name="M:Triamec.Tam.Modules.Axis.Dispose(System.Boolean)">
+      <summary>
+            Clean up any resources being used.
+            </summary>
+      <param name="disposing">
+        <see langword="true" /> to release both managed and unmanaged resources;
+            <see langword="false" /> to release only unmanaged resources.</param>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Axis.Drive">
+      <summary> 
+            Gets the tam Drive which owns this axis
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.Modules.Axis.Enable">
+      <summary>
+            Enables the axis.
+            </summary>
+      <exception cref="T:System.ObjectDisposedException">The instance has been disposed.</exception>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Axis.EncoderLines">
+      <summary>
+            Gets or sets the number of encoder lines
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Axis.EncoderModule">
+      <summary>
+            Gets the encoder module, if any.
+            </summary>
+    </member>
+    <member name="E:Triamec.Tam.Modules.Axis.ErrorOccurred">
+      <summary>
+            Occurs when an asynchronous method completes with an exception.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.Modules.Axis.Home">
+      <summary>
+            Homes this axis.
+            </summary>
+      <exception cref="T:System.ObjectDisposedException">The instance has been disposed.</exception>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Axis.HomingEngine">
+      <summary>
+            Gets or sets who executes the homing sequence.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.Modules.Axis.IsApplicableTo(Triamec.Tam.ITamDevice)">
+      <summary>
+            Determines whether this <see cref="T:Triamec.Tam.Modules.Axis" /> can be associated to the specified TAM device.
+            </summary>
+      <param name="tamDevice">The TAM device to examine.</param>
+      <returns>
+        <see langword="true" /> if the <paramref name="tamDevice" /> is an <see cref="T:Triamec.Tam.ITamDrive" /> instance and
+            has at least one <see cref="T:Triamec.Tam.TamAxis" />; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Axis.MaximumAcceleration">
+      <summary>
+            Gets or sets the maximum possible velocity, in position units per square second.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Axis.MaximumVelocity">
+      <summary>
+            Gets or sets the maximum possible velocity, in position units per second.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.Modules.Axis.MoveAbsolute(System.Double[])">
+      <summary>
+            Moves to a specified absolute positions.
+            </summary>
+      <param name="positions">The new desired absolute positions, in meters or radian.</param>
+      <exception cref="T:System.ObjectDisposedException">The instance has been disposed.</exception>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="positions" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.Tam.Modules.Axis.MoveRelative(System.Double[])">
+      <summary>
+            Moves the axis relative by the specified distances.
+            </summary>
+      <param name="moveDistances">The relative move distances.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="moveDistances" /> is <see langword="null" />.
+              </exception>
+      <exception cref="T:System.ObjectDisposedException">The instance has been disposed.</exception>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Axis.Name">
+      <summary>
+            Gets or sets the display name of this <see cref="T:Triamec.Tam.ITamNode" />.
+            </summary>
+      <exception cref="T:System.InvalidOperationException">
+        <c>
+          <see cref="P:Triamec.Tam.ITamNode.CanEditName" /> == <see langword="false" /></c>.
+              </exception>
+      <exception cref="T:System.ArgumentException">
+        <para>Another <see cref="T:Triamec.Tam.ITamNode" /> in the <see cref="P:Triamec.Tam.ITamNode.ParentNode" />'s
+              <see cref="P:Triamec.Tam.ITamNodeComposite.Nodes" /> has the same <see cref="P:Triamec.Tam.ITamNode.Name" />.</para>
+        <para>-or-</para>
+        <para>The value contains any of the characters in <see cref="F:Triamec.Tam.TamTopology.InvalidNameChars" />.</para>
+      </exception>
+    </member>
+    <member name="M:Triamec.Tam.Modules.Axis.OnParameterApplied(Triamec.Tam.Modules.TamComponentParameter,System.Object)">
+      <summary>
+            Raises the <see cref="E:Triamec.Tam.Modules.ModuleComponent.ParameterApplied" /> event.
+            </summary>
+      <param name="parameter">The parameter that has been applied.</param>
+      <param name="appliedValue">The value applied to <paramref name="parameter" />.</param>
+    </member>
+    <member name="M:Triamec.Tam.Modules.Axis.OnRetrieveActivityLevel(System.Int32)">
+      <summary>
+            Called whenever <see cref="P:Triamec.Tam.Modules.ModuleComponent.ActivityLevel" /> or <see cref="P:Triamec.Tam.Modules.ModuleComponent.ActivityState" /> is read.
+            </summary>
+      <param name="currentLevel">The current value of <see cref="P:Triamec.Tam.Modules.ModuleComponent.ActivityLevel" />.</param>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Axis.ProvidesControl">
+      <summary>
+            Returns <see langword="true" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Axis.RepeatMove">
+      <summary>
+            Gets or sets a value indicating whether to repeat the move AB sequence.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Axis.RepeatPause">
+      <summary>
+            Gets or sets the pause time when repeating the move AB sequence, in milliseconds.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Axis.RequiresPolling">
+      <summary>
+            Returns <see langword="true" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.Modules.Axis.Reset">
+      <summary>
+            Acknowledges a pending device or axis error, or resets from a communication timeout causing the state to be
+            inconsistent.
+            </summary>
+      <exception cref="T:System.ObjectDisposedException">The instance has been disposed.</exception>
+    </member>
+    <member name="M:Triamec.Tam.Modules.Axis.SetPosition(System.Double)">
+      <summary>
+            Sets the current desired position to a specified absolute position.
+            </summary>
+      <param name="position">The new desired absolute position, in meters or radian.</param>
+      <exception cref="T:System.ObjectDisposedException">The instance has been disposed.</exception>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Axis.ShortDescription">
+      <summary>
+            Gets a description of this <see cref="T:Triamec.Tam.ITamNode" /> or <see langword="null" /> if it is a root node.
+            </summary>
+      <exception cref="T:Triamec.Tam.TamException">A communication timeout occurred.</exception>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Axis.State">
+      <summary>
+            Gets the current <see cref="T:Triamec.TriaLink.AxisState" /> of the axis.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.Modules.Axis.Stop">
+      <summary>
+            Stops the axis from moving, homing or coupling.
+            </summary>
+      <exception cref="T:System.ObjectDisposedException">The instance has been disposed.</exception>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Axis.SupportsHoming">
+      <summary>
+            Gets a value indicating whether the drive firmware implements homing.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Axis.VelocityFraction">
+      <summary>
+            Specifies the fraction of the maximum velocity to use with the <see cref="M:Triamec.Tam.Modules.Axis.MoveAbsolute(System.Double[])" /> and
+             <see cref="M:Triamec.Tam.Modules.Axis.MoveRelative(System.Double[])" /> commands.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Modules.AxisGroup">
+      <summary>
+            Container for up to two <see cref="T:Triamec.Tam.Modules.Axis" /> modules.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.Modules.AxisGroup.#ctor(Triamec.Tam.ITamDevice)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Triamec.Tam.Modules.AxisGroup" /> class.
+            </summary>
+      <param name="parentDevice">The parent device.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="parentDevice" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="P:Triamec.Tam.Modules.AxisGroup.Axis1">
+      <summary>
+            Gets the first axis of this group, if any.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.AxisGroup.Axis2">
+      <summary>
+            Gets the second axis of this group, if any.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.Modules.AxisGroup.IsApplicableTo(Triamec.Tam.ITamDevice)">
+      <summary>
+            Determines whether this <see cref="T:Triamec.Tam.Modules.Axis" /> can be associated to the specified TAM device.
+            </summary>
+      <param name="tamDevice">The TAM device to examine.</param>
+      <returns>
+        <see langword="true" /> if the <paramref name="tamDevice" /> is an <see cref="T:Triamec.Tam.ITamDrive" /> instance and
+            has at least one <see cref="T:Triamec.Tam.TamAxis" />; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="T:Triamec.Tam.Modules.AxisType">
+      <summary>
+            The principal type of an axis.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.AxisType.None">
+      <summary>Undefined axis type</summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.AxisType.Rotary">
+      <summary>Rotary axis direct drive</summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.AxisType.LinearWithLinearMotor">
+      <summary>Linear axis with linear motor</summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.AxisType.RotaryWithGear">
+      <summary>Rotary axis with gear</summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.AxisType.LinearWithRotaryMotor">
+      <summary>Linear axis with rotary motor</summary>
+    </member>
+    <member name="T:Triamec.Tam.Modules.CouplingManager">
+      <summary>
+            Governs the coupling between a master and a slave <see cref="T:Triamec.Tam.Modules.Axis" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.CouplingManager.AccelerationRegister">
+      <summary>
+            Gets or sets the source on the <see cref="P:Triamec.Tam.Modules.CouplingManager.Master" /> where the acceleration values are specified.
+            </summary>
+      <exception cref="T:System.ArgumentException">The <see cref="P:Triamec.Tam.Subscriptions.ISubscribable.Station" /> of the given position source is
+            not legal.</exception>
+      <exception cref="T:System.InvalidOperationException">Cannot alter this property when coupled.</exception>
+      <exception cref="T:System.ObjectDisposedException">Cannot access a disposed object.</exception>
+    </member>
+    <member name="P:Triamec.Tam.Modules.CouplingManager.CanCouple">
+      <summary>
+            Determines whether coupling can be enabled.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.CouplingManager.Coupling">
+      <summary>
+            Gets or sets the kind of coupling to use.
+            </summary>
+      <exception cref="T:System.InvalidOperationException">Cannot alter this property when coupled.</exception>
+      <exception cref="T:System.ObjectDisposedException">Cannot access a disposed object.</exception>
+    </member>
+    <member name="M:Triamec.Tam.Modules.CouplingManager.CreateControl">
+      <summary>
+            Creates a new instance of the associated GUI class.
+            </summary>
+      <returns>The instantiated control.</returns>
+    </member>
+    <member name="M:Triamec.Tam.Modules.CouplingManager.Dispose(System.Boolean)">
+      <summary>
+            Clean up any resources being used.
+            </summary>
+      <param name="disposing">
+        <see langword="true" /> to release both managed and unmanaged resources;
+            <see langword="false" /> to release only unmanaged resources.</param>
+    </member>
+    <member name="P:Triamec.Tam.Modules.CouplingManager.Master">
+      <summary>
+            Gets or sets the master <see cref="T:Triamec.Tam.TamStation" />.
+            </summary>
+      <exception cref="T:System.ArgumentException">
+        <para>Cannot use a <see cref="T:Triamec.Tam.TamStation" /> from another <see cref="T:Triamec.Tam.TamLink" /> as <see cref="P:Triamec.Tam.Modules.CouplingManager.Master" />.
+            </para>
+        <para>-or-</para>
+        <para>The specified <see cref="T:Triamec.Tam.TamStation" /> has not exactly one <see cref="T:Triamec.Tam.ITamDrive" /> child.</para>
+        <para>-or-</para>
+        <para>
+          <see cref="P:Triamec.Tam.Modules.CouplingManager.PositionRegister" />, <see cref="P:Triamec.Tam.Modules.CouplingManager.VelocityRegister" /> and
+            <see cref="P:Triamec.Tam.Modules.CouplingManager.AccelerationRegister" /> must all be <see langword="null" /> when exchanging the
+            <see cref="P:Triamec.Tam.Modules.CouplingManager.Master" />.</para>
+      </exception>
+      <exception cref="T:Triamec.Tam.TamException">The property is set and a communication timeout occurred while reading out
+            identification.</exception>
+      <exception cref="T:System.InvalidOperationException">Cannot alter this property when coupled.</exception>
+      <exception cref="T:System.ObjectDisposedException">Cannot access a disposed object.</exception>
+    </member>
+    <member name="P:Triamec.Tam.Modules.CouplingManager.MasterAxisIndex">
+      <summary>
+            Gets or sets the zero based index of the master axis.
+            </summary>
+      <exception cref="T:System.ArgumentOutOfRangeException">The index is negative.</exception>
+      <exception cref="T:System.InvalidOperationException">Cannot alter this property when coupled.</exception>
+      <exception cref="T:System.ObjectDisposedException">Cannot access a disposed object.</exception>
+    </member>
+    <member name="M:Triamec.Tam.Modules.CouplingManager.OnParameterApplied(Triamec.Tam.Modules.TamComponentParameter,System.Object)">
+      <summary>
+            Raises the <see cref="E:Triamec.Tam.Modules.ModuleComponent.ParameterApplied" /> event.
+            </summary>
+      <param name="parameter">The parameter that has been applied.</param>
+      <param name="appliedValue">The value applied to <paramref name="parameter" />.</param>
+    </member>
+    <member name="M:Triamec.Tam.Modules.CouplingManager.OnRetrieveActivityLevel(System.Int32)">
+      <summary>
+            Called whenever <see cref="P:Triamec.Tam.Modules.ModuleComponent.ActivityLevel" /> or <see cref="P:Triamec.Tam.Modules.ModuleComponent.ActivityState" /> is read.
+            </summary>
+      <param name="currentLevel">The current value of <see cref="P:Triamec.Tam.Modules.ModuleComponent.ActivityLevel" />.</param>
+    </member>
+    <member name="P:Triamec.Tam.Modules.CouplingManager.PositionRegister">
+      <summary>
+            Gets or sets the source on the <see cref="P:Triamec.Tam.Modules.CouplingManager.Master" /> where the position values are specified.
+            </summary>
+      <exception cref="T:System.ArgumentException">The <see cref="P:Triamec.Tam.Subscriptions.ISubscribable.Station" /> of the given position source is
+            not legal.</exception>
+      <exception cref="T:System.InvalidOperationException">Cannot alter this property when coupled.</exception>
+      <exception cref="T:System.ObjectDisposedException">Cannot access a disposed object.</exception>
+    </member>
+    <member name="P:Triamec.Tam.Modules.CouplingManager.ProvidesControl">
+      <summary>
+            Returns <see langword="true" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.CouplingManager.RequiresPolling">
+      <summary>
+            Returns <see langword="true" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.CouplingManager.VelocityRegister">
+      <summary>
+            Gets or sets the source on the <see cref="P:Triamec.Tam.Modules.CouplingManager.Master" /> where the velocity values are specified.
+            </summary>
+      <exception cref="T:System.ArgumentException">The <see cref="P:Triamec.Tam.Subscriptions.ISubscribable.Station" /> of the given position source is
+            not legal.</exception>
+      <exception cref="T:System.InvalidOperationException">Cannot alter this property when coupled.</exception>
+      <exception cref="T:System.ObjectDisposedException">Cannot access a disposed object.</exception>
+    </member>
+    <member name="T:Triamec.Tam.Modules.CouplingStyle">
+      <summary>
+            	The kind of possible couplings in a coupled system.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.CouplingStyle.Direct">
+      <summary>
+            	The axes are to be synchronously coupled, corresponding to
+            	<see cref="F:Triamec.TriaLink.PathPlannerCommand.MoveCoupled" /></summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.CouplingStyle.Tama">
+      <summary>
+            	The axes are to be coupled via a kinematics coupling function of a Tama program on the slave drive, 
+            	corresponding to <see cref="F:Triamec.TriaLink.PathPlannerCommand.MoveDirectCoupled" />.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Modules.Encoder">
+      <summary>
+            The encoder module.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.Modules.Encoder.ConvertParameters">
+      <summary>
+            Recursively converts the <see cref="P:Triamec.Tam.Modules.ModuleComponent.Parameters" /> of this <see cref="T:Triamec.Tam.Modules.ModuleComponent" />.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.Modules.Encoder.CreateControl">
+      <summary>
+            Creates a new instance of the GUI class.
+            </summary>
+      <returns>The instantiated control.</returns>
+    </member>
+    <member name="M:Triamec.Tam.Modules.Encoder.Dispose(System.Boolean)">
+      <summary>
+            Clean up any resources being used.
+            </summary>
+      <param name="disposing">
+        <see langword="true" /> to release both managed and unmanaged resources;
+            <see langword="false" /> to release only unmanaged resources.</param>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Encoder.EncoderMagneticPeriod">
+      <summary>
+            Gets or sets the encoder magnetic period
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Encoder.EncoderManufacturer">
+      <summary>
+            Gets or sets the name of the encoder manufacturer
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Encoder.EncoderMass">
+      <summary>
+            Gets or sets the  mass / inertia of the moved part of the encoder
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Encoder.EncoderPartType">
+      <summary>
+            Gets or sets the type or part name of the encoder
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Encoder.EncoderPitch">
+      <summary>
+            Gets or sets the encoder pitch.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Encoder.EncoderPulses">
+      <summary>
+            Gets or sets the number of encoder pulses per revolution or per magnetic period.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Encoder.EncoderType">
+      <summary>
+            Gets or sets the encoder type
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Encoder.EncoderVelocityLimit">
+      <summary>
+            Gets or sets the velocity limit of the encoder
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Encoder.IsAnalogEncoder">
+      <summary>
+            Gets a value indicating whether this instance represents an analog encoder.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.Modules.Encoder.OnConvertDerivedParameters">
+      <summary>
+            Hook for component specific derived parameter calculation method.
+            This hook is called during parameter apply operation.
+            </summary>
+    </member>
+    <member name="M:Triamec.Tam.Modules.Encoder.OnRetrieveActivityLevel(System.Int32)">
+      <summary>
+            Called whenever <see cref="P:Triamec.Tam.Modules.ModuleComponent.ActivityLevel" /> or <see cref="P:Triamec.Tam.Modules.ModuleComponent.ActivityState" /> is read.
+            </summary>
+      <param name="currentLevel">The current value of <see cref="P:Triamec.Tam.Modules.ModuleComponent.ActivityLevel" />.</param>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Encoder.PredefinedImage">
+      <summary>
+            Gets the predefined image specification
+            to use for this <see cref="T:Triamec.Tam.ITamNode" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Encoder.ProvidesControl">
+      <summary>
+            Returns <see langword="true" /> to indicate this module has a control.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Encoder.RequiresPolling">
+      <summary>
+            Returns <see langword="true" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Tam.Modules.Encoder.SupportsDigitalEndat">
+      <summary>
+            Gets a value indicating whether an EnDat encoder is under full control of the drive.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Modules.EncoderType">
+      <summary>
+            The <see cref="T:Triamec.Tam.Modules.EncoderType" /> of the <see cref="T:Triamec.Tam.Modules.Encoder" />.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.EncoderType.None">
+      <summary>Undefined encoder type</summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.EncoderType.IncrementalRS422">
+      <summary>
+            Differential digital encoder according to <a href="https://en.wikipedia.org/wiki/RS-422">RS-422</a>.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.EncoderType.Digital2">
+      <summary>Second digital encoder</summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.EncoderType.IncrementalTTL">
+      <summary>
+        <a href="https://en.wikipedia.org/wiki/Differential_TTL">Differential TTL</a> encoder.</summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.EncoderType.Analog">
+      <summary>Analog encoder.</summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.EncoderType.AnalogEndat">
+      <summary>Analog encoder with EnDat interface.</summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.EncoderType.Endat">
+      <summary>EnDat 2.1 digital encoder.</summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.EncoderType.Sensorless">
+      <summary>
+            Derive the position from the <a href="https://en.wikipedia.org/w/index.php?title=Back_EMF">back-EMF</a>.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.EncoderType.Sensor">
+      <summary>
+            Use two analog sensors with twisted pair inputs A and B.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.EncoderType.AnalogBissB">
+      <summary>
+            Analog encoder with initial position from BiSS B.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.EncoderType.DigitalBissB">
+      <summary>
+            BiSS encoder with digital positions from BiSS B.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.EncoderType.DigitalTamagawa">
+      <summary>
+            Digital encoder Tamagawa T-Format.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.EncoderType.DigitalNikon">
+      <summary>
+            Digital encoder Nikon A-Format.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Modules.HomingEngine">
+      <summary>
+            The engine executing a homing sequence.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.HomingEngine.None">
+      <summary>
+            Don't home.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.HomingEngine.AsynchronousTama">
+      <summary>
+            The <see cref="P:Triamec.Tam.TamaNode.AsynchronousVM" /> executes homing. An appropriate Tama program has to be loaded.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.HomingEngine.IsochronousTama">
+      <summary>
+            The <see cref="P:Triamec.Tam.TamaNode.IsochronousVM" /> executes homing. An appropriate Tama program has to be loaded.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Modules.TamaCommand">
+      <summary>
+            	Commands for the state machine of the isochronous tama 
+            	main program used in the axis of the module catalog.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.TamaCommand.NoCommand">
+      <summary>Idle</summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.TamaCommand.StartHoming">
+      <summary>Start homing</summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.TamaCommand.Stop">
+      <summary>Stop</summary>
+    </member>
+    <member name="T:Triamec.Tam.Modules.TamaControlState">
+      <summary>
+            The homing states.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.TamaControlState.Enabled">
+      <summary>
+            Not yet homed.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.TamaControlState.Homing">
+      <summary>
+            The Tama program is homing.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.TamaControlState.CancelingHoming">
+      <summary>
+            Homing was intercepted. Waiting for the Tama program to stop.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.TamaControlState.Done">
+      <summary>
+            Homing succeeded.
+            </summary>
+    </member>
+    <member name="T:Triamec.Tam.Modules.TamaState">
+      <summary>
+            	States for the main state machine of the isochronous Tama
+            	main program used in the axis of the module catalog.
+            </summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.TamaState.CheckForHomingAction">
+      <summary>CheckForHomingAction</summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.TamaState.Idle">
+      <summary>Idle</summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.TamaState.SearchIndex">
+      <summary>SearchIndex</summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.TamaState.SetPosition">
+      <summary>SetPosition</summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.TamaState.WaitIndexCleared">
+      <summary>WaitIndexCleared</summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.TamaState.WaitMoveDone">
+      <summary>WaitMoveDone</summary>
+    </member>
+    <member name="F:Triamec.Tam.Modules.TamaState.WaitPositionSet">
+      <summary>WaitPositionSet</summary>
+    </member>
+  </members>
+</doc>

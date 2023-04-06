@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+
+<!-- $Id: CommonEnumerations.xml 9477 2017-04-27 07:03:19Z ExtDev.AB $ -->
+<!-- Copyright © 2005 - 2007 Triamec Motion AG -->
+
+<RegisterLayout rlid="0" root="" xmlns="http://schemas.triamec.com/Tam/RegisterLayout.xsd" >
+
+	<Descriptions>
+		<Description cultureInfo="en">Register layout enumerations common for all register layouts</Description>
+		<Description cultureInfo="de">Gemeinsame Aufzählungen aller Registeraufbau-Spezifikationen</Description>
+	</Descriptions>
+
+	<!--enumerations which may be used in all hardware types-->   
+
+	<Enum flags="false" prefix="RURt" name="UniversalRegisterType">
+
+		<Descriptions>
+			<Description cultureInfo="en">Representation of a universal register, as used by the UniversalRegisterValueConverter.</Description>
+		</Descriptions>
+
+		<EnumValue prefix="RURe" name="Hex" value="0">
+			<Descriptions>
+				<Description cultureInfo="en">32-bit hexadecimal representation as used by the HexRegisterValueConverter.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RURe" name="Signed" value="1">
+			<Descriptions>
+				<Description cultureInfo="en">Representation as signed 32-bit integer.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RURe" name="Float" value="2">
+			<Descriptions>
+				<Description cultureInfo="en">Single precision floating point representation.</Description>
+			</Descriptions>
+		</EnumValue>
+
+	</Enum>
+
+
+	<Enum flags="false" prefix="RPTt" name="VectorModulationType">
+
+		<Descriptions>
+			<Description cultureInfo="en">Characterization of the modulation method used in space vector modulation and pulse width modulation</Description>
+		</Descriptions>
+
+		<EnumValue prefix="RPTeSVPW_" name="SinusoidalPwm" value="0">
+			<Descriptions>
+				<Description cultureInfo="en">Continuous sinusoidal PWM</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeSVPW_" name="ThirdHarmonicInjectionPwm" value="1">
+			<Descriptions>
+				<Description cultureInfo="en">Continuous 3rd harmonic injection PWM</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeSVPW_" name="SymmetricalPwm" value="2">
+			<Descriptions>
+				<Description cultureInfo="en">Continuous symmetrical PWM</Description>
+			</Descriptions>
+		</EnumValue>
+
+	</Enum>
+
+
+	<Enum flags="false" prefix="RPTt" name="CommutationPhasingMethod">
+    <!-- Needs to comply with Triamec.Tam.Rlid19.CommutationPhasingMethod. That is, each intersecting value must have the same meaning. -->
+
+    <Descriptions>
+			<Description cultureInfo="en">Selector for the commutation phasing method</Description>
+		</Descriptions>
+
+		<EnumValue prefix="RPTeCPM_" name="NoPhasing" value="0">
+			<Descriptions>
+				<Description cultureInfo="en">No commutation phasing will be performed (standard for DC motors)</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeCPM_" name="RotorAlignmentThenEncoder" value="1">
+			<Descriptions>
+				<Description cultureInfo="en">Start commutation phasing with rotor alignment, then, after successful alignment, switch to encoder based commutation</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeCPM_" name="RotorAngleSearchThenEncoder" value="2">
+			<Descriptions>
+				<Description cultureInfo="en">Start commutation phasing with angle search controller, then, after successful search, switch to encoder based commutation</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeCPM_" name="PhaseAtPositionThenEncoder" value="3">
+			<Descriptions>
+				<Description cultureInfo="en">Commutation phasing at actual position, then switch to encoder based commutation</Description>
+			</Descriptions>
+		</EnumValue>
+	</Enum>
+
+
+	<Enum flags="false" prefix="RPTt" name="EnablingMethod">
+    <!-- Needs to comply with Triamec.Tam.Rlid19.EnablingMethod. That is, each intersecting value must have the same meaning. -->
+
+    <Descriptions>
+			<Description cultureInfo="en">Selector for the enabling method.</Description>
+		</Descriptions>
+
+		<EnumValue prefix="RPTeEM_" name="ForcePhasing" value="0">
+			<Descriptions>
+				<Description cultureInfo="en">Perform axis enable always with selected phasing method.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeEM_" name="Automatic" value="1">
+			<Descriptions>
+				<Description cultureInfo="en">Perform first axis enable with selected phasing method. No phasing needed for subsequent axis enables.</Description>
+			</Descriptions>
+		</EnumValue>
+
+	</Enum>
+
+
+	<Enum flags="false" prefix="RPTt" name="MotorBrakeReleaseAction">
+
+		<Descriptions>
+			<Description cultureInfo="en">Action needed for the release of the motor brake during axis enabling.</Description>
+		</Descriptions>
+
+		<EnumValue prefix="RPTeBRA_" name="NoAction" value="0">
+			<Descriptions>
+				<Description cultureInfo="en">No action for axis enabling and disabling.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeBRA_" name="SetOutput1" value="1">
+			<Descriptions>
+				<Description cultureInfo="en">Set output 1 to release the brake after axis enabling.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeBRA_" name="SetOutput2" value="2">
+			<Descriptions>
+				<Description cultureInfo="en">Set output 2 to release the brake after axis enabling.</Description>
+			</Descriptions>
+		</EnumValue>
+
+	</Enum>
+
+
+	<Enum flags="false" prefix="RTCt" name="TestSignalCommand">
+
+		<Descriptions>
+			<Description cultureInfo="en">Test signal generator command.</Description>
+		</Descriptions>
+
+		<EnumValue prefix="RTCeTSCMD_" name="NoCommand" value="0">
+			<Descriptions>
+				<Description cultureInfo="en">No command.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCeTSCMD_" name="Stop" value="1">
+			<Descriptions>
+				<Description cultureInfo="en">Stop the test signal generator.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCeTSCMD_" name="StartPositionSine" value="2">
+			<Descriptions>
+				<Description cultureInfo="en">Start a position output sine wave.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCeTSCMD_" name="StartPositionSquare" value="3">
+			<Descriptions>
+				<Description cultureInfo="en">Start a position output square wave.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCeTSCMD_" name="StartCurrentSine" value="4">
+			<Descriptions>
+				<Description cultureInfo="en">Start a current output sine wave.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCeTSCMD_" name="StartCurrentSquare" value="5">
+			<Descriptions>
+				<Description cultureInfo="en">Start a current output square wave.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCeTSCMD_" name="StartCurrentSineStaticVector" value="6">
+			<Descriptions>
+				<Description cultureInfo="en">Start a current output static vector modulation with modulating length.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCeTSCMD_" name="StartVoltageSine" value="7">
+			<Descriptions>
+				<Description cultureInfo="en">Start a voltage output sine wave.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCeTSCMD_" name="StartVoltageSineStaticVector" value="8">
+			<Descriptions>
+				<Description cultureInfo="en">Activate a voltage output static vector modulation with modulating length.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCeTSCMD_" name="StartRotatingVectorConstantCurrent" value="9">
+			<Descriptions>
+				<Description cultureInfo="en">Activate constant current output with rotating vector.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCeTSCMD_" name="StartRotatingVectorConstantVoltage" value="10">
+			<Descriptions>
+				<Description cultureInfo="en">Activate constant voltage output with rotating vector.</Description>
+			</Descriptions>
+		</EnumValue>
+	</Enum>
+
+
+	<Enum flags="false" prefix="RPTt" name="FilterType">
+
+		<Descriptions>
+			<Description cultureInfo="en">Characterization of the selected filter</Description>
+		</Descriptions>
+
+		<EnumValue prefix="RPTeFIL_" name="Bypassed" value="0">
+			<Descriptions>
+				<Description cultureInfo="en">No filtering</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeFIL_" name="Lowpass1" value="1">
+			<Descriptions>
+				<Description cultureInfo="en">1st order low pass filter</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeFIL_" name="Highpass1" value="2">
+			<Descriptions>
+				<Description cultureInfo="en">1st order high pass filter</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeFIL_" name="LeadLag1" value="3">
+			<Descriptions>
+				<Description cultureInfo="en">1st order lead lag filter</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeFIL_" name="Lowpass2" value="4">
+			<Descriptions>
+				<Description cultureInfo="en">2nd order low pass filter</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeFIL_" name="Highpass2" value="5">
+			<Descriptions>
+				<Description cultureInfo="en">2nd order high pass filter</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeFIL_" name="Bandpass2" value="6">
+			<Descriptions>
+				<Description cultureInfo="en">2nd order band pass filter</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeFIL_" name="Notch2" value="7">
+			<Descriptions>
+				<Description cultureInfo="en">2nd order notch filter</Description>
+			</Descriptions>
+		</EnumValue>
+
+	</Enum>
+
+
+	<Enum flags="false" prefix="RTCt" name="PositionControllerTestSignalCommand">
+
+		<Descriptions>
+			<Description cultureInfo="en">Test signal generator command</Description>
+		</Descriptions>
+
+		<EnumValue prefix="RTCePCCMD_" name="NoCommand" value="0">
+			<Descriptions>
+				<Description cultureInfo="en">No command</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCePCCMD_" name="SignalActive" value="1">
+			<Descriptions>
+				<Description cultureInfo="en">Activate the test signal generator</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCePCCMD_" name="Stop" value="2">
+			<Descriptions>
+				<Description cultureInfo="en">Stop the test signal generator</Description>
+			</Descriptions>
+		</EnumValue>
+
+	</Enum>
+
+
+	<Enum flags="false" prefix="RTCt" name="TimingAnalysisLowPriorityTaskCommand">
+
+		<Descriptions>
+			<Description cultureInfo="en">Timing analysis selector command for low priority task</Description>
+		</Descriptions>
+
+		<EnumValue prefix="RTCePPTIM_" name="AnalysisOff" value="0">
+			<Descriptions>
+				<Description cultureInfo="en">Timing analsyis off</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCePPTIM_" name="TimingAll" value="1">
+			<Descriptions>
+				<Description cultureInfo="en">Time used for all low prio task items</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCePPTIM_" name="TimingIO" value="2">
+			<Descriptions>
+				<Description cultureInfo="en">Time used for isochronous IO (includes break(s) by controller task)</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCePPTIM_" name="TimingTama" value="3">
+			<Descriptions>
+				<Description cultureInfo="en">Time used for isochronous Tama (includes break(s) by controller task)</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCePPTIM_" name="TimingStateMachine" value="4">
+			<Descriptions>
+				<Description cultureInfo="en">Time used for state machines with path planning (includes break(s) by controller task)</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCePPTIM_" name="TimingPalBus" value="5">
+			<Descriptions>
+				<Description cultureInfo="en">Time used for PALbus communication part (includes break(s) by controller task)</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCePPTIM_" name="TimingSchedule" value="6">
+			<Descriptions>
+				<Description cultureInfo="en">Time used for Schedule on PalControl (includes break(s) by controller task)</Description>
+			</Descriptions>
+		</EnumValue>
+
+	</Enum>
+
+
+	<Enum flags="false" prefix="RTCt" name="TimingAnalysisHighPriorityTaskCommand">
+
+		<Descriptions>
+			<Description cultureInfo="en">Timing analysis selector command for high priority task</Description>
+		</Descriptions>
+
+		<EnumValue prefix="RTCeCTTIM_" name="AnalysisOff" value="0">
+			<Descriptions>
+				<Description cultureInfo="en">Timing analsyis off</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCeCTTIM_" name="TimingAll" value="8">
+			<Descriptions>
+				<Description cultureInfo="en">Cumulated time used for all high prio task items during one low prio task cycle</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCeCTTIM_" name="TimingCC" value="1">
+			<Descriptions>
+				<Description cultureInfo="en">Time used for one call of current controller(s)</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCeCTTIM_" name="TimingPC" value="2">
+			<Descriptions>
+				<Description cultureInfo="en">Time used for one call of position controller(s)</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCeCTTIM_" name="TimingIO" value="4">
+			<Descriptions>
+				<Description cultureInfo="en">Time used for one call of IO</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCeCTTIM_" name="TimingCCPC" value="3">
+			<Descriptions>
+				<Description cultureInfo="en">Time used for one call of position and current controller(s)</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCeCTTIM_" name="TimingCCIO" value="5">
+			<Descriptions>
+				<Description cultureInfo="en">Time used for one call of IO and current controller(s)</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RTCeCTTIM_" name="TimingCCPCIO" value="7">
+			<Descriptions>
+				<Description cultureInfo="en">Time used for one call of IO, position and current controller(s)</Description>
+			</Descriptions>
+		</EnumValue>
+
+	</Enum>
+
+
+	<Enum flags="false" prefix="ROSt" name="OutputSignalSource">
+
+		<Descriptions>
+			<Description cultureInfo="en">Selector for output signal source.</Description>
+		</Descriptions>
+
+		<EnumValue prefix="ROStAXOUT_" name="Register" value="0">
+			<Descriptions>
+				<Description cultureInfo="en">The Register value is connected to the output.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="ROStAXOUT_" name="Axis1Output" value="1">
+			<Descriptions>
+				<Description cultureInfo="en">The Axis 1 output is connected to the output.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="ROStAXOUT_" name="Axis2Output" value="2">
+			<Descriptions>
+				<Description cultureInfo="en">The Axis 2 output is connected to the output.</Description>
+			</Descriptions>
+		</EnumValue>
+
+	</Enum>
+
+
+	<!--enumerations which are used in CTC Palbus hardware types only-->
+
+	<Enum flags="false" prefix="RPTt" name="PalBusInputPropagationAction">
+
+		<Descriptions>
+			<Description cultureInfo="en">Action on PalControl needed after occurance of a Palbus input pulse.</Description>
+		</Descriptions>
+
+		<EnumValue prefix="RPTeIOP_" name="NoAction" value="0">
+			<Descriptions>
+				<Description cultureInfo="en">No action on PalBus input.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeIOP_" name="PulseOnTtlOutput1" value="1">
+			<Descriptions>
+				<Description cultureInfo="en">Propagate PalBus input as pulse on TTL output 1.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeIOP_" name="PulseOnTtlOutput2" value="2">
+			<Descriptions>
+				<Description cultureInfo="en">Propagate PalBus input as pulse on TTL output 2.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeIOP_" name="PulseOnTtlOutput3" value="3">
+			<Descriptions>
+				<Description cultureInfo="en">Propagate PalBus input as pulse on TTL output 3.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeIOP_" name="PulseOnSwOutput1" value="4">
+			<Descriptions>
+				<Description cultureInfo="en">Propagate PalBus input as pulse on SW output 1.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeIOP_" name="PulseOnSwOutput2" value="5">
+			<Descriptions>
+				<Description cultureInfo="en">Propagate PalBus input as pulse on SW output 2.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeIOP_" name="PulseOnPwmOutput" value="6">
+			<Descriptions>
+				<Description cultureInfo="en">Propagate PalBus input as pulse on Pwm output.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeIOP_" name="BuzzerBeep" value="7">
+			<Descriptions>
+				<Description cultureInfo="en">Propagate PalBus input as buzzer beep.</Description>
+			</Descriptions>
+		</EnumValue>
+
+	</Enum>
+
+
+	<Enum flags="false" prefix="RPTt" name="PalBusInputPropagationActionOnPalBusMaster">
+
+		<Descriptions>
+			<Description cultureInfo="en">Action on PalBusMaster needed after occurance of a Palbus input pulse.</Description>
+		</Descriptions>
+
+		<EnumValue prefix="RPTeIOPM_" name="NoAction" value="0">
+			<Descriptions>
+				<Description cultureInfo="en">No action on PalBus input.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeIOPM_" name="PulseOnOutput1" value="1">
+			<Descriptions>
+				<Description cultureInfo="en">Propagate PalBus input as pulse on Output 1.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeIOPM_" name="PulseOnOutput2" value="2">
+			<Descriptions>
+				<Description cultureInfo="en">Propagate PalBus input as pulse on Output 2.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeIOPM_" name="PulseOnOutput3" value="3">
+			<Descriptions>
+				<Description cultureInfo="en">Propagate PalBus input as pulse on Output 3.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeIOPM_" name="PulseOnOutput4" value="4">
+			<Descriptions>
+				<Description cultureInfo="en">Propagate PalBus input as pulse on Output 4.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeIOPM_" name="PulseOnOutput5" value="5">
+			<Descriptions>
+				<Description cultureInfo="en">Propagate PalBus input as pulse on Output 5.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeIOPM_" name="PulseOnOutput6" value="6">
+			<Descriptions>
+				<Description cultureInfo="en">Propagate PalBus input as pulse on Output 6.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeIOPM_" name="PulseOnOutput7" value="7">
+			<Descriptions>
+				<Description cultureInfo="en">Propagate PalBus input as pulse on Output 7.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeIOPM_" name="PulseOnOutput8" value="8">
+			<Descriptions>
+				<Description cultureInfo="en">Propagate PalBus input as pulse on Output 8.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeIOPM_" name="BuzzerBeep" value="9">
+			<Descriptions>
+				<Description cultureInfo="en">Propagate PalBus input as buzzer beep.</Description>
+			</Descriptions>
+		</EnumValue>
+
+	</Enum>
+
+
+	<Enum flags="false" prefix="RPTt" name="DrawerState">
+
+		<Descriptions>
+			<Description cultureInfo="en">Information about the state of a drawer.</Description>
+		</Descriptions>
+
+		<EnumValue prefix="RPTeDRA_" name="DrawNotPresent" value="0">
+			<Descriptions>
+				<Description cultureInfo="en">Drawer is not present.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeDRA_" name="DrawPresent" value="8">
+			<Descriptions>
+				<Description cultureInfo="en">Drawer is present.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeDRA_" name="DrawPresentButInvalid1" value="9">
+			<Descriptions>
+				<Description cultureInfo="en">Drawer is present but switch state is invalid.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeDRA_" name="DrawPresentButInvalid2" value="10">
+			<Descriptions>
+				<Description cultureInfo="en">Drawer is present but switch state is invalid.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeDRA_" name="DrawOpen" value="11">
+			<Descriptions>
+				<Description cultureInfo="en">Drawer is present and is open.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeDRA_" name="DrawPresentButInvalid3" value="12">
+			<Descriptions>
+				<Description cultureInfo="en">Drawer is present but switch state is invalid.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeDRA_" name="DrawInCenter" value="13">
+			<Descriptions>
+				<Description cultureInfo="en">Drawer is present and is in center position.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeDRA_" name="DrawClosed" value="14">
+			<Descriptions>
+				<Description cultureInfo="en">Drawer is present and is closed.</Description>
+			</Descriptions>
+		</EnumValue>
+
+		<EnumValue prefix="RPTeDRA_" name="DrawNotInPosition" value="15">
+			<Descriptions>
+				<Description cultureInfo="en">Drawer is present and not in expected position.</Description>
+			</Descriptions>
+		</EnumValue>
+
+	</Enum>
+
+</RegisterLayout>

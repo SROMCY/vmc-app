@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Triamec.Database.Plain</name>
+  </assembly>
+  <members>
+    <member name="T:Triamec.Database.DatabaseTransaction">
+      <summary>Scope for an atomic manipulation to a database.</summary>
+    </member>
+    <member name="M:Triamec.Database.DatabaseTransaction.Commit">
+      <summary>Executes the atomic manipulation.</summary>
+    </member>
+    <member name="M:Triamec.Database.DatabaseTransaction.Dispose">
+      <summary>
+            Disposes of the transaction scope.
+            If <see cref="M:Triamec.Database.DatabaseTransaction.Commit" /> was not called during the lifetime of this instance,
+            the atomic manipulation isn't executed.
+            </summary>
+    </member>
+    <member name="T:Triamec.Database.Db">
+      <summary>
+            A database interface for simple applications.
+            </summary>
+    </member>
+    <member name="M:Triamec.Database.Db.Connect(System.String)">
+      <summary>
+            Connects to the database configured in a connection string.
+            </summary>
+      <param name="configuration">The name of the connection string.</param>
+      <exception cref="T:System.Data.Common.DbException">Failed to initialize database connection.</exception>
+    </member>
+    <member name="M:Triamec.Database.Db.Connect``1(System.String)">
+      <summary>
+            Connects to the database configured in a connection string.
+            </summary>
+      <param name="configuration">The name of the connection string.</param>
+      <exception cref="T:System.Data.Common.DbException">Failed to initialize database connection.</exception>
+    </member>
+    <member name="M:Triamec.Database.Db.Connect(System.String,System.String)">
+      <summary>
+            Connects to the database configured with the specified provider and connection string.
+            </summary>
+      <param name="providerName">The type of the provider.</param>
+      <param name="connectionString">The connection string.</param>
+      <exception cref="T:System.Data.Common.DbException">Failed to initialize database connection.</exception>
+    </member>
+    <member name="M:Triamec.Database.Db.Connect``1(System.String,System.String)">
+      <summary>
+            Connects to the database configured with the specified provider and connection string.
+            </summary>
+      <param name="providerName">The type of the provider.</param>
+      <param name="connectionString">The connection string.</param>
+      <exception cref="T:System.Data.Common.DbException">Failed to initialize database connection.</exception>
+    </member>
+    <member name="M:Triamec.Database.Db.ConnectToSQLite(System.String,System.Boolean)">
+      <summary>Connects to the specified SQLite v3 database.</summary>
+      <param name="path">The path to the database.</param>
+      <param name="readOnly">Whether to open the database for reading only.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="path" /> is <see langword="null" />.</exception>
+      <exception cref="T:System.Data.Common.DbException">Failed to initialize database connection.</exception>
+    </member>
+    <member name="M:Triamec.Database.Db.ConnectToSQLite``1(System.String,System.Boolean)">
+      <summary>Connects to the specified SQLite v3 database.</summary>
+      <param name="path">The path to the database.</param>
+      <param name="readOnly">Whether to open the database for reading only.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="path" /> is <see langword="null" />.</exception>
+      <exception cref="T:System.Data.Common.DbException">Failed to initialize database connection.</exception>
+    </member>
+    <member name="M:Triamec.Database.Db.CreateTable``1">
+      <summary>
+            Creates a new table in the database.
+            </summary>
+      <typeparam name="T">
+            Represents the table by means of the type's <see cref="P:System.Reflection.MemberInfo.Name" />.
+            </typeparam>
+      <exception cref="T:System.Data.Common.DbException">Failed to create the table.</exception>
+    </member>
+    <member name="M:Triamec.Database.Db.Dispose">
+      <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+    </member>
+    <member name="M:Triamec.Database.Db.Dispose(System.Boolean)">
+      <summary>
+            Disposes this database connection.
+            </summary>
+      <param name="disposing">
+        <markup>
+          <include item="SMCAutoDocDisposeParam">
+            <parameter>Triamec.Database.Db</parameter>
+          </include>
+        </markup>
+      </param>
+    </member>
+    <member name="M:Triamec.Database.Db.Enumerate``1">
+      <summary>
+            Returns all rows from a specified table as an enumerable entity.
+            </summary>
+      <typeparam name="T">
+            Represents the table by means of the type's <see cref="P:System.Reflection.MemberInfo.Name" />.
+            </typeparam>
+      <returns>The enumerable entity.</returns>
+    </member>
+    <member name="M:Triamec.Database.Db.Exists(System.Type)">
+      <summary>
+            Determines whether the specified table exists.
+            </summary>
+      <param name="tableType">The type of the table.</param>
+    </member>
+    <member name="M:Triamec.Database.Db.ExportTable``1(Triamec.Database.Db,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+      <summary>Copies an entire table to another database.</summary>
+      <param name="target">The other database.</param>
+      <param name="filter">If specified, allows to limit the exported data.</param>
+      <typeparam name="T">
+            Represents the table by means of the type's <see cref="P:System.Reflection.MemberInfo.Name" />.
+            </typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="target" /> is <see langword="null" />.</exception>
+    </member>
+    <member name="M:Triamec.Database.Db.FromSql``1(System.FormattableString)">
+      <summary>
+            Creates a LINQ query based on an interpolated string representing an SQL query.
+            </summary>
+      <param name="sql">The interpolated string representing an SQL query.</param>
+      <typeparam name="T">Query record type.</typeparam>
+      <returns>An instance representing the raw SQL query.</returns>
+    </member>
+    <member name="M:Triamec.Database.Db.Insert``1(``0)">
+      <summary>
+            Inserts an entry into a specified table.
+            </summary>
+      <param name="row">The entry to insert.</param>
+      <typeparam name="T">
+            Represents the table by means of the type's <see cref="P:System.Reflection.MemberInfo.Name" />.
+            </typeparam>
+      <exception cref="T:System.ArgumentException">
+            The underlying database is MySQL and <paramref name="row" /> already exists in the table.
+            </exception>
+      <exception cref="T:System.Data.Common.DbException">Could not insert <paramref name="row" />.</exception>
+    </member>
+    <member name="M:Triamec.Database.Db.Prune``1(Triamec.Database.Db,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})"></member>
+    <member name="M:Triamec.Database.Db.Query``1">
+      <summary>
+            Reads data from a table.
+            </summary>
+      <typeparam name="T">
+            Represents the table by means of the type's <see cref="P:System.Reflection.MemberInfo.Name" />.
+            </typeparam>
+      <returns>The sequence of table rows.</returns>
+    </member>
+    <member name="M:Triamec.Database.Db.StartTransaction">
+      <summary>Initiates a sequence of atomic operations.</summary>
+      <returns>An instance allowing to end the sequence of atomic operations.</returns>
+    </member>
+    <member name="M:Triamec.Database.Db.TryConnect(System.String,Triamec.Database.Db@)">
+      <summary>Attempts to connect to the database configured in a connection string.</summary>
+      <param name="configuration">The name of the connection string.</param>
+      <param name="db">
+            The connected database or <see langword="null" /> if this method returns <see langword="false" />.
+            </param>
+      <returns>Whether the connection succeeded.</returns>
+    </member>
+    <member name="M:Triamec.Database.Db.TryConnect``1(System.String,Triamec.Database.Db{``0}@)">
+      <summary>Attempts to connect to the database configured in a connection string.</summary>
+      <param name="configuration">The name of the connection string.</param>
+      <param name="db">
+            The connected database or <see langword="null" /> if this method returns <see langword="false" />.
+            </param>
+      <returns>Whether the connection succeeded.</returns>
+    </member>
+    <member name="T:Triamec.Database.Db`1">
+      <summary>
+            A database interface for simple applications with a query table.
+            </summary>
+      <typeparam name="TQuery">Represents the table which contains the query scripts.</typeparam>
+    </member>
+    <member name="M:Triamec.Database.Db`1.Export(Triamec.Database.Db{`0})">
+      <summary>
+            Exports the query table to the specified database.
+            </summary>
+    </member>
+    <member name="M:Triamec.Database.Db`1.Join``2(System.Collections.Generic.IEnumerable{``0})">
+      <summary>
+            Returns the specified query as a queryable entity.
+            </summary>
+      <param name="records"></param>
+      <typeparam name="TInput">
+            Record type of the input table which will be joined in the script specified by
+            <typeparamref name="TOutput" />.
+            </typeparam>
+      <typeparam name="TOutput">
+            Represents a query from the <typeparamref name="TQuery" /> table by matching its
+            <see cref="P:System.Reflection.MemberInfo.Name" /> with the <see cref="P:Triamec.Database.IQueryStore.Name" /> column of the
+            <typeparamref name="TQuery" /> table.
+            </typeparam>
+      <exception cref="T:System.Data.Common.DbException">
+            The query specified by <typeparamref name="TOutput" /> doesn't exist in the <typeparamref name="TQuery" />
+            table.
+            </exception>
+    </member>
+    <member name="M:Triamec.Database.Db`1.QueryScript``1">
+      <summary>
+            Returns the specified query as a queryable entity.
+            </summary>
+      <typeparam name="T">
+            Represents a parameterless query from the <typeparamref name="TQuery" /> table by matching its
+            <see cref="P:System.Reflection.MemberInfo.Name" /> with the <see cref="P:Triamec.Database.IQueryStore.Name" /> column of the
+            <typeparamref name="TQuery" /> table.
+            </typeparam>
+      <returns>The queryable entity.</returns>
+      <exception cref="T:System.Data.Common.DbException">
+            The queries specified by <typeparamref name="T" /> was not found in the <typeparamref name="TQuery" /> table.
+            </exception>
+    </member>
+    <member name="M:Triamec.Database.Db`1.QueryScript``1(System.Object[])">
+      <summary>
+            Returns the specified query as a queryable entity.
+            </summary>
+      <param name="arguments">The arguments passed to the query, as needed by the specific query.</param>
+      <typeparam name="T">
+            Represents a query from the <typeparamref name="TQuery" /> table by matching its
+            <see cref="P:System.Reflection.MemberInfo.Name" /> with the <see cref="P:Triamec.Database.IQueryStore.Name" /> column of the
+            <typeparamref name="TQuery" /> table.
+            </typeparam>
+      <returns>The queryable entity.</returns>
+      <exception cref="T:System.Data.Common.DbException">
+            The queries specified by <typeparamref name="T" /> was not found in the
+            <typeparamref name="TQuery" /> table.
+            </exception>
+    </member>
+    <member name="T:Triamec.Database.IQueryStore">
+      <summary>
+            Table containing SQL queries to use with the methods in <see cref="T:Triamec.Database.Db`1" />.
+            </summary>
+    </member>
+    <member name="P:Triamec.Database.IQueryStore.Name">
+      <summary>
+            Gets the name of the script.
+            </summary>
+    </member>
+    <member name="P:Triamec.Database.IQueryStore.Query">
+      <summary>
+            Gets the SQL script.
+            </summary>
+    </member>
+  </members>
+</doc>
